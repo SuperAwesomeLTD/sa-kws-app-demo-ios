@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B56DFD51D194A6200973075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B56DFD41D194A6200973075 /* AppDelegate.swift */; };
+		1B56DFD71D194A6200973075 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B56DFD61D194A6200973075 /* ViewController.swift */; };
+		1B56DFDA1D194A6200973075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFD81D194A6200973075 /* Main.storyboard */; };
+		1B56DFDC1D194A6200973075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFDB1D194A6200973075 /* Assets.xcassets */; };
+		1B56DFDF1D194A6200973075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFDD1D194A6200973075 /* LaunchScreen.storyboard */; };
+		49AD0095224D5BAE7D7619F1 /* libPods-KWSDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8428C2CE179EC5C18CBCD10 /* libPods-KWSDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B56DFD11D194A6200973075 /* KWSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KWSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B56DFD41D194A6200973075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1B56DFD61D194A6200973075 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B56DFD91D194A6200973075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1B56DFDB1D194A6200973075 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B56DFDE1D194A6200973075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1B56DFE01D194A6200973075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B56DFE91D194B6700973075 /* KWSDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KWSDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		A850D3CE8731A85DEA1AAF39 /* Pods-KWSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		AA1E00B9BBB9803E2EE38986 /* Pods-KWSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.release.xcconfig"; sourceTree = "<group>"; };
+		D8428C2CE179EC5C18CBCD10 /* libPods-KWSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KWSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B56DFCE1D194A6200973075 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49AD0095224D5BAE7D7619F1 /* libPods-KWSDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16C0CAFE66326A9FE61A0A28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8428C2CE179EC5C18CBCD10 /* libPods-KWSDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B56DFC81D194A6200973075 = {
+			isa = PBXGroup;
+			children = (
+				1B56DFD31D194A6200973075 /* KWSDemo */,
+				1B56DFD21D194A6200973075 /* Products */,
+				A2D33661C3ABF15BC5519951 /* Pods */,
+				16C0CAFE66326A9FE61A0A28 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1B56DFD21D194A6200973075 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B56DFD11D194A6200973075 /* KWSDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B56DFD31D194A6200973075 /* KWSDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1B56DFE81D194B4700973075 /* Meta */,
+				1B56DFE71D194B3800973075 /* Controllers */,
+				1B56DFE61D194B3400973075 /* Delegate */,
+				1B56DFD81D194A6200973075 /* Main.storyboard */,
+			);
+			path = KWSDemo;
+			sourceTree = "<group>";
+		};
+		1B56DFE61D194B3400973075 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				1B56DFD41D194A6200973075 /* AppDelegate.swift */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		1B56DFE71D194B3800973075 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B56DFD61D194A6200973075 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1B56DFE81D194B4700973075 /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				1B56DFDB1D194A6200973075 /* Assets.xcassets */,
+				1B56DFDD1D194A6200973075 /* LaunchScreen.storyboard */,
+				1B56DFE01D194A6200973075 /* Info.plist */,
+				1B56DFE91D194B6700973075 /* KWSDemo-Bridging-Header.h */,
+			);
+			name = Meta;
+			sourceTree = "<group>";
+		};
+		A2D33661C3ABF15BC5519951 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A850D3CE8731A85DEA1AAF39 /* Pods-KWSDemo.debug.xcconfig */,
+				AA1E00B9BBB9803E2EE38986 /* Pods-KWSDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B56DFD01D194A6200973075 /* KWSDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B56DFE31D194A6200973075 /* Build configuration list for PBXNativeTarget "KWSDemo" */;
+			buildPhases = (
+				6BF56D85EE94799B4179A70D /* Check Pods Manifest.lock */,
+				1B56DFCD1D194A6200973075 /* Sources */,
+				1B56DFCE1D194A6200973075 /* Frameworks */,
+				1B56DFCF1D194A6200973075 /* Resources */,
+				1D62B9C0093C86574BDDAC17 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KWSDemo;
+			productName = KWSDemo;
+			productReference = 1B56DFD11D194A6200973075 /* KWSDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B56DFC91D194A6200973075 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Gabriel Coman";
+				TargetAttributes = {
+					1B56DFD01D194A6200973075 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = K79XEZP48K;
+					};
+				};
+			};
+			buildConfigurationList = 1B56DFCC1D194A6200973075 /* Build configuration list for PBXProject "KWSDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1B56DFC81D194A6200973075;
+			productRefGroup = 1B56DFD21D194A6200973075 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B56DFD01D194A6200973075 /* KWSDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B56DFCF1D194A6200973075 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B56DFDF1D194A6200973075 /* LaunchScreen.storyboard in Resources */,
+				1B56DFDC1D194A6200973075 /* Assets.xcassets in Resources */,
+				1B56DFDA1D194A6200973075 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D62B9C0093C86574BDDAC17 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BF56D85EE94799B4179A70D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B56DFCD1D194A6200973075 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B56DFD71D194A6200973075 /* ViewController.swift in Sources */,
+				1B56DFD51D194A6200973075 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1B56DFD81D194A6200973075 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B56DFD91D194A6200973075 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1B56DFDD1D194A6200973075 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B56DFDE1D194A6200973075 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B56DFE11D194A6200973075 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B56DFE21D194A6200973075 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B56DFE41D194A6200973075 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A850D3CE8731A85DEA1AAF39 /* Pods-KWSDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = KWSDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.superawesome.KWSDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KWSDemo/KWSDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1B56DFE51D194A6200973075 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA1E00B9BBB9803E2EE38986 /* Pods-KWSDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = KWSDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.superawesome.KWSDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KWSDemo/KWSDemo-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B56DFCC1D194A6200973075 /* Build configuration list for PBXProject "KWSDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B56DFE11D194A6200973075 /* Debug */,
+				1B56DFE21D194A6200973075 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B56DFE31D194A6200973075 /* Build configuration list for PBXNativeTarget "KWSDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B56DFE41D194A6200973075 /* Debug */,
+				1B56DFE51D194A6200973075 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B56DFC91D194A6200973075 /* Project object */;
+}
