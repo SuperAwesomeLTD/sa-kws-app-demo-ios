@@ -3,5 +3,6 @@ platform :ios, '6.0'
 
 target 'KWSDemo' do
   pod 'KWSiOSSDKObjC'
+  pod 'SAUtils'
 end
 
