@@ -36,7 +36,7 @@
                                     <constraint firstAttribute="height" constant="28" id="vup-eE-1oe"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yC0-ZI-yUm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kid-safe push notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yC0-ZI-yUm">
                                 <rect key="frame" x="54" y="19" width="206" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="94q-G9-eLX"/>
@@ -62,6 +62,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                 <state key="normal" title="ENABLE PUSH NOTIFICATIONS"/>
+                                <connections>
+                                    <action selector="notifAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="TjQ-nY-b80"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLI-m7-5G3">
                                 <rect key="frame" x="16" y="178" width="240" height="30"/>
@@ -71,6 +74,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                 <state key="normal" title="SEE DOCUMENTATION"/>
+                                <connections>
+                                    <action selector="notifDocs:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G9s-SB-oGl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -103,7 +109,7 @@
             <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="0.0" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="content" destination="ifq-Aw-gfS" id="OTx-L2-z3t"/>
-                <outlet property="notifAction" destination="y1B-U2-Aqa" id="QRu-No-rXO"/>
+                <outlet property="notifActionButton" destination="y1B-U2-Aqa" id="4GB-AI-77O"/>
                 <outlet property="notifDocButton" destination="HLI-m7-5G3" id="fqE-LJ-DTN"/>
             </connections>
         </tableViewCell>

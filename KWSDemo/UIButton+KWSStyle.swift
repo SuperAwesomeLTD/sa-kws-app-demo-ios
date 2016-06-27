@@ -17,4 +17,10 @@ extension UIButton {
         // let title = self.titleLabel?.text
         self.backgroundColor = UIColor.clearColor()
     }
+    
+    func redButton () {
+        self.backgroundColor = UIColorFromHex(0xED1C24)
+        self.layer.cornerRadius = 5
+        self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+    }
 }

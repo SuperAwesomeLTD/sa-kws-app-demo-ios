@@ -63,6 +63,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                 <state key="normal" title="AUTHENTICATE USER"/>
+                                <connections>
+                                    <action selector="authAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dvw-gH-hUz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCk-AI-FuQ">
                                 <rect key="frame" x="16" y="202" width="240" height="30"/>
@@ -72,6 +75,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                 <state key="normal" title="SEE DOCUMENTATION"/>
+                                <connections>
+                                    <action selector="authDocs:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zl9-Zv-2X9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

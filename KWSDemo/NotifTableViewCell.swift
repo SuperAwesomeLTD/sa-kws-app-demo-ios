@@ -8,24 +8,35 @@
 
 import UIKit
 
+protocol NotifCellProtocol {
+    func notifCellProtocolDidClickOnAction ()
+    func notifCellprotocolDidClickOnDocs ()
+}
+
 class NotifTableViewCell: UITableViewCell {
 
     @IBOutlet weak var content: UIView!
-    @IBOutlet weak var notifAction: UIButton!
+    @IBOutlet weak var notifActionButton: UIButton!
     @IBOutlet weak var notifDocButton: UIButton!
+    
+    var delegate: NotifCellProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         content.addShadow()
-        notifAction.blueButton()
+        notifActionButton.blueButton()
         notifDocButton.blueButton()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    @IBAction func notifAction(sender: AnyObject) {
+        delegate?.notifCellProtocolDidClickOnAction()
     }
     
+    @IBAction func notifDocs(sender: AnyObject) {
+        delegate?.notifCellprotocolDidClickOnDocs()
+    }
 }

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        UITabBar.appearance().barTintColor = UIColorFromHex(0xFAFAFA)
+        UITabBar.appearance().barTintColor = UIColorFromHex(0xf9f9f9)
         UITabBar.appearance().tintColor = UIColorFromHex(0xED1C24)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColorFromHex(0xED1C24)], forState: .Selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColorFromHex(0x929292)], forState: .Normal)

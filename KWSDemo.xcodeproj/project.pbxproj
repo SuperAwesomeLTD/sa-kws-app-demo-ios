@@ -12,6 +12,10 @@
 		1B56DFDA1D194A6200973075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFD81D194A6200973075 /* Main.storyboard */; };
 		1B56DFDC1D194A6200973075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFDB1D194A6200973075 /* Assets.xcassets */; };
 		1B56DFDF1D194A6200973075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFDD1D194A6200973075 /* LaunchScreen.storyboard */; };
+		1B92FCD71D21803800B75617 /* KWSActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCD61D21803800B75617 /* KWSActivityView.swift */; };
+		1B92FCD91D21808200B75617 /* KWSSimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCD81D21808200B75617 /* KWSSimpleAlert.swift */; };
+		1B92FCDB1D2181F300B75617 /* KWSSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */; };
+		1B92FCDD1D218BEA00B75617 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDC1D218BEA00B75617 /* LogOutViewController.swift */; };
 		1BDC11A61D1953C900B1111A /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A51D1953C900B1111A /* FeaturesViewController.swift */; };
 		1BDC11A81D1953E000B1111A /* DocumentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */; };
 		1BDC11AB1D197EB200B1111A /* KWSNavitationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */; };
@@ -36,7 +40,11 @@
 		1BDC11F71D1AA9A400B1111A /* NotifTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11F51D1AA9A400B1111A /* NotifTableViewCell.swift */; };
 		1BDC11F81D1AA9A400B1111A /* NotifTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BDC11F61D1AA9A400B1111A /* NotifTableViewCell.xib */; };
 		1BDC11FA1D1AABBD00B1111A /* UIView+KWSStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11F91D1AABBD00B1111A /* UIView+KWSStyle.swift */; };
-		49AD0095224D5BAE7D7619F1 /* libPods-KWSDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8428C2CE179EC5C18CBCD10 /* libPods-KWSDemo.a */; };
+		1BDC11FC1D1ABF8E00B1111A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FB1D1ABF8E00B1111A /* SignUpViewController.swift */; };
+		1BDC11FE1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FD1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift */; };
+		1BDC12001D1AECC300B1111A /* UITextField+KWSStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FF1D1AECC300B1111A /* UITextField+KWSStyle.swift */; };
+		1BDC12031D1AF5BA00B1111A /* KWSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC12021D1AF5BA00B1111A /* KWSModel.swift */; };
+		E076418A6275A726179B815C /* libPods-KWSDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E3EBA46FE4C45797F69944 /* libPods-KWSDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +56,10 @@
 		1B56DFDE1D194A6200973075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B56DFE01D194A6200973075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B56DFE91D194B6700973075 /* KWSDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KWSDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		1B92FCD61D21803800B75617 /* KWSActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSActivityView.swift; sourceTree = "<group>"; };
+		1B92FCD81D21808200B75617 /* KWSSimpleAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSSimpleAlert.swift; sourceTree = "<group>"; };
+		1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSSingleton.swift; sourceTree = "<group>"; };
+		1B92FCDC1D218BEA00B75617 /* LogOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		1BDC11A51D1953C900B1111A /* FeaturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesViewController.swift; sourceTree = "<group>"; };
 		1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentationViewController.swift; sourceTree = "<group>"; };
 		1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSNavitationBar.swift; sourceTree = "<group>"; };
@@ -72,9 +84,13 @@
 		1BDC11F51D1AA9A400B1111A /* NotifTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifTableViewCell.swift; sourceTree = "<group>"; };
 		1BDC11F61D1AA9A400B1111A /* NotifTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotifTableViewCell.xib; sourceTree = "<group>"; };
 		1BDC11F91D1AABBD00B1111A /* UIView+KWSStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+KWSStyle.swift"; sourceTree = "<group>"; };
-		A850D3CE8731A85DEA1AAF39 /* Pods-KWSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		AA1E00B9BBB9803E2EE38986 /* Pods-KWSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.release.xcconfig"; sourceTree = "<group>"; };
-		D8428C2CE179EC5C18CBCD10 /* libPods-KWSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KWSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BDC11FB1D1ABF8E00B1111A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1BDC11FD1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSPopupNavigationBar.swift; sourceTree = "<group>"; };
+		1BDC11FF1D1AECC300B1111A /* UITextField+KWSStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+KWSStyle.swift"; sourceTree = "<group>"; };
+		1BDC12021D1AF5BA00B1111A /* KWSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSModel.swift; sourceTree = "<group>"; };
+		60E3EBA46FE4C45797F69944 /* libPods-KWSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KWSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73EC6CD53EA0788DF07CB27A /* Pods-KWSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.release.xcconfig"; sourceTree = "<group>"; };
+		A57993F2A900C4293C24C6FD /* Pods-KWSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,28 +98,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49AD0095224D5BAE7D7619F1 /* libPods-KWSDemo.a in Frameworks */,
+				E076418A6275A726179B815C /* libPods-KWSDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		16C0CAFE66326A9FE61A0A28 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D8428C2CE179EC5C18CBCD10 /* libPods-KWSDemo.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		1B56DFC81D194A6200973075 = {
 			isa = PBXGroup;
 			children = (
 				1B56DFD31D194A6200973075 /* KWSDemo */,
 				1B56DFD21D194A6200973075 /* Products */,
-				A2D33661C3ABF15BC5519951 /* Pods */,
-				16C0CAFE66326A9FE61A0A28 /* Frameworks */,
+				F98D0A2E9A60745B474766C2 /* Pods */,
+				C6BA7DA313395D83BFD2D04C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +126,7 @@
 		1B56DFD31D194A6200973075 /* KWSDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1BDC12011D1AF5B100B1111A /* Model */,
 				1BDC11F01D1AA91E00B1111A /* Cells */,
 				1BDC11EB1D1AA39300B1111A /* Categories */,
 				1BDC11B01D198B3900B1111A /* Assets */,
@@ -145,6 +154,8 @@
 				1BDC11A51D1953C900B1111A /* FeaturesViewController.swift */,
 				1BDC11EE1D1AA84C00B1111A /* FeaturesDataSource.swift */,
 				1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */,
+				1BDC11FB1D1ABF8E00B1111A /* SignUpViewController.swift */,
+				1B92FCDC1D218BEA00B75617 /* LogOutViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */,
+				1BDC11FD1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -194,6 +206,9 @@
 			children = (
 				1BDC11EC1D1AA3BD00B1111A /* UIButton+KWSStyle.swift */,
 				1BDC11F91D1AABBD00B1111A /* UIView+KWSStyle.swift */,
+				1BDC11FF1D1AECC300B1111A /* UITextField+KWSStyle.swift */,
+				1B92FCD61D21803800B75617 /* KWSActivityView.swift */,
+				1B92FCD81D21808200B75617 /* KWSSimpleAlert.swift */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -209,11 +224,28 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		A2D33661C3ABF15BC5519951 /* Pods */ = {
+		1BDC12011D1AF5B100B1111A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A850D3CE8731A85DEA1AAF39 /* Pods-KWSDemo.debug.xcconfig */,
-				AA1E00B9BBB9803E2EE38986 /* Pods-KWSDemo.release.xcconfig */,
+				1BDC12021D1AF5BA00B1111A /* KWSModel.swift */,
+				1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C6BA7DA313395D83BFD2D04C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60E3EBA46FE4C45797F69944 /* libPods-KWSDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F98D0A2E9A60745B474766C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A57993F2A900C4293C24C6FD /* Pods-KWSDemo.debug.xcconfig */,
+				73EC6CD53EA0788DF07CB27A /* Pods-KWSDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -225,11 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B56DFE31D194A6200973075 /* Build configuration list for PBXNativeTarget "KWSDemo" */;
 			buildPhases = (
-				6BF56D85EE94799B4179A70D /* Check Pods Manifest.lock */,
+				38C2CC44E58664C989E2A193 /* [CP] Check Pods Manifest.lock */,
 				1B56DFCD1D194A6200973075 /* Sources */,
 				1B56DFCE1D194A6200973075 /* Frameworks */,
 				1B56DFCF1D194A6200973075 /* Resources */,
-				1D62B9C0093C86574BDDAC17 /* Copy Pods Resources */,
+				C21949C16A431F1DEE7D8E79 /* [CP] Embed Pods Frameworks */,
+				D9728A189220A91C8A5B206D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,34 +337,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D62B9C0093C86574BDDAC17 /* Copy Pods Resources */ = {
+		38C2CC44E58664C989E2A193 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6BF56D85EE94799B4179A70D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C21949C16A431F1DEE7D8E79 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9728A189220A91C8A5B206D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -341,16 +389,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BDC11FE1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift in Sources */,
+				1BDC11FC1D1ABF8E00B1111A /* SignUpViewController.swift in Sources */,
 				1BDC11FA1D1AABBD00B1111A /* UIView+KWSStyle.swift in Sources */,
 				1BDC11AB1D197EB200B1111A /* KWSNavitationBar.swift in Sources */,
 				1BDC11A61D1953C900B1111A /* FeaturesViewController.swift in Sources */,
 				1B56DFD71D194A6200973075 /* PlatformViewController.swift in Sources */,
+				1B92FCD91D21808200B75617 /* KWSSimpleAlert.swift in Sources */,
 				1BDC11F71D1AA9A400B1111A /* NotifTableViewCell.swift in Sources */,
 				1B56DFD51D194A6200973075 /* AppDelegate.swift in Sources */,
 				1BDC11A81D1953E000B1111A /* DocumentationViewController.swift in Sources */,
 				1BDC11ED1D1AA3BD00B1111A /* UIButton+KWSStyle.swift in Sources */,
 				1BDC11EF1D1AA84C00B1111A /* FeaturesDataSource.swift in Sources */,
+				1B92FCDD1D218BEA00B75617 /* LogOutViewController.swift in Sources */,
 				1BDC11F31D1AA99800B1111A /* AuthTableViewCell.swift in Sources */,
+				1BDC12001D1AECC300B1111A /* UITextField+KWSStyle.swift in Sources */,
+				1B92FCD71D21803800B75617 /* KWSActivityView.swift in Sources */,
+				1BDC12031D1AF5BA00B1111A /* KWSModel.swift in Sources */,
+				1B92FCDB1D2181F300B75617 /* KWSSingleton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +521,7 @@
 		};
 		1B56DFE41D194A6200973075 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A850D3CE8731A85DEA1AAF39 /* Pods-KWSDemo.debug.xcconfig */;
+			baseConfigurationReference = A57993F2A900C4293C24C6FD /* Pods-KWSDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -484,7 +540,7 @@
 		};
 		1B56DFE51D194A6200973075 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA1E00B9BBB9803E2EE38986 /* Pods-KWSDemo.release.xcconfig */;
+			baseConfigurationReference = 73EC6CD53EA0788DF07CB27A /* Pods-KWSDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

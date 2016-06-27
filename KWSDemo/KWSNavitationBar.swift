@@ -36,7 +36,6 @@ class KWSNavitationBar: UINavigationBar {
     override func sizeThatFits(size: CGSize) -> CGSize {
         var amendedSize = super.sizeThatFits(size)
         amendedSize.height += 40
-        print(amendedSize.height)
         return amendedSize
     }
 }

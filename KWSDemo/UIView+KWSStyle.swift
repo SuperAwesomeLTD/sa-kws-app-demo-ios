@@ -9,14 +9,12 @@
 import UIKit
 
 extension UIView {
+    
     func addShadow () {
-        
         backgroundColor = UIColor.whiteColor()
-        let shadowPath = UIBezierPath(rect: self.bounds)
         layer.masksToBounds = false
         layer.shadowColor = UIColorFromHex(0x898989).CGColor
         layer.shadowOffset = CGSizeMake(0, 2.5)
         layer.shadowOpacity = 0.5
-        layer.shadowPath = shadowPath.CGPath
-    }
+      }
 }

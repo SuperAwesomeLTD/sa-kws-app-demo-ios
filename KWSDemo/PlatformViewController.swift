@@ -18,6 +18,7 @@ class PlatformViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNeedsStatusBarAppearanceUpdate()
         knowMoreButton.blueButton()
     }
 
@@ -29,6 +30,12 @@ class PlatformViewController: UIViewController {
     @IBAction func knowMoreAction(sender: AnyObject) {
         let url = NSURL(string: urlStr)
         UIApplication.sharedApplication().openURL(url!)
+    }
+    
+    // <Custom>
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.Default
     }
 }
 
