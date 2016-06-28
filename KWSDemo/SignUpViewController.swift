@@ -168,6 +168,8 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
                         // save user to singleton
                         KWSSingleton.sharedInstance.setModel(kwsmodel)
                         
+                        print("Logged in as:\n\(kwsmodel.userId)\n\(kwsmodel.username)\n\(kwsmodel.token)")
+                        
                         // dismiss
                         vc.dismissViewControllerAnimated(true) {
                             self.delegate?.signupViewControllerDidManageToSignUpUser()

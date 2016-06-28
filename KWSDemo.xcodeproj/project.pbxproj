@@ -16,6 +16,7 @@
 		1B92FCD91D21808200B75617 /* KWSSimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCD81D21808200B75617 /* KWSSimpleAlert.swift */; };
 		1B92FCDB1D2181F300B75617 /* KWSSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */; };
 		1B92FCDD1D218BEA00B75617 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDC1D218BEA00B75617 /* LogOutViewController.swift */; };
+		1B92FD0C1D228F7000B75617 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */; };
 		1BDC11A61D1953C900B1111A /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A51D1953C900B1111A /* FeaturesViewController.swift */; };
 		1BDC11A81D1953E000B1111A /* DocumentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */; };
 		1BDC11AB1D197EB200B1111A /* KWSNavitationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */; };
@@ -60,6 +61,7 @@
 		1B92FCD81D21808200B75617 /* KWSSimpleAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSSimpleAlert.swift; sourceTree = "<group>"; };
 		1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSSingleton.swift; sourceTree = "<group>"; };
 		1B92FCDC1D218BEA00B75617 /* LogOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1BDC11A51D1953C900B1111A /* FeaturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesViewController.swift; sourceTree = "<group>"; };
 		1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentationViewController.swift; sourceTree = "<group>"; };
 		1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSNavitationBar.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		1B56DFE81D194B4700973075 /* Meta */ = {
 			isa = PBXGroup;
 			children = (
+				1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */,
 				1B56DFDB1D194A6200973075 /* Assets.xcassets */,
 				1B56DFDD1D194A6200973075 /* LaunchScreen.storyboard */,
 				1B56DFE01D194A6200973075 /* Info.plist */,
@@ -329,6 +332,7 @@
 				1BDC11CA1D198B5600B1111A /* SF-UI-Text-SemiboldItalic.otf in Resources */,
 				1BDC11CC1D198B5600B1111A /* SF-UI-Text-UltrathinItalic.otf in Resources */,
 				1BDC11CB1D198B5600B1111A /* SF-UI-Text-Ultrathin.otf in Resources */,
+				1B92FD0C1D228F7000B75617 /* GoogleService-Info.plist in Resources */,
 				1BDC11C81D198B5600B1111A /* SF-UI-Text-RegularItalic.otf in Resources */,
 				1BDC11C61D198B5600B1111A /* SF-UI-Text-MediumItalic.otf in Resources */,
 			);

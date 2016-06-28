@@ -88,6 +88,7 @@ class FeaturesViewController: UIViewController, UITableViewDelegate, AuthCellPro
             if let kwsModel = kwsModel {
                 let alert = UIAlertController(title: "Hey!", message: "Do you want to enable Push Notifications for this user?", preferredStyle: .Alert)
                 let OKAction = UIAlertAction(title: "Yes", style: .Default) { (action) in
+                    KWSActivityView.sharedInstance.showActivityView()
                     KWS.sdk().setupWithOAuthToken(kwsModel.token, kwsApiUrl: self.KWS_API, delegate: self)
                     KWS.sdk().checkIfNotificationsAreAllowed()
                 }
@@ -128,18 +129,22 @@ class FeaturesViewController: UIViewController, UITableViewDelegate, AuthCellPro
     }
     
     func isAlreadyRegisteredForRemoteNotifications() {
+        KWSActivityView.sharedInstance.hideActivityView()
         KWSSimpleAlert.sharedInstance.show(self, title: "Great news!", message: "This user is already registered for Remote Notifications in KWS.", button: "Got it!")
     }
     
     func didRegisterForRemoteNotifications() {
+        KWSActivityView.sharedInstance.hideActivityView()
         KWSSimpleAlert.sharedInstance.show(self, title: "Great news!", message: "This user has been successfully registered for Remote Notifications in KWS.", button: "Got it!")
     }
     
     func didFailBecauseKWSCouldNotFindParentEmail() {
+        KWSActivityView.sharedInstance.hideActivityView()
         let alert = UIAlertController(title: "Hey!", message: "To enable Push Notifications in KWS you'll need to provide a parent's email.", preferredStyle: .Alert)
         let OKAction = UIAlertAction(title: "Submit", style: .Default) { (action) in
             let textField = alert.textFields?.first
             if let textField = textField {
+                KWSActivityView.sharedInstance.showActivityView()
                 KWS.sdk().submitParentEmail(textField.text)
             }
         }
@@ -155,19 +160,28 @@ class FeaturesViewController: UIViewController, UITableViewDelegate, AuthCellPro
     }
     
     func didFailBecauseParentEmailIsInvalid() {
+        KWSActivityView.sharedInstance.hideActivityView()
         KWSSimpleAlert.sharedInstance.show(self, title: "Ups!", message: "You must input a valid parent email!", button: "Got it!")
     }
     
     func didFailBecauseRemoteNotificationsAreDisabled() {
+        KWSActivityView.sharedInstance.hideActivityView()
         KWSSimpleAlert.sharedInstance.show(self, title: "Hey!", message: "This user could not be registered because he has disabled Remote Notifications for this app.", button: "Got it!")
     }
     
     func didFailBecauseKWSDoesNotAllowRemoteNotifications() {
+        KWSActivityView.sharedInstance.hideActivityView()
         KWSSimpleAlert.sharedInstance.show(self, title: "Hey!", message: "This user could not be registered for Remote Notifications because a parent in KWS has disabled this functionality.", button: "Got it!")
     }
     
     func didFailBecauseOfError() {
+        KWSActivityView.sharedInstance.hideActivityView()
         KWSSimpleAlert.sharedInstance.show(self, title: "Ups!", message: "An un-identified error occured, and this user could not be registered for Remote Notifications in KWS.", button: "Got it!")
+    }
+    
+    func didFailBecauseFirebaseIsNotSetupCorrectly() {
+        KWSActivityView.sharedInstance.hideActivityView()
+        KWSSimpleAlert.sharedInstance.show(self, title: "Ups!", message: "It seems Firebase isn't setup correctly! Usually this means you'll have to download a GoogleService-Info.plist from https://console.firebase.google.com.", button: "Got it!")
     }
     
     // <Custom>

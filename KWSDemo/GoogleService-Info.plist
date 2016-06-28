@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>335316960677-7f2e618ub4jaf4ijdel06i3bkf2ea025.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.335316960677-7f2e618ub4jaf4ijdel06i3bkf2ea025</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDvF7ym-FJ6KHlGdUEWbKTt2kEQg1ug2h4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>335316960677</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>tv.superawesome.KWSDemo</string>
+	<key>PROJECT_ID</key>
+	<string>sa-kws-13936</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sa-kws-13936.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:335316960677:ios:329cad5b908833f4</string>
+	<key>DATABASE_URL</key>
+	<string>https://sa-kws-13936.firebaseio.com</string>
+</dict>
+</plist>
