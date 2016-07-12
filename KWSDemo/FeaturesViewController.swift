@@ -47,7 +47,7 @@ class FeaturesViewController: UIViewController, UITableViewDelegate, AuthCellPro
     // <UITableViewDelegate>
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 298 : 248
+        return indexPath.row == 0 ? 298 : 288
     }
     
     // <AuthCellProtocol>
@@ -81,26 +81,25 @@ class FeaturesViewController: UIViewController, UITableViewDelegate, AuthCellPro
     
     // <NotifCellProtocol>
 
-    func notifCellProtocolDidClickOnAction() {
+    func notifCellProtocolDidClickOnEnable() {
         if KWSSingleton.sharedInstance.appHasAuthenticatedUser() {
             
             let kwsModel = KWSSingleton.sharedInstance.getModel() as KWSModel?
             if let kwsModel = kwsModel {
-                let alert = UIAlertController(title: "Hey!", message: "Do you want to enable Push Notifications for this user?", preferredStyle: .Alert)
-                let OKAction = UIAlertAction(title: "Yes", style: .Default) { (action) in
-                    KWSActivityView.sharedInstance.showActivityView()
-                    KWS.sdk().setupWithOAuthToken(kwsModel.token, kwsApiUrl: self.KWS_API, delegate: self)
-                    KWS.sdk().checkIfNotificationsAreAllowed()
-                }
-                let CancelAction = UIAlertAction(title: "No", style: .Default) { (action) in
-                    // do nothing
-                }
-                alert.addAction(OKAction)
-                alert.addAction(CancelAction)
-                presentViewController(alert, animated: true) {}
+                SAActivityView.sharedManager().showActivityView()
+                KWS.sdk().setupWithOAuthToken(kwsModel.token, kwsApiUrl: self.KWS_API, andPermissionPopup: true, delegate: self)
+                KWS.sdk().registerForRemoteNotifications()
             }
         } else {
-            KWSSimpleAlert.sharedInstance.show(self, title: "Hey!", message: "Before enabling Push Notifications you must authenticate with KWS.", button: "Got it!")
+            let alert = SAPopup()
+            alert.showWithTitle("Hey!", andMessage: "Before enabling Push Notifications you must authenticate with KWS.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Alphabet, andOKBlock: nil, andNOKBlock: nil)
+        }
+    }
+    
+    func notifCellProtocolDidClickonDisable() {
+        if KWSSingleton.sharedInstance.appHasAuthenticatedUser() {
+            SAActivityView.sharedManager().showActivityView()
+            KWS.sdk().unregisterForRemoteNotifications()
         }
     }
     
@@ -122,66 +121,77 @@ class FeaturesViewController: UIViewController, UITableViewDelegate, AuthCellPro
     }
     
     // <KWSProtocol>
+    // MARK: - KWSPROTOCOL -
     
-    func isAllowedToRegisterForRemoteNotifications() {
-        print("isAllowedToRegisterForRemoteNotifications")
-        KWS.sdk().registerForRemoteNotifications()
+    func kwsSDKDidRegisterUserForRemoteNotifications() {
+        SAActivityView.sharedManager().hideActivityView()
+        SAPopup.sharedManager().showWithTitle("Hey!", andMessage: "You have successfully registered for Remote Notifications in KWS!", andOKTitle: "Great", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
     }
     
-    func isAlreadyRegisteredForRemoteNotifications() {
-        KWSActivityView.sharedInstance.hideActivityView()
-        KWSSimpleAlert.sharedInstance.show(self, title: "Great news!", message: "This user is already registered for Remote Notifications in KWS.", button: "Got it!")
+    func kwsSDKDidUnregisterUserForRemoteNotifications() {
+        SAActivityView.sharedManager().hideActivityView()
+        SAPopup.sharedManager().showWithTitle("Hey!", andMessage: "You have successfully un-registered for Remote Notifications in KWS!", andOKTitle: "Great", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
     }
     
-    func didRegisterForRemoteNotifications() {
-        KWSActivityView.sharedInstance.hideActivityView()
-        KWSSimpleAlert.sharedInstance.show(self, title: "Great news!", message: "This user has been successfully registered for Remote Notifications in KWS.", button: "Got it!")
-    }
-    
-    func didFailBecauseKWSCouldNotFindParentEmail() {
-        KWSActivityView.sharedInstance.hideActivityView()
-        let alert = UIAlertController(title: "Hey!", message: "To enable Push Notifications in KWS you'll need to provide a parent's email.", preferredStyle: .Alert)
-        let OKAction = UIAlertAction(title: "Submit", style: .Default) { (action) in
-            let textField = alert.textFields?.first
-            if let textField = textField {
-                KWSActivityView.sharedInstance.showActivityView()
-                KWS.sdk().submitParentEmail(textField.text)
-            }
+    func kwsSDKDidFailToRegisterUserForRemoteNotificationsWithError(errorType: KWSErrorType) {
+        
+        switch errorType {
+        case .ParentHasDisabledRemoteNotifications:
+            SAActivityView.sharedManager().hideActivityView()
+            SAPopup.sharedManager().showWithTitle("Error!", andMessage: "Parent has disabled remote notifications for this user from KWS.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
+            break
+        case .UserHasDisabledRemoteNotifications:
+            SAActivityView.sharedManager().hideActivityView()
+            SAPopup.sharedManager().showWithTitle("Error!", andMessage: "User has disabled remote notifications on the device.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
+            break
+        case .UserHasNoParentEmail:
+            SAActivityView.sharedManager().hideActivityView()
+            SAPopup.sharedManager().showWithTitle("Hey!",
+                                                  andMessage: "In order to enable KWS Remote Notifications you must specify a parent email",
+                                                  andOKTitle: "Submit",
+                                                  andNOKTitle: "Cancel",
+                                                  andTextField: true,
+                                                  andKeyboardTyle: UIKeyboardType.EmailAddress,
+                                                  andOKBlock: { (email: String!) in
+                SAActivityView.sharedManager().showActivityView()
+                KWS.sdk().submitParentEmail(email)
+            }, andNOKBlock: {
+               // cancel
+            })
+            break
+        case .ParentEmailInvalid:
+            SAActivityView.sharedManager().hideActivityView()
+            SAPopup.sharedManager().showWithTitle("Error!", andMessage: "The email you submitted is invalid.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
+            break
+        case .FirebaseNotSetup:
+            SAActivityView.sharedManager().hideActivityView()
+            SAPopup.sharedManager().showWithTitle("Error!", andMessage: "The Firebase SDK is not correctly setup.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
+            break
+        case .FirebaseCouldNotGetToken:
+            SAActivityView.sharedManager().hideActivityView()
+            SAPopup.sharedManager().showWithTitle("Error!", andMessage: "The Firebase SDK could not obtain a valid token.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
+            break
+        case .FailedToCheckIfUserHasNotificationsEnabledInKWS:
+            SAActivityView.sharedManager().hideActivityView()
+            SAPopup.sharedManager().showWithTitle("Error!", andMessage: "Network error trying to check if user has Remote Notifications enabled in KWS.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
+            break
+        case .FailedToRequestNotificationsPermissionInKWS:
+            SAActivityView.sharedManager().hideActivityView()
+            SAPopup.sharedManager().showWithTitle("Error!", andMessage: "Network error trying to request Remote Notifications permissions from KWS.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
+            break
+        case .FailedToSubmitParentEmail:
+            SAActivityView.sharedManager().hideActivityView()
+            SAPopup.sharedManager().showWithTitle("Error!", andMessage: "Network error trying to submit parent email to KWS.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
+            break
+        case .FailedToSubscribeTokenToKWS:
+            SAActivityView.sharedManager().hideActivityView()
+            SAPopup.sharedManager().showWithTitle("Error!", andMessage: "Network error trying to subscribe Firebase token to KWS.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
+            break
+        case .FailedToUbsubscribeTokenToKWS:
+            SAActivityView.sharedManager().hideActivityView()
+            SAPopup.sharedManager().showWithTitle("Error!", andMessage: "Network error trying to ubsubscribe token Firebase from KWS.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
+            break
         }
-        let CancelAction = UIAlertAction(title: "Cancel", style: .Default) { (action) in
-            // do nothing
-        }
-        alert.addTextFieldWithConfigurationHandler { (textField: UITextField) in
-            // do nothing
-        }
-        alert.addAction(OKAction)
-        alert.addAction(CancelAction)
-        presentViewController(alert, animated: true) {}
-    }
-    
-    func didFailBecauseParentEmailIsInvalid() {
-        KWSActivityView.sharedInstance.hideActivityView()
-        KWSSimpleAlert.sharedInstance.show(self, title: "Ups!", message: "You must input a valid parent email!", button: "Got it!")
-    }
-    
-    func didFailBecauseRemoteNotificationsAreDisabled() {
-        KWSActivityView.sharedInstance.hideActivityView()
-        KWSSimpleAlert.sharedInstance.show(self, title: "Hey!", message: "This user could not be registered because he has disabled Remote Notifications for this app.", button: "Got it!")
-    }
-    
-    func didFailBecauseKWSDoesNotAllowRemoteNotifications() {
-        KWSActivityView.sharedInstance.hideActivityView()
-        KWSSimpleAlert.sharedInstance.show(self, title: "Hey!", message: "This user could not be registered for Remote Notifications because a parent in KWS has disabled this functionality.", button: "Got it!")
-    }
-    
-    func didFailBecauseOfError() {
-        KWSActivityView.sharedInstance.hideActivityView()
-        KWSSimpleAlert.sharedInstance.show(self, title: "Ups!", message: "An un-identified error occured, and this user could not be registered for Remote Notifications in KWS.", button: "Got it!")
-    }
-    
-    func didFailBecauseFirebaseIsNotSetupCorrectly() {
-        KWSActivityView.sharedInstance.hideActivityView()
-        KWSSimpleAlert.sharedInstance.show(self, title: "Ups!", message: "It seems Firebase isn't setup correctly! Usually this means you'll have to download a GoogleService-Info.plist from https://console.firebase.google.com.", button: "Got it!")
     }
     
     // <Custom>

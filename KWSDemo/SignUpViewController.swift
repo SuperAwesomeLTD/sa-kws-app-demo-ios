@@ -86,7 +86,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let text = usernameTextView.text where text != "" {
             username = text
         } else {
-            KWSSimpleAlert.sharedInstance.show(vc, title: "Hey!", message: "Please specify a valid username.", button: "Got it!")
+            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "Please specify a valid username.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andOKBlock: nil, andNOKBlock: nil)
             return
         }
         
@@ -94,7 +94,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let text = password1TextView.text where text != "" && text.characters.count >= 8 {
             password1 = text
         } else {
-            KWSSimpleAlert.sharedInstance.show(vc, title: "Hey!", message: "Please speficy a password (that is longer than 8 characters)", button: "Got it!")
+            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "Please speficy a password (that is longer than 8 characters)", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andOKBlock: nil, andNOKBlock: nil)
             return
         }
         
@@ -102,7 +102,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let text = password2TextView.text where text != "" && text.characters.count >= 8 {
             password2 = text
         } else {
-            KWSSimpleAlert.sharedInstance.show(vc, title: "Hey!", message: "Please make sure the two passwords match (and are both longer than 8 characters)", button: "Got it!")
+            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "Please make sure the two passwords match (and are both longer than 8 characters)", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andOKBlock: nil, andNOKBlock: nil)
             return
         }
         
@@ -110,7 +110,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let password1 = password1, let password2 = password2 where password1 == password2 {
             passwordsMatch = true
         } else {
-            KWSSimpleAlert.sharedInstance.show(vc, title: "Hey!", message: "The two passwords you entered do not match.", button: "Got it!")
+            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "The two passwords you entered do not match.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andOKBlock: nil, andNOKBlock: nil)
             return
         }
         
@@ -118,7 +118,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let text = yearTextView.text, let year = Int(text) where year > 1900 && year <= 2016 {
             self.year = year
         } else {
-            KWSSimpleAlert.sharedInstance.show(vc, title: "Hey!", message: "Please specify a valid birth year.", button: "Got it!")
+            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "Please specify a valid birth year.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andOKBlock: nil, andNOKBlock: nil)
             return
         }
         
@@ -126,7 +126,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let text = monthTextView.text, let month = Int(text) where month > 1 && month <= 12 {
             self.month = month
         } else {
-            KWSSimpleAlert.sharedInstance.show(vc, title: "Hey!", message: "Please specify a valid birth month.", button: "Got it!")
+            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "Please specify a valid birth month.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andOKBlock: nil, andNOKBlock: nil)
             return
         }
         
@@ -134,7 +134,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let text = dayTextView.text, let day = Int(text) where day > 1 && day <= 30 {
             self.day = day
         } else {
-            KWSSimpleAlert.sharedInstance.show(vc, title: "Hey!", message: "Please specify a valid birth day.", button: "Got it")
+            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "Please specify a valid birth day.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andOKBlock: nil, andNOKBlock: nil)
             return
         }
         
@@ -146,16 +146,20 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
                 "password": password,
                 "dateOfBirth": "\(year)-" + (month < 10 ? "0\(month)" : "\(month)") + "-" + (day < 10 ? "0\(day)" : "\(day)")
             ]
+            let header = [
+                "Content-Type":"application/json"
+            ]
     
             // start loading
             resignAllResponders()
-            KWSActivityView.sharedInstance.showActivityView()
+            SAActivityView.sharedManager().showActivityView()
             
             // send POST
-            KWSNetworking.sendPOST("https://kwsdemobackend.herokuapp.com/create", token: "", body: postData) { (json: String!, code: Int) in
+            let network = SANetwork()
+            network.sendPOST("https://kwsdemobackend.herokuapp.com/create", withQuery: [:], andHeader: header, andBody: postData, andSuccess: { (code: Int, json: String!) in
                 
                 // hide this
-                KWSActivityView.sharedInstance.hideActivityView()
+                SAActivityView.sharedManager().hideActivityView()
                 
                 if code == 200 {
                     // get the model
@@ -176,16 +180,20 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
                         }
                         
                     } else if kwsmodel.status == 0 {
-                        KWSSimpleAlert.sharedInstance.show(vc, title: "Error", message: "The user \(username) already exists.", button: "Got it!")
+                        SAPopup.sharedManager().showWithTitle("Error", andMessage: "Failed to sign up user.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andOKBlock: nil, andNOKBlock: nil)
                     } else {
-                        KWSSimpleAlert.sharedInstance.show(vc, title: "Error", message: "Failed to sign up user.", button: "Got it!")
+                        SAPopup.sharedManager().showWithTitle("Error", andMessage: "Failed to sign up user.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andOKBlock: nil, andNOKBlock: nil)
                     }
                 } else {
-                    KWSSimpleAlert.sharedInstance.show(vc, title: "Error", message: "Failed to sign up user.", button: "Got it!")
+                    SAPopup.sharedManager().showWithTitle("Error", andMessage: "Failed to sign up user.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andOKBlock: nil, andNOKBlock: nil)
                 }
-            }
+                
+            }, andFailure: {
+                SAPopup.sharedManager().showWithTitle("Error", andMessage: "Failed to sign up user.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andOKBlock: nil, andNOKBlock: nil)
+            })
+            
         } else {
-            KWSSimpleAlert.sharedInstance.show(vc, title: "Error", message: "Failed to sign up user.", button: "Got it!")
+            SAPopup.sharedManager().showWithTitle("Error", andMessage: "Failed to sign up user.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andOKBlock: nil, andNOKBlock: nil)
         }
     }
     

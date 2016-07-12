@@ -12,8 +12,6 @@
 		1B56DFDA1D194A6200973075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFD81D194A6200973075 /* Main.storyboard */; };
 		1B56DFDC1D194A6200973075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFDB1D194A6200973075 /* Assets.xcassets */; };
 		1B56DFDF1D194A6200973075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFDD1D194A6200973075 /* LaunchScreen.storyboard */; };
-		1B92FCD71D21803800B75617 /* KWSActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCD61D21803800B75617 /* KWSActivityView.swift */; };
-		1B92FCD91D21808200B75617 /* KWSSimpleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCD81D21808200B75617 /* KWSSimpleAlert.swift */; };
 		1B92FCDB1D2181F300B75617 /* KWSSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */; };
 		1B92FCDD1D218BEA00B75617 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDC1D218BEA00B75617 /* LogOutViewController.swift */; };
 		1B92FD0C1D228F7000B75617 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */; };
@@ -57,8 +55,6 @@
 		1B56DFDE1D194A6200973075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B56DFE01D194A6200973075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B56DFE91D194B6700973075 /* KWSDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KWSDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		1B92FCD61D21803800B75617 /* KWSActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSActivityView.swift; sourceTree = "<group>"; };
-		1B92FCD81D21808200B75617 /* KWSSimpleAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSSimpleAlert.swift; sourceTree = "<group>"; };
 		1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSSingleton.swift; sourceTree = "<group>"; };
 		1B92FCDC1D218BEA00B75617 /* LogOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -210,8 +206,6 @@
 				1BDC11EC1D1AA3BD00B1111A /* UIButton+KWSStyle.swift */,
 				1BDC11F91D1AABBD00B1111A /* UIView+KWSStyle.swift */,
 				1BDC11FF1D1AECC300B1111A /* UITextField+KWSStyle.swift */,
-				1B92FCD61D21803800B75617 /* KWSActivityView.swift */,
-				1B92FCD81D21808200B75617 /* KWSSimpleAlert.swift */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -399,7 +393,6 @@
 				1BDC11AB1D197EB200B1111A /* KWSNavitationBar.swift in Sources */,
 				1BDC11A61D1953C900B1111A /* FeaturesViewController.swift in Sources */,
 				1B56DFD71D194A6200973075 /* PlatformViewController.swift in Sources */,
-				1B92FCD91D21808200B75617 /* KWSSimpleAlert.swift in Sources */,
 				1BDC11F71D1AA9A400B1111A /* NotifTableViewCell.swift in Sources */,
 				1B56DFD51D194A6200973075 /* AppDelegate.swift in Sources */,
 				1BDC11A81D1953E000B1111A /* DocumentationViewController.swift in Sources */,
@@ -408,7 +401,6 @@
 				1B92FCDD1D218BEA00B75617 /* LogOutViewController.swift in Sources */,
 				1BDC11F31D1AA99800B1111A /* AuthTableViewCell.swift in Sources */,
 				1BDC12001D1AECC300B1111A /* UITextField+KWSStyle.swift in Sources */,
-				1B92FCD71D21803800B75617 /* KWSActivityView.swift in Sources */,
 				1BDC12031D1AF5BA00B1111A /* KWSModel.swift in Sources */,
 				1B92FCDB1D2181F300B75617 /* KWSSingleton.swift in Sources */,
 			);
