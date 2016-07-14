@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeaturesViewController: UIViewController, UITableViewDelegate, AuthCellProtocol, NotifCellProtocol, SignUpViewControllerProtocol, LogOutViewControllerProtocol, KWSProtocol {
+class FeaturesViewController: UIViewController, UITableViewDelegate, AuthCellProtocol, NotifCellProtocol, SignUpViewControllerProtocol, LogOutViewControllerProtocol, KWSRegisterProtocol, KWSUnregisterProtocol, KWSCheckProtocol {
 
     // table view
     @IBOutlet weak var tableView: UITableView!
@@ -87,8 +87,8 @@ class FeaturesViewController: UIViewController, UITableViewDelegate, AuthCellPro
             let kwsModel = KWSSingleton.sharedInstance.getModel() as KWSModel?
             if let kwsModel = kwsModel {
                 SAActivityView.sharedManager().showActivityView()
-                KWS.sdk().setupWithOAuthToken(kwsModel.token, kwsApiUrl: self.KWS_API, andPermissionPopup: true, delegate: self)
-                KWS.sdk().registerForRemoteNotifications()
+                KWS.sdk().setupWithOAuthToken(kwsModel.token, kwsApiUrl: self.KWS_API, andPermissionPopup: true)
+                KWS.sdk().registerForRemoteNotifications(self)
             }
         } else {
             let alert = SAPopup()
@@ -99,7 +99,7 @@ class FeaturesViewController: UIViewController, UITableViewDelegate, AuthCellPro
     func notifCellProtocolDidClickonDisable() {
         if KWSSingleton.sharedInstance.appHasAuthenticatedUser() {
             SAActivityView.sharedManager().showActivityView()
-            KWS.sdk().unregisterForRemoteNotifications()
+            KWS.sdk().unregisterForRemoteNotifications(self)
         }
     }
     
@@ -126,11 +126,6 @@ class FeaturesViewController: UIViewController, UITableViewDelegate, AuthCellPro
     func kwsSDKDidRegisterUserForRemoteNotifications() {
         SAActivityView.sharedManager().hideActivityView()
         SAPopup.sharedManager().showWithTitle("Hey!", andMessage: "You have successfully registered for Remote Notifications in KWS!", andOKTitle: "Great", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
-    }
-    
-    func kwsSDKDidUnregisterUserForRemoteNotifications() {
-        SAActivityView.sharedManager().hideActivityView()
-        SAPopup.sharedManager().showWithTitle("Hey!", andMessage: "You have successfully un-registered for Remote Notifications in KWS!", andOKTitle: "Great", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
     }
     
     func kwsSDKDidFailToRegisterUserForRemoteNotificationsWithError(errorType: KWSErrorType) {
@@ -187,11 +182,36 @@ class FeaturesViewController: UIViewController, UITableViewDelegate, AuthCellPro
             SAActivityView.sharedManager().hideActivityView()
             SAPopup.sharedManager().showWithTitle("Error!", andMessage: "Network error trying to subscribe Firebase token to KWS.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
             break
-        case .FailedToUbsubscribeTokenToKWS:
-            SAActivityView.sharedManager().hideActivityView()
-            SAPopup.sharedManager().showWithTitle("Error!", andMessage: "Network error trying to ubsubscribe token Firebase from KWS.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
-            break
+//        case .FailedToUbsubscribeTokenToKWS:
+//            SAActivityView.sharedManager().hideActivityView()
+//            SAPopup.sharedManager().showWithTitle("Error!", andMessage: "Network error trying to ubsubscribe token Firebase from KWS.", andOKTitle: "Ok", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
+//            break
         }
+    }
+    
+    // MARK: KWSUnregisterProtocol
+    
+    func kwsSDKDidUnregisterUserForRemoteNotifications() {
+        SAActivityView.sharedManager().hideActivityView()
+        SAPopup.sharedManager().showWithTitle("Hey!", andMessage: "You have successfully un-registered for Remote Notifications in KWS!", andOKTitle: "Great", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andOKBlock: nil, andNOKBlock: nil)
+    }
+    
+    func kwsSDKDidFailToUnregisterUserForRemoteNotifications() {
+        
+    }
+    
+    // MARK: KWSCheckProtocol
+    
+    func kwsSDKUserIsRegistered() {
+        
+    }
+    
+    func kwsSDKUserIsNotRegistered() {
+        
+    }
+    
+    func kwsSDKDidFailToCheckIfUserIsRegistered() {
+        
     }
     
     // <Custom>
