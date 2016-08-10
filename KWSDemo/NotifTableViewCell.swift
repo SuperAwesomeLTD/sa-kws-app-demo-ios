@@ -9,16 +9,14 @@
 import UIKit
 
 protocol NotifCellProtocol {
-    func notifCellProtocolDidClickOnEnable ()
-    func notifCellProtocolDidClickonDisable ()
+    func notifCellProtocolDidClickOnEnableOrDisable ()
     func notifCellprotocolDidClickOnDocs ()
 }
 
 class NotifTableViewCell: UITableViewCell {
 
     @IBOutlet weak var content: UIView!
-    @IBOutlet weak var notifEnableButton: UIButton!
-    @IBOutlet weak var notifDisableButton: UIButton!
+    @IBOutlet weak var notifEnableOrDisableButton: UIButton!
     @IBOutlet weak var notifDocButton: UIButton!
     
     var delegate: NotifCellProtocol?
@@ -27,8 +25,7 @@ class NotifTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         content.addShadow()
-        notifEnableButton.blueButton()
-        notifDisableButton.blueButton()
+        notifEnableOrDisableButton.blueButton()
         notifDocButton.blueButton()
     }
 
@@ -37,11 +34,7 @@ class NotifTableViewCell: UITableViewCell {
     }
     
     @IBAction func notifEnableAction(sender: AnyObject) {
-        delegate?.notifCellProtocolDidClickOnEnable()
-    }
-    
-    @IBAction func notifDisableAction(sender: AnyObject) {
-        delegate?.notifCellProtocolDidClickonDisable()
+        delegate?.notifCellProtocolDidClickOnEnableOrDisable()
     }
     
     @IBAction func notifDocsAction(sender: AnyObject) {

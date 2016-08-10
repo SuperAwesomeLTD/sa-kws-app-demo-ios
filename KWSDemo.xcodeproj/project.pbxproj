@@ -12,8 +12,15 @@
 		1B56DFDA1D194A6200973075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFD81D194A6200973075 /* Main.storyboard */; };
 		1B56DFDC1D194A6200973075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFDB1D194A6200973075 /* Assets.xcassets */; };
 		1B56DFDF1D194A6200973075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFDD1D194A6200973075 /* LaunchScreen.storyboard */; };
+		1B6392961D5B7067005FDCE2 /* UserDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6392951D5B7067005FDCE2 /* UserDetailsModel.swift */; };
+		1B6392A31D5B72E5005FDCE2 /* UserHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6392A11D5B72E5005FDCE2 /* UserHeaderTableViewCell.swift */; };
+		1B6392A41D5B72E5005FDCE2 /* UserHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B6392A21D5B72E5005FDCE2 /* UserHeaderTableViewCell.xib */; };
+		1B6392A71D5B72F1005FDCE2 /* UserItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6392A51D5B72F1005FDCE2 /* UserItemTableViewCell.swift */; };
+		1B6392A81D5B72F1005FDCE2 /* UserItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B6392A61D5B72F1005FDCE2 /* UserItemTableViewCell.xib */; };
+		1B6392AB1D5B92A3005FDCE2 /* PermTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6392A91D5B92A3005FDCE2 /* PermTableViewCell.swift */; };
+		1B6392AC1D5B92A3005FDCE2 /* PermTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B6392AA1D5B92A3005FDCE2 /* PermTableViewCell.xib */; };
 		1B92FCDB1D2181F300B75617 /* KWSSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */; };
-		1B92FCDD1D218BEA00B75617 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDC1D218BEA00B75617 /* LogOutViewController.swift */; };
+		1B92FCDD1D218BEA00B75617 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDC1D218BEA00B75617 /* UserViewController.swift */; };
 		1B92FD0C1D228F7000B75617 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */; };
 		1BDC11A61D1953C900B1111A /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A51D1953C900B1111A /* FeaturesViewController.swift */; };
 		1BDC11A81D1953E000B1111A /* DocumentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */; };
@@ -33,7 +40,6 @@
 		1BDC11CB1D198B5600B1111A /* SF-UI-Text-Ultrathin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDC11BD1D198B5600B1111A /* SF-UI-Text-Ultrathin.otf */; };
 		1BDC11CC1D198B5600B1111A /* SF-UI-Text-UltrathinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDC11BE1D198B5600B1111A /* SF-UI-Text-UltrathinItalic.otf */; };
 		1BDC11ED1D1AA3BD00B1111A /* UIButton+KWSStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11EC1D1AA3BD00B1111A /* UIButton+KWSStyle.swift */; };
-		1BDC11EF1D1AA84C00B1111A /* FeaturesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11EE1D1AA84C00B1111A /* FeaturesDataSource.swift */; };
 		1BDC11F31D1AA99800B1111A /* AuthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11F11D1AA99800B1111A /* AuthTableViewCell.swift */; };
 		1BDC11F41D1AA99800B1111A /* AuthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BDC11F21D1AA99800B1111A /* AuthTableViewCell.xib */; };
 		1BDC11F71D1AA9A400B1111A /* NotifTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11F51D1AA9A400B1111A /* NotifTableViewCell.swift */; };
@@ -55,8 +61,15 @@
 		1B56DFDE1D194A6200973075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B56DFE01D194A6200973075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B56DFE91D194B6700973075 /* KWSDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KWSDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		1B6392951D5B7067005FDCE2 /* UserDetailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsModel.swift; sourceTree = "<group>"; };
+		1B6392A11D5B72E5005FDCE2 /* UserHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		1B6392A21D5B72E5005FDCE2 /* UserHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		1B6392A51D5B72F1005FDCE2 /* UserItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItemTableViewCell.swift; sourceTree = "<group>"; };
+		1B6392A61D5B72F1005FDCE2 /* UserItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserItemTableViewCell.xib; sourceTree = "<group>"; };
+		1B6392A91D5B92A3005FDCE2 /* PermTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermTableViewCell.swift; sourceTree = "<group>"; };
+		1B6392AA1D5B92A3005FDCE2 /* PermTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PermTableViewCell.xib; sourceTree = "<group>"; };
 		1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSSingleton.swift; sourceTree = "<group>"; };
-		1B92FCDC1D218BEA00B75617 /* LogOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		1B92FCDC1D218BEA00B75617 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1BDC11A51D1953C900B1111A /* FeaturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesViewController.swift; sourceTree = "<group>"; };
 		1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentationViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +89,6 @@
 		1BDC11BD1D198B5600B1111A /* SF-UI-Text-Ultrathin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Ultrathin.otf"; sourceTree = "<group>"; };
 		1BDC11BE1D198B5600B1111A /* SF-UI-Text-UltrathinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-UltrathinItalic.otf"; sourceTree = "<group>"; };
 		1BDC11EC1D1AA3BD00B1111A /* UIButton+KWSStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+KWSStyle.swift"; sourceTree = "<group>"; };
-		1BDC11EE1D1AA84C00B1111A /* FeaturesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesDataSource.swift; sourceTree = "<group>"; };
 		1BDC11F11D1AA99800B1111A /* AuthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthTableViewCell.swift; sourceTree = "<group>"; };
 		1BDC11F21D1AA99800B1111A /* AuthTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthTableViewCell.xib; sourceTree = "<group>"; };
 		1BDC11F51D1AA9A400B1111A /* NotifTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,6 +136,7 @@
 		1B56DFD31D194A6200973075 /* KWSDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1B6392941D5B7053005FDCE2 /* Aux */,
 				1BDC12011D1AF5B100B1111A /* Model */,
 				1BDC11F01D1AA91E00B1111A /* Cells */,
 				1BDC11EB1D1AA39300B1111A /* Categories */,
@@ -150,10 +163,9 @@
 			children = (
 				1B56DFD61D194A6200973075 /* PlatformViewController.swift */,
 				1BDC11A51D1953C900B1111A /* FeaturesViewController.swift */,
-				1BDC11EE1D1AA84C00B1111A /* FeaturesDataSource.swift */,
 				1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */,
 				1BDC11FB1D1ABF8E00B1111A /* SignUpViewController.swift */,
-				1B92FCDC1D218BEA00B75617 /* LogOutViewController.swift */,
+				1B92FCDC1D218BEA00B75617 /* UserViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -168,6 +180,38 @@
 				1B56DFE91D194B6700973075 /* KWSDemo-Bridging-Header.h */,
 			);
 			name = Meta;
+			sourceTree = "<group>";
+		};
+		1B6392941D5B7053005FDCE2 /* Aux */ = {
+			isa = PBXGroup;
+			children = (
+				1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */,
+			);
+			name = Aux;
+			sourceTree = "<group>";
+		};
+		1B6392971D5B71B2005FDCE2 /* FeaturesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1BDC11F11D1AA99800B1111A /* AuthTableViewCell.swift */,
+				1BDC11F21D1AA99800B1111A /* AuthTableViewCell.xib */,
+				1BDC11F51D1AA9A400B1111A /* NotifTableViewCell.swift */,
+				1BDC11F61D1AA9A400B1111A /* NotifTableViewCell.xib */,
+				1B6392A91D5B92A3005FDCE2 /* PermTableViewCell.swift */,
+				1B6392AA1D5B92A3005FDCE2 /* PermTableViewCell.xib */,
+			);
+			name = FeaturesViewController;
+			sourceTree = "<group>";
+		};
+		1B6392981D5B71BF005FDCE2 /* UserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1B6392A11D5B72E5005FDCE2 /* UserHeaderTableViewCell.swift */,
+				1B6392A21D5B72E5005FDCE2 /* UserHeaderTableViewCell.xib */,
+				1B6392A51D5B72F1005FDCE2 /* UserItemTableViewCell.swift */,
+				1B6392A61D5B72F1005FDCE2 /* UserItemTableViewCell.xib */,
+			);
+			name = UserViewController;
 			sourceTree = "<group>";
 		};
 		1BDC11A91D197DB200B1111A /* Navigation */ = {
@@ -213,10 +257,8 @@
 		1BDC11F01D1AA91E00B1111A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1BDC11F11D1AA99800B1111A /* AuthTableViewCell.swift */,
-				1BDC11F21D1AA99800B1111A /* AuthTableViewCell.xib */,
-				1BDC11F51D1AA9A400B1111A /* NotifTableViewCell.swift */,
-				1BDC11F61D1AA9A400B1111A /* NotifTableViewCell.xib */,
+				1B6392981D5B71BF005FDCE2 /* UserViewController */,
+				1B6392971D5B71B2005FDCE2 /* FeaturesViewController */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -225,7 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				1BDC12021D1AF5BA00B1111A /* KWSModel.swift */,
-				1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */,
+				1B6392951D5B7067005FDCE2 /* UserDetailsModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -317,8 +359,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B6392A41D5B72E5005FDCE2 /* UserHeaderTableViewCell.xib in Resources */,
 				1BDC11F81D1AA9A400B1111A /* NotifTableViewCell.xib in Resources */,
 				1BDC11C91D198B5600B1111A /* SF-UI-Text-Semibold.otf in Resources */,
+				1B6392A81D5B72F1005FDCE2 /* UserItemTableViewCell.xib in Resources */,
 				1B56DFDF1D194A6200973075 /* LaunchScreen.storyboard in Resources */,
 				1B56DFDC1D194A6200973075 /* Assets.xcassets in Resources */,
 				1BDC11C71D198B5600B1111A /* SF-UI-Text-Regular.otf in Resources */,
@@ -327,6 +371,7 @@
 				1BDC11C21D198B5600B1111A /* SF-UI-Text-HeavyItalic.otf in Resources */,
 				1BDC11C01D198B5600B1111A /* SF-UI-Text-BoldItalic.otf in Resources */,
 				1BDC11C31D198B5600B1111A /* SF-UI-Text-Light.otf in Resources */,
+				1B6392AC1D5B92A3005FDCE2 /* PermTableViewCell.xib in Resources */,
 				1BDC11F41D1AA99800B1111A /* AuthTableViewCell.xib in Resources */,
 				1BDC11C41D198B5600B1111A /* SF-UI-Text-LightItalic.otf in Resources */,
 				1BDC11C51D198B5600B1111A /* SF-UI-Text-Medium.otf in Resources */,
@@ -397,18 +442,21 @@
 			files = (
 				1BDC11FE1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift in Sources */,
 				1BDC11FC1D1ABF8E00B1111A /* SignUpViewController.swift in Sources */,
+				1B6392AB1D5B92A3005FDCE2 /* PermTableViewCell.swift in Sources */,
 				1BDC11FA1D1AABBD00B1111A /* UIView+KWSStyle.swift in Sources */,
+				1B6392A31D5B72E5005FDCE2 /* UserHeaderTableViewCell.swift in Sources */,
 				1BDC11AB1D197EB200B1111A /* KWSNavitationBar.swift in Sources */,
 				1BDC11A61D1953C900B1111A /* FeaturesViewController.swift in Sources */,
 				1B56DFD71D194A6200973075 /* PlatformViewController.swift in Sources */,
+				1B6392A71D5B72F1005FDCE2 /* UserItemTableViewCell.swift in Sources */,
 				1BDC11F71D1AA9A400B1111A /* NotifTableViewCell.swift in Sources */,
 				1B56DFD51D194A6200973075 /* AppDelegate.swift in Sources */,
 				1BDC11A81D1953E000B1111A /* DocumentationViewController.swift in Sources */,
 				1BDC11ED1D1AA3BD00B1111A /* UIButton+KWSStyle.swift in Sources */,
-				1BDC11EF1D1AA84C00B1111A /* FeaturesDataSource.swift in Sources */,
-				1B92FCDD1D218BEA00B75617 /* LogOutViewController.swift in Sources */,
+				1B92FCDD1D218BEA00B75617 /* UserViewController.swift in Sources */,
 				1BDC11F31D1AA99800B1111A /* AuthTableViewCell.swift in Sources */,
 				1BDC12001D1AECC300B1111A /* UITextField+KWSStyle.swift in Sources */,
+				1B6392961D5B7067005FDCE2 /* UserDetailsModel.swift in Sources */,
 				1BDC12031D1AF5BA00B1111A /* KWSModel.swift in Sources */,
 				1B92FCDB1D2181F300B75617 /* KWSSingleton.swift in Sources */,
 			);

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SF-UI-Text-Regular.otf">
+            <string>SFUIText-Regular</string>
+        </mutableArray>
+        <mutableArray key="SF-UI-Text-Semibold.otf">
+            <string>SFUIText-Semibold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserItemTableViewCellId" id="KGk-i7-Jjw" customClass="UserItemTableViewCell" customModule="KWSDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhY-Sg-bEA">
+                        <rect key="frame" x="8" y="8" width="134" height="27.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="134" id="bsP-aX-hSV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCk-uq-oP9">
+                        <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="RNG-wJ-TqJ"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJe-42-yPn">
+                        <rect key="frame" x="150" y="8" width="162" height="27.5"/>
+                        <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="cCk-uq-oP9" secondAttribute="trailing" id="0K8-mg-AT5"/>
+                    <constraint firstAttribute="bottom" secondItem="nJe-42-yPn" secondAttribute="bottom" constant="8" id="4OX-Sv-ufb"/>
+                    <constraint firstAttribute="trailing" secondItem="nJe-42-yPn" secondAttribute="trailing" constant="8" id="4xI-df-3bs"/>
+                    <constraint firstAttribute="bottom" secondItem="FhY-Sg-bEA" secondAttribute="bottom" constant="8" id="5Qc-RD-rhL"/>
+                    <constraint firstItem="FhY-Sg-bEA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="OTZ-vG-qs0"/>
+                    <constraint firstItem="cCk-uq-oP9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="R9W-XO-64H"/>
+                    <constraint firstItem="nJe-42-yPn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Vsu-6J-G4T"/>
+                    <constraint firstItem="nJe-42-yPn" firstAttribute="leading" secondItem="FhY-Sg-bEA" secondAttribute="trailing" constant="8" id="e7f-14-6SA"/>
+                    <constraint firstAttribute="bottom" secondItem="cCk-uq-oP9" secondAttribute="bottom" id="lBf-um-S54"/>
+                    <constraint firstItem="FhY-Sg-bEA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="mR8-nA-XLD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="titleLabel" destination="FhY-Sg-bEA" id="MQN-Qd-FpA"/>
+                <outlet property="valueLabel" destination="nJe-42-yPn" id="u6h-5g-mZK"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

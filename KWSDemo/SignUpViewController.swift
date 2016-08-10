@@ -144,6 +144,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
             let postData = [
                 "username": username,
                 "password": password,
+                "country": "US",
                 "dateOfBirth": "\(year)-" + (month < 10 ? "0\(month)" : "\(month)") + "-" + (day < 10 ? "0\(day)" : "\(day)")
             ]
             let header = [

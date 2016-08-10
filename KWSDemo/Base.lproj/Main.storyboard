@@ -7,8 +7,6 @@
     <customFonts key="customFonts">
         <mutableArray key="SF-UI-Text-Bold.otf">
             <string>SFUIText-Bold</string>
-            <string>SFUIText-Bold</string>
-            <string>SFUIText-Bold</string>
         </mutableArray>
         <mutableArray key="SF-UI-Text-Medium.otf">
             <string>SFUIText-Medium</string>
@@ -25,11 +23,8 @@
             <string>SFUIText-Regular</string>
             <string>SFUIText-Regular</string>
             <string>SFUIText-Regular</string>
-            <string>SFUIText-Regular</string>
-            <string>SFUIText-Regular</string>
         </mutableArray>
         <mutableArray key="SF-UI-Text-Semibold.otf">
-            <string>SFUIText-Semibold</string>
             <string>SFUIText-Semibold</string>
         </mutableArray>
     </customFonts>
@@ -237,6 +232,7 @@ for kids</string>
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="dataSource" destination="hSF-G0-MiL" id="D7N-PJ-4Ea"/>
                                     <outlet property="delegate" destination="hSF-G0-MiL" id="mvF-0b-Xnk"/>
                                 </connections>
                             </tableView>
@@ -402,10 +398,10 @@ for kids</string>
             </objects>
             <point key="canvasLocation" x="2249" y="-72"/>
         </scene>
-        <!--Log Out View Controller-->
+        <!--User View Controller-->
         <scene sceneID="ZEX-xP-wMh">
             <objects>
-                <viewController id="V6O-fP-TAn" customClass="LogOutViewController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="V6O-fP-TAn" customClass="UserViewController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iAg-Za-BVl"/>
                         <viewControllerLayoutGuide type="bottom" id="mDc-H5-38x"/>
@@ -414,80 +410,52 @@ for kids</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFL-Rj-Hfr">
-                                <rect key="frame" x="20" y="86" width="560" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Cni-L5-Li1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xv-Eh-dcm">
-                                <rect key="frame" x="20" y="109" width="560" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="jiv-rL-tQa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Token" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqh-0b-vhH">
-                                <rect key="frame" x="20" y="138" width="560" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="LUq-G6-a2s"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfZ-FY-DlW">
-                                <rect key="frame" x="15" y="162" width="570" height="100"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BCJ-GN-k86">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="bSd-Rq-rAp"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpO-eg-8ij">
-                                <rect key="frame" x="490" y="278" width="90" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="byB-Pm-y7j"/>
-                                    <constraint firstAttribute="width" constant="90" id="oLM-hV-3od"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="12"/>
-                                <state key="normal" title="LOGOUT"/>
                                 <connections>
-                                    <action selector="logoutAction:" destination="V6O-fP-TAn" eventType="touchUpInside" id="8uF-vl-R3L"/>
+                                    <outlet property="dataSource" destination="V6O-fP-TAn" id="tnb-RQ-GmB"/>
+                                    <outlet property="delegate" destination="V6O-fP-TAn" id="t4A-75-eQ9"/>
                                 </connections>
-                            </button>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8M-q0-3as">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiN-hB-euy">
+                                        <rect key="frame" x="509" y="10" width="83" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="83h-9x-45D"/>
+                                            <constraint firstAttribute="width" constant="83" id="acO-2P-NOs"/>
+                                        </constraints>
+                                        <state key="normal" title="Logout"/>
+                                        <connections>
+                                            <action selector="logoutAction:" destination="V6O-fP-TAn" eventType="touchUpInside" id="GtE-zS-2hB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JiN-hB-euy" secondAttribute="trailing" constant="8" id="aXv-dY-mB4"/>
+                                    <constraint firstAttribute="height" constant="50" id="wFs-Jr-WJS"/>
+                                    <constraint firstItem="JiN-hB-euy" firstAttribute="centerY" secondItem="T8M-q0-3as" secondAttribute="centerY" id="xT8-W0-V2J"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Aqh-0b-vhH" firstAttribute="leading" secondItem="ZwZ-jL-R8t" secondAttribute="leading" constant="20" id="4AT-vF-nWm"/>
-                            <constraint firstItem="CFL-Rj-Hfr" firstAttribute="top" secondItem="iAg-Za-BVl" secondAttribute="bottom" constant="22" id="8EE-DV-Iqd"/>
-                            <constraint firstItem="dpO-eg-8ij" firstAttribute="top" secondItem="cfZ-FY-DlW" secondAttribute="bottom" constant="16" id="GIc-n2-3tQ"/>
-                            <constraint firstAttribute="trailing" secondItem="CFL-Rj-Hfr" secondAttribute="trailing" constant="20" id="GNr-qv-VaV"/>
-                            <constraint firstAttribute="trailing" secondItem="dpO-eg-8ij" secondAttribute="trailing" constant="20" id="Ht0-0e-o4G"/>
-                            <constraint firstItem="CFL-Rj-Hfr" firstAttribute="leading" secondItem="ZwZ-jL-R8t" secondAttribute="leading" constant="20" id="O7K-3J-pq5"/>
-                            <constraint firstItem="cfZ-FY-DlW" firstAttribute="leading" secondItem="ZwZ-jL-R8t" secondAttribute="leading" constant="15" id="Sv7-Aw-iNd"/>
-                            <constraint firstItem="Aqh-0b-vhH" firstAttribute="top" secondItem="7Xv-Eh-dcm" secondAttribute="bottom" constant="8" id="TP6-d3-1yB"/>
-                            <constraint firstAttribute="trailing" secondItem="cfZ-FY-DlW" secondAttribute="trailing" constant="15" id="VJs-yv-Fj6"/>
-                            <constraint firstItem="7Xv-Eh-dcm" firstAttribute="top" secondItem="CFL-Rj-Hfr" secondAttribute="bottom" constant="2" id="WTc-Ce-cYH"/>
-                            <constraint firstItem="7Xv-Eh-dcm" firstAttribute="leading" secondItem="ZwZ-jL-R8t" secondAttribute="leading" constant="20" id="Z4x-f1-xCM"/>
-                            <constraint firstAttribute="trailing" secondItem="7Xv-Eh-dcm" secondAttribute="trailing" constant="20" id="bXW-fb-0bO"/>
-                            <constraint firstItem="cfZ-FY-DlW" firstAttribute="top" secondItem="Aqh-0b-vhH" secondAttribute="bottom" constant="3" id="fHH-Lf-RCw"/>
-                            <constraint firstAttribute="trailing" secondItem="Aqh-0b-vhH" secondAttribute="trailing" constant="20" id="pyZ-cz-gkn"/>
+                            <constraint firstAttribute="trailing" secondItem="T8M-q0-3as" secondAttribute="trailing" id="27C-cN-N6l"/>
+                            <constraint firstItem="mDc-H5-38x" firstAttribute="top" secondItem="T8M-q0-3as" secondAttribute="bottom" id="PQd-IQ-g2R"/>
+                            <constraint firstItem="T8M-q0-3as" firstAttribute="top" secondItem="BCJ-GN-k86" secondAttribute="bottom" id="Qxx-vN-ngY"/>
+                            <constraint firstItem="T8M-q0-3as" firstAttribute="leading" secondItem="ZwZ-jL-R8t" secondAttribute="leading" id="fKk-XO-e7P"/>
+                            <constraint firstItem="BCJ-GN-k86" firstAttribute="leading" secondItem="ZwZ-jL-R8t" secondAttribute="leading" id="w4J-T1-F0e"/>
+                            <constraint firstAttribute="trailing" secondItem="BCJ-GN-k86" secondAttribute="trailing" id="zPe-ah-VyO"/>
+                            <constraint firstItem="BCJ-GN-k86" firstAttribute="top" secondItem="ZwZ-jL-R8t" secondAttribute="top" id="zQU-jy-f1Y"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Xf-Qi-KMj"/>
                     <connections>
-                        <outlet property="logoutButton" destination="dpO-eg-8ij" id="gQg-in-hw8"/>
-                        <outlet property="tokenTextView" destination="cfZ-FY-DlW" id="OO5-8U-lsG"/>
-                        <outlet property="usernameLabel" destination="7Xv-Eh-dcm" id="2qp-W3-SpR"/>
+                        <outlet property="logoutButton" destination="JiN-hB-euy" id="l0u-Qm-puu"/>
+                        <outlet property="userDetailsTableView" destination="BCJ-GN-k86" id="XxY-L9-LGv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cm5-aZ-y3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
