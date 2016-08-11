@@ -69,6 +69,10 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
 
     // <KWSPopupNavigationBarProtocol>
     
+    func kwsPopupNavGetTitle() -> String {
+        return "Sign Up to KWS"
+    }
+    
     func kwsPopupNavDidPressOnClose() {
         resignAllResponders()
         dismissViewControllerAnimated(true) { 

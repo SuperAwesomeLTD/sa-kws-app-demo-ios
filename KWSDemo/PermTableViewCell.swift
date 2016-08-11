@@ -23,8 +23,6 @@ class PermTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        // Initialization code
         content.addShadow()
         permAddPermissionsButton.blueButton()
         permSeeDocsButton.blueButton()

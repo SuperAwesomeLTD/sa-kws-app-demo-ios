@@ -9,6 +9,7 @@
 import UIKit
 
 protocol KWSPopupNavigationBarProtocol {
+    func kwsPopupNavGetTitle () -> String
     func kwsPopupNavDidPressOnClose()
 }
 
@@ -42,7 +43,7 @@ class KWSPopupNavigationBar: UINavigationBar {
         // add title
         let titleframe = CGRectMake(8, 0, W - 72, H)
         let title = UILabel(frame: titleframe)
-        title.text = "Sign Up to KWS"
+        title.text = kwsdelegate?.kwsPopupNavGetTitle() // "Sign Up to KWS"
         title.textColor = UIColor.whiteColor()
         title.font = font
         addSubview(title)

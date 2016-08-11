@@ -33,10 +33,6 @@ class UserViewController: UIViewController,
             bar.kwsdelegate = self
         }
         
-        // get cells
-        userDetailsTableView.registerNib(UINib(nibName: "UserItemTableViewCell", bundle: nil), forCellReuseIdentifier: "UserItemTableViewCellId")
-        userDetailsTableView.registerNib(UINib(nibName: "UserHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "UserHeaderTableViewCellId")
-        
         // make button red
         logoutButton.redButton()
         
@@ -124,12 +120,10 @@ class UserViewController: UIViewController,
         
         if (item.type == .HEADER) {
             let cell = tableView.dequeueReusableCellWithIdentifier("UserHeaderTableViewCellId", forIndexPath: indexPath) as! UserHeaderTableViewCell
-            cell.selectionStyle = .None
             cell.headerTitle.text = item.headerText!
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("UserItemTableViewCellId", forIndexPath: indexPath) as! UserItemTableViewCell
-            cell.selectionStyle = .None
             cell.titleLabel.text = item.itemTitle
             if let value = item.itemValue {
                 cell.valueLabel.text = "\(value)"
@@ -143,6 +137,10 @@ class UserViewController: UIViewController,
     }
     
     // MARK: KWSPopupNavigationBarProtocol
+    
+    func kwsPopupNavGetTitle() -> String {
+        return "User details"
+    }
     
     func kwsPopupNavDidPressOnClose() {
         dismissViewControllerAnimated(true) {

@@ -14,6 +14,7 @@ class FeaturesViewController: UIViewController,
     AuthCellProtocol,
     NotifCellProtocol,
     PermCellProtocol,
+    EventsCellProtocol,
     SignUpViewControllerProtocol,
     UserViewControllerProtocol {
 
@@ -35,9 +36,6 @@ class FeaturesViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
-        tableView.registerNib(UINib(nibName: "AuthTableViewCell", bundle: nil), forCellReuseIdentifier: "AuthTableViewCellId")
-        tableView.registerNib(UINib(nibName: "NotifTableViewCell", bundle: nil), forCellReuseIdentifier: "NotifTableViewCellId")
-        tableView.registerNib(UINib(nibName: "PermTableViewCell", bundle: nil), forCellReuseIdentifier: "PermTableViewCellId")
         updateStatus()
         
         // do this just once
@@ -65,31 +63,28 @@ class FeaturesViewController: UIViewController,
     ////////////////////////////////////////////////////////////////////////////
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 298 : 248
+        if indexPath.row == 0 { return 298 }
+        else if indexPath.row == 1 || indexPath.row == 2 { return 248 }
+        else { return 328 }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if (indexPath.row == 0) {
             let cell = tableView.dequeueReusableCellWithIdentifier("AuthTableViewCellId", forIndexPath: indexPath) as! AuthTableViewCell
-            cell.selectionStyle = .None
             cell.delegate = self
-            
-            // get data for User
             if let local = local, let username = local.username {
                 cell.authActionButton.setTitle("Loged in as \(username)".uppercaseString, forState: .Normal)
             } else {
                 cell.authActionButton.setTitle("Authenticate user".uppercaseString, forState: .Normal)
             }
-            
             return cell
         } else if (indexPath.row == 1){
             let cell = tableView.dequeueReusableCellWithIdentifier("NotifTableViewCellId", forIndexPath: indexPath) as! NotifTableViewCell
-            cell.selectionStyle = .None
             cell.delegate = self
             cell.notifEnableOrDisableButton.enabled = local != nil
             if (isRegistered) {
@@ -98,11 +93,17 @@ class FeaturesViewController: UIViewController,
                 cell.notifEnableOrDisableButton.setTitle("ENABLE PUSH NOTIFICATIONS", forState: .Normal)
             }
             return cell
-        } else {
+        } else if (indexPath.row == 2) {
             let cell = tableView.dequeueReusableCellWithIdentifier("PermTableViewCellId", forIndexPath: indexPath) as! PermTableViewCell
-            cell.selectionStyle = .None
             cell.delegate = self
             cell.permAddPermissionsButton.enabled = local != nil
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("EventsTableViewCellId", forIndexPath: indexPath) as! EventsTableViewCell
+            cell.evtAdd20PointsButton.enabled = local != nil
+            cell.evtSub10PointsButton.enabled = local != nil
+            cell.evtSeeLeaderboardButton.enabled = local != nil
+            cell.delegate = self
             return cell
         }
     }
@@ -116,7 +117,7 @@ class FeaturesViewController: UIViewController,
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         if local != nil {
-            let vc = sb.instantiateViewControllerWithIdentifier("LogOutNavControllerId")
+            let vc = sb.instantiateViewControllerWithIdentifier("UserNavControllerId")
             presentViewController(vc, animated: true) {
                 if let vc = vc as? UINavigationController, let vc1 = vc.viewControllers.first as? UserViewController {
                     vc1.delegate = self
@@ -242,6 +243,37 @@ class FeaturesViewController: UIViewController,
     }
     
     func permCellprotocolDidClickOnDocs() {
+        let url = NSURL(string: DOCSURL)
+        UIApplication.sharedApplication().openURL(url!)
+    }
+    
+    func eventsCellProtocolDidClickOnAdd20Points () {
+        KWS.sdk().triggerEvent("GabrielAdd20ForAwesomeApp", withPoints: 20, andDescription: "You just earned 20 points!") { (success: Bool) in
+            if (success) {
+                SAPopup.sharedManager().showWithTitle("Congrats!", andMessage: "You just earned 20 points!", andOKTitle: "Great!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
+            }
+        }
+    }
+    
+    func eventsCellprotocolDidClickOnSub10Points () {
+        KWS.sdk().triggerEvent("GabrielSub10ForAwesomeApp", withPoints: -10, andDescription: "You jost lost 10 points!") { (success: Bool) in
+            if (success) {
+                SAPopup.sharedManager().showWithTitle("Oh no!", andMessage: "You just lost 10 points!", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
+            }
+        }
+    }
+    
+    func eventsCellProtocolDidClickOnSeeLeaderboard () {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("LeaderboardNavControllerId")
+        presentViewController(vc, animated: true) {
+//            if let vc = vc as? UINavigationController, let vc1 = vc.viewControllers.first as? LeaderboardViewController {
+//                //
+//            }
+        }
+    }
+    
+    func eventsCellprotocolDidClickOnDocs () {
         let url = NSURL(string: DOCSURL)
         UIApplication.sharedApplication().openURL(url!)
     }
