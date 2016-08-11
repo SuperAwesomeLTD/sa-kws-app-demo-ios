@@ -1,26 +1,24 @@
 //
-//  UserHeaderTableViewCell.swift
+//  LeaderTableViewCell.swift
 //  KWSDemo
 //
-//  Created by Gabriel Coman on 10/08/2016.
+//  Created by Gabriel Coman on 11/08/2016.
 //  Copyright © 2016 Gabriel Coman. All rights reserved.
 //
 
 import UIKit
 
-class UserHeaderTableViewCell: UITableViewCell {
+class LeaderRow: UITableViewCell {
 
-    @IBOutlet weak var headerTitle: UILabel!
+    @IBOutlet weak var RankLabel: UILabel!
+    @IBOutlet weak var UsernameLabel: UILabel!
+    @IBOutlet weak var PointsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
 }

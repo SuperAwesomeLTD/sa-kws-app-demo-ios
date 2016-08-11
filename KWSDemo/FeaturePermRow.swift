@@ -8,18 +8,11 @@
 
 import UIKit
 
-protocol PermCellProtocol {
-    func permCellProtocolDidClickOnAddPermissions ()
-    func permCellprotocolDidClickOnDocs ()
-}
-
-class PermTableViewCell: UITableViewCell {
+class FeaturePermRow: UITableViewCell {
 
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var permAddPermissionsButton: UIButton!
     @IBOutlet weak var permSeeDocsButton: UIButton!
-    
-    var delegate: PermCellProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,13 +25,5 @@ class PermTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    @IBAction func permAddPermissionAction(sender: AnyObject) {
-        delegate?.permCellProtocolDidClickOnAddPermissions()
-    }
-    
-    @IBAction func permSeeDocsAction(sender: AnyObject) {
-        delegate?.permCellprotocolDidClickOnDocs()
     }
 }

@@ -1,55 +1,47 @@
 //
-//  LogOutViewController.swift
+//  LeaderboardViewController.swift
 //  KWSDemo
 //
-//  Created by Gabriel Coman on 27/06/2016.
+//  Created by Gabriel Coman on 11/08/2016.
 //  Copyright © 2016 Gabriel Coman. All rights reserved.
 //
 
 import UIKit
 
-// protocol
-protocol UserViewControllerProtocol {
-    func userViewControllerDidManageToLogOutUser()
-}
+class LeaderViewController: UIViewController, KWSPopupNavigationBarProtocol {
 
-// vc
-class UserViewController: UIViewController, KWSPopupNavigationBarProtocol, UITableViewDelegate {
-    
-    // vars
-    var delegate: UserViewControllerProtocol?
-    var dataSource: UserDataSource!
-    var spinnerM: SAActivityView!
-    var popupM: SAPopup!
-    @IBOutlet weak var logoutButton: UIButton!
-    @IBOutlet weak var userDetailsTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    private var dataSource: LeaderDataSource!
+    private var spinnerM: SAActivityView!
+    private var popupM: SAPopup!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         if let bar = navigationController?.navigationBar as? KWSPopupNavigationBar {
             bar.kwsdelegate = self
         }
         
-        logoutButton.redButton()
+        
         spinnerM = SAActivityView.sharedManager()
         popupM = SAPopup.sharedManager()
-        dataSource = UserDataSource()
-        userDetailsTableView.dataSource = dataSource
-        userDetailsTableView.delegate = dataSource
-        dataSource?.update(start: {
+        dataSource = LeaderDataSource()
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        dataSource.update(start: {
                 self.spinnerM.showActivityView()
-            }, success: {
+            }, success: { 
                 self.spinnerM.hideActivityView()
-                self.userDetailsTableView.reloadData()
+                self.tableView.reloadData()
             }, error: {
                 self.spinnerM.hideActivityView()
                 self.popupM.showWithTitle(
                     "Hey!",
-                    andMessage: "Could not load user data. Try again!",
+                    andMessage: "An error occured and we could not get the Leaderboard. Please try again!",
                     andOKTitle: "Got it!",
                     andNOKTitle: nil,
                     andTextField: false,
-                    andKeyboardTyle: .Default,
+                    andKeyboardTyle: UIKeyboardType.Default,
                     andPressed: nil)
         })
     }
@@ -58,7 +50,7 @@ class UserViewController: UIViewController, KWSPopupNavigationBarProtocol, UITab
         super.viewDidAppear(animated)
         navigationController?.navigationBar.barStyle = .Black
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -66,7 +58,7 @@ class UserViewController: UIViewController, KWSPopupNavigationBarProtocol, UITab
     // MARK: KWSPopupNavigationBarProtocol
     
     func kwsPopupNavGetTitle() -> String {
-        return "User details"
+        return "Leaderboard"
     }
     
     func kwsPopupNavDidPressOnClose() {
@@ -74,13 +66,5 @@ class UserViewController: UIViewController, KWSPopupNavigationBarProtocol, UITab
             // flush
         }
     }
-    
-    // MARK: Actions
-    
-    @IBAction func logoutAction(sender: AnyObject) {
-        KWSSingleton.sharedInstance.setModel(nil)
-        dismissViewControllerAnimated(true) { 
-            self.delegate?.userViewControllerDidManageToLogOutUser()
-        }
-    }
+
 }

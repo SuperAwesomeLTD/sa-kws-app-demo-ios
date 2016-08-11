@@ -8,15 +8,7 @@
 
 import UIKit
 
-class FeaturesViewController: UIViewController,
-    UITableViewDelegate,
-    UITableViewDataSource,
-    AuthCellProtocol,
-    NotifCellProtocol,
-    PermCellProtocol,
-    EventsCellProtocol,
-    SignUpViewControllerProtocol,
-    UserViewControllerProtocol {
+class FeatureViewController: UIViewController, SignUpViewControllerProtocol, UserViewControllerProtocol {
 
     // constants
     private let DOCSURL: String = "https://developers.superawesome.tv/extdocs/sa-kws-android-sdk/html/index.html"
@@ -27,7 +19,9 @@ class FeaturesViewController: UIViewController,
     
     // the local model
     private var local: KWSModel?
-    private var isRegistered: Bool = false
+    dynamic private var isRegistered: Bool = false
+    private var dataSource: FeatureDataSource!
+    private var center: NSNotificationCenter!
     
     ////////////////////////////////////////////////////////////////////////////
     // MARK: View Controller Setup
@@ -37,6 +31,18 @@ class FeaturesViewController: UIViewController,
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
         updateStatus()
+        
+        center = NSNotificationCenter.defaultCenter()
+        dataSource = FeatureDataSource()
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        dataSource.update(start: { 
+            // do nothing
+            }, success: { 
+                // do nothing
+            }, error: {
+                // do nothing
+        })
         
         // do this just once
         if local != nil {
@@ -48,6 +54,32 @@ class FeaturesViewController: UIViewController,
             isRegistered = false
             tableView.reloadData()
         }
+        
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        // add observers
+        center.addObserver(self, selector: #selector(didObserveAuth), name: Notifications.AUTH.rawValue, object: nil)
+        center.addObserver(self, selector: #selector(didObservePerm), name: Notifications.PERM.rawValue, object: nil)
+        center.addObserver(self, selector: #selector(didObserveAdd20Points), name: Notifications.ADD_20.rawValue, object: nil)
+        center.addObserver(self, selector: #selector(didObserveSub10Points), name: Notifications.SUB_10.rawValue, object: nil)
+        center.addObserver(self, selector: #selector(didObserveSeeLeader), name: Notifications.LEADER.rawValue, object: nil)
+        center.addObserver(self, selector: #selector(didObserveSubscribe), name: Notifications.SUBSCRIBE.rawValue, object: nil)
+        center.addObserver(self, selector: #selector(didObserveDocs), name: Notifications.DOCS.rawValue, object: nil)
+        addObserver(self, forKeyPath: "isRegistered", options: NSKeyValueObservingOptions.New, context: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        center.removeObserver(self, name: Notifications.AUTH.rawValue, object: nil)
+        center.removeObserver(self, name: Notifications.PERM.rawValue, object: nil)
+        center.removeObserver(self, name: Notifications.ADD_20.rawValue, object: nil)
+        center.removeObserver(self, name: Notifications.SUB_10.rawValue, object: nil)
+        center.removeObserver(self, name: Notifications.LEADER.rawValue, object: nil)
+        center.removeObserver(self, name: Notifications.SUBSCRIBE.rawValue, object: nil)
+        center.removeObserver(self, name: Notifications.DOCS.rawValue, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,61 +91,19 @@ class FeaturesViewController: UIViewController,
     }
     
     ////////////////////////////////////////////////////////////////////////////
-    // MARK: Table setup
+    // MARK: Observer functions
     ////////////////////////////////////////////////////////////////////////////
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 { return 298 }
-        else if indexPath.row == 1 || indexPath.row == 2 { return 248 }
-        else { return 328 }
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        if (indexPath.row == 0) {
-            let cell = tableView.dequeueReusableCellWithIdentifier("AuthTableViewCellId", forIndexPath: indexPath) as! AuthTableViewCell
-            cell.delegate = self
-            if let local = local, let username = local.username {
-                cell.authActionButton.setTitle("Loged in as \(username)".uppercaseString, forState: .Normal)
-            } else {
-                cell.authActionButton.setTitle("Authenticate user".uppercaseString, forState: .Normal)
-            }
-            return cell
-        } else if (indexPath.row == 1){
-            let cell = tableView.dequeueReusableCellWithIdentifier("NotifTableViewCellId", forIndexPath: indexPath) as! NotifTableViewCell
-            cell.delegate = self
-            cell.notifEnableOrDisableButton.enabled = local != nil
-            if (isRegistered) {
-                cell.notifEnableOrDisableButton.setTitle("DISABLE PUSH NOTIFICATIONS", forState: .Normal)
-            } else {
-                cell.notifEnableOrDisableButton.setTitle("ENABLE PUSH NOTIFICATIONS", forState: .Normal)
-            }
-            return cell
-        } else if (indexPath.row == 2) {
-            let cell = tableView.dequeueReusableCellWithIdentifier("PermTableViewCellId", forIndexPath: indexPath) as! PermTableViewCell
-            cell.delegate = self
-            cell.permAddPermissionsButton.enabled = local != nil
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("EventsTableViewCellId", forIndexPath: indexPath) as! EventsTableViewCell
-            cell.evtAdd20PointsButton.enabled = local != nil
-            cell.evtSub10PointsButton.enabled = local != nil
-            cell.evtSeeLeaderboardButton.enabled = local != nil
-            cell.delegate = self
-            return cell
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if let keyPath = keyPath where keyPath == "isRegistered",
+           let change = change,
+           let isRegistered = change["new"] as? Bool
+        {
+            print("New value is \(isRegistered)")
         }
     }
     
-    ////////////////////////////////////////////////////////////////////////////
-    // MARK: Cells Button Actions
-    ////////////////////////////////////////////////////////////////////////////
-    
-    func authCellProtocolDidClickOnAction() {
-
+    func didObserveAuth () {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         if local != nil {
@@ -134,13 +124,7 @@ class FeaturesViewController: UIViewController,
         }
     }
     
-    func authCellprotocolDidClickOnDocs() {
-        let url = NSURL(string: DOCSURL)
-        UIApplication.sharedApplication().openURL(url!)
-    }
-    
-    func notifCellProtocolDidClickOnEnableOrDisable() {
-        
+    func didObserveSubscribe () {
         SAActivityView.sharedManager().showActivityView()
         
         // user *IS* registered
@@ -155,7 +139,7 @@ class FeaturesViewController: UIViewController,
                 if (success) {
                     SAPopup.sharedManager().showWithTitle("Great!", andMessage: "Successfully registered for Remote Notifications!", andOKTitle: "OK!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andPressed: nil)
                     self.isRegistered = true
-                    self.updateStatus()
+//                    self.updateStatus()
                 } else {
                     if (error == .UserHasNoParentEmail) {
                         KWS.sdk().submitParentEmailWithPopup({ (submitted: Bool) in
@@ -174,24 +158,19 @@ class FeaturesViewController: UIViewController,
             // start procedure
             KWS.sdk().register(callback)
         }
-        // user *IS NOT* registered
+            // user *IS NOT* registered
         else {
             KWS.sdk().unregister({ (success) in
                 SAActivityView.sharedManager().hideActivityView()
                 let message = success ? "You have successfully un-registered for Remote Notifications in KWS!" : "There was a network error trying to un-register for Remote Notifications in KWS. Please try again!"
                 SAPopup.sharedManager().showWithTitle("Hey!", andMessage: message, andOKTitle: "Great", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andPressed: nil)
                 self.isRegistered = false
-                self.updateStatus()
+//                self.updateStatus()
             })
         }
     }
     
-    func notifCellprotocolDidClickOnDocs() {
-        let url = NSURL(string: DOCSURL)
-        UIApplication.sharedApplication().openURL(url!)
-    }
-    
-    func permCellProtocolDidClickOnAddPermissions() {
+    func didObservePerm () {
         // Create the action sheet
         let myActionSheet = UIAlertController(title: "KWS Permissions",
                                               message: "What information would you like permission for?",
@@ -242,12 +221,7 @@ class FeaturesViewController: UIViewController,
         self.presentViewController(myActionSheet, animated: true, completion: nil)
     }
     
-    func permCellprotocolDidClickOnDocs() {
-        let url = NSURL(string: DOCSURL)
-        UIApplication.sharedApplication().openURL(url!)
-    }
-    
-    func eventsCellProtocolDidClickOnAdd20Points () {
+    func didObserveAdd20Points () {
         KWS.sdk().triggerEvent("GabrielAdd20ForAwesomeApp", withPoints: 20, andDescription: "You just earned 20 points!") { (success: Bool) in
             if (success) {
                 SAPopup.sharedManager().showWithTitle("Congrats!", andMessage: "You just earned 20 points!", andOKTitle: "Great!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
@@ -255,7 +229,7 @@ class FeaturesViewController: UIViewController,
         }
     }
     
-    func eventsCellprotocolDidClickOnSub10Points () {
+    func didObserveSub10Points () {
         KWS.sdk().triggerEvent("GabrielSub10ForAwesomeApp", withPoints: -10, andDescription: "You jost lost 10 points!") { (success: Bool) in
             if (success) {
                 SAPopup.sharedManager().showWithTitle("Oh no!", andMessage: "You just lost 10 points!", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
@@ -263,17 +237,13 @@ class FeaturesViewController: UIViewController,
         }
     }
     
-    func eventsCellProtocolDidClickOnSeeLeaderboard () {
+    func didObserveSeeLeader () {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewControllerWithIdentifier("LeaderboardNavControllerId")
-        presentViewController(vc, animated: true) {
-//            if let vc = vc as? UINavigationController, let vc1 = vc.viewControllers.first as? LeaderboardViewController {
-//                //
-//            }
-        }
+        presentViewController(vc, animated: true, completion: nil)
     }
     
-    func eventsCellprotocolDidClickOnDocs () {
+    func didObserveDocs () {
         let url = NSURL(string: DOCSURL)
         UIApplication.sharedApplication().openURL(url!)
     }
