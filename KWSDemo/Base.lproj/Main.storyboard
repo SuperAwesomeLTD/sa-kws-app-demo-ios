@@ -238,7 +238,7 @@ for kids</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Boq-uP-rLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="-1159"/>
+            <point key="canvasLocation" x="1495" y="-1206"/>
         </scene>
         <!--Features View Controller-->
         <scene sceneID="q9M-Jj-Ix2">
@@ -249,11 +249,11 @@ for kids</string>
                         <viewControllerLayoutGuide type="bottom" id="b0F-oZ-OR9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4fi-uH-9hH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="APO-k3-Oph">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AuthTableViewCellId" rowHeight="298" id="QgU-lU-uWh" customClass="AuthTableViewCell" customModule="KWSDemo" customModuleProvider="target">
@@ -684,7 +684,7 @@ might need</string>
                     </view>
                     <navigationItem key="navigationItem" id="0nf-hL-u1R"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1200"/>
+                    <size key="freeformSize" width="600" height="1300"/>
                     <connections>
                         <outlet property="tableView" destination="APO-k3-Oph" id="rrg-dr-5Mg"/>
                     </connections>
@@ -1133,7 +1133,7 @@ might need</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uu8-WX-MC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="786"/>
+            <point key="canvasLocation" x="1495" y="825"/>
         </scene>
         <!--Documentation-->
         <scene sceneID="9bc-vf-5GU">
