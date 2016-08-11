@@ -992,7 +992,7 @@ might need</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pex-dx-mCH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pex-dx-mCH">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -1139,7 +1139,7 @@ might need</string>
         <scene sceneID="9bc-vf-5GU">
             <objects>
                 <navigationController id="tGS-4H-HDB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="Documentation" image="tab_docs_sel" id="dQo-O4-DcM"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Documentation" image="tab_features_unsel" selectedImage="tab_features_sel" id="dQo-O4-DcM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ayL-BU-lIb" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1177,7 +1177,6 @@ might need</string>
         <image name="ico_parent_portal" width="16" height="22"/>
         <image name="ico_shield" width="18" height="22"/>
         <image name="ico_smiley" width="22" height="22"/>
-        <image name="tab_docs_sel" width="27" height="30"/>
         <image name="tab_features_sel" width="22" height="30"/>
         <image name="tab_features_unsel" width="22" height="30"/>
         <image name="tab_platform_sel" width="21" height="30"/>
