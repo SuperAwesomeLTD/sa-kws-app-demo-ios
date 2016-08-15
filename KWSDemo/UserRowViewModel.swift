@@ -18,12 +18,16 @@ class UserRowViewModel: AnyObject, ViewModel {
         if let value = value {
             self.value = "\(value)"
             self.valueColor = UIColor.blackColor()
-            if value is Int {
+            if value is Int && item != "ID" {
                 if value as! Int > 0 {
                     self.valueColor = UIColorFromHex(0x396104)
                 } else {
                     self.valueColor = UIColorFromHex(0x610404)
                 }
+            }
+            if self.value == "" {
+                self.value = "undefined"
+                self.valueColor = UIColor.lightGrayColor()
             }
         } else {
             self.value = "undefined"

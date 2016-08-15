@@ -161,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				1B6392941D5B7053005FDCE2 /* Aux */,
-				1BDC12011D1AF5B100B1111A /* Model */,
 				1BDC11EB1D1AA39300B1111A /* Styles */,
 				1BDC11B01D198B3900B1111A /* Assets */,
 				1BDC11A91D197DB200B1111A /* Navigation */,
@@ -210,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */,
+				1BDC12021D1AF5BA00B1111A /* KWSModel.swift */,
 				1B7AD5881D5CA498003400B4 /* DataSource.swift */,
 				1B7AD5951D5CB074003400B4 /* ViewModel.swift */,
 				1B6463A61D5CD24000FB81FD /* Notifications.swift */,
@@ -322,14 +322,6 @@
 				1BDC11FF1D1AECC300B1111A /* UITextField+KWSStyle.swift */,
 			);
 			name = Styles;
-			sourceTree = "<group>";
-		};
-		1BDC12011D1AF5B100B1111A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1BDC12021D1AF5BA00B1111A /* KWSModel.swift */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		C6BA7DA313395D83BFD2D04C /* Frameworks */ = {
