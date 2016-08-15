@@ -15,40 +15,64 @@ class KWSSingleton: NSObject {
     // user defaults
     private var userDefs = NSUserDefaults.standardUserDefaults()
     private var kwsModel: KWSModel?
+    private dynamic var isRegistered: Bool = false
+    private dynamic var isLogged: Bool = false
     
     override init() {
         super.init()
+        start()
+    }
+    
+    func start () {
         let userJson = userDefs.stringForKey("KWS_MODEL") as String?
         if let userJson = userJson {
             kwsModel = KWSModel(jsonString: userJson)
-        }
-    }
-    
-    func setModel(model: KWSModel?) {
-        kwsModel = model
-        
-        if let kwsModel = kwsModel {
-            let kwsModelJson = kwsModel.jsonPreetyStringRepresentation() as String?
-            if let kwsModelJson = kwsModelJson {
-                userDefs.setObject(kwsModelJson, forKey: "KWS_MODEL")
-                userDefs.synchronize()
-                print("Saved KWS Model for User \(kwsModel.username) into user defaults.")
-            }
+            self.isLogged = true
+            self.didChangeValueForKey("isLogged")
         } else {
-            userDefs.removeObjectForKey("KWS_MODEL")
+            self.isLogged = false
+            self.didChangeValueForKey("isLogged")
+        }
+    }
+    
+    func loginUser(model: KWSModel) {
+        kwsModel = model
+        if let kwsModel = kwsModel,
+            let kwsModelJson = kwsModel.jsonPreetyStringRepresentation() as String? {
+            userDefs.setObject(kwsModelJson, forKey: "KWS_MODEL")
             userDefs.synchronize()
-            print("Deleted current User from Defaults")
+            self.isLogged = true
+            self.didChangeValueForKey("isLogged")
         }
     }
     
-    func getModel() -> KWSModel? {
-        return kwsModel
+    func logoutUser () {
+        kwsModel = nil
+        userDefs.removeObjectForKey("KWS_MODEL")
+        userDefs.synchronize()
+        self.isLogged = false
+        self.didChangeValueForKey("isLogged")
     }
     
-    func appHasAuthenticatedUser () -> Bool {
-        if kwsModel != nil {
-            return true
-        }
-        return false
+    func isUserLogged () -> Bool {
+        return self.isLogged
+    }
+    
+    func getUser () -> KWSModel? {
+        return self.kwsModel
+    }
+    
+    func markUserAsRegistered () {
+        self.isRegistered = true
+        self.didChangeValueForKey("isRegistered")
+    }
+    
+    func markUserAsUnregistered () {
+        self.isRegistered = false
+        self.didChangeValueForKey("isRegistered")
+    }
+    
+    func isUserMarkedAsRegistered () -> Bool {
+        return self.isRegistered
     }
 }

@@ -23,6 +23,8 @@ class FeatureDataSource: NSObject, DataSource, UITableViewDelegate, UITableViewD
             FeaturePermViewModel(),
             FeatureEventViewModel()
         ]
+        
+        success()
     }
     
     // MARK: Table delegate

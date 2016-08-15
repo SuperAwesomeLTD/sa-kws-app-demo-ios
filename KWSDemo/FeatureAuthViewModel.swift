@@ -15,7 +15,7 @@ class FeatureAuthViewModel: AnyObject, ViewModel {
     }
     
     func representationAsRow(tableView: UITableView) -> UITableViewCell {
-        let local = KWSSingleton.sharedInstance.getModel()
+        let local = KWSSingleton.sharedInstance.getUser()
         
         let cell = tableView.dequeueReusableCellWithIdentifier("FeatureAuthRowId") as! FeatureAuthRow
         if let local = local, let username = local.username {

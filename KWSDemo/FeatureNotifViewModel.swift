@@ -18,11 +18,9 @@ class FeatureNotifViewModel: AnyObject, ViewModel {
     }
     
     func representationAsRow(tableView: UITableView) -> UITableViewCell {
-        isLogged = KWSSingleton.sharedInstance.getModel() != nil
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("FeatureNotifRowId") as! FeatureNotifRow
-        cell.notifEnableOrDisableButton.enabled = isLogged
-        if (isRegistered) {
+        cell.notifEnableOrDisableButton.enabled = KWSSingleton.sharedInstance.isUserLogged()
+        if (KWSSingleton.sharedInstance.isUserMarkedAsRegistered()) {
             cell.notifEnableOrDisableButton.setTitle("DISABLE PUSH NOTIFICATIONS", forState: .Normal)
         } else {
             cell.notifEnableOrDisableButton.setTitle("ENABLE PUSH NOTIFICATIONS", forState: .Normal)

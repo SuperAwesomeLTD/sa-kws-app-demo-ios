@@ -17,12 +17,10 @@ class FeatureEventViewModel: AnyObject, ViewModel {
     }
     
     func representationAsRow(tableView: UITableView) -> UITableViewCell {
-        loggedIn = KWSSingleton.sharedInstance.getModel() != nil
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("FeatureEventRowId") as! FeatureEventRow
-        cell.evtAdd20PointsButton.enabled = loggedIn
-        cell.evtSub10PointsButton.enabled = loggedIn
-        cell.evtSeeLeaderboardButton.enabled = loggedIn
+        cell.evtAdd20PointsButton.enabled = KWSSingleton.sharedInstance.isUserLogged()
+        cell.evtSub10PointsButton.enabled = KWSSingleton.sharedInstance.isUserLogged()
+        cell.evtSeeLeaderboardButton.enabled = KWSSingleton.sharedInstance.isUserLogged()
         cell.evtAdd20PointsButton.addTarget(self, action: #selector(add20PointsAction), forControlEvents: UIControlEvents.TouchUpInside)
         cell.evtSub10PointsButton.addTarget(self, action: #selector(sub10PointsAction), forControlEvents: UIControlEvents.TouchUpInside)
         cell.evtSeeLeaderboardButton.addTarget(self, action: #selector(seeLeaderAction), forControlEvents: UIControlEvents.TouchUpInside)

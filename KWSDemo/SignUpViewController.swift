@@ -8,11 +8,6 @@
 
 import UIKit
 
-// protocol
-protocol SignUpViewControllerProtocol {
-    func signupViewControllerDidManageToSignUpUser()
-}
-
 // vc
 class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
 
@@ -33,9 +28,6 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
     private var month: Int?
     private var day: Int?
     private var passwordsMatch: Bool = false
-    
-    // delegate
-    var delegate: SignUpViewControllerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -177,14 +169,10 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
                         // check if all is OK
                         if kwsmodel.status == 1 {
                             
-                            // save user to singleton
-                            KWSSingleton.sharedInstance.setModel(kwsmodel)
-                            
-                            print("Logged in as:\n\(kwsmodel.userId)\n\(kwsmodel.username)\n\(kwsmodel.token)")
-                            
                             // dismiss
                             vc.dismissViewControllerAnimated(true) {
-                                self.delegate?.signupViewControllerDidManageToSignUpUser()
+                                // save user to singleton
+                                KWSSingleton.sharedInstance.loginUser(kwsmodel)
                             }
                             
                         } else if kwsmodel.status == 0 {

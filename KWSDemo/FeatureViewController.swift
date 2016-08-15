@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeatureViewController: UIViewController, SignUpViewControllerProtocol, UserViewControllerProtocol {
+class FeatureViewController: UIViewController {
 
     // constants
     private let DOCSURL: String = "https://developers.superawesome.tv/extdocs/sa-kws-android-sdk/html/index.html"
@@ -16,12 +16,9 @@ class FeatureViewController: UIViewController, SignUpViewControllerProtocol, Use
     
     // outlets
     @IBOutlet weak var tableView: UITableView!
-    
-    // the local model
-    private var local: KWSModel?
-    dynamic private var isRegistered: Bool = false
     private var dataSource: FeatureDataSource!
     private var center: NSNotificationCenter!
+    private var onStart: Bool = true
     
     ////////////////////////////////////////////////////////////////////////////
     // MARK: View Controller Setup
@@ -30,37 +27,9 @@ class FeatureViewController: UIViewController, SignUpViewControllerProtocol, Use
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
-        updateStatus()
-        
         center = NSNotificationCenter.defaultCenter()
-        dataSource = FeatureDataSource()
-        tableView.dataSource = dataSource
-        tableView.delegate = dataSource
-        dataSource.update(start: { 
-            // do nothing
-            }, success: { 
-                // do nothing
-            }, error: {
-                // do nothing
-        })
         
-        // do this just once
-        if local != nil {
-            KWS.sdk().isRegistered({ (registerd: Bool) in
-                self.isRegistered = registerd
-                self.tableView.reloadData()
-            })
-        } else {
-            isRegistered = false
-            tableView.reloadData()
-        }
-        
-        
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        // add observers
+        // set observer
         center.addObserver(self, selector: #selector(didObserveAuth), name: Notifications.AUTH.rawValue, object: nil)
         center.addObserver(self, selector: #selector(didObservePerm), name: Notifications.PERM.rawValue, object: nil)
         center.addObserver(self, selector: #selector(didObserveAdd20Points), name: Notifications.ADD_20.rawValue, object: nil)
@@ -68,18 +37,20 @@ class FeatureViewController: UIViewController, SignUpViewControllerProtocol, Use
         center.addObserver(self, selector: #selector(didObserveSeeLeader), name: Notifications.LEADER.rawValue, object: nil)
         center.addObserver(self, selector: #selector(didObserveSubscribe), name: Notifications.SUBSCRIBE.rawValue, object: nil)
         center.addObserver(self, selector: #selector(didObserveDocs), name: Notifications.DOCS.rawValue, object: nil)
-        addObserver(self, forKeyPath: "isRegistered", options: NSKeyValueObservingOptions.New, context: nil)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        center.removeObserver(self, name: Notifications.AUTH.rawValue, object: nil)
-        center.removeObserver(self, name: Notifications.PERM.rawValue, object: nil)
-        center.removeObserver(self, name: Notifications.ADD_20.rawValue, object: nil)
-        center.removeObserver(self, name: Notifications.SUB_10.rawValue, object: nil)
-        center.removeObserver(self, name: Notifications.LEADER.rawValue, object: nil)
-        center.removeObserver(self, name: Notifications.SUBSCRIBE.rawValue, object: nil)
-        center.removeObserver(self, name: Notifications.DOCS.rawValue, object: nil)
+        KWSSingleton.sharedInstance.addObserver(self, forKeyPath: "isRegistered", options: NSKeyValueObservingOptions.New, context: nil)
+        KWSSingleton.sharedInstance.addObserver(self, forKeyPath: "isLogged", options: NSKeyValueObservingOptions.New, context: nil)
+        KWSSingleton.sharedInstance.start()
+        
+        dataSource = FeatureDataSource()
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        dataSource.update(start: {
+            // do nothing
+            }, success: { 
+                // do nothing
+            }, error: {
+                // do nothing
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -95,40 +66,53 @@ class FeatureViewController: UIViewController, SignUpViewControllerProtocol, Use
     ////////////////////////////////////////////////////////////////////////////
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if let keyPath = keyPath where keyPath == "isRegistered",
-           let change = change,
-           let isRegistered = change["new"] as? Bool
-        {
-            print("New value is \(isRegistered)")
+        
+        if let change = change, let keyPath = keyPath {
+            if keyPath == "isRegistered" {
+                self.tableView.reloadData()
+            }
+            else if keyPath == "isLogged" {
+                if let logedInStatus = change["new"] as? Bool {
+                    if logedInStatus {
+                        let model = KWSSingleton.sharedInstance.getUser()
+                        if let model = model {
+                            KWS.sdk().setupWithOAuthToken(model.token, kwsApiUrl: KWS_API)
+                        }
+                        if onStart {
+                            onStart = false
+                            KWS.sdk().isRegistered({ (registerd: Bool) in
+                                KWSSingleton.sharedInstance.markUserAsRegistered()
+                                self.tableView.reloadData()
+                            })
+                        } else {
+                            tableView.reloadData()
+                        }
+                    } else {
+                        SAActivityView.sharedManager().showActivityView()
+                        KWS.sdk().unregister { (success) in
+                            SAActivityView.sharedManager().hideActivityView()
+                            KWSSingleton.sharedInstance.markUserAsUnregistered()
+                            KWS.sdk().desetup()
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            }
         }
     }
     
     func didObserveAuth () {
+        let logged = KWSSingleton.sharedInstance.isUserLogged()
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        
-        if local != nil {
-            let vc = sb.instantiateViewControllerWithIdentifier("UserNavControllerId")
-            presentViewController(vc, animated: true) {
-                if let vc = vc as? UINavigationController, let vc1 = vc.viewControllers.first as? UserViewController {
-                    vc1.delegate = self
-                }
-            }
-            
-        } else {
-            let vc = sb.instantiateViewControllerWithIdentifier("SignUpNavControllerId")
-            presentViewController(vc, animated: true) {
-                if let vc = vc as? UINavigationController, let vc1 = vc.viewControllers.first as? SignUpViewController {
-                    vc1.delegate = self
-                }
-            }
-        }
+        let vc = sb.instantiateViewControllerWithIdentifier(logged ? "UserNavControllerId" : "SignUpNavControllerId")
+        presentViewController(vc, animated: true, completion: nil)
     }
     
     func didObserveSubscribe () {
         SAActivityView.sharedManager().showActivityView()
         
-        // user *IS* registered
-        if (!isRegistered) {
+        // user *IS NOT* registered
+        if (!KWSSingleton.sharedInstance.isUserMarkedAsRegistered()) {
             
             // define callback
             var callback: ((Bool, KWSErrorType)->Void)!
@@ -138,12 +122,12 @@ class FeatureViewController: UIViewController, SignUpViewControllerProtocol, Use
                 
                 if (success) {
                     SAPopup.sharedManager().showWithTitle("Great!", andMessage: "Successfully registered for Remote Notifications!", andOKTitle: "OK!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andPressed: nil)
-                    self.isRegistered = true
-//                    self.updateStatus()
+                    KWSSingleton.sharedInstance.markUserAsRegistered()
                 } else {
                     if (error == .UserHasNoParentEmail) {
                         KWS.sdk().submitParentEmailWithPopup({ (submitted: Bool) in
                             if (submitted) {
+                                SAActivityView.sharedManager().showActivityView()
                                 KWS.sdk().register(callback)
                             } else {
                                 SAPopup.sharedManager().showWithTitle("Hey!", andMessage: "An error occured trying to submit parent email. Will not continue.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andPressed: nil)
@@ -158,14 +142,13 @@ class FeatureViewController: UIViewController, SignUpViewControllerProtocol, Use
             // start procedure
             KWS.sdk().register(callback)
         }
-            // user *IS NOT* registered
+        // user *IS* registered
         else {
             KWS.sdk().unregister({ (success) in
                 SAActivityView.sharedManager().hideActivityView()
                 let message = success ? "You have successfully un-registered for Remote Notifications in KWS!" : "There was a network error trying to un-register for Remote Notifications in KWS. Please try again!"
                 SAPopup.sharedManager().showWithTitle("Hey!", andMessage: message, andOKTitle: "Great", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andPressed: nil)
-                self.isRegistered = false
-//                self.updateStatus()
+                KWSSingleton.sharedInstance.markUserAsUnregistered()
             })
         }
     }
@@ -246,41 +229,5 @@ class FeatureViewController: UIViewController, SignUpViewControllerProtocol, Use
     func didObserveDocs () {
         let url = NSURL(string: DOCSURL)
         UIApplication.sharedApplication().openURL(url!)
-    }
-    
-    ////////////////////////////////////////////////////////////////////////////
-    // MARK: Login In or Log Out action
-    ////////////////////////////////////////////////////////////////////////////
-    
-    func signupViewControllerDidManageToSignUpUser() {
-        updateStatus()
-    }
-    
-    func userViewControllerDidManageToLogOutUser() {
-        // also unregister
-        SAActivityView.sharedManager().showActivityView()
-        KWS.sdk().unregister { (success) in
-            SAActivityView.sharedManager().hideActivityView()
-            self.isRegistered = false
-            self.updateStatus()
-        }
-    }
-    
-    ////////////////////////////////////////////////////////////////////////////
-    // MARK: Aux functions
-    ////////////////////////////////////////////////////////////////////////////
-    
-    private func updateStatus () {
-        // logged-in status
-        local = KWSSingleton.sharedInstance.getModel()
-        if let local = local {
-            KWS.sdk().setupWithOAuthToken(local.token, kwsApiUrl: KWS_API)
-        }
-        // logged-out status
-        else {
-            KWS.sdk().desetup()
-        }
-        // reload
-        tableView.reloadData()
     }
 }

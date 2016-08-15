@@ -17,10 +17,8 @@ class FeaturePermViewModel: AnyObject, ViewModel {
     }
     
     func representationAsRow(tableView: UITableView) -> UITableViewCell {
-        loggedIn = KWSSingleton.sharedInstance.getModel() != nil
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("FeaturePermRowId") as! FeaturePermRow
-        cell.permAddPermissionsButton.enabled = loggedIn
+        cell.permAddPermissionsButton.enabled = KWSSingleton.sharedInstance.isUserLogged()
         cell.permAddPermissionsButton.addTarget(self, action: #selector(addPermissionAction), forControlEvents: UIControlEvents.TouchUpInside)
         cell.permSeeDocsButton.addTarget(self, action: #selector(docsButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         return cell

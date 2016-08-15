@@ -8,16 +8,10 @@
 
 import UIKit
 
-// protocol
-protocol UserViewControllerProtocol {
-    func userViewControllerDidManageToLogOutUser()
-}
-
 // vc
 class UserViewController: UIViewController, KWSPopupNavigationBarProtocol, UITableViewDelegate {
     
     // vars
-    var delegate: UserViewControllerProtocol?
     var dataSource: UserDataSource!
     var spinnerM: SAActivityView!
     var popupM: SAPopup!
@@ -78,9 +72,8 @@ class UserViewController: UIViewController, KWSPopupNavigationBarProtocol, UITab
     // MARK: Actions
     
     @IBAction func logoutAction(sender: AnyObject) {
-        KWSSingleton.sharedInstance.setModel(nil)
         dismissViewControllerAnimated(true) { 
-            self.delegate?.userViewControllerDidManageToLogOutUser()
+            KWSSingleton.sharedInstance.logoutUser()
         }
     }
 }
