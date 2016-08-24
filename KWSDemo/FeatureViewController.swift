@@ -80,9 +80,12 @@ class FeatureViewController: UIViewController {
                         }
                         if onStart {
                             onStart = false
+                            KWSSingleton.sharedInstance.markUserAsUnregistered()
                             KWS.sdk().isRegistered({ (registerd: Bool) in
-                                KWSSingleton.sharedInstance.markUserAsRegistered()
-                                self.tableView.reloadData()
+                                if registerd {
+                                    KWSSingleton.sharedInstance.markUserAsRegistered()
+                                    self.tableView.reloadData()
+                                }
                             })
                         } else {
                             tableView.reloadData()

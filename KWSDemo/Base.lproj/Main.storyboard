@@ -1168,7 +1168,7 @@ might need</string>
         <scene sceneID="9bc-vf-5GU">
             <objects>
                 <navigationController id="tGS-4H-HDB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="Documentation" image="tab_features_unsel" selectedImage="tab_features_sel" id="dQo-O4-DcM"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Documentation" image="documentation" selectedImage="documentation_selected" id="dQo-O4-DcM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ayL-BU-lIb" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1200,6 +1200,8 @@ might need</string>
         </scene>
     </scenes>
     <resources>
+        <image name="documentation" width="37" height="30"/>
+        <image name="documentation_selected" width="37" height="30"/>
         <image name="ico_bell" width="24" height="26"/>
         <image name="ico_identity" width="24" height="12"/>
         <image name="ico_login_btn" width="26" height="23"/>
