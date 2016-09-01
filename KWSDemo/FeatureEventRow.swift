@@ -13,6 +13,7 @@ class FeatureEventRow: UITableViewCell {
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var evtAdd20PointsButton: UIButton!
     @IBOutlet weak var evtSub10PointsButton: UIButton!
+    @IBOutlet weak var evtGetScoreButton: UIButton!
     @IBOutlet weak var evtSeeLeaderboardButton: UIButton!
     @IBOutlet weak var evtSeeDocsButton: UIButton!
     
@@ -21,6 +22,7 @@ class FeatureEventRow: UITableViewCell {
         content.addShadow()
         evtAdd20PointsButton.blueButton()
         evtSub10PointsButton.blueButton()
+        evtGetScoreButton.blueButton()
         evtSeeLeaderboardButton.blueButton()
         evtSeeDocsButton.blueButton()
     }

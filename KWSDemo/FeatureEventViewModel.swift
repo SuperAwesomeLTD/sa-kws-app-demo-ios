@@ -13,16 +13,19 @@ class FeatureEventViewModel: AnyObject, ViewModel {
     private var loggedIn: Bool = false
     
     func heightForRow() -> CGFloat {
-        return 328
+        return 368
     }
     
     func representationAsRow(tableView: UITableView) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FeatureEventRowId") as! FeatureEventRow
-        cell.evtAdd20PointsButton.enabled = KWSSingleton.sharedInstance.isUserLogged()
-        cell.evtSub10PointsButton.enabled = KWSSingleton.sharedInstance.isUserLogged()
-        cell.evtSeeLeaderboardButton.enabled = KWSSingleton.sharedInstance.isUserLogged()
+        let isLogged = KWSSingleton.sharedInstance.isUserLogged()
+        cell.evtAdd20PointsButton.enabled = isLogged
+        cell.evtSub10PointsButton.enabled = isLogged
+        cell.evtSeeLeaderboardButton.enabled = isLogged
+        cell.evtGetScoreButton.enabled = isLogged
         cell.evtAdd20PointsButton.addTarget(self, action: #selector(add20PointsAction), forControlEvents: UIControlEvents.TouchUpInside)
         cell.evtSub10PointsButton.addTarget(self, action: #selector(sub10PointsAction), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.evtGetScoreButton.addTarget(self, action: #selector(getScoreAction), forControlEvents: UIControlEvents.TouchUpInside)
         cell.evtSeeLeaderboardButton.addTarget(self, action: #selector(seeLeaderAction), forControlEvents: UIControlEvents.TouchUpInside)
         cell.evtSeeDocsButton.addTarget(self, action: #selector(docsButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         return cell
@@ -34,6 +37,10 @@ class FeatureEventViewModel: AnyObject, ViewModel {
     
     @objc func sub10PointsAction () {
         NSNotificationCenter.defaultCenter().postNotificationName(Notifications.SUB_10.rawValue, object: self)
+    }
+    
+    @objc func getScoreAction () {
+        NSNotificationCenter.defaultCenter().postNotificationName(Notifications.SCORE.rawValue, object: self)
     }
     
     @objc func seeLeaderAction () {

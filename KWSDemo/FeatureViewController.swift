@@ -37,6 +37,7 @@ class FeatureViewController: UIViewController {
         center.addObserver(self, selector: #selector(didObserveSeeLeader), name: Notifications.LEADER.rawValue, object: nil)
         center.addObserver(self, selector: #selector(didObserveSubscribe), name: Notifications.SUBSCRIBE.rawValue, object: nil)
         center.addObserver(self, selector: #selector(didObserveDocs), name: Notifications.DOCS.rawValue, object: nil)
+        center.addObserver(self, selector: #selector(didObserveGetScore), name: Notifications.SCORE.rawValue, object: nil)
         KWSSingleton.sharedInstance.addObserver(self, forKeyPath: "isRegistered", options: NSKeyValueObservingOptions.New, context: nil)
         KWSSingleton.sharedInstance.addObserver(self, forKeyPath: "isLogged", options: NSKeyValueObservingOptions.New, context: nil)
         KWSSingleton.sharedInstance.start()
@@ -219,6 +220,14 @@ class FeatureViewController: UIViewController {
         KWS.sdk().triggerEvent("GabrielSub10ForAwesomeApp", withPoints: -10, andDescription: "You jost lost 10 points!") { (success: Bool) in
             if (success) {
                 SAPopup.sharedManager().showWithTitle("Oh no!", andMessage: "You just lost 10 points!", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
+            }
+        }
+    }
+    
+    func didObserveGetScore () {
+        KWS.sdk().getScore { (score: KWSScore!) in
+            if score != nil {
+                SAPopup.sharedManager().showWithTitle("Hey!", andMessage: "You're ranked \(score.rank) with \(score.score) points!", andOKTitle: "Great!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
             }
         }
     }

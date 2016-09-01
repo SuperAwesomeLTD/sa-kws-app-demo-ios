@@ -16,4 +16,5 @@ enum Notifications : String {
     case ADD_20 = "ADD_20_NOTIFICAITON"
     case SUB_10 = "SUB_10_NOTIFICATION"
     case DOCS = "DOCS_NOTIFICATION"
+    case SCORE = "GET_SCORE"
 }
