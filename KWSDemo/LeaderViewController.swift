@@ -36,9 +36,9 @@ class LeaderViewController: UIViewController, KWSPopupNavigationBarProtocol {
             }, error: {
                 self.spinnerM.hideActivityView()
                 self.popupM.showWithTitle(
-                    "Hey!",
-                    andMessage: "An error occured and we could not get the Leaderboard. Please try again!",
-                    andOKTitle: "Got it!",
+                    "leader_popup_error_title".localized,
+                    andMessage: "leader_popup_error_message".localized,
+                    andOKTitle: "leader_popup_dismiss_button".localized,
                     andNOKTitle: nil,
                     andTextField: false,
                     andKeyboardTyle: UIKeyboardType.Default,
@@ -58,7 +58,7 @@ class LeaderViewController: UIViewController, KWSPopupNavigationBarProtocol {
     // MARK: KWSPopupNavigationBarProtocol
     
     func kwsPopupNavGetTitle() -> String {
-        return "Leaderboard"
+        return "leader_vc_title".localized
     }
     
     func kwsPopupNavDidPressOnClose() {

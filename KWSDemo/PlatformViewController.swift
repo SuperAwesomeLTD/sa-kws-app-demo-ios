@@ -11,6 +11,12 @@ import UIKit
 class PlatformViewController: UIViewController {
 
     // outlets
+    @IBOutlet weak var platformTitle: UILabel!
+    @IBOutlet weak var platformContent: UILabel!
+    @IBOutlet weak var platformFeature1: UILabel!
+    @IBOutlet weak var platformFeature2: UILabel!
+    @IBOutlet weak var platformFeature3: UILabel!
+    @IBOutlet weak var platformFeature4: UILabel!
     @IBOutlet weak var knowMoreButton: UIButton!
     
     // contants
@@ -20,6 +26,14 @@ class PlatformViewController: UIViewController {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
         knowMoreButton.blueButton()
+        
+        platformTitle.text = "platform_title".localized
+        platformContent.text = "platform_content".localized
+        platformFeature1.text = "platform_feature_1".localized
+        platformFeature2.text = "platform_feature_2".localized
+        platformFeature3.text = "platform_feature_3".localized
+        platformFeature4.text = "platform_feature_4".localized
+        knowMoreButton.setTitle("platform_main_button".localized.uppercaseString, forState: UIControlState.Normal)
     }
 
     override func didReceiveMemoryWarning() {

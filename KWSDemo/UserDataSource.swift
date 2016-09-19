@@ -30,50 +30,50 @@ class UserDataSource: NSObject, DataSource, UITableViewDataSource, UITableViewDe
             // perform operations on data
             if let user = user {
                 
-                self.data.append(UserData(header: UserHeaderViewModel(title: "Details"), rows: [
-                    UserRowViewModel(item: "ID", value: user._id),
-                    UserRowViewModel(item: "Username", value: user.username),
-                    UserRowViewModel(item: "First name", value: user.firstName),
-                    UserRowViewModel(item: "Last name", value: user.lastName),
-                    UserRowViewModel(item: "Birth date", value: user.dateOfBirth),
-                    UserRowViewModel(item: "Gender", value: user.gender),
-                    UserRowViewModel(item: "Phone", value: user.phoneNumber),
-                    UserRowViewModel(item: "Language", value: user.language),
-                    UserRowViewModel(item: "Email", value: user.email)
+                self.data.append(UserData(header: UserHeaderViewModel(title: "user_header_details".localized), rows: [
+                    UserRowViewModel(item: "user_row_details_id".localized, value: user._id),
+                    UserRowViewModel(item: "user_row_details_username".localized, value: user.username),
+                    UserRowViewModel(item: "user_row_details_first_name".localized, value: user.firstName),
+                    UserRowViewModel(item: "user_row_details_last_name".localized, value: user.lastName),
+                    UserRowViewModel(item: "user_row_details_birth_date".localized, value: user.dateOfBirth),
+                    UserRowViewModel(item: "user_row_details_gender".localized, value: user.gender),
+                    UserRowViewModel(item: "user_row_details_phone".localized, value: user.phoneNumber),
+                    UserRowViewModel(item: "user_row_details_language".localized, value: user.language),
+                    UserRowViewModel(item: "user_row_details_email".localized, value: user.email)
                 ]))
                 
                 if let address = user.address {
-                    self.data.append(UserData(header: UserHeaderViewModel(title: "Address"), rows: [
-                        UserRowViewModel(item: "Street", value: address.street),
-                        UserRowViewModel(item: "City", value: address.city),
-                        UserRowViewModel(item: "Post code", value: address.postCode),
-                        UserRowViewModel(item: "Country", value: address.country)
+                    self.data.append(UserData(header: UserHeaderViewModel(title: "user_header_address".localized), rows: [
+                        UserRowViewModel(item: "user_row_address_street".localized, value: address.street),
+                        UserRowViewModel(item: "user_row_address_city".localized, value: address.city),
+                        UserRowViewModel(item: "user_row_address_post_code".localized, value: address.postCode),
+                        UserRowViewModel(item: "user_row_address_country".localized, value: address.country)
                         ]))
                 }
                 
                 if let points = user.points {
-                    self.data.append(UserData(header: UserHeaderViewModel(title: "Points"), rows: [
-                        UserRowViewModel(item: "Received", value: points.totalReceived),
-                        UserRowViewModel(item: "Total", value: points.total),
-                        UserRowViewModel(item: "In this app", value: points.totalPointsReceivedInCurrentApp),
-                        UserRowViewModel(item: "Available", value: points.availableBalance),
-                        UserRowViewModel(item: "Pending", value: points.pending)
+                    self.data.append(UserData(header: UserHeaderViewModel(title: "user_header_points".localized), rows: [
+                        UserRowViewModel(item: "user_row_points_received".localized, value: points.totalReceived),
+                        UserRowViewModel(item: "user_row_points_total".localized, value: points.total),
+                        UserRowViewModel(item: "user_row_points_app".localized, value: points.totalPointsReceivedInCurrentApp),
+                        UserRowViewModel(item: "user_row_points_available".localized, value: points.availableBalance),
+                        UserRowViewModel(item: "user_row_points_pending".localized, value: points.pending)
                         ]))
                 }
                 
                 if let permissions = user.applicationPermissions {
-                    self.data.append(UserData(header: UserHeaderViewModel(title: "Permissions"), rows: [
-                        UserRowViewModel(item: "Address", value: permissions.accessAddress),
-                        UserRowViewModel(item: "Phone number", value: permissions.accessPhoneNumber),
-                        UserRowViewModel(item: "First name", value: permissions.accessFirstName),
-                        UserRowViewModel(item: "Last name", value: permissions.accessLastName),
-                        UserRowViewModel(item: "Email", value: permissions.accessEmail),
-                        UserRowViewModel(item: "Street address", value: permissions.accessStreetAddress),
-                        UserRowViewModel(item: "City", value: permissions.accessCity),
-                        UserRowViewModel(item: "Postal code", value: permissions.accessPostalCode),
-                        UserRowViewModel(item: "Country", value: permissions.accessCountry),
-                        UserRowViewModel(item: "Notifications", value: permissions.sendPushNotification),
-                        UserRowViewModel(item: "Newsletter", value: permissions.sendNewsletter)
+                    self.data.append(UserData(header: UserHeaderViewModel(title: "user_header_perm".localized), rows: [
+                        UserRowViewModel(item: "user_row_perm_address".localized, value: permissions.accessAddress),
+                        UserRowViewModel(item: "user_row_perm_phone".localized, value: permissions.accessPhoneNumber),
+                        UserRowViewModel(item: "user_row_perm_first_name".localized, value: permissions.accessFirstName),
+                        UserRowViewModel(item: "user_row_perm_last_name".localized, value: permissions.accessLastName),
+                        UserRowViewModel(item: "user_row_perm_email".localized, value: permissions.accessEmail),
+                        UserRowViewModel(item: "user_row_perm_street".localized, value: permissions.accessStreetAddress),
+                        UserRowViewModel(item: "user_row_perm_city".localized, value: permissions.accessCity),
+                        UserRowViewModel(item: "user_row_perm_post_code".localized, value: permissions.accessPostalCode),
+                        UserRowViewModel(item: "user_row_perm_country".localized, value: permissions.accessCountry),
+                        UserRowViewModel(item: "user_row_perm_notifications".localized, value: permissions.sendPushNotification),
+                        UserRowViewModel(item: "user_row_perm_newsletter".localized, value: permissions.sendNewsletter)
                         ]))
                 }
                 

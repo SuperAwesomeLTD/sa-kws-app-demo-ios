@@ -1,0 +1,180 @@
+
+/* Class = "UITextField"; placeholder = "YYYY"; ObjectID = "0ZK-Wg-awI"; */
+"0ZK-Wg-awI.placeholder" = "YYYY";
+
+/* Class = "UIButton"; normalTitle = "SEE DOCUMENTATION"; ObjectID = "41E-kb-EeM"; */
+"41E-kb-EeM.normalTitle" = "SEE DOCUMENTATION";
+
+/* Class = "UILabel"; text = "Manage permissions"; ObjectID = "41X-jO-ULV"; */
+"41X-jO-ULV.text" = "Manage permissions";
+
+/* Class = "UILabel"; text = "Score"; ObjectID = "4Rb-4B-T1g"; */
+"4Rb-4B-T1g.text" = "Score";
+
+/* Class = "UILabel"; text = "This Awesome App is powered by Kids Web Services (KWS), the platform that provides a set of compliance-as-a-service tools to create a kid-safe, COPPA-compliant sites and apps, allowing you to focus on delivering awesome content by abstracting all legal complexity related to data-collection."; ObjectID = "5Td-l1-zMw"; */
+"5Td-l1-zMw.text" = "This Awesome App is powered by Kids Web Services (KWS), the platform that provides a set of compliance-as-a-service tools to create a kid-safe, COPPA-compliant sites and apps, allowing you to focus on delivering awesome content by abstracting all legal complexity related to data-collection.";
+
+/* Class = "UITabBarItem"; title = "Features"; ObjectID = "5mN-d1-nMM"; */
+"5mN-d1-nMM.title" = "Features";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "6lV-IN-tyh"; */
+"6lV-IN-tyh.normalTitle" = "Add";
+
+/* Class = "UIButton"; normalTitle = "KNOW MORE ABOUT KIDS WEB SERVICES"; ObjectID = "7If-f2-9Nb"; */
+"7If-f2-9Nb.normalTitle" = "KNOW MORE ABOUT KIDS WEB SERVICES";
+
+/* Class = "UIButton"; normalTitle = "GET SCORE"; ObjectID = "85M-Lj-48f"; */
+"85M-Lj-48f.normalTitle" = "GET SCORE";
+
+/* Class = "UILabel"; text = "Welcome to your\nSuperAwesome App"; ObjectID = "8c8-FD-NMM"; */
+"8c8-FD-NMM.text" = "Welcome to your\nSuperAwesome App";
+
+/* Class = "UILabel"; text = "Invite friends"; ObjectID = "8m0-vB-v6H"; */
+"8m0-vB-v6H.text" = "Invite friends";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "9zz-1x-g7o"; */
+"9zz-1x-g7o.text" = "1";
+
+/* Class = "UILabel"; text = "App data"; ObjectID = "AJh-2X-zr0"; */
+"AJh-2X-zr0.text" = "App data";
+
+/* Class = "UIButton"; normalTitle = "SEE APP DATA"; ObjectID = "Bhc-LN-10t"; */
+"Bhc-LN-10t.normalTitle" = "SEE APP DATA";
+
+/* Class = "UILabel"; text = "Item"; ObjectID = "ETS-7e-ejI"; */
+"ETS-7e-ejI.text" = "Item";
+
+/* Class = "UILabel"; text = "Generate codes/vouchers to allow users to award extra points to incentivise user retention and engagement."; ObjectID = "F7O-OM-gk0"; */
+"F7O-OM-gk0.text" = "Generate codes/vouchers to allow users to award extra points to incentivise user retention and engagement.";
+
+/* Class = "UILabel"; text = "Add or subtract points and manage application events for each user."; ObjectID = "HFg-VF-bGk"; */
+"HFg-VF-bGk.text" = "Add or subtract points and manage application events for each user.";
+
+/* Class = "UILabel"; text = "Value"; ObjectID = "HKr-jr-lbK"; */
+"HKr-jr-lbK.text" = "Value";
+
+/* Class = "UIButton"; normalTitle = "ADD PERMISSIONS"; ObjectID = "IDv-L0-bZO"; */
+"IDv-L0-bZO.normalTitle" = "ADD PERMISSIONS";
+
+/* Class = "UILabel"; text = "#"; ObjectID = "Ilj-QT-FUf"; */
+"Ilj-QT-FUf.text" = "#";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "JiN-hB-euy"; */
+"JiN-hB-euy.normalTitle" = "Logout";
+
+/* Class = "UITabBarItem"; title = "Platform"; ObjectID = "KXs-Ny-lzX"; */
+"KXs-Ny-lzX.title" = "Platform";
+
+/* Class = "UIButton"; normalTitle = "SEE DOCUMENTATION"; ObjectID = "MiR-da-HRI"; */
+"MiR-da-HRI.normalTitle" = "SEE DOCUMENTATION";
+
+/* Class = "UILabel"; text = "Verifiable\nparental\nconsent"; ObjectID = "RPe-kb-bWD"; */
+"RPe-kb-bWD.text" = "Verifiable\nparental\nconsent";
+
+/* Class = "UIButton"; normalTitle = "SEE DOCUMENTATION"; ObjectID = "RwZ-Tf-NUr"; */
+"RwZ-Tf-NUr.normalTitle" = "SEE DOCUMENTATION";
+
+/* Class = "UIButton"; normalTitle = "ENABLE PUSH NOTIFICATIONS"; ObjectID = "S5b-Ml-UUg"; */
+"S5b-Ml-UUg.normalTitle" = "ENABLE PUSH NOTIFICATIONS";
+
+/* Class = "UILabel"; text = "Kid-safe push notifications"; ObjectID = "SOd-kE-ZpU"; */
+"SOd-kE-ZpU.text" = "Kid-safe push notifications";
+
+/* Class = "UITextField"; placeholder = "Enter a new value pair"; ObjectID = "T9u-bg-gVr"; */
+"T9u-bg-gVr.placeholder" = "Enter a new value pair";
+
+/* Class = "UILabel"; text = "Events and points"; ObjectID = "UwN-4u-dUn"; */
+"UwN-4u-dUn.text" = "Events and points";
+
+/* Class = "UILabel"; text = "Value"; ObjectID = "UzX-QX-1J8"; */
+"UzX-QX-1J8.text" = "Value";
+
+/* Class = "UITextField"; placeholder = "Enter a user name"; ObjectID = "Vgd-Sg-yfY"; */
+"Vgd-Sg-yfY.placeholder" = "Enter a user name";
+
+/* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "ViL-ai-8wU"; */
+"ViL-ai-8wU.normalTitle" = "SUBMIT";
+
+/* Class = "UITextField"; placeholder = "MM"; ObjectID = "Wum-dX-MwU"; */
+"Wum-dX-MwU.placeholder" = "MM";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "XHw-Fq-ujy"; */
+"XHw-Fq-ujy.text" = "Username";
+
+/* Class = "UILabel"; text = "Header"; ObjectID = "Xtn-ew-StT"; */
+"Xtn-ew-StT.text" = "Header";
+
+/* Class = "UIButton"; normalTitle = "SEE DOCUMENTATION"; ObjectID = "YRU-0N-bme"; */
+"YRU-0N-bme.normalTitle" = "SEE DOCUMENTATION";
+
+/* Class = "UIButton"; normalTitle = "ADD 20 POINTS"; ObjectID = "Zkc-JM-eoM"; */
+"Zkc-JM-eoM.normalTitle" = "ADD 20 POINTS";
+
+/* Class = "UITextField"; placeholder = "Enter a password"; ObjectID = "adU-nc-o50"; */
+"adU-nc-o50.placeholder" = "Enter a password";
+
+/* Class = "UILabel"; text = "Item"; ObjectID = "cek-ZR-eQx"; */
+"cek-ZR-eQx.text" = "Item";
+
+/* Class = "UITextField"; placeholder = "DD"; ObjectID = "cle-JT-YD2"; */
+"cle-JT-YD2.placeholder" = "DD";
+
+/* Class = "UITabBarItem"; title = "Documentation"; ObjectID = "dQo-O4-DcM"; */
+"dQo-O4-DcM.title" = "Documentation";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "fOF-IL-YOo"; */
+"fOF-IL-YOo.text" = "Username";
+
+/* Class = "UILabel"; text = "Handle all the permissions your users \nmight need"; ObjectID = "gkq-ei-cTu"; */
+"gkq-ei-cTu.text" = "Handle all the permissions your users \nmight need";
+
+/* Class = "UITextField"; placeholder = "Enter a new name pair"; ObjectID = "hgC-lD-trm"; */
+"hgC-lD-trm.placeholder" = "Enter a new name pair";
+
+/* Class = "UITextField"; placeholder = "Repeat the password"; ObjectID = "iCh-DE-AMl"; */
+"iCh-DE-AMl.placeholder" = "Repeat the password";
+
+/* Class = "UILabel"; text = "Add your friends via email."; ObjectID = "iN8-Kg-fnX"; */
+"iN8-Kg-fnX.text" = "Add your friends via email.";
+
+/* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "iVu-wa-78n"; */
+"iVu-wa-78n.normalTitle" = "SUBMIT";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "jNi-NP-cDe"; */
+"jNi-NP-cDe.text" = "1";
+
+/* Class = "UILabel"; text = "Kids Web Services federated identity system (Single Sign-On) allows kids and parents create one secure identity to easily log into your collection of kid-safe sites and apps."; ObjectID = "jWg-7p-afM"; */
+"jWg-7p-afM.text" = "Kids Web Services federated identity system (Single Sign-On) allows kids and parents create one secure identity to easily log into your collection of kid-safe sites and apps.";
+
+/* Class = "UIButton"; normalTitle = "INVITE FRIEND"; ObjectID = "kGU-Ce-2sf"; */
+"kGU-Ce-2sf.normalTitle" = "INVITE FRIEND";
+
+/* Class = "UILabel"; text = "Set app data as name | value pairs"; ObjectID = "kRh-tg-uw8"; */
+"kRh-tg-uw8.text" = "Set app data as name | value pairs";
+
+/* Class = "UIButton"; normalTitle = "AUTHENTICATE USER"; ObjectID = "lti-Gf-eoI"; */
+"lti-Gf-eoI.normalTitle" = "AUTHENTICATE USER";
+
+/* Class = "UIButton"; normalTitle = "SEE LEADERBOARD"; ObjectID = "lyE-8K-Lq5"; */
+"lyE-8K-Lq5.normalTitle" = "SEE LEADERBOARD";
+
+/* Class = "UILabel"; text = "Loyalty\nplatform\nfor kids"; ObjectID = "mDu-rn-UnJ"; */
+"mDu-rn-UnJ.text" = "Loyalty\nplatform\nfor kids";
+
+/* Class = "UIButton"; normalTitle = "SEE DOCUMENTATION"; ObjectID = "mQN-pr-mD2"; */
+"mQN-pr-mD2.normalTitle" = "SEE DOCUMENTATION";
+
+/* Class = "UILabel"; text = "Parent\nPortal"; ObjectID = "ppB-0h-u7e"; */
+"ppB-0h-u7e.text" = "Parent\nPortal";
+
+/* Class = "UIButton"; normalTitle = "SUBTRACT 10 POINTS"; ObjectID = "qjQ-Ri-0Rg"; */
+"qjQ-Ri-0Rg.normalTitle" = "SUBTRACT 10 POINTS";
+
+/* Class = "UILabel"; text = "Federated\nIdentity"; ObjectID = "wqo-4U-Fg0"; */
+"wqo-4U-Fg0.text" = "Federated\nIdentity";
+
+/* Class = "UILabel"; text = "User authentication"; ObjectID = "zTY-DA-E0Q"; */
+"zTY-DA-E0Q.text" = "User authentication";
+
+/* Class = "UIButton"; normalTitle = "SEE DOCUMENTATION"; ObjectID = "zcm-eK-aUY"; */
+"zcm-eK-aUY.normalTitle" = "SEE DOCUMENTATION";

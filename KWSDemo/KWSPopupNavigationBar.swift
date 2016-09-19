@@ -35,7 +35,7 @@ class KWSPopupNavigationBar: UINavigationBar {
         let btnframe = CGRectMake(W - 80, 0, 80, H)
         close = UIButton(frame: btnframe)
         close.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        close.setTitle("Close".uppercaseString, forState: .Normal)
+        close.setTitle("kws_popup_nav_bar_close".localized.uppercaseString, forState: .Normal)
         close.titleLabel!.font = font
         close.addTarget(self, action: #selector(KWSPopupNavigationBar.doSometing), forControlEvents: .TouchUpInside)
         addSubview(close)

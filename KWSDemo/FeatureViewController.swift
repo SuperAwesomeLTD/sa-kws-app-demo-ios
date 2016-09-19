@@ -38,6 +38,8 @@ class FeatureViewController: UIViewController {
         center.addObserver(self, selector: #selector(didObserveSubscribe), name: Notifications.SUBSCRIBE.rawValue, object: nil)
         center.addObserver(self, selector: #selector(didObserveDocs), name: Notifications.DOCS.rawValue, object: nil)
         center.addObserver(self, selector: #selector(didObserveGetScore), name: Notifications.SCORE.rawValue, object: nil)
+        center.addObserver(self, selector: #selector(didObserveInviteFriend), name: Notifications.INVITE.rawValue, object: nil)
+        center.addObserver(self, selector: #selector(didObserveSeeAppData), name: Notifications.APPDATA.rawValue, object: nil)
         KWSSingleton.sharedInstance.addObserver(self, forKeyPath: "isRegistered", options: NSKeyValueObservingOptions.New, context: nil)
         KWSSingleton.sharedInstance.addObserver(self, forKeyPath: "isLogged", options: NSKeyValueObservingOptions.New, context: nil)
         KWSSingleton.sharedInstance.start()
@@ -125,7 +127,7 @@ class FeatureViewController: UIViewController {
                 SAActivityView.sharedManager().hideActivityView()
                 
                 if (success) {
-                    SAPopup.sharedManager().showWithTitle("Great!", andMessage: "Successfully registered for Remote Notifications!", andOKTitle: "OK!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andPressed: nil)
+                    self.featurePopup("feature_notif_reg_popup_success_title".localized, "feature_notif_reg_popup_success_message".localized)
                     KWSSingleton.sharedInstance.markUserAsRegistered()
                 } else {
                     if (error == .UserHasNoParentEmail) {
@@ -134,11 +136,11 @@ class FeatureViewController: UIViewController {
                                 SAActivityView.sharedManager().showActivityView()
                                 KWS.sdk().register(callback)
                             } else {
-                                SAPopup.sharedManager().showWithTitle("Hey!", andMessage: "An error occured trying to submit parent email. Will not continue.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andPressed: nil)
+                                self.featurePopup("feature_parent_email_popup_error_title".localized, "feature_parent_email_popup_error_message".localized)
                             }
                         })
                     } else {
-                        SAPopup.sharedManager().showWithTitle("Hey!", andMessage: "An error occured trying to subscribe to Push Notifications: \(error)", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andPressed: nil)
+                        self.featurePopup("feature_notif_reg_popup_error_title".localized, "feature_notif_reg_popup_error_message".localized)
                     }
                 }
             }
@@ -150,17 +152,20 @@ class FeatureViewController: UIViewController {
         else {
             KWS.sdk().unregister({ (success) in
                 SAActivityView.sharedManager().hideActivityView()
-                let message = success ? "You have successfully un-registered for Remote Notifications in KWS!" : "There was a network error trying to un-register for Remote Notifications in KWS. Please try again!"
-                SAPopup.sharedManager().showWithTitle("Hey!", andMessage: message, andOKTitle: "Great", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andPressed: nil)
-                KWSSingleton.sharedInstance.markUserAsUnregistered()
+                if (success) {
+                    self.featurePopup("feature_notif_unreg_popup_success_title".localized, "feature_notif_unreg_popup_success_message".localized)
+                    KWSSingleton.sharedInstance.markUserAsUnregistered()
+                } else {
+                    self.featurePopup("feature_notif_unreg_popup_error_title".localized, "feature_notif_unreg_popup_error_message".localized)
+                }
             })
         }
     }
     
     func didObservePerm () {
         // Create the action sheet
-        let myActionSheet = UIAlertController(title: "KWS Permissions",
-                                              message: "What information would you like permission for?",
+        let myActionSheet = UIAlertController(title: "feature_perm_alert_title".localized,
+                                              message: "feature_perm_alter_message".localized,
                                               preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         // get the titles & associated types
@@ -186,13 +191,13 @@ class FeatureViewController: UIViewController {
                     var callback: ((Bool, Bool) -> Void)!
                     callback = { (success: Bool, requested: Bool) in
                         if (requested) {
-                            SAPopup.sharedManager().showWithTitle("Great!", andMessage: "You've successfully asked for permission for \(title)", andOKTitle: "OK!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
+                            self.featurePopup("feature_perm_popup_success_title".localized, "feature_perm_popup_success_message".localized)
                         } else {
                             KWS.sdk().submitParentEmailWithPopup({ (success: Bool) in
                                 if (success) {
                                     KWS.sdk().requestPermission(requestedPermission, callback)
                                 } else {
-                                    SAPopup.sharedManager().showWithTitle("Hey!", andMessage: "An error occured trying to submit parent email. Will not continue.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .Alphabet, andPressed: nil)
+                                    self.featurePopup("feature_parent_email_popup_error_title".localized, "feature_parent_email_popup_error_message".localized)
                                 }
                             })
                         }
@@ -211,7 +216,7 @@ class FeatureViewController: UIViewController {
     func didObserveAdd20Points () {
         KWS.sdk().triggerEvent("GabrielAdd20ForAwesomeApp", withPoints: 20, andDescription: "You just earned 20 points!") { (success: Bool) in
             if (success) {
-                SAPopup.sharedManager().showWithTitle("Congrats!", andMessage: "You just earned 20 points!", andOKTitle: "Great!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
+                self.featurePopup("feature_event_add20_popup_success_title".localized, "feature_event_add20_popup_success_message".localized)
             }
         }
     }
@@ -219,7 +224,7 @@ class FeatureViewController: UIViewController {
     func didObserveSub10Points () {
         KWS.sdk().triggerEvent("GabrielSub10ForAwesomeApp", withPoints: -10, andDescription: "You jost lost 10 points!") { (success: Bool) in
             if (success) {
-                SAPopup.sharedManager().showWithTitle("Oh no!", andMessage: "You just lost 10 points!", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
+                self.featurePopup("feature_event_sub10_popup_success_title".localized, "feature_event_sub10_popup_success_message".localized)
             }
         }
     }
@@ -227,7 +232,10 @@ class FeatureViewController: UIViewController {
     func didObserveGetScore () {
         KWS.sdk().getScore { (score: KWSScore!) in
             if score != nil {
-                SAPopup.sharedManager().showWithTitle("Hey!", andMessage: "You're ranked \(score.rank) with \(score.score) points!", andOKTitle: "Great!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
+                let title = "feature_event_getscore_success_title".localized
+                let message = NSString(format: "feature_event_getscore_success_message".localized, score.rank, score.score) as String;
+                let button = "feature_popup_dismiss_button".localized
+                SAPopup.sharedManager().showWithTitle(title, andMessage: message, andOKTitle: button, andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
             }
         }
     }
@@ -238,8 +246,58 @@ class FeatureViewController: UIViewController {
         presentViewController(vc, animated: true, completion: nil)
     }
     
+    func didObserveInviteFriend () {
+        let title = "feature_friend_email_popup_title".localized
+        let message = "feature_friend_email_popup_message".localized
+        let submit = "feature_friend_email_popup_submit".localized
+        let cancel = "feature_friend_email_popup_cancel".localized
+        
+        SAPopup.sharedManager().showWithTitle(title, andMessage: message, andOKTitle: submit, andNOKTitle: cancel, andTextField: true, andKeyboardTyle: UIKeyboardType.EmailAddress) { (button, email) in
+            if button == 0 {
+                
+                SAActivityView.sharedManager().showActivityView()
+                
+                KWS.sdk().inviteUser(email, { (invited) in
+                    
+                    SAActivityView.sharedManager().hideActivityView()
+                    
+                    if invited {
+                        let title = "feature_friend_email_popup_success_title".localized
+                        let message = NSString(format: "feature_friend_email_popup_success_message".localized, email) as String
+                        let button = "feature_popup_dismiss_button".localized
+                        SAPopup.sharedManager().showWithTitle(title, andMessage: message, andOKTitle: button, andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
+                    } else {
+                        let title = "feature_friend_email_popup_error_title".localized
+                        let message = NSString(format: "feature_friend_email_popup_error_message".localized, email) as String
+                        let button = "feature_popup_dismiss_button".localized
+                        SAPopup.sharedManager().showWithTitle(title, andMessage: message, andOKTitle: button, andNOKTitle: nil, andTextField: false, andKeyboardTyle: UIKeyboardType.Default, andPressed: nil)
+                    }
+                })
+            }
+        }
+    }
+    
+    func didObserveSeeAppData () {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("GetAppDataNavControllerId")
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
     func didObserveDocs () {
         let url = NSURL(string: DOCSURL)
         UIApplication.sharedApplication().openURL(url!)
+    }
+    
+    
+    func featurePopup(title: String, _ message: String) {
+        
+        SAPopup.sharedManager().showWithTitle(title,
+                                              andMessage: message,
+                                              andOKTitle: "feature_popup_dismiss_button".localized,
+                                              andNOKTitle: nil,
+                                              andTextField: false,
+                                              andKeyboardTyle: .Alphabet,
+                                              andPressed: nil)
+        
     }
 }

@@ -10,8 +10,6 @@ import UIKit
 
 class FeatureEventViewModel: AnyObject, ViewModel {
 
-    private var loggedIn: Bool = false
-    
     func heightForRow() -> CGFloat {
         return 368
     }

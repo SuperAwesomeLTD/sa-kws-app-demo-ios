@@ -24,6 +24,7 @@ class UserViewController: UIViewController, KWSPopupNavigationBarProtocol, UITab
             bar.kwsdelegate = self
         }
         
+        logoutButton.setTitle("user_logout".localized.uppercaseString, forState: UIControlState.Normal)
         logoutButton.redButton()
         spinnerM = SAActivityView.sharedManager()
         popupM = SAPopup.sharedManager()
@@ -38,9 +39,9 @@ class UserViewController: UIViewController, KWSPopupNavigationBarProtocol, UITab
             }, error: {
                 self.spinnerM.hideActivityView()
                 self.popupM.showWithTitle(
-                    "Hey!",
-                    andMessage: "Could not load user data. Try again!",
-                    andOKTitle: "Got it!",
+                    "user_popup_error_title".localized,
+                    andMessage: "user_popup_error_message".localized,
+                    andOKTitle: "user_popup_dismiss_button".localized,
                     andNOKTitle: nil,
                     andTextField: false,
                     andKeyboardTyle: .Default,
@@ -60,7 +61,7 @@ class UserViewController: UIViewController, KWSPopupNavigationBarProtocol, UITab
     // MARK: KWSPopupNavigationBarProtocol
     
     func kwsPopupNavGetTitle() -> String {
-        return "User details"
+        return "user_vc_title".localized
     }
     
     func kwsPopupNavDidPressOnClose() {

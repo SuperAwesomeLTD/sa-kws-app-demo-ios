@@ -1,0 +1,192 @@
+// tabs
+"tab_platform" = "Platform";
+"tab_features" = "Features";
+"tab_doc" = "Documentation";
+
+// navigation
+"kws_popup_nav_bar_close" = "Close";
+
+// platform
+"platform_title" = "Welcome to your\nSuperAwesome App";
+"platform_content" = "This Awesome App is powered by Kids Web Services (KWS), the platform that provides a set of compliance-as-a-service tools to create a kid-safe, COPPA-compliant sites and apps, allowing you to focus on delivering awesome content by abstracting all legal complexity related to data-collection.";
+"platform_feature_1" = "Verifiable\nparental\nconsent";
+"platform_feature_2" = "Loyalty\nplatform\nfor kids";
+"platform_feature_3" = "Federated\nIdentity";
+"platform_feature_4" = "Parent\nPortal";
+"platform_main_button" = "KNOW MORE ABOUT KIDS WEB SERVICES";
+
+// features
+"feature_cell_auth_title" = "User authentication";
+"feature_cell_auth_content" = "Kids Web Services federated identity system (Single Sign-On) allows kids and parents create one secure identity to easily log into your collection of kid-safe sites and apps.";
+"feature_cell_auth_button_1_loggedout" = "AUTHENTICATE USER";
+"feature_cell_auth_button_1_loggedin" = "LOGED IN AS";
+"feature_cell_auth_button_2" = "SEE DOCUMENTATION";
+
+"feature_cell_notif_title" = "Kid-safe push notifications";
+"feature_cell_notif_content" = "Generate codes/vouchers to allow users to award extra points to incentivise user retention and engagement.";
+"feature_cell_notif_button_1" = "ENABLE PUSH NOTIFICATIONS";
+"feature_cell_notif_button_2" = "SEE DOCUMENTATION";
+
+"feature_cell_perm_title" = "Manage permissions";
+"feature_cell_perm_content" = "Handle all the permissions your users might need";
+"feature_cell_perm_button_1" = "ADD PERMISSIONS";
+"feature_cell_perm_button_2" = "SEE DOCUMENTATION";
+
+"feature_cell_evt_title" = "Events and points";
+"feature_cell_evt_message" = "Add or subtract points and manage application events for each user.";
+"feature_cell_evt_button_1" = "ADD 20 POINTS";
+"feature_cell_evt_button_2" = "SUBTRACT 10 POINTS";
+"feature_cell_evt_button_3" = "GET SCORE";
+"feature_cell_evt_button_4" = "SEE LEADERBOARD";
+"feature_cell_evt_button_5" = "SEE DOCUMENTATION";
+
+"feature_cell_inv_title" = "Invite friends";
+"feature_cell_inv_message" = "Add your friends via email.";
+"feature_cell_inv_button_1" = "INVITE FRIEND";
+"feature_cell_inv_button_2" = "SEE DOCUMENTATION";
+
+"feature_cell_appd_title" = "App data";
+"feature_cell_appd_message" = "Set app data as name | value pairs";
+"feature_cell_appd_button_1" = "SEE APP DATA";
+"feature_cell_appd_button_2" = "SEE DOCUMENTATION";
+
+"feature_notif_reg_popup_success_title" = "Great";
+"feature_notif_reg_popup_success_message" = "Successfully registered for Remote Notifications.";
+"feature_notif_reg_popup_error_title" = "Error";
+"feature_notif_reg_popup_error_message" = "An error occured trying to subscribe to Push Notifications.";
+
+"feature_notif_unreg_popup_success_title" = "Great";
+"feature_notif_unreg_popup_success_message" = "You have successfully un-registered for Remote Notifications in KWS!";
+"feature_notif_unreg_popup_error_title" = "Error";
+"feature_notif_unreg_popup_error_message" = "There was a network error trying to un-register for Remote Notifications in KWS. Please try again!";
+
+"feature_parent_email_popup_error_title" = "Error";
+"feature_parent_email_popup_error_message" = "An error occured trying to submit parent email. Will not continue.";
+
+"feature_perm_alert_title" = "KWS Permissions";
+"feature_perm_alter_message" = "What information would you like permission for?";
+"feature_perm_popup_success_title" = "Great";
+"feature_perm_popup_success_message" = "You've successfully asked for the permission.";
+
+"feature_event_add20_popup_success_title" = "Congrats!";
+"feature_event_add20_popup_success_message" = "You just earned 20 points!";
+"feature_event_sub10_popup_success_title" = "Oh no!";
+"feature_event_sub10_popup_success_message" = "You just lost 10 points!";
+
+"feature_event_getscore_success_title" = "Hey";
+"feature_event_getscore_success_message" = "You're ranked %ld with %ld points!";
+
+"feature_friend_email_popup_title" = "Friend email";
+"feature_friend_email_popup_message" = "Please input your friend's email in order to invite him";
+"feature_friend_email_popup_submit" = "Submit";
+"feature_friend_email_popup_cancel" = "Cancel";
+
+"feature_friend_email_popup_success_title" = "Hey";
+"feature_friend_email_popup_success_message" = "You successfully invited %@ in KWS.";
+"feature_friend_email_popup_error_title" = "Error";
+"feature_friend_email_popup_error_message" = "An error occurred while inviting %@ in KWS!";
+
+"feature_popup_dismiss_button" = "Got it";
+
+// documentation
+
+// sign-up
+"sign_up_vc_title" = "Sign Up to KWS";
+"sign_up_username_placeholder" = "Enter a username";
+"sign_up_password1_placeholder" = "Enter a password";
+"sign_up_password2_placeholder" = "Repeat the password";
+"sign_up_year_placeholder" = "YYYY";
+"sign_up_month_placeholder" = "MM";
+"sign_up_day_placeholder" = "DD";
+"sign_up_submit" = "Submit";
+
+"sign_up_popup_warning_title" = "Hey";
+"sign_up_popup_error_title" = "Error";
+"sign_up_popup_dismiss_button" = "Got it";
+"sign_up_popup_warning_message_username" = "Please specify a valid username.";
+"sign_up_popup_warning_message_password1" = "Please speficy a password (that is longer than 8 characters)";
+"sign_up_popup_warning_message_password2" = "Please make sure the two passwords match (and are both longer than 8 characters)";
+"sign_up_popup_warning_message_password12" = "The two passwords you entered do not match.";
+"sign_up_popup_warning_message_year" = "Please specify a valid birth year.";
+"sign_up_popup_warning_message_month" = "Please specify a valid birth month.";
+"sign_up_popup_warning_message_day" = "Please specify a valid birth day.";
+"sign_up_popup_error_message" = "Failed to sign up user";
+
+// user
+"user_vc_title" = "User details";
+"user_logout" = "Logout";
+
+"user_header_details" = "Details";
+"user_header_address" = "Address";
+"user_header_points" = "Points";
+"user_header_perm" = "Permissions";
+
+"user_row_details_id" = "ID";
+"user_row_details_username" = "Username";
+"user_row_details_first_name" = "First name";
+"user_row_details_last_name" = "Last name";
+"user_row_details_birth_date" = "Birth date";
+"user_row_details_gender" = "Gender";
+"user_row_details_phone" = "Phone";
+"user_row_details_language" = "Language";
+"user_row_details_email" = "Email";
+"user_row_address_street" = "Street";
+"user_row_address_city" = "City";
+"user_row_address_post_code" = "Postal code";
+"user_row_address_country" = "Country";
+"user_row_points_received" = "Received";
+"user_row_points_total" = "Total";
+"user_row_points_app" = "In this app";
+"user_row_points_available" = "Available";
+"user_row_points_pending" = "Pending";
+"user_row_perm_address" = "Address";
+"user_row_perm_phone" = "Phone number";
+"user_row_perm_first_name" = "First name";
+"user_row_perm_last_name" = "Last name";
+"user_row_perm_email" = "Email";
+"user_row_perm_street" = "Street";
+"user_row_perm_city" = "City";
+"user_row_perm_post_code" = "Postal code";
+"user_row_perm_country" = "Country";
+"user_row_perm_notifications" = "Notifications";
+"user_row_perm_newsletter" = "Newsletter";
+
+"user_row_value_true" = "True";
+"user_row_value_false" = "False";
+"user_row_value_undefined" = "Undefined";
+
+"user_popup_error_title" = "Error";
+"user_popup_error_message" = "An error occured and we could not get the user details. Please try again.";
+"user_popup_dismiss_button" = "Got it";
+
+// leaderboard
+"leader_vc_title" = "Leaderboard";
+
+"leader_col_1_title" = "#";
+"leader_col_2_title" = "Username";
+"leader_col_3_title" = "Score";
+"leader_col_unknown_username" = "Unknown";
+
+"leader_popup_error_title" = "Error";
+"leader_popup_error_message" = "An error occured and we could not get the Leaderboard. Please try again.";
+"leader_popup_dismiss_button" = "Got it";
+
+// get app data
+"get_app_data_vc_title" = "App data";
+"get_app_data_add_button" = "Add";
+
+"get_app_data_popup_error_title" = "Error";
+"get_app_data_popup_error_message" = "An error occured and we could not get the current app data. Please try again.";
+"get_app_data_popup_dismiss_button" = "Got it";
+
+// add app data
+"add_app_data_vc_title" = "New app data";
+"add_app_data_name_placeholder" = "Enter a new name pair";
+"add_app_data_value_placeholder" = "Enter a new value pair";
+"add_app_data_submit" = "Submit";
+
+"add_app_data_popup_warning_title" = "Hey";
+"add_app_data_popup_error_title" = "Error";
+"add_app_data_popup_dismiss_button" = "Got it";
+"add_app_data_warning_message" = "Could not save name & value pair because of network error";
+"add_app_data_error_message" = "Please input a valid name & value pair";

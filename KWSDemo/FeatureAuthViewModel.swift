@@ -19,9 +19,9 @@ class FeatureAuthViewModel: AnyObject, ViewModel {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("FeatureAuthRowId") as! FeatureAuthRow
         if let local = local, let username = local.username {
-            cell.authActionButton.setTitle("Loged in as \(username)".uppercaseString, forState: .Normal)
+            cell.authActionButton.setTitle("feature_cell_auth_button_1_loggedin".localized.uppercaseString + "\(username)".uppercaseString, forState: .Normal)
         } else {
-            cell.authActionButton.setTitle("Authenticate user".uppercaseString, forState: .Normal)
+            cell.authActionButton.setTitle("feature_cell_auth_button_1_loggedout".localized.uppercaseString, forState: .Normal)
         }
         
         cell.authActionButton.addTarget(self, action: #selector(authButtonAction), forControlEvents: .TouchUpInside)

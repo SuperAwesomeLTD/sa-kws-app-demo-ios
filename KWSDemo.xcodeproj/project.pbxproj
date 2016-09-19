@@ -36,6 +36,16 @@
 		1B92FCDB1D2181F300B75617 /* KWSSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */; };
 		1B92FCDD1D218BEA00B75617 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDC1D218BEA00B75617 /* UserViewController.swift */; };
 		1B92FD0C1D228F7000B75617 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */; };
+		1BA9F0DF1D78336C002150A7 /* FeatureInviteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0DE1D78336C002150A7 /* FeatureInviteRow.swift */; };
+		1BA9F0E11D783478002150A7 /* FeatureInviteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0E01D783478002150A7 /* FeatureInviteViewModel.swift */; };
+		1BA9F0E31D783893002150A7 /* FeatureAppDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0E21D783893002150A7 /* FeatureAppDataRow.swift */; };
+		1BA9F0E51D78390D002150A7 /* FeatureAppDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0E41D78390D002150A7 /* FeatureAppDataViewModel.swift */; };
+		1BA9F0E91D783CF0002150A7 /* GetAppDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0E81D783CF0002150A7 /* GetAppDataController.swift */; };
+		1BA9F0EB1D783FC3002150A7 /* GetAppDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0EA1D783FC3002150A7 /* GetAppDataRow.swift */; };
+		1BA9F0ED1D783FCE002150A7 /* GetAppDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0EC1D783FCE002150A7 /* GetAppDataViewModel.swift */; };
+		1BA9F0EF1D783FDC002150A7 /* GetAppDataDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0EE1D783FDC002150A7 /* GetAppDataDataSource.swift */; };
+		1BA9F0F11D78442A002150A7 /* SetAppDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0F01D78442A002150A7 /* SetAppDataController.swift */; };
+		1BA9F0F31D784EA4002150A7 /* SetAppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0F21D784EA4002150A7 /* SetAppDataModel.swift */; };
 		1BDC11A61D1953C900B1111A /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A51D1953C900B1111A /* FeatureViewController.swift */; };
 		1BDC11A81D1953E000B1111A /* DocumentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */; };
 		1BDC11AB1D197EB200B1111A /* KWSNavitationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */; };
@@ -61,6 +71,8 @@
 		1BDC11FE1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FD1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift */; };
 		1BDC12001D1AECC300B1111A /* UITextField+KWSStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FF1D1AECC300B1111A /* UITextField+KWSStyle.swift */; };
 		1BDC12031D1AF5BA00B1111A /* KWSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC12021D1AF5BA00B1111A /* KWSModel.swift */; };
+		1BE8CEF61D8FF2A000572070 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CEF51D8FF2A000572070 /* Localizable.strings */; };
+		1BE8CEFD1D90342300572070 /* NSString+KWSStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8CEFC1D90342300572070 /* NSString+KWSStyle.swift */; };
 		E076418A6275A726179B815C /* libPods-KWSDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E3EBA46FE4C45797F69944 /* libPods-KWSDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +109,16 @@
 		1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSSingleton.swift; sourceTree = "<group>"; };
 		1B92FCDC1D218BEA00B75617 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1BA9F0DE1D78336C002150A7 /* FeatureInviteRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureInviteRow.swift; sourceTree = "<group>"; };
+		1BA9F0E01D783478002150A7 /* FeatureInviteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureInviteViewModel.swift; sourceTree = "<group>"; };
+		1BA9F0E21D783893002150A7 /* FeatureAppDataRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureAppDataRow.swift; sourceTree = "<group>"; };
+		1BA9F0E41D78390D002150A7 /* FeatureAppDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureAppDataViewModel.swift; sourceTree = "<group>"; };
+		1BA9F0E81D783CF0002150A7 /* GetAppDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAppDataController.swift; sourceTree = "<group>"; };
+		1BA9F0EA1D783FC3002150A7 /* GetAppDataRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAppDataRow.swift; sourceTree = "<group>"; };
+		1BA9F0EC1D783FCE002150A7 /* GetAppDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAppDataViewModel.swift; sourceTree = "<group>"; };
+		1BA9F0EE1D783FDC002150A7 /* GetAppDataDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAppDataDataSource.swift; sourceTree = "<group>"; };
+		1BA9F0F01D78442A002150A7 /* SetAppDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetAppDataController.swift; sourceTree = "<group>"; };
+		1BA9F0F21D784EA4002150A7 /* SetAppDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetAppDataModel.swift; sourceTree = "<group>"; };
 		1BDC11A51D1953C900B1111A /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
 		1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentationViewController.swift; sourceTree = "<group>"; };
 		1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSNavitationBar.swift; sourceTree = "<group>"; };
@@ -122,6 +144,9 @@
 		1BDC11FD1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSPopupNavigationBar.swift; sourceTree = "<group>"; };
 		1BDC11FF1D1AECC300B1111A /* UITextField+KWSStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+KWSStyle.swift"; sourceTree = "<group>"; };
 		1BDC12021D1AF5BA00B1111A /* KWSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSModel.swift; sourceTree = "<group>"; };
+		1BE8CEF51D8FF2A000572070 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		1BE8CEF81D8FF92900572070 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		1BE8CEFC1D90342300572070 /* NSString+KWSStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+KWSStyle.swift"; sourceTree = "<group>"; };
 		60E3EBA46FE4C45797F69944 /* libPods-KWSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KWSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73EC6CD53EA0788DF07CB27A /* Pods-KWSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A57993F2A900C4293C24C6FD /* Pods-KWSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +208,8 @@
 		1B56DFE71D194B3800973075 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1BA9F0E71D783CD3002150A7 /* GetAppData */,
+				1BA9F0E61D783CC9002150A7 /* SetAppData */,
 				1B7AD58A1D5CA4C6003400B4 /* Leaderboard */,
 				1B7AD5851D5CA12D003400B4 /* UserDetails */,
 				1B7AD5901D5CA657003400B4 /* Features */,
@@ -278,10 +305,34 @@
 				1B6463A21D5CCAF000FB81FD /* FeaturePermViewModel.swift */,
 				1B6392B21D5C7386005FDCE2 /* FeatureEventRow.swift */,
 				1B6463A41D5CCAFE00FB81FD /* FeatureEventViewModel.swift */,
+				1BA9F0DE1D78336C002150A7 /* FeatureInviteRow.swift */,
+				1BA9F0E01D783478002150A7 /* FeatureInviteViewModel.swift */,
+				1BA9F0E21D783893002150A7 /* FeatureAppDataRow.swift */,
+				1BA9F0E41D78390D002150A7 /* FeatureAppDataViewModel.swift */,
 				1BDC11A51D1953C900B1111A /* FeatureViewController.swift */,
 				1B2D45A91D5CC58700E525AA /* FeatureDataSource.swift */,
 			);
 			name = Features;
+			sourceTree = "<group>";
+		};
+		1BA9F0E61D783CC9002150A7 /* SetAppData */ = {
+			isa = PBXGroup;
+			children = (
+				1BA9F0F01D78442A002150A7 /* SetAppDataController.swift */,
+				1BA9F0F21D784EA4002150A7 /* SetAppDataModel.swift */,
+			);
+			name = SetAppData;
+			sourceTree = "<group>";
+		};
+		1BA9F0E71D783CD3002150A7 /* GetAppData */ = {
+			isa = PBXGroup;
+			children = (
+				1BA9F0EA1D783FC3002150A7 /* GetAppDataRow.swift */,
+				1BA9F0EC1D783FCE002150A7 /* GetAppDataViewModel.swift */,
+				1BA9F0E81D783CF0002150A7 /* GetAppDataController.swift */,
+				1BA9F0EE1D783FDC002150A7 /* GetAppDataDataSource.swift */,
+			);
+			name = GetAppData;
 			sourceTree = "<group>";
 		};
 		1BDC11A91D197DB200B1111A /* Navigation */ = {
@@ -296,6 +347,7 @@
 		1BDC11B01D198B3900B1111A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1BE8CEF51D8FF2A000572070 /* Localizable.strings */,
 				1BDC11B11D198B5600B1111A /* SF-UI-Text-Bold.otf */,
 				1BDC11B21D198B5600B1111A /* SF-UI-Text-BoldItalic.otf */,
 				1BDC11B31D198B5600B1111A /* SF-UI-Text-Heavy.otf */,
@@ -320,6 +372,7 @@
 				1BDC11EC1D1AA3BD00B1111A /* UIButton+KWSStyle.swift */,
 				1BDC11F91D1AABBD00B1111A /* UIView+KWSStyle.swift */,
 				1BDC11FF1D1AECC300B1111A /* UITextField+KWSStyle.swift */,
+				1BE8CEFC1D90342300572070 /* NSString+KWSStyle.swift */,
 			);
 			name = Styles;
 			sourceTree = "<group>";
@@ -427,6 +480,7 @@
 				1BDC11CC1D198B5600B1111A /* SF-UI-Text-UltrathinItalic.otf in Resources */,
 				1BDC11CB1D198B5600B1111A /* SF-UI-Text-Ultrathin.otf in Resources */,
 				1B92FD0C1D228F7000B75617 /* GoogleService-Info.plist in Resources */,
+				1BE8CEF61D8FF2A000572070 /* Localizable.strings in Resources */,
 				1BDC11C81D198B5600B1111A /* SF-UI-Text-RegularItalic.otf in Resources */,
 				1BDC11C61D198B5600B1111A /* SF-UI-Text-MediumItalic.otf in Resources */,
 			);
@@ -489,14 +543,21 @@
 			files = (
 				1B7AD5891D5CA498003400B4 /* DataSource.swift in Sources */,
 				1BDC11FE1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift in Sources */,
+				1BA9F0F11D78442A002150A7 /* SetAppDataController.swift in Sources */,
 				1BDC11FC1D1ABF8E00B1111A /* SignUpViewController.swift in Sources */,
+				1BA9F0EB1D783FC3002150A7 /* GetAppDataRow.swift in Sources */,
 				1B7AD5941D5CADDD003400B4 /* UserRowViewModel.swift in Sources */,
+				1BA9F0DF1D78336C002150A7 /* FeatureInviteRow.swift in Sources */,
 				1B6392AB1D5B92A3005FDCE2 /* FeaturePermRow.swift in Sources */,
+				1BA9F0EF1D783FDC002150A7 /* GetAppDataDataSource.swift in Sources */,
 				1B7AD5981D5CB563003400B4 /* LeaderRowViewModel.swift in Sources */,
 				1BDC11FA1D1AABBD00B1111A /* UIView+KWSStyle.swift in Sources */,
 				1B6463A11D5CCAE400FB81FD /* FeatureNotifViewModel.swift in Sources */,
 				1B7AD5961D5CB074003400B4 /* ViewModel.swift in Sources */,
 				1B7AD59A1D5CB7DA003400B4 /* LeaderHeader.swift in Sources */,
+				1BE8CEFD1D90342300572070 /* NSString+KWSStyle.swift in Sources */,
+				1BA9F0E51D78390D002150A7 /* FeatureAppDataViewModel.swift in Sources */,
+				1BA9F0E91D783CF0002150A7 /* GetAppDataController.swift in Sources */,
 				1B6392A31D5B72E5005FDCE2 /* UserHeader.swift in Sources */,
 				1BDC11AB1D197EB200B1111A /* KWSNavitationBar.swift in Sources */,
 				1B6463A71D5CD24000FB81FD /* Notifications.swift in Sources */,
@@ -508,12 +569,16 @@
 				1B6463A31D5CCAF000FB81FD /* FeaturePermViewModel.swift in Sources */,
 				1B6392B71D5C78F1005FDCE2 /* LeaderRow.swift in Sources */,
 				1B7AD5921D5CADD4003400B4 /* UserHeaderViewModel.swift in Sources */,
+				1BA9F0E11D783478002150A7 /* FeatureInviteViewModel.swift in Sources */,
 				1BDC11F71D1AA9A400B1111A /* FeatureNotifRow.swift in Sources */,
 				1B56DFD51D194A6200973075 /* AppDelegate.swift in Sources */,
 				1BDC11A81D1953E000B1111A /* DocumentationViewController.swift in Sources */,
+				1BA9F0E31D783893002150A7 /* FeatureAppDataRow.swift in Sources */,
+				1BA9F0F31D784EA4002150A7 /* SetAppDataModel.swift in Sources */,
 				1B7AD59C1D5CB9A4003400B4 /* LeaderHeaderViewModel.swift in Sources */,
 				1B6392B31D5C7386005FDCE2 /* FeatureEventRow.swift in Sources */,
 				1B7AD58C1D5CA4E6003400B4 /* LeaderDataSource.swift in Sources */,
+				1BA9F0ED1D783FCE002150A7 /* GetAppDataViewModel.swift in Sources */,
 				1BDC11ED1D1AA3BD00B1111A /* UIButton+KWSStyle.swift in Sources */,
 				1B92FCDD1D218BEA00B75617 /* UserViewController.swift in Sources */,
 				1B7AD5871D5CA199003400B4 /* UserDataSource.swift in Sources */,
@@ -533,6 +598,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1B56DFD91D194A6200973075 /* Base */,
+				1BE8CEF81D8FF92900572070 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

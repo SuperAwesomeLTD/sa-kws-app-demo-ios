@@ -19,10 +19,11 @@ class LeaderDataSource: NSObject, DataSource, UITableViewDataSource, UITableView
         start()
         
         KWS.sdk().getLeaderboard { (leaders: [KWSLeader]!) in
-            if let leaders = leaders where leaders.count > 0 {
-                for leader in leaders {
-                    self.rows.append(LeaderRowViewModel(rank: leader.rank, score: leader.score, username: leader.user))
-                }
+            if let leaders = leaders {
+                 self.rows = leaders.map({ (leader) -> ViewModel in
+                    return LeaderRowViewModel(leader.rank, leader.score, leader.user)
+                 })
+                
                 success()
             } else {
                 error()

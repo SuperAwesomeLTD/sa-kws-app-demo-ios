@@ -14,13 +14,13 @@ class LeaderRowViewModel : AnyObject, ViewModel {
     var score: NSInteger = 0
     var username: String
     
-    init (rank: NSInteger, score: NSInteger, username: String?) {
+    init (_ rank: NSInteger, _ score: NSInteger, _ username: String?) {
         self.rank = rank
         self.score = score
         if let username = username {
             self.username = username
         } else {
-            self.username = "unknown"
+            self.username = "leader_col_unknown_username".localized
         }
     }
     

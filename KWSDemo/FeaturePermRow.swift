@@ -10,12 +10,20 @@ import UIKit
 
 class FeaturePermRow: UITableViewCell {
 
+    @IBOutlet weak var permTitle: UILabel!
     @IBOutlet weak var content: UIView!
+    @IBOutlet weak var permMessage: UILabel!
     @IBOutlet weak var permAddPermissionsButton: UIButton!
     @IBOutlet weak var permSeeDocsButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        permTitle.text = "feature_cell_perm_title".localized
+        permMessage.text = "feature_cell_perm_content".localized
+        permAddPermissionsButton.setTitle("feature_cell_perm_button_1".localized.uppercaseString, forState: UIControlState.Normal)
+        permSeeDocsButton.setTitle("feature_cell_perm_button_2".localized.uppercaseString, forState: UIControlState.Normal)
+        
         content.addShadow()
         permAddPermissionsButton.blueButton()
         permSeeDocsButton.blueButton()

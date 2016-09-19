@@ -15,9 +15,9 @@ class LeaderHeaderViewModel: AnyObject, ViewModel {
     var col3title: String
     
     init() {
-        col1title = "#"
-        col2title = "Username"
-        col3title = "Score"
+        col1title = "leader_col_1_title".localized
+        col2title = "leader_col_2_title".localized
+        col3title = "leader_col_3_title".localized
     }
     
     func heightForRow() -> CGFloat {

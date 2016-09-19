@@ -21,7 +21,9 @@ class FeatureDataSource: NSObject, DataSource, UITableViewDelegate, UITableViewD
             FeatureAuthViewModel(),
             FeatureNotifViewModel(),
             FeaturePermViewModel(),
-            FeatureEventViewModel()
+            FeatureEventViewModel(),
+            FeatureInviteViewModel(),
+            FeatureAppDataViewModel()
         ]
         
         success()

@@ -35,6 +35,14 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
             bar.kwsdelegate = self
         }
         
+        usernameTextView.placeholder = "sign_up_username_placeholder".localized
+        password1TextView.placeholder = "sign_up_password1_placeholder".localized
+        password2TextView.placeholder = "sign_up_password2_placeholder".localized
+        yearTextView.placeholder = "sign_up_year_placeholder".localized
+        monthTextView.placeholder = "sign_up_month_placeholder".localized
+        dayTextView.placeholder = "sign_up_day_placeholder".localized
+        submitButton.setTitle("sign_up_submit".localized.uppercaseString, forState: UIControlState.Normal)
+        
         // customize
         submitButton.redButton()
         usernameTextView.kwsStyle()
@@ -48,6 +56,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         yearTextView.kwsStyle()
         dayTextView.keyboardType = .NumberPad
         dayTextView.kwsStyle()
+    
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -62,7 +71,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
     // <KWSPopupNavigationBarProtocol>
     
     func kwsPopupNavGetTitle() -> String {
-        return "Sign Up to KWS"
+        return "sign_up_vc_title".localized
     }
     
     func kwsPopupNavDidPressOnClose() {
@@ -82,7 +91,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let text = usernameTextView.text where text != "" {
             username = text
         } else {
-            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "Please specify a valid username.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andPressed: nil)
+            signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_username".localized)
             return
         }
         
@@ -90,7 +99,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let text = password1TextView.text where text != "" && text.characters.count >= 8 {
             password1 = text
         } else {
-            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "Please speficy a password (that is longer than 8 characters)", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andPressed: nil)
+            signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_password1".localized)
             return
         }
         
@@ -98,7 +107,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let text = password2TextView.text where text != "" && text.characters.count >= 8 {
             password2 = text
         } else {
-            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "Please make sure the two passwords match (and are both longer than 8 characters)", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andPressed: nil)
+            signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_password2".localized)
             return
         }
         
@@ -106,7 +115,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let password1 = password1, let password2 = password2 where password1 == password2 {
             passwordsMatch = true
         } else {
-            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "The two passwords you entered do not match.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andPressed: nil)
+            signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_password12".localized)
             return
         }
         
@@ -114,7 +123,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let text = yearTextView.text, let year = Int(text) where year > 1900 && year <= 2016 {
             self.year = year
         } else {
-            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "Please specify a valid birth year.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andPressed: nil)
+            signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_year".localized)
             return
         }
         
@@ -122,7 +131,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let text = monthTextView.text, let month = Int(text) where month > 1 && month <= 12 {
             self.month = month
         } else {
-            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "Please specify a valid birth month.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andPressed: nil)
+            signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_month".localized)
             return
         }
         
@@ -130,7 +139,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         if let text = dayTextView.text, let day = Int(text) where day > 1 && day <= 30 {
             self.day = day
         } else {
-            SAPopup.sharedManager().showWithTitle("Hey", andMessage: "Please specify a valid birth day.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andPressed: nil)
+            signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_day".localized)
             return
         }
         
@@ -158,7 +167,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
                 SAActivityView.sharedManager().hideActivityView()
                 
                 if (!success) {
-                    SAPopup.sharedManager().showWithTitle("Error", andMessage: "Failed to sign up user.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andPressed: nil)
+                    self.signUpError("error_title".localized, "sign_up_popup_error_message".localized)
                 } else {
                     
                     if code == 200 {
@@ -176,17 +185,17 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
                             }
                             
                         } else if kwsmodel.status == 0 {
-                            SAPopup.sharedManager().showWithTitle("Error", andMessage: "Failed to sign up user.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andPressed: nil)
+                            self.signUpError("error_title".localized, "sign_up_popup_error_message".localized)
                         } else {
-                            SAPopup.sharedManager().showWithTitle("Error", andMessage: "Failed to sign up user.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andPressed: nil)
+                            self.signUpError("error_title".localized, "sign_up_popup_error_message".localized)
                         }
                     } else {
-                        SAPopup.sharedManager().showWithTitle("Error", andMessage: "Failed to sign up user.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andPressed: nil)
+                        self.signUpError("error_title".localized, "sign_up_popup_error_message".localized)
                     }
                 }
             })
         } else {
-            SAPopup.sharedManager().showWithTitle("Error", andMessage: "Failed to sign up user.", andOKTitle: "Got it!", andNOKTitle: nil, andTextField: false, andKeyboardTyle: .DecimalPad, andPressed: nil)
+            signUpError("error_title".localized, "sign_up_popup_error_message".localized)
         }
     }
     
@@ -198,5 +207,15 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         yearTextView.resignFirstResponder()
         monthTextView.resignFirstResponder()
         dayTextView.resignFirstResponder()
+    }
+    
+    func signUpError(title: String, _ message: String) {
+        SAPopup.sharedManager().showWithTitle(title,
+                                              andMessage: message,
+                                              andOKTitle: "sign_up_popup_dismiss_button".localized,
+                                              andNOKTitle: nil,
+                                              andTextField: false,
+                                              andKeyboardTyle: .DecimalPad,
+                                              andPressed: nil)
     }
 }
