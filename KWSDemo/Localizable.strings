@@ -24,7 +24,8 @@
 
 "feature_cell_notif_title" = "Kid-safe push notifications";
 "feature_cell_notif_content" = "Generate codes/vouchers to allow users to award extra points to incentivise user retention and engagement.";
-"feature_cell_notif_button_1" = "ENABLE PUSH NOTIFICATIONS";
+"feature_cell_notif_button_1_enable" = "ENABLE PUSH NOTIFICATIONS";
+"feature_cell_notif_button_1_disable" = "DISABLE PUSH NOTIFICATIONS";
 "feature_cell_notif_button_2" = "SEE DOCUMENTATION";
 
 "feature_cell_perm_title" = "Manage permissions";
@@ -116,13 +117,10 @@
 "user_vc_title" = "User details";
 "user_logout" = "Logout";
 
-"user_header_details" = "Details";
 "user_header_address" = "Address";
 "user_header_points" = "Points";
 "user_header_perm" = "Permissions";
 
-"user_row_details_id" = "ID";
-"user_row_details_username" = "Username";
 "user_row_details_first_name" = "First name";
 "user_row_details_last_name" = "Last name";
 "user_row_details_birth_date" = "Birth date";
@@ -188,5 +186,5 @@
 "add_app_data_popup_warning_title" = "Hey";
 "add_app_data_popup_error_title" = "Error";
 "add_app_data_popup_dismiss_button" = "Got it";
-"add_app_data_warning_message" = "Could not save name & value pair because of network error";
-"add_app_data_error_message" = "Please input a valid name & value pair";
+"add_app_data_warning_message" = "Please input a valid name & value pair";
+"add_app_data_error_message" = "Could not save name & value pair because of network error";

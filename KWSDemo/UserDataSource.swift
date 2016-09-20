@@ -30,16 +30,14 @@ class UserDataSource: NSObject, DataSource, UITableViewDataSource, UITableViewDe
             // perform operations on data
             if let user = user {
                 
-                self.data.append(UserData(header: UserHeaderViewModel(title: "user_header_details".localized), rows: [
-                    UserRowViewModel(item: "user_row_details_id".localized, value: user._id),
-                    UserRowViewModel(item: "user_row_details_username".localized, value: user.username),
+                self.data.append(UserData(header: UserHeaderViewModel(title: user.username), rows: [
                     UserRowViewModel(item: "user_row_details_first_name".localized, value: user.firstName),
                     UserRowViewModel(item: "user_row_details_last_name".localized, value: user.lastName),
                     UserRowViewModel(item: "user_row_details_birth_date".localized, value: user.dateOfBirth),
-                    UserRowViewModel(item: "user_row_details_gender".localized, value: user.gender),
+                    UserRowViewModel(item: "user_row_details_email".localized, value: user.email),
                     UserRowViewModel(item: "user_row_details_phone".localized, value: user.phoneNumber),
-                    UserRowViewModel(item: "user_row_details_language".localized, value: user.language),
-                    UserRowViewModel(item: "user_row_details_email".localized, value: user.email)
+                    UserRowViewModel(item: "user_row_details_gender".localized, value: user.gender),
+                    UserRowViewModel(item: "user_row_details_language".localized, value: user.language)
                 ]))
                 
                 if let address = user.address {

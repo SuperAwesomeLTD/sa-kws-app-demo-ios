@@ -21,9 +21,9 @@ class FeatureNotifViewModel: AnyObject, ViewModel {
         let cell = tableView.dequeueReusableCellWithIdentifier("FeatureNotifRowId") as! FeatureNotifRow
         cell.notifEnableOrDisableButton.enabled = KWSSingleton.sharedInstance.isUserLogged()
         if (KWSSingleton.sharedInstance.isUserMarkedAsRegistered()) {
-            cell.notifEnableOrDisableButton.setTitle("DISABLE PUSH NOTIFICATIONS", forState: .Normal)
+            cell.notifEnableOrDisableButton.setTitle("feature_cell_notif_button_1_disable".localized.uppercaseString, forState: .Normal)
         } else {
-            cell.notifEnableOrDisableButton.setTitle("ENABLE PUSH NOTIFICATIONS", forState: .Normal)
+            cell.notifEnableOrDisableButton.setTitle("feature_cell_notif_button_1_enable".localized.uppercaseString, forState: .Normal)
         }
         cell.notifEnableOrDisableButton.addTarget(self, action: #selector(notifButtonAction), forControlEvents: .TouchUpInside)
         cell.notifDocButton.addTarget(self, action: #selector(docsButtonAction), forControlEvents: .TouchUpInside)

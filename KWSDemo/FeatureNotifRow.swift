@@ -21,7 +21,7 @@ class FeatureNotifRow: UITableViewCell {
         
         notifTitle.text = "feature_cell_notif_title".localized
         notifMessage.text = "feature_cell_notif_content".localized
-        notifEnableOrDisableButton.setTitle("feature_cell_notif_button_1".localized.uppercaseString, forState: UIControlState.Normal)
+        notifEnableOrDisableButton.setTitle("feature_cell_notif_button_1_enable".localized.uppercaseString, forState: UIControlState.Normal)
         notifDocButton.setTitle("feature_cell_notif_button_2".localized.uppercaseString, forState: UIControlState.Normal)
         
         content.addShadow()
