@@ -1,7 +1,7 @@
 // tabs
 "tab_platform" = "Platform";
 "tab_features" = "Features";
-"tab_doc" = "Documentation";
+"tab_doc" = "Docs";
 
 // navigation
 "kws_popup_nav_bar_close" = "Close";
@@ -61,13 +61,20 @@
 "feature_notif_unreg_popup_error_title" = "Error";
 "feature_notif_unreg_popup_error_message" = "There was a network error trying to un-register for Remote Notifications in KWS. Please try again!";
 
+"feature_parent_email_request_popup_title" = "Parent email missing";
+"feature_parent_email_request_popup_message" = "You have to input a valid parent's email in order to continue";
+"feature_parent_email_request_popup_submit" = "Submit";
+"feature_parent_email_request_popup_cancel" = "Cancel";
+
 "feature_parent_email_popup_error_title" = "Error";
 "feature_parent_email_popup_error_message" = "An error occured trying to submit parent email. Will not continue.";
 
 "feature_perm_alert_title" = "KWS Permissions";
-"feature_perm_alter_message" = "What information would you like permission for?";
+"feature_perm_alert_message" = "What information would you like permission for?";
 "feature_perm_popup_success_title" = "Great";
 "feature_perm_popup_success_message" = "You've successfully asked for the permission.";
+"feature_perm_popup_error_title" = "Error";
+"feature_perm_popup_error_message" = "Something happened while trying to ask for permission.";
 
 "feature_event_add20_popup_success_title" = "Congrats!";
 "feature_event_add20_popup_success_message" = "You just earned 20 points!";

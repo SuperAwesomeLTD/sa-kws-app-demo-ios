@@ -131,6 +131,7 @@ class FeatureViewController: UIViewController {
                     KWSSingleton.sharedInstance.markUserAsRegistered()
                 } else {
                     if (error == .UserHasNoParentEmail) {
+                        
                         KWS.sdk().submitParentEmailWithPopup({ (submitted: Bool) in
                             if (submitted) {
                                 SAActivityView.sharedManager().showActivityView()
@@ -165,7 +166,7 @@ class FeatureViewController: UIViewController {
     func didObservePerm () {
         // Create the action sheet
         let myActionSheet = UIAlertController(title: "feature_perm_alert_title".localized,
-                                              message: "feature_perm_alter_message".localized,
+                                              message: "feature_perm_alert_message".localized,
                                               preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         // get the titles & associated types
