@@ -21,15 +21,15 @@ class FeatureInviteRow: UITableViewCell {
         
         inviteTitle.text = "feature_cell_inv_title".localized
         invMessage.text = "feature_cell_inv_message".localized
-        invInviteFriendButton.setTitle("feature_cell_inv_button_1".localized.uppercaseString, forState: UIControlState.Normal)
-        invSeeDocsButton.setTitle("feature_cell_inv_button_2".localized.uppercaseString, forState: UIControlState.Normal)
+        invInviteFriendButton.setTitle("feature_cell_inv_button_1".localized.uppercased(), for: UIControlState())
+        invSeeDocsButton.setTitle("feature_cell_inv_button_2".localized.uppercased(), for: UIControlState())
         
         content.addShadow()
         invInviteFriendButton.blueButton()
         invSeeDocsButton.blueButton()
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 }

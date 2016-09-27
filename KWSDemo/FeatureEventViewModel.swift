@@ -14,38 +14,38 @@ class FeatureEventViewModel: AnyObject, ViewModel {
         return 368
     }
     
-    func representationAsRow(tableView: UITableView) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FeatureEventRowId") as! FeatureEventRow
+    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeatureEventRowId") as! FeatureEventRow
         let isLogged = KWSSingleton.sharedInstance.isUserLogged()
-        cell.evtAdd20PointsButton.enabled = isLogged
-        cell.evtSub10PointsButton.enabled = isLogged
-        cell.evtSeeLeaderboardButton.enabled = isLogged
-        cell.evtGetScoreButton.enabled = isLogged
-        cell.evtAdd20PointsButton.addTarget(self, action: #selector(add20PointsAction), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.evtSub10PointsButton.addTarget(self, action: #selector(sub10PointsAction), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.evtGetScoreButton.addTarget(self, action: #selector(getScoreAction), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.evtSeeLeaderboardButton.addTarget(self, action: #selector(seeLeaderAction), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.evtSeeDocsButton.addTarget(self, action: #selector(docsButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.evtAdd20PointsButton.isEnabled = isLogged
+        cell.evtSub10PointsButton.isEnabled = isLogged
+        cell.evtSeeLeaderboardButton.isEnabled = isLogged
+        cell.evtGetScoreButton.isEnabled = isLogged
+        cell.evtAdd20PointsButton.addTarget(self, action: #selector(add20PointsAction), for: UIControlEvents.touchUpInside)
+        cell.evtSub10PointsButton.addTarget(self, action: #selector(sub10PointsAction), for: UIControlEvents.touchUpInside)
+        cell.evtGetScoreButton.addTarget(self, action: #selector(getScoreAction), for: UIControlEvents.touchUpInside)
+        cell.evtSeeLeaderboardButton.addTarget(self, action: #selector(seeLeaderAction), for: UIControlEvents.touchUpInside)
+        cell.evtSeeDocsButton.addTarget(self, action: #selector(docsButtonAction), for: UIControlEvents.touchUpInside)
         return cell
     }
     
     @objc func add20PointsAction () {
-        NSNotificationCenter.defaultCenter().postNotificationName(Notifications.ADD_20.rawValue, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.ADD_20.rawValue), object: self)
     }
     
     @objc func sub10PointsAction () {
-        NSNotificationCenter.defaultCenter().postNotificationName(Notifications.SUB_10.rawValue, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.SUB_10.rawValue), object: self)
     }
     
     @objc func getScoreAction () {
-        NSNotificationCenter.defaultCenter().postNotificationName(Notifications.SCORE.rawValue, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.SCORE.rawValue), object: self)
     }
     
     @objc func seeLeaderAction () {
-        NSNotificationCenter.defaultCenter().postNotificationName(Notifications.LEADER.rawValue, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.LEADER.rawValue), object: self)
     }
     
     @objc func docsButtonAction () {
-        NSNotificationCenter.defaultCenter().postNotificationName(Notifications.DOCS.rawValue, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.DOCS.rawValue), object: self)
     }
 }

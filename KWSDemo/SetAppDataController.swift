@@ -27,21 +27,21 @@ class SetAppDataController: UIViewController, KWSPopupNavigationBarProtocol {
         
         namePairTextField.placeholder = "add_app_data_name_placeholder".localized
         valuePairTextField.placeholder = "add_app_data_value_placeholder".localized
-        submitButton.setTitle("add_app_data_submit".localized.uppercaseString, forState: UIControlState.Normal)
+        submitButton.setTitle("add_app_data_submit".localized.uppercased(), for: UIControlState())
         
         submitButton.redButton()
         namePairTextField.kwsStyle()
         valuePairTextField.kwsStyle()
-        valuePairTextField.keyboardType = UIKeyboardType.NumberPad
+        valuePairTextField.keyboardType = UIKeyboardType.numberPad
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController?.navigationBar.barStyle = .Black
+        navigationController?.navigationBar.barStyle = .black
     }
     
     // MARK: KWSPopupNavigationBarProtocol
@@ -51,12 +51,12 @@ class SetAppDataController: UIViewController, KWSPopupNavigationBarProtocol {
     }
     
     func kwsPopupNavDidPressOnClose() {
-        dismissViewControllerAnimated(true) {
+        dismiss(animated: true) {
             // flush
         }
     }
 
-    @IBAction func submitButtonAction(sender: AnyObject) {
+    @IBAction func submitButtonAction(_ sender: AnyObject) {
         
         let vc = self
         
@@ -66,16 +66,16 @@ class SetAppDataController: UIViewController, KWSPopupNavigationBarProtocol {
         
         if model.isValid() {
             
-            SAActivityView.sharedManager().showActivityView()
+            SAActivityView.sharedManager().show()
             
             KWS.sdk().setAppData(model.getName(), withValue: model.getValue(), { (set) in
                 
-                SAActivityView.sharedManager().hideActivityView()
+                SAActivityView.sharedManager().hide()
                 
                 if set {
                     
-                    vc.dismissViewControllerAnimated(true, completion: { 
-                        NSNotificationCenter.defaultCenter().postNotificationName(Notifications.ADDED_APPDATA.rawValue, object: nil)
+                    vc.dismiss(animated: true, completion: { 
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.ADDED_APPDATA.rawValue), object: nil)
                     })
                     
                 } else {
@@ -89,13 +89,13 @@ class SetAppDataController: UIViewController, KWSPopupNavigationBarProtocol {
         }
     }
     
-    func appDataError(title: String, _ message: String) {
-        SAPopup.sharedManager().showWithTitle(title,
+    func appDataError(_ title: String, _ message: String) {
+        SAPopup.sharedManager().show(withTitle: title,
                                               andMessage: message,
                                               andOKTitle: "add_app_data_popup_dismiss_button".localized,
                                               andNOKTitle: nil,
                                               andTextField: false,
-                                              andKeyboardTyle: .DecimalPad,
+                                              andKeyboardTyle: .decimalPad,
                                               andPressed: nil)
     }
 }

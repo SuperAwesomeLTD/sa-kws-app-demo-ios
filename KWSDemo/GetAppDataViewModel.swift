@@ -22,8 +22,8 @@ class GetAppDataViewModel: AnyObject, ViewModel {
         return 44
     }
     
-    func representationAsRow(tableView: UITableView) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("GetAppDataRowId") as! GetAppDataRow
+    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GetAppDataRowId") as! GetAppDataRow
         cell.nameLabel.text = name
         cell.valueLabel.text = "\(value)"
         return cell

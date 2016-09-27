@@ -9,20 +9,21 @@
 import UIKit
 
 class LeaderDataSource: NSObject, DataSource, UITableViewDataSource, UITableViewDelegate {
+    
 
-    private var header: ViewModel = LeaderHeaderViewModel()
-    private var rows: [ViewModel] = []
+    fileprivate var header: ViewModel = LeaderHeaderViewModel()
+    fileprivate var rows: [ViewModel] = []
     
     // MARK: DataSourceProtocol
     
-    func update(start start: () -> Void, success: () -> Void, error: () -> Void) {
+    internal func update(start: @escaping () -> Void, success: @escaping () -> Void, error: @escaping () -> Void) {
         start()
         
-        KWS.sdk().getLeaderboard { (leaders: [KWSLeader]!) in
+        KWS.sdk().getLeaderboard { (leaders: [KWSLeader]?) in
             if let leaders = leaders {
-                 self.rows = leaders.map({ (leader) -> ViewModel in
+                self.rows = leaders.map({ (leader) -> ViewModel in
                     return LeaderRowViewModel(leader.rank, leader.score, leader.user)
-                 })
+                })
                 
                 success()
             } else {
@@ -30,27 +31,28 @@ class LeaderDataSource: NSObject, DataSource, UITableViewDataSource, UITableView
             }
         }
     }
+
     
     // MARK: UITableViewDataSource
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return header.heightForRow()
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return header.representationAsRow(tableView)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rows.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return rows[indexPath.row].heightForRow()
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return rows[(indexPath as NSIndexPath).row].heightForRow()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return rows[indexPath.row].representationAsRow(tableView)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return rows[(indexPath as NSIndexPath).row].representationAsRow(tableView)
     }
     
 }

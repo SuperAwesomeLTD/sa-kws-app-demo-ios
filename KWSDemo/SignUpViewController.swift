@@ -21,13 +21,13 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
     @IBOutlet weak var submitButton: UIButton!
     
     // variables
-    private var username: String?
-    private var password1: String?
-    private var password2: String?
-    private var year: Int?
-    private var month: Int?
-    private var day: Int?
-    private var passwordsMatch: Bool = false
+    fileprivate var username: String?
+    fileprivate var password1: String?
+    fileprivate var password2: String?
+    fileprivate var year: Int?
+    fileprivate var month: Int?
+    fileprivate var day: Int?
+    fileprivate var passwordsMatch: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,27 +41,27 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         yearTextView.placeholder = "sign_up_year_placeholder".localized
         monthTextView.placeholder = "sign_up_month_placeholder".localized
         dayTextView.placeholder = "sign_up_day_placeholder".localized
-        submitButton.setTitle("sign_up_submit".localized.uppercaseString, forState: UIControlState.Normal)
+        submitButton.setTitle("sign_up_submit".localized.uppercased(), for: UIControlState())
         
         // customize
         submitButton.redButton()
         usernameTextView.kwsStyle()
-        password1TextView.secureTextEntry = true
+        password1TextView.isSecureTextEntry = true
         password1TextView.kwsStyle()
-        password2TextView.secureTextEntry = true
+        password2TextView.isSecureTextEntry = true
         password2TextView.kwsStyle()
-        monthTextView.keyboardType = .NumberPad
+        monthTextView.keyboardType = .numberPad
         monthTextView.kwsStyle()
-        yearTextView.keyboardType = .NumberPad
+        yearTextView.keyboardType = .numberPad
         yearTextView.kwsStyle()
-        dayTextView.keyboardType = .NumberPad
+        dayTextView.keyboardType = .numberPad
         dayTextView.kwsStyle()
     
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController?.navigationBar.barStyle = .Black
+        navigationController?.navigationBar.barStyle = .black
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,19 +76,19 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
     
     func kwsPopupNavDidPressOnClose() {
         resignAllResponders()
-        dismissViewControllerAnimated(true) { 
+        dismiss(animated: true) { 
             // flush
         }
     }
     
     // <Actions>
     
-    @IBAction func submitAction(sender: AnyObject) {
+    @IBAction func submitAction(_ sender: AnyObject) {
         
         let vc = self
         
         // verify username
-        if let text = usernameTextView.text where text != "" {
+        if let text = usernameTextView.text , text != "" {
             username = text
         } else {
             signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_username".localized)
@@ -96,7 +96,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         }
         
         // password 1
-        if let text = password1TextView.text where text != "" && text.characters.count >= 8 {
+        if let text = password1TextView.text , text != "" && text.characters.count >= 8 {
             password1 = text
         } else {
             signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_password1".localized)
@@ -104,7 +104,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         }
         
         // password 2
-        if let text = password2TextView.text where text != "" && text.characters.count >= 8 {
+        if let text = password2TextView.text , text != "" && text.characters.count >= 8 {
             password2 = text
         } else {
             signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_password2".localized)
@@ -112,7 +112,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         }
         
         // passwords must match
-        if let password1 = password1, let password2 = password2 where password1 == password2 {
+        if let password1 = password1, let password2 = password2 , password1 == password2 {
             passwordsMatch = true
         } else {
             signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_password12".localized)
@@ -120,7 +120,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         }
         
         // year check
-        if let text = yearTextView.text, let year = Int(text) where year > 1900 && year <= 2016 {
+        if let text = yearTextView.text, let year = Int(text) , year > 1900 && year <= 2016 {
             self.year = year
         } else {
             signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_year".localized)
@@ -128,7 +128,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         }
         
         // month check
-        if let text = monthTextView.text, let month = Int(text) where month > 1 && month <= 12 {
+        if let text = monthTextView.text, let month = Int(text) , month > 1 && month <= 12 {
             self.month = month
         } else {
             signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_month".localized)
@@ -136,7 +136,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         }
         
         // day check
-        if let text = dayTextView.text, let day = Int(text) where day > 1 && day <= 30 {
+        if let text = dayTextView.text, let day = Int(text) , day > 1 && day <= 30 {
             self.day = day
         } else {
             signUpError("sign_up_popup_warning_title".localized, "sign_up_popup_warning_message_day".localized)
@@ -144,7 +144,7 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         }
         
         // do a final check to see everything is in order
-        if let username = username, let password = password1, let year = year, let month = month, let day = day where passwordsMatch == true {
+        if let username = username, let password = password1, let year = year, let month = month, let day = day , passwordsMatch == true {
             
             let postData = [
                 "username": username,
@@ -158,39 +158,39 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
     
             // start loading
             resignAllResponders()
-            SAActivityView.sharedManager().showActivityView()
+            SAActivityView.sharedManager().show()
             
             // send POST
             let network = SANetwork()
-            network.sendPOST("https://kwsdemobackend.herokuapp.com/create", withQuery: [:], andHeader: header, andBody: postData, withResponse: { (code: Int, json: String!, success: Bool) in
+            network.sendPOST("https://kwsdemobackend.herokuapp.com/create", withQuery: [:], andHeader: header, andBody: postData, withResponse: { (code: Int, json: String?, success: Bool) in
                 // hide this
-                SAActivityView.sharedManager().hideActivityView()
+                SAActivityView.sharedManager().hide()
                 
                 if (!success) {
-                    self.signUpError("error_title".localized, "sign_up_popup_error_message".localized)
+                    self.signUpError("sign_up_popup_error_title".localized, "sign_up_popup_error_message".localized)
                 } else {
                     
                     if code == 200 {
                         // get the model
-                        let kwsmodel = KWSModel(jsonString: json)
+                        let kwsmodel: KWSModel = KWSModel(jsonString: json)
                         kwsmodel.username = username
                         
                         // check if all is OK
                         if kwsmodel.status == 1 {
                             
                             // dismiss
-                            vc.dismissViewControllerAnimated(true) {
+                            vc.dismiss(animated: true) {
                                 // save user to singleton
                                 KWSSingleton.sharedInstance.loginUser(kwsmodel)
                             }
                             
                         } else if kwsmodel.status == 0 {
-                            self.signUpError("error_title".localized, "sign_up_popup_error_message".localized)
+                            self.signUpError("sign_up_popup_error_title".localized, "sign_up_popup_error_message".localized)
                         } else {
-                            self.signUpError("error_title".localized, "sign_up_popup_error_message".localized)
+                            self.signUpError("sign_up_popup_error_title".localized, "sign_up_popup_error_message".localized)
                         }
                     } else {
-                        self.signUpError("error_title".localized, "sign_up_popup_error_message".localized)
+                        self.signUpError("sign_up_popup_error_title".localized, "sign_up_popup_error_message".localized)
                     }
                 }
             })
@@ -209,13 +209,13 @@ class SignUpViewController: UIViewController, KWSPopupNavigationBarProtocol {
         dayTextView.resignFirstResponder()
     }
     
-    func signUpError(title: String, _ message: String) {
-        SAPopup.sharedManager().showWithTitle(title,
+    func signUpError(_ title: String, _ message: String) {
+        SAPopup.sharedManager().show(withTitle: title,
                                               andMessage: message,
                                               andOKTitle: "sign_up_popup_dismiss_button".localized,
                                               andNOKTitle: nil,
                                               andTextField: false,
-                                              andKeyboardTyle: .DecimalPad,
+                                              andKeyboardTyle: .decimalPad,
                                               andPressed: nil)
     }
 }

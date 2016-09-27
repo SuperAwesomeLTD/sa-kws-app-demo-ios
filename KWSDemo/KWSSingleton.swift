@@ -13,10 +13,10 @@ class KWSSingleton: NSObject {
     static let sharedInstance = KWSSingleton()
     
     // user defaults
-    private var userDefs = NSUserDefaults.standardUserDefaults()
-    private var kwsModel: KWSModel?
-    private dynamic var isRegistered: Bool = false
-    private dynamic var isLogged: Bool = false
+    fileprivate var userDefs = UserDefaults.standard
+    fileprivate var kwsModel: KWSModel?
+    fileprivate dynamic var isRegistered: Bool = false
+    fileprivate dynamic var isLogged: Bool = false
     
     override init() {
         super.init()
@@ -24,34 +24,34 @@ class KWSSingleton: NSObject {
     }
     
     func start () {
-        let userJson = userDefs.stringForKey("KWS_MODEL") as String?
+        let userJson = userDefs.string(forKey: "KWS_MODEL") as String?
         if let userJson = userJson {
             kwsModel = KWSModel(jsonString: userJson)
             self.isLogged = true
-            self.didChangeValueForKey("isLogged")
+            self.didChangeValue(forKey: "isLogged")
         } else {
             self.isLogged = false
-            self.didChangeValueForKey("isLogged")
+            self.didChangeValue(forKey: "isLogged")
         }
     }
     
-    func loginUser(model: KWSModel) {
+    func loginUser(_ model: KWSModel) {
         kwsModel = model
         if let kwsModel = kwsModel,
             let kwsModelJson = kwsModel.jsonPreetyStringRepresentation() as String? {
-            userDefs.setObject(kwsModelJson, forKey: "KWS_MODEL")
+            userDefs.set(kwsModelJson, forKey: "KWS_MODEL")
             userDefs.synchronize()
             self.isLogged = true
-            self.didChangeValueForKey("isLogged")
+            self.didChangeValue(forKey: "isLogged")
         }
     }
     
     func logoutUser () {
         kwsModel = nil
-        userDefs.removeObjectForKey("KWS_MODEL")
+        userDefs.removeObject(forKey: "KWS_MODEL")
         userDefs.synchronize()
         self.isLogged = false
-        self.didChangeValueForKey("isLogged")
+        self.didChangeValue(forKey: "isLogged")
     }
     
     func isUserLogged () -> Bool {
@@ -64,12 +64,12 @@ class KWSSingleton: NSObject {
     
     func markUserAsRegistered () {
         self.isRegistered = true
-        self.didChangeValueForKey("isRegistered")
+        self.didChangeValue(forKey: "isRegistered")
     }
     
     func markUserAsUnregistered () {
         self.isRegistered = false
-        self.didChangeValueForKey("isRegistered")
+        self.didChangeValue(forKey: "isRegistered")
     }
     
     func isUserMarkedAsRegistered () -> Bool {

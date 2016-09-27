@@ -28,8 +28,8 @@ class LeaderRowViewModel : AnyObject, ViewModel {
         return 44
     }
     
-    func representationAsRow(tableView: UITableView) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("LeaderRowId") as! LeaderRow
+    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderRowId") as! LeaderRow
         cell.RankLabel.text = "\(rank)"
         cell.PointsLabel.text = "\(score)"
         cell.UsernameLabel.text = username

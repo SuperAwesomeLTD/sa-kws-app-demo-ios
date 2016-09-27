@@ -10,25 +10,25 @@ import UIKit
 
 class FeaturePermViewModel: AnyObject, ViewModel {
 
-    private var loggedIn: Bool = false
+    fileprivate var loggedIn: Bool = false
     
     func heightForRow() -> CGFloat {
         return 248
     }
     
-    func representationAsRow(tableView: UITableView) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FeaturePermRowId") as! FeaturePermRow
-        cell.permAddPermissionsButton.enabled = KWSSingleton.sharedInstance.isUserLogged()
-        cell.permAddPermissionsButton.addTarget(self, action: #selector(addPermissionAction), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.permSeeDocsButton.addTarget(self, action: #selector(docsButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
+    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeaturePermRowId") as! FeaturePermRow
+        cell.permAddPermissionsButton.isEnabled = KWSSingleton.sharedInstance.isUserLogged()
+        cell.permAddPermissionsButton.addTarget(self, action: #selector(addPermissionAction), for: UIControlEvents.touchUpInside)
+        cell.permSeeDocsButton.addTarget(self, action: #selector(docsButtonAction), for: UIControlEvents.touchUpInside)
         return cell
     }
     
     @objc func addPermissionAction () {
-        NSNotificationCenter.defaultCenter().postNotificationName(Notifications.PERM.rawValue, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.PERM.rawValue), object: self)
     }
     
     @objc func docsButtonAction () {
-        NSNotificationCenter.defaultCenter().postNotificationName(Notifications.DOCS.rawValue, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.DOCS.rawValue), object: self)
     }
 }

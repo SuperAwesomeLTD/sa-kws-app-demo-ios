@@ -20,20 +20,20 @@ class KWSModel: SABaseObject {
         super.init()
     }
     
-    required init!(jsonDictionary: [NSObject : AnyObject]!) {
+    required init!(jsonDictionary: [AnyHashable: Any]!) {
         super.init()
         let json = jsonDictionary as NSDictionary
-        status = json.safeObjectForKey("status") as? Int
-        userId = json.safeObjectForKey("userId") as? Int
-        token = json.safeObjectForKey("token") as? String
-        username = json.safeObjectForKey("username") as? String
-        error = json.safeObjectForKey("error") as? String
+        status = json.safeObject(forKey: "status") as? Int
+        userId = json.safeObject(forKey: "userId") as? Int
+        token = json.safeObject(forKey: "token") as? String
+        username = json.safeObject(forKey: "username") as? String
+        error = json.safeObject(forKey: "error") as? String
     }
     
-    required convenience init!(jsonData: NSData!) {
+    required convenience init!(jsonData: Data!) {
         do {
-            if let dictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.init(rawValue: 0)) as? NSDictionary {
-                self.init(jsonDictionary: dictionary as [NSObject : AnyObject])
+            if let dictionary = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.init(rawValue: 0)) as? NSDictionary {
+                self.init(jsonDictionary: dictionary as! [AnyHashable: Any])
             }
             else {
                 self.init()
@@ -44,15 +44,15 @@ class KWSModel: SABaseObject {
     }
     
     required convenience init!(jsonString: String!) {
-        if let data = jsonString.dataUsingEncoding(NSUTF8StringEncoding) {
+        if let data = jsonString.data(using: String.Encoding.utf8) {
             self.init(jsonData: data)
         } else {
             self.init()
         }
     }
     
-    override func dictionaryRepresentation() -> [NSObject : AnyObject]? {
-        var dict: [NSObject: AnyObject] = [:]
+    override func dictionaryRepresentation() -> [AnyHashable: Any]? {
+        var dict: [AnyHashable: Any] = [:]
         if let status = status {
             dict["status"] = status
         }

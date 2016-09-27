@@ -9,13 +9,12 @@
 import UIKit
 
 class FeatureDataSource: NSObject, DataSource, UITableViewDelegate, UITableViewDataSource {
-
-    private var data : [ViewModel] = []
+    
+    fileprivate var data : [ViewModel] = []
     
     // MARK: DataSource
     
-    func update(start start: () -> Void, success: () -> Void, error: () -> Void) {
-        
+    internal func update(start: @escaping () -> Void, success: @escaping () -> Void, error: @escaping () -> Void) {
         start ()
         data = [
             FeatureAuthViewModel(),
@@ -31,15 +30,15 @@ class FeatureDataSource: NSObject, DataSource, UITableViewDelegate, UITableViewD
     
     // MARK: Table delegate
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return data[indexPath.row].heightForRow()
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return data[(indexPath as NSIndexPath).row].heightForRow()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return data[indexPath.row].representationAsRow(tableView)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return data[(indexPath as NSIndexPath).row].representationAsRow(tableView)
     }
 }

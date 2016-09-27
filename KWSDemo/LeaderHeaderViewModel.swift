@@ -24,8 +24,8 @@ class LeaderHeaderViewModel: AnyObject, ViewModel {
         return 44
     }
     
-    func representationAsRow(tableView: UITableView) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("LeaderHeaderId") as! LeaderHeader
+    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderHeaderId") as! LeaderHeader
         cell.rankLabel.text = col1title
         cell.usernameLabel.text = col2title
         cell.pointsLabel.text = col3title

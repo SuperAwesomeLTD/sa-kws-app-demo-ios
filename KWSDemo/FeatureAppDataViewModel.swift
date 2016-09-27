@@ -14,21 +14,21 @@ class FeatureAppDataViewModel: AnyObject, ViewModel {
         return 248
     }
     
-    func representationAsRow(tableView: UITableView) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FeatureAppDataRowId") as! FeatureAppDataRow
+    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeatureAppDataRowId") as! FeatureAppDataRow
         let isLogged = KWSSingleton.sharedInstance.isUserLogged()
-        cell.appdSeeAppDataButton.enabled = isLogged
-        cell.appdSeeAppDataButton.addTarget(self, action: #selector(seeAppDataAction), forControlEvents: UIControlEvents.TouchUpInside)
-        cell.appdSeeDocsButton.addTarget(self, action: #selector(docsButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
+        cell.appdSeeAppDataButton.isEnabled = isLogged
+        cell.appdSeeAppDataButton.addTarget(self, action: #selector(seeAppDataAction), for: UIControlEvents.touchUpInside)
+        cell.appdSeeDocsButton.addTarget(self, action: #selector(docsButtonAction), for: UIControlEvents.touchUpInside)
         return cell
     }
     
     @objc func seeAppDataAction () {
-        NSNotificationCenter.defaultCenter().postNotificationName(Notifications.APPDATA.rawValue, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.APPDATA.rawValue), object: self)
     }
     
     @objc func docsButtonAction () {
-        NSNotificationCenter.defaultCenter().postNotificationName(Notifications.DOCS.rawValue, object: self)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.DOCS.rawValue), object: self)
     }
     
 }

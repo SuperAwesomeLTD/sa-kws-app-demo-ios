@@ -11,9 +11,9 @@ import UIKit
 class LeaderViewController: UIViewController, KWSPopupNavigationBarProtocol {
 
     @IBOutlet weak var tableView: UITableView!
-    private var dataSource: LeaderDataSource!
-    private var spinnerM: SAActivityView!
-    private var popupM: SAPopup!
+    fileprivate var dataSource: LeaderDataSource!
+    fileprivate var spinnerM: SAActivityView!
+    fileprivate var popupM: SAPopup!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,26 +29,26 @@ class LeaderViewController: UIViewController, KWSPopupNavigationBarProtocol {
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         dataSource.update(start: {
-                self.spinnerM.showActivityView()
+                self.spinnerM.show()
             }, success: { 
-                self.spinnerM.hideActivityView()
+                self.spinnerM.hide()
                 self.tableView.reloadData()
             }, error: {
-                self.spinnerM.hideActivityView()
-                self.popupM.showWithTitle(
-                    "leader_popup_error_title".localized,
+                self.spinnerM.hide()
+                self.popupM.show(
+                    withTitle: "leader_popup_error_title".localized,
                     andMessage: "leader_popup_error_message".localized,
                     andOKTitle: "leader_popup_dismiss_button".localized,
                     andNOKTitle: nil,
                     andTextField: false,
-                    andKeyboardTyle: UIKeyboardType.Default,
+                    andKeyboardTyle: UIKeyboardType.default,
                     andPressed: nil)
         })
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController?.navigationBar.barStyle = .Black
+        navigationController?.navigationBar.barStyle = .black
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +62,7 @@ class LeaderViewController: UIViewController, KWSPopupNavigationBarProtocol {
     }
     
     func kwsPopupNavDidPressOnClose() {
-        dismissViewControllerAnimated(true) {
+        dismiss(animated: true) {
             // flush
         }
     }

@@ -21,15 +21,15 @@ class FeatureAppDataRow: UITableViewCell {
         
         appdTitle.text = "feature_cell_appd_title".localized
         appdMessage.text = "feature_cell_appd_message".localized
-        appdSeeAppDataButton.setTitle("feature_cell_appd_button_1".localized.uppercaseString, forState: UIControlState.Normal)
-        appdSeeDocsButton.setTitle("feature_cell_appd_button_2".localized.uppercaseString, forState: UIControlState.Normal)
+        appdSeeAppDataButton.setTitle("feature_cell_appd_button_1".localized.uppercased(), for: UIControlState())
+        appdSeeDocsButton.setTitle("feature_cell_appd_button_2".localized.uppercased(), for: UIControlState())
         
         content.addShadow()
         appdSeeAppDataButton.blueButton()
         appdSeeDocsButton.blueButton()
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 

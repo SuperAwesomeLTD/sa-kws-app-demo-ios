@@ -12,15 +12,15 @@ extension UIButton {
     func blueButton () {
         self.layer.borderWidth = 2.0
         self.layer.cornerRadius = (self.frame.size.height / 2.0)
-        self.setTitleColor(UIColorFromHex(0x4A90E2), forState: .Normal)
-        self.backgroundColor = UIColor.clearColor()
-        self.setTitleColor(UIColor.lightGrayColor(), forState: .Disabled)
-        self.layer.borderColor = UIColorFromHex(0x4A90E2).CGColor
+        self.setTitleColor(UIColorFromHex(0x4A90E2), for: .normal)
+        self.backgroundColor = UIColor.clear
+        self.setTitleColor(UIColor.lightGray, for: .disabled)
+        self.layer.borderColor = UIColorFromHex(0x4A90E2).cgColor
     }
     
     func redButton () {
         self.backgroundColor = UIColorFromHex(0xED1C24)
         self.layer.cornerRadius = 5
-        self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        self.setTitleColor(UIColor.white, for: UIControlState())
     }
 }

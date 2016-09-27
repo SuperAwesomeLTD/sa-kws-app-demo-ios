@@ -12,9 +12,9 @@ class GetAppDataController: UIViewController, KWSPopupNavigationBarProtocol {
 
     @IBOutlet weak var appDataTable: UITableView!
     @IBOutlet weak var addButton: UIButton!
-    private var dataSource: GetAppDataDataSource!
-    private var spinnerM: SAActivityView!
-    private var popupM: SAPopup!
+    fileprivate var dataSource: GetAppDataDataSource!
+    fileprivate var spinnerM: SAActivityView!
+    fileprivate var popupM: SAPopup!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class GetAppDataController: UIViewController, KWSPopupNavigationBarProtocol {
             bar.kwsdelegate = self
         }
         
-        addButton.setTitle("get_app_data_add_button".localized.uppercaseString, forState: UIControlState.Normal)
+        addButton.setTitle("get_app_data_add_button".localized.uppercased(), for: UIControlState())
         
         addButton.redButton()
         spinnerM = SAActivityView.sharedManager()
@@ -32,24 +32,24 @@ class GetAppDataController: UIViewController, KWSPopupNavigationBarProtocol {
         appDataTable.dataSource = dataSource
         appDataTable.delegate = dataSource
         loadDataSource()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loadDataSource), name: Notifications.ADDED_APPDATA.rawValue, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadDataSource), name: NSNotification.Name(rawValue: Notifications.ADDED_APPDATA.rawValue), object: nil)
     }
     
     func loadDataSource() {
         dataSource.update(start: {
-            self.spinnerM.showActivityView()
+            self.spinnerM.show()
             }, success: {
-                self.spinnerM.hideActivityView()
+                self.spinnerM.hide()
                 self.appDataTable.reloadData()
             }, error: {
-                self.spinnerM.hideActivityView()
-                self.popupM.showWithTitle(
-                    "get_app_data_popup_error_title".localized,
+                self.spinnerM.hide()
+                self.popupM.show(
+                    withTitle: "get_app_data_popup_error_title".localized,
                     andMessage: "get_app_data_popup_error_message".localized,
                     andOKTitle: "get_app_data_popup_dismiss_button".localized,
                     andNOKTitle: nil,
                     andTextField: false,
-                    andKeyboardTyle: UIKeyboardType.Default,
+                    andKeyboardTyle: UIKeyboardType.default,
                     andPressed: nil)
         })
     }
@@ -58,15 +58,15 @@ class GetAppDataController: UIViewController, KWSPopupNavigationBarProtocol {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController?.navigationBar.barStyle = .Black
+        navigationController?.navigationBar.barStyle = .black
     }
 
-    @IBAction func addNewNameValuePairAction(sender: AnyObject) {
+    @IBAction func addNewNameValuePairAction(_ sender: AnyObject) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewControllerWithIdentifier("SetAppDataNavControllerId")
-        presentViewController(vc, animated: true, completion: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SetAppDataNavControllerId")
+        present(vc, animated: true, completion: nil)
     }
     
     // MARK: KWSPopupNavigationBarProtocol
@@ -76,7 +76,7 @@ class GetAppDataController: UIViewController, KWSPopupNavigationBarProtocol {
     }
     
     func kwsPopupNavDidPressOnClose() {
-        dismissViewControllerAnimated(true) {
+        dismiss(animated: true) {
             // flush
         }
     }

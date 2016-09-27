@@ -10,21 +10,21 @@ import UIKit
 
 class SetAppDataModel: NSObject {
 
-    private let INVALID_VALID = -Int.max
-    private var name: String! = nil
-    private var value: Int = 0
+    fileprivate let INVALID_VALID = -Int.max
+    fileprivate var name: String! = nil
+    fileprivate var value: Int = 0
     
     init (name: String?, value: String?) {
         
         // get a name var
-        if let name = name where name != "" {
+        if let name = name , name != "" {
             self.name = name
         } else {
             self.name = nil
         }
         
         // get a value var, if possible
-        if let value = value where value != "", let ivalue = Int(value) {
+        if let value = value , value != "", let ivalue = Int(value) {
             self.value = ivalue
         }
         else {

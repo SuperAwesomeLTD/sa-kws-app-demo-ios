@@ -25,11 +25,11 @@ class FeatureEventRow: UITableViewCell {
         
         evtTitle.text = "feature_cell_evt_title".localized
         evtMessage.text = "feature_cell_evt_message".localized
-        evtAdd20PointsButton.setTitle("feature_cell_evt_button_1".localized.uppercaseString, forState: UIControlState.Normal)
-        evtSub10PointsButton.setTitle("feature_cell_evt_button_2".localized.uppercaseString, forState: UIControlState.Normal)
-        evtGetScoreButton.setTitle("feature_cell_evt_button_3".localized.uppercaseString, forState: UIControlState.Normal)
-        evtSeeLeaderboardButton.setTitle("feature_cell_evt_button_4".localized.uppercaseString, forState: UIControlState.Normal)
-        evtSeeDocsButton.setTitle("feature_cell_evt_button_5".localized.uppercaseString, forState: UIControlState.Normal)
+        evtAdd20PointsButton.setTitle("feature_cell_evt_button_1".localized.uppercased(), for: UIControlState())
+        evtSub10PointsButton.setTitle("feature_cell_evt_button_2".localized.uppercased(), for: UIControlState())
+        evtGetScoreButton.setTitle("feature_cell_evt_button_3".localized.uppercased(), for: UIControlState())
+        evtSeeLeaderboardButton.setTitle("feature_cell_evt_button_4".localized.uppercased(), for: UIControlState())
+        evtSeeDocsButton.setTitle("feature_cell_evt_button_5".localized.uppercased(), for: UIControlState())
         
         evtAdd20PointsButton.blueButton()
         evtSub10PointsButton.blueButton()
@@ -38,7 +38,7 @@ class FeatureEventRow: UITableViewCell {
         evtSeeDocsButton.blueButton()
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 }

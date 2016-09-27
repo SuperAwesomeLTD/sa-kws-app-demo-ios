@@ -21,15 +21,15 @@ class FeaturePermRow: UITableViewCell {
         
         permTitle.text = "feature_cell_perm_title".localized
         permMessage.text = "feature_cell_perm_content".localized
-        permAddPermissionsButton.setTitle("feature_cell_perm_button_1".localized.uppercaseString, forState: UIControlState.Normal)
-        permSeeDocsButton.setTitle("feature_cell_perm_button_2".localized.uppercaseString, forState: UIControlState.Normal)
+        permAddPermissionsButton.setTitle("feature_cell_perm_button_1".localized.uppercased(), for: UIControlState())
+        permSeeDocsButton.setTitle("feature_cell_perm_button_2".localized.uppercased(), for: UIControlState())
         
         content.addShadow()
         permAddPermissionsButton.blueButton()
         permSeeDocsButton.blueButton()
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

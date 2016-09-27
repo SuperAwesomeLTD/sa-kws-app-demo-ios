@@ -20,8 +20,8 @@ class UserHeaderViewModel: AnyObject, ViewModel {
         return 44
     }
     
-    func representationAsRow(tableView: UITableView) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UserHeaderId") as! UserHeader
+    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserHeaderId") as! UserHeader
         cell.headerTitle.text = self.title
         return cell
     }

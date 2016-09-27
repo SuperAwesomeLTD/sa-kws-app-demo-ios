@@ -9,5 +9,5 @@
 import UIKit
 
 protocol DataSource {
-    func update(start start: ()->Void, success: ()->Void, error: ()->Void) -> Void
+    func update(start: @escaping ()->Void, success: @escaping ()->Void, error: @escaping ()->Void) -> Void
 }

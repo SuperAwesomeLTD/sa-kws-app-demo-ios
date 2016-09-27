@@ -15,8 +15,8 @@ extension UITextField {
         let H = self.frame.size.height
         
         let border = UIView()
-        border.frame = CGRectMake(0, H-1, W, 1)
-        border.backgroundColor = UIColor.lightGrayColor()
+        border.frame = CGRect(x: 0, y: H-1, width: W, height: 1)
+        border.backgroundColor = UIColor.lightGray
         self.addSubview(border)
         
     }

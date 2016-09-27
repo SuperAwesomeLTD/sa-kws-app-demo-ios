@@ -20,7 +20,7 @@ class PlatformViewController: UIViewController {
     @IBOutlet weak var knowMoreButton: UIButton!
     
     // contants
-    private let urlStr = "http://www.superawesome.tv/en/"
+    fileprivate let urlStr = "http://www.superawesome.tv/en/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class PlatformViewController: UIViewController {
         platformFeature2.text = "platform_feature_2".localized
         platformFeature3.text = "platform_feature_3".localized
         platformFeature4.text = "platform_feature_4".localized
-        knowMoreButton.setTitle("platform_main_button".localized.uppercaseString, forState: UIControlState.Normal)
+        knowMoreButton.setTitle("platform_main_button".localized.uppercased(), for: UIControlState())
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,15 +41,15 @@ class PlatformViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func knowMoreAction(sender: AnyObject) {
-        let url = NSURL(string: urlStr)
-        UIApplication.sharedApplication().openURL(url!)
+    @IBAction func knowMoreAction(_ sender: AnyObject) {
+        let url = URL(string: urlStr)
+        UIApplication.shared.openURL(url!)
     }
     
     // <Custom>
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.Default
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.default
     }
 }
 

@@ -17,23 +17,23 @@ class KWSNavitationBar: UINavigationBar {
         self.barTintColor = UIColorFromHex(0xffffff)
         
         // image 1
-        let logo_aa = UIImageView(image: UIImage(named: "logo_aa"))
-        logo_aa.frame = CGRectMake(16, (self.frame.size.height - 36)/2, 163, 36)
+        let logo_aa = UIImageView(image: UIImage(named: "logo2_sa"))
+        logo_aa.frame = CGRect(x: 16, y: (self.frame.size.height - 44)/2, width: 127, height: 44)
         self.addSubview(logo_aa)
         
         // image 2
         let logo_sa = UIImageView(image: UIImage(named: "logo_sa"))
-        logo_sa.frame = CGRectMake(self.frame.size.width - 16 - 95, (self.frame.size.height - 12) / 2, 95, 12)
+        logo_sa.frame = CGRect(x: self.frame.size.width - 16 - 95, y: (self.frame.size.height - 12) / 2, width: 95, height: 12)
         self.addSubview(logo_sa)
         
         // border
-        let frame = CGRectMake(0, self.frame.size.height - 1, self.frame.size.width, 1)
+        let frame = CGRect(x: 0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1)
         let border = UIView(frame: frame)
         border.backgroundColor = UIColorFromHex(0xED1C24)
         self.addSubview(border)
     }
     
-    override func sizeThatFits(size: CGSize) -> CGSize {
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
         var amendedSize = super.sizeThatFits(size)
         amendedSize.height += 40
         return amendedSize

@@ -24,7 +24,7 @@ class UserViewController: UIViewController, KWSPopupNavigationBarProtocol, UITab
             bar.kwsdelegate = self
         }
         
-        logoutButton.setTitle("user_logout".localized.uppercaseString, forState: UIControlState.Normal)
+        logoutButton.setTitle("user_logout".localized.uppercased(), for: UIControlState())
         logoutButton.redButton()
         spinnerM = SAActivityView.sharedManager()
         popupM = SAPopup.sharedManager()
@@ -32,26 +32,26 @@ class UserViewController: UIViewController, KWSPopupNavigationBarProtocol, UITab
         userDetailsTableView.dataSource = dataSource
         userDetailsTableView.delegate = dataSource
         dataSource?.update(start: {
-                self.spinnerM.showActivityView()
+                self.spinnerM.show()
             }, success: {
-                self.spinnerM.hideActivityView()
+                self.spinnerM.hide()
                 self.userDetailsTableView.reloadData()
             }, error: {
-                self.spinnerM.hideActivityView()
-                self.popupM.showWithTitle(
-                    "user_popup_error_title".localized,
+                self.spinnerM.hide()
+                self.popupM.show(
+                    withTitle: "user_popup_error_title".localized,
                     andMessage: "user_popup_error_message".localized,
                     andOKTitle: "user_popup_dismiss_button".localized,
                     andNOKTitle: nil,
                     andTextField: false,
-                    andKeyboardTyle: .Default,
+                    andKeyboardTyle: .default,
                     andPressed: nil)
         })
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController?.navigationBar.barStyle = .Black
+        navigationController?.navigationBar.barStyle = .black
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,15 +65,15 @@ class UserViewController: UIViewController, KWSPopupNavigationBarProtocol, UITab
     }
     
     func kwsPopupNavDidPressOnClose() {
-        dismissViewControllerAnimated(true) {
+        dismiss(animated: true) {
             // flush
         }
     }
     
     // MARK: Actions
     
-    @IBAction func logoutAction(sender: AnyObject) {
-        dismissViewControllerAnimated(true) { 
+    @IBAction func logoutAction(_ sender: AnyObject) {
+        dismiss(animated: true) { 
             KWSSingleton.sharedInstance.logoutUser()
         }
     }

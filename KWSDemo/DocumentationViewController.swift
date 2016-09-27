@@ -19,7 +19,7 @@ class DocumentationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: urlStr)!))
+        webView.loadRequest(URLRequest(url: URL(string: urlStr)!))
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,7 +28,7 @@ class DocumentationViewController: UIViewController {
     
     // <Custom>
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.Default
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.default
     }
 }

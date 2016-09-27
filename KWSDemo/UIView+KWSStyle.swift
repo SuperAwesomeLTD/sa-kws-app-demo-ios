@@ -11,10 +11,10 @@ import UIKit
 extension UIView {
     
     func addShadow () {
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.white
         layer.masksToBounds = false
-        layer.shadowColor = UIColorFromHex(0x898989).CGColor
-        layer.shadowOffset = CGSizeMake(0, 2.5)
+        layer.shadowColor = UIColorFromHex(0x898989).cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 2.5)
         layer.shadowOpacity = 0.5
       }
 }
