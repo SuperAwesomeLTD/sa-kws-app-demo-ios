@@ -8,42 +8,42 @@
 
 import UIKit
 
-class LeaderViewController: UIViewController, KWSPopupNavigationBarProtocol {
+class LeaderViewController: UIViewController/*, KWSPopupNavigationBarProtocol*/ {
 
     @IBOutlet weak var tableView: UITableView!
-    fileprivate var dataSource: LeaderDataSource!
-    fileprivate var spinnerM: SAActivityView!
-    fileprivate var popupM: SAPopup!
+//    fileprivate var dataSource: LeaderDataSource!
+//    fileprivate var spinnerM: SAActivityView!
+//    fileprivate var popupM: SAPopup!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let bar = navigationController?.navigationBar as? KWSPopupNavigationBar {
-            bar.kwsdelegate = self
-        }
+//        if let bar = navigationController?.navigationBar as? KWSPopupNavigationBar {
+//            bar.kwsdelegate = self
+//        }
         
         
-        spinnerM = SAActivityView.sharedManager()
-        popupM = SAPopup.sharedManager()
-        dataSource = LeaderDataSource()
-        tableView.dataSource = dataSource
-        tableView.delegate = dataSource
-        dataSource.update(start: {
-                self.spinnerM.show()
-            }, success: { 
-                self.spinnerM.hide()
-                self.tableView.reloadData()
-            }, error: {
-                self.spinnerM.hide()
-                self.popupM.show(
-                    withTitle: "leader_popup_error_title".localized,
-                    andMessage: "leader_popup_error_message".localized,
-                    andOKTitle: "leader_popup_dismiss_button".localized,
-                    andNOKTitle: nil,
-                    andTextField: false,
-                    andKeyboardTyle: UIKeyboardType.default,
-                    andPressed: nil)
-        })
+//        spinnerM = SAActivityView.sharedManager()
+//        popupM = SAPopup.sharedManager()
+//        dataSource = LeaderDataSource()
+//        tableView.dataSource = dataSource
+//        tableView.delegate = dataSource
+//        dataSource.update(start: {
+//                self.spinnerM.show()
+//            }, success: { 
+//                self.spinnerM.hide()
+//                self.tableView.reloadData()
+//            }, error: {
+//                self.spinnerM.hide()
+//                self.popupM.show(
+//                    withTitle: "leader_popup_error_title".localized,
+//                    andMessage: "leader_popup_error_message".localized,
+//                    andOKTitle: "leader_popup_dismiss_button".localized,
+//                    andNOKTitle: nil,
+//                    andTextField: false,
+//                    andKeyboardTyle: UIKeyboardType.default,
+//                    andPressed: nil)
+//        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,16 +55,16 @@ class LeaderViewController: UIViewController, KWSPopupNavigationBarProtocol {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: KWSPopupNavigationBarProtocol
-    
-    func kwsPopupNavGetTitle() -> String {
-        return "leader_vc_title".localized
-    }
-    
-    func kwsPopupNavDidPressOnClose() {
-        dismiss(animated: true) {
-            // flush
-        }
-    }
+//    // MARK: KWSPopupNavigationBarProtocol
+//    
+//    func kwsPopupNavGetTitle() -> String {
+//        return "leader_vc_title".localized
+//    }
+//    
+//    func kwsPopupNavDidPressOnClose() {
+//        dismiss(animated: true) {
+//            // flush
+//        }
+//    }
 
 }

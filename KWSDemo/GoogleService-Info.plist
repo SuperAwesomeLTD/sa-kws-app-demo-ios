@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>335316960677-7f2e618ub4jaf4ijdel06i3bkf2ea025.apps.googleusercontent.com</string>
+	<string>335316960677-rv1qfsbcgoa09oq2c1a2rt116uaoi8lg.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.335316960677-7f2e618ub4jaf4ijdel06i3bkf2ea025</string>
+	<string>com.googleusercontent.apps.335316960677-rv1qfsbcgoa09oq2c1a2rt116uaoi8lg</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDvF7ym-FJ6KHlGdUEWbKTt2kEQg1ug2h4</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>tv.superawesome.KWSDemo</string>
+	<string>superawesome.tv.kwsdemoapp</string>
 	<key>PROJECT_ID</key>
 	<string>sa-kws-13936</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:335316960677:ios:329cad5b908833f4</string>
+	<string>1:335316960677:ios:a588c3359b845a7a</string>
 	<key>DATABASE_URL</key>
 	<string>https://sa-kws-13936.firebaseio.com</string>
 </dict>

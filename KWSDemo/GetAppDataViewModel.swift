@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GetAppDataViewModel: AnyObject, ViewModel {
+class GetAppDataViewModel: AnyObject /*, ViewModel*/ {
     
     var name: String
     var value: NSInteger = 0
@@ -18,15 +18,15 @@ class GetAppDataViewModel: AnyObject, ViewModel {
         self.value = value
     }
     
-    func heightForRow() -> CGFloat {
-        return 44
-    }
+//    func heightForRow() -> CGFloat {
+//        return 44
+//    }
     
-    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GetAppDataRowId") as! GetAppDataRow
-        cell.nameLabel.text = name
-        cell.valueLabel.text = "\(value)"
-        return cell
-    }
+//    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "GetAppDataRowId") as! GetAppDataRow
+//        cell.nameLabel.text = name
+//        cell.valueLabel.text = "\(value)"
+//        return cell
+//    }
     
 }

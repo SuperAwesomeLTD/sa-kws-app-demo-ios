@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAUtils
 
 class KWSNavitationBar: UINavigationBar {
 

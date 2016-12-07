@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAUtils
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        SuperAwesome.getInstance().handleCPI()
         
         UITabBar.appearance().barTintColor = UIColorFromHex(0xf9f9f9)
         UITabBar.appearance().tintColor = UIColorFromHex(0xED1C24)

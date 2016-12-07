@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B2D45AA1D5CC58700E525AA /* FeatureDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D45A91D5CC58700E525AA /* FeatureDataSource.swift */; };
 		1B56DFD51D194A6200973075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B56DFD41D194A6200973075 /* AppDelegate.swift */; };
 		1B56DFD71D194A6200973075 /* PlatformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B56DFD61D194A6200973075 /* PlatformViewController.swift */; };
 		1B56DFDA1D194A6200973075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B56DFD81D194A6200973075 /* Main.storyboard */; };
@@ -23,17 +22,12 @@
 		1B6463A11D5CCAE400FB81FD /* FeatureNotifViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6463A01D5CCAE400FB81FD /* FeatureNotifViewModel.swift */; };
 		1B6463A31D5CCAF000FB81FD /* FeaturePermViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6463A21D5CCAF000FB81FD /* FeaturePermViewModel.swift */; };
 		1B6463A51D5CCAFE00FB81FD /* FeatureEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6463A41D5CCAFE00FB81FD /* FeatureEventViewModel.swift */; };
-		1B6463A71D5CD24000FB81FD /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6463A61D5CD24000FB81FD /* Notifications.swift */; };
-		1B7AD5871D5CA199003400B4 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AD5861D5CA199003400B4 /* UserDataSource.swift */; };
-		1B7AD5891D5CA498003400B4 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AD5881D5CA498003400B4 /* DataSource.swift */; };
-		1B7AD58C1D5CA4E6003400B4 /* LeaderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AD58B1D5CA4E6003400B4 /* LeaderDataSource.swift */; };
 		1B7AD5921D5CADD4003400B4 /* UserHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AD5911D5CADD4003400B4 /* UserHeaderViewModel.swift */; };
 		1B7AD5941D5CADDD003400B4 /* UserRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AD5931D5CADDD003400B4 /* UserRowViewModel.swift */; };
 		1B7AD5961D5CB074003400B4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AD5951D5CB074003400B4 /* ViewModel.swift */; };
 		1B7AD5981D5CB563003400B4 /* LeaderRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AD5971D5CB563003400B4 /* LeaderRowViewModel.swift */; };
 		1B7AD59A1D5CB7DA003400B4 /* LeaderHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AD5991D5CB7DA003400B4 /* LeaderHeader.swift */; };
 		1B7AD59C1D5CB9A4003400B4 /* LeaderHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AD59B1D5CB9A4003400B4 /* LeaderHeaderViewModel.swift */; };
-		1B92FCDB1D2181F300B75617 /* KWSSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */; };
 		1B92FCDD1D218BEA00B75617 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDC1D218BEA00B75617 /* UserViewController.swift */; };
 		1B92FD0C1D228F7000B75617 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */; };
 		1BA9F0DF1D78336C002150A7 /* FeatureInviteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0DE1D78336C002150A7 /* FeatureInviteRow.swift */; };
@@ -43,7 +37,6 @@
 		1BA9F0E91D783CF0002150A7 /* GetAppDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0E81D783CF0002150A7 /* GetAppDataController.swift */; };
 		1BA9F0EB1D783FC3002150A7 /* GetAppDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0EA1D783FC3002150A7 /* GetAppDataRow.swift */; };
 		1BA9F0ED1D783FCE002150A7 /* GetAppDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0EC1D783FCE002150A7 /* GetAppDataViewModel.swift */; };
-		1BA9F0EF1D783FDC002150A7 /* GetAppDataDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0EE1D783FDC002150A7 /* GetAppDataDataSource.swift */; };
 		1BA9F0F11D78442A002150A7 /* SetAppDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0F01D78442A002150A7 /* SetAppDataController.swift */; };
 		1BA9F0F31D784EA4002150A7 /* SetAppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0F21D784EA4002150A7 /* SetAppDataModel.swift */; };
 		1BDC11A61D1953C900B1111A /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A51D1953C900B1111A /* FeatureViewController.swift */; };
@@ -70,14 +63,12 @@
 		1BDC11FC1D1ABF8E00B1111A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FB1D1ABF8E00B1111A /* SignUpViewController.swift */; };
 		1BDC11FE1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FD1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift */; };
 		1BDC12001D1AECC300B1111A /* UITextField+KWSStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FF1D1AECC300B1111A /* UITextField+KWSStyle.swift */; };
-		1BDC12031D1AF5BA00B1111A /* KWSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC12021D1AF5BA00B1111A /* KWSModel.swift */; };
 		1BE8CEF61D8FF2A000572070 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CEF51D8FF2A000572070 /* Localizable.strings */; };
 		1BE8CEFD1D90342300572070 /* NSString+KWSStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8CEFC1D90342300572070 /* NSString+KWSStyle.swift */; };
-		E076418A6275A726179B815C /* libPods-KWSDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E3EBA46FE4C45797F69944 /* libPods-KWSDemo.a */; };
+		486C55E87962109585629F6B /* Pods_KWSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FC682E29A423CEE036B9BD /* Pods_KWSDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B2D45A91D5CC58700E525AA /* FeatureDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureDataSource.swift; sourceTree = "<group>"; };
 		1B56DFD11D194A6200973075 /* KWSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KWSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B56DFD41D194A6200973075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B56DFD61D194A6200973075 /* PlatformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformViewController.swift; sourceTree = "<group>"; };
@@ -96,17 +87,12 @@
 		1B6463A01D5CCAE400FB81FD /* FeatureNotifViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureNotifViewModel.swift; sourceTree = "<group>"; };
 		1B6463A21D5CCAF000FB81FD /* FeaturePermViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturePermViewModel.swift; sourceTree = "<group>"; };
 		1B6463A41D5CCAFE00FB81FD /* FeatureEventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureEventViewModel.swift; sourceTree = "<group>"; };
-		1B6463A61D5CD24000FB81FD /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		1B7AD5861D5CA199003400B4 /* UserDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
-		1B7AD5881D5CA498003400B4 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		1B7AD58B1D5CA4E6003400B4 /* LeaderDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderDataSource.swift; sourceTree = "<group>"; };
 		1B7AD5911D5CADD4003400B4 /* UserHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHeaderViewModel.swift; sourceTree = "<group>"; };
 		1B7AD5931D5CADDD003400B4 /* UserRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRowViewModel.swift; sourceTree = "<group>"; };
 		1B7AD5951D5CB074003400B4 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		1B7AD5971D5CB563003400B4 /* LeaderRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderRowViewModel.swift; sourceTree = "<group>"; };
 		1B7AD5991D5CB7DA003400B4 /* LeaderHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderHeader.swift; sourceTree = "<group>"; };
 		1B7AD59B1D5CB9A4003400B4 /* LeaderHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderHeaderViewModel.swift; sourceTree = "<group>"; };
-		1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSSingleton.swift; sourceTree = "<group>"; };
 		1B92FCDC1D218BEA00B75617 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1BA9F0DE1D78336C002150A7 /* FeatureInviteRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureInviteRow.swift; sourceTree = "<group>"; };
@@ -116,7 +102,6 @@
 		1BA9F0E81D783CF0002150A7 /* GetAppDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAppDataController.swift; sourceTree = "<group>"; };
 		1BA9F0EA1D783FC3002150A7 /* GetAppDataRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAppDataRow.swift; sourceTree = "<group>"; };
 		1BA9F0EC1D783FCE002150A7 /* GetAppDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAppDataViewModel.swift; sourceTree = "<group>"; };
-		1BA9F0EE1D783FDC002150A7 /* GetAppDataDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAppDataDataSource.swift; sourceTree = "<group>"; };
 		1BA9F0F01D78442A002150A7 /* SetAppDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetAppDataController.swift; sourceTree = "<group>"; };
 		1BA9F0F21D784EA4002150A7 /* SetAppDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetAppDataModel.swift; sourceTree = "<group>"; };
 		1BDC11A51D1953C900B1111A /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
@@ -143,11 +128,10 @@
 		1BDC11FB1D1ABF8E00B1111A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1BDC11FD1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSPopupNavigationBar.swift; sourceTree = "<group>"; };
 		1BDC11FF1D1AECC300B1111A /* UITextField+KWSStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+KWSStyle.swift"; sourceTree = "<group>"; };
-		1BDC12021D1AF5BA00B1111A /* KWSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSModel.swift; sourceTree = "<group>"; };
 		1BE8CEF51D8FF2A000572070 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1BE8CEF81D8FF92900572070 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1BE8CEFC1D90342300572070 /* NSString+KWSStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+KWSStyle.swift"; sourceTree = "<group>"; };
-		60E3EBA46FE4C45797F69944 /* libPods-KWSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KWSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35FC682E29A423CEE036B9BD /* Pods_KWSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KWSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73EC6CD53EA0788DF07CB27A /* Pods-KWSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A57993F2A900C4293C24C6FD /* Pods-KWSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,13 +141,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E076418A6275A726179B815C /* libPods-KWSDemo.a in Frameworks */,
+				486C55E87962109585629F6B /* Pods_KWSDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B085FF31DF810EA00986E56 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1B56DFD81D194A6200973075 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		1B56DFC81D194A6200973075 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +177,7 @@
 		1B56DFD31D194A6200973075 /* KWSDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1B085FF31DF810EA00986E56 /* Storyboards */,
 				1B6392941D5B7053005FDCE2 /* Aux */,
 				1BDC11EB1D1AA39300B1111A /* Styles */,
 				1BDC11B01D198B3900B1111A /* Assets */,
@@ -192,7 +185,6 @@
 				1B56DFE81D194B4700973075 /* Meta */,
 				1B56DFE71D194B3800973075 /* Controllers */,
 				1B56DFE61D194B3400973075 /* Delegate */,
-				1B56DFD81D194A6200973075 /* Main.storyboard */,
 			);
 			path = KWSDemo;
 			sourceTree = "<group>";
@@ -235,11 +227,7 @@
 		1B6392941D5B7053005FDCE2 /* Aux */ = {
 			isa = PBXGroup;
 			children = (
-				1B92FCDA1D2181F300B75617 /* KWSSingleton.swift */,
-				1BDC12021D1AF5BA00B1111A /* KWSModel.swift */,
-				1B7AD5881D5CA498003400B4 /* DataSource.swift */,
 				1B7AD5951D5CB074003400B4 /* ViewModel.swift */,
-				1B6463A61D5CD24000FB81FD /* Notifications.swift */,
 			);
 			name = Aux;
 			sourceTree = "<group>";
@@ -252,7 +240,6 @@
 				1B6392A51D5B72F1005FDCE2 /* UserRow.swift */,
 				1B7AD5931D5CADDD003400B4 /* UserRowViewModel.swift */,
 				1B92FCDC1D218BEA00B75617 /* UserViewController.swift */,
-				1B7AD5861D5CA199003400B4 /* UserDataSource.swift */,
 			);
 			name = UserDetails;
 			sourceTree = "<group>";
@@ -265,7 +252,6 @@
 				1B6392B61D5C78F1005FDCE2 /* LeaderRow.swift */,
 				1B7AD5971D5CB563003400B4 /* LeaderRowViewModel.swift */,
 				1B6392B41D5C768B005FDCE2 /* LeaderViewController.swift */,
-				1B7AD58B1D5CA4E6003400B4 /* LeaderDataSource.swift */,
 			);
 			name = Leaderboard;
 			sourceTree = "<group>";
@@ -310,7 +296,6 @@
 				1BA9F0E21D783893002150A7 /* FeatureAppDataRow.swift */,
 				1BA9F0E41D78390D002150A7 /* FeatureAppDataViewModel.swift */,
 				1BDC11A51D1953C900B1111A /* FeatureViewController.swift */,
-				1B2D45A91D5CC58700E525AA /* FeatureDataSource.swift */,
 			);
 			name = Features;
 			sourceTree = "<group>";
@@ -330,7 +315,6 @@
 				1BA9F0EA1D783FC3002150A7 /* GetAppDataRow.swift */,
 				1BA9F0EC1D783FCE002150A7 /* GetAppDataViewModel.swift */,
 				1BA9F0E81D783CF0002150A7 /* GetAppDataController.swift */,
-				1BA9F0EE1D783FDC002150A7 /* GetAppDataDataSource.swift */,
 			);
 			name = GetAppData;
 			sourceTree = "<group>";
@@ -380,7 +364,7 @@
 		C6BA7DA313395D83BFD2D04C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				60E3EBA46FE4C45797F69944 /* libPods-KWSDemo.a */,
+				35FC682E29A423CEE036B9BD /* Pods_KWSDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -502,7 +486,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C21949C16A431F1DEE7D8E79 /* [CP] Embed Pods Frameworks */ = {
@@ -542,7 +526,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B7AD5891D5CA498003400B4 /* DataSource.swift in Sources */,
 				1BDC11FE1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift in Sources */,
 				1BA9F0F11D78442A002150A7 /* SetAppDataController.swift in Sources */,
 				1BDC11FC1D1ABF8E00B1111A /* SignUpViewController.swift in Sources */,
@@ -550,7 +533,6 @@
 				1B7AD5941D5CADDD003400B4 /* UserRowViewModel.swift in Sources */,
 				1BA9F0DF1D78336C002150A7 /* FeatureInviteRow.swift in Sources */,
 				1B6392AB1D5B92A3005FDCE2 /* FeaturePermRow.swift in Sources */,
-				1BA9F0EF1D783FDC002150A7 /* GetAppDataDataSource.swift in Sources */,
 				1B7AD5981D5CB563003400B4 /* LeaderRowViewModel.swift in Sources */,
 				1BDC11FA1D1AABBD00B1111A /* UIView+KWSStyle.swift in Sources */,
 				1B6463A11D5CCAE400FB81FD /* FeatureNotifViewModel.swift in Sources */,
@@ -561,10 +543,8 @@
 				1BA9F0E91D783CF0002150A7 /* GetAppDataController.swift in Sources */,
 				1B6392A31D5B72E5005FDCE2 /* UserHeader.swift in Sources */,
 				1BDC11AB1D197EB200B1111A /* KWSNavitationBar.swift in Sources */,
-				1B6463A71D5CD24000FB81FD /* Notifications.swift in Sources */,
 				1BDC11A61D1953C900B1111A /* FeatureViewController.swift in Sources */,
 				1B6392B51D5C768B005FDCE2 /* LeaderViewController.swift in Sources */,
-				1B2D45AA1D5CC58700E525AA /* FeatureDataSource.swift in Sources */,
 				1B56DFD71D194A6200973075 /* PlatformViewController.swift in Sources */,
 				1B6392A71D5B72F1005FDCE2 /* UserRow.swift in Sources */,
 				1B6463A31D5CCAF000FB81FD /* FeaturePermViewModel.swift in Sources */,
@@ -578,16 +558,12 @@
 				1BA9F0F31D784EA4002150A7 /* SetAppDataModel.swift in Sources */,
 				1B7AD59C1D5CB9A4003400B4 /* LeaderHeaderViewModel.swift in Sources */,
 				1B6392B31D5C7386005FDCE2 /* FeatureEventRow.swift in Sources */,
-				1B7AD58C1D5CA4E6003400B4 /* LeaderDataSource.swift in Sources */,
 				1BA9F0ED1D783FCE002150A7 /* GetAppDataViewModel.swift in Sources */,
 				1BDC11ED1D1AA3BD00B1111A /* UIButton+KWSStyle.swift in Sources */,
 				1B92FCDD1D218BEA00B75617 /* UserViewController.swift in Sources */,
-				1B7AD5871D5CA199003400B4 /* UserDataSource.swift in Sources */,
 				1BDC11F31D1AA99800B1111A /* FeatureAuthRow.swift in Sources */,
 				1BDC12001D1AECC300B1111A /* UITextField+KWSStyle.swift in Sources */,
 				1B6463A51D5CCAFE00FB81FD /* FeatureEventViewModel.swift in Sources */,
-				1BDC12031D1AF5BA00B1111A /* KWSModel.swift in Sources */,
-				1B92FCDB1D2181F300B75617 /* KWSSingleton.swift in Sources */,
 				1B64639F1D5CCADA00FB81FD /* FeatureAuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "250cb52e-a609-43a8-867c-86a340b88213";
@@ -701,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "250cb52e-a609-43a8-867c-86a340b88213";
 				SDKROOT = iphoneos;
@@ -720,7 +696,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: SuperAwesome Ltd (DCC9L689QJ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SuperAwesome Ltd (DCC9L689QJ)";
 				INFOPLIST_FILE = KWSDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = superawesome.tv.kwsdemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -728,6 +704,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "KWSDemo/KWSDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -740,13 +717,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: SuperAwesome Ltd (DCC9L689QJ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SuperAwesome Ltd (DCC9L689QJ)";
 				INFOPLIST_FILE = KWSDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = superawesome.tv.kwsdemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "250cb52e-a609-43a8-867c-86a340b88213";
 				SWIFT_OBJC_BRIDGING_HEADER = "KWSDemo/KWSDemo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SAUtils
 
-class UserRowViewModel: AnyObject, ViewModel {
+class UserRowViewModel: AnyObject/*, ViewModel*/ {
     var item: String
     var value: String
     var valueColor: UIColor?
@@ -44,15 +45,15 @@ class UserRowViewModel: AnyObject, ViewModel {
         }
     }
     
-    func heightForRow() -> CGFloat {
-        return 44
-    }
-    
-    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserRowId") as! UserRow
-        cell.titleLabel.text = self.item
-        cell.valueLabel.text = self.value
-        cell.valueLabel.textColor = self.valueColor
-        return cell
-    }
+//    func heightForRow() -> CGFloat {
+//        return 44
+//    }
+//    
+//    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "UserRowId") as! UserRow
+//        cell.titleLabel.text = self.item
+//        cell.valueLabel.text = self.value
+//        cell.valueLabel.textColor = self.valueColor
+//        return cell
+//    }
 }

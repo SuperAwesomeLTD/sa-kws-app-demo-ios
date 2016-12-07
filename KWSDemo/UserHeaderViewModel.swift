@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserHeaderViewModel: AnyObject, ViewModel {
+class UserHeaderViewModel: AnyObject/*, ViewModel*/ {
 
     var title: String
     
@@ -16,13 +16,13 @@ class UserHeaderViewModel: AnyObject, ViewModel {
         self.title = title
     }
     
-    func heightForRow() -> CGFloat {
-        return 44
-    }
-    
-    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserHeaderId") as! UserHeader
-        cell.headerTitle.text = self.title
-        return cell
-    }
+//    func heightForRow() -> CGFloat {
+//        return 44
+//    }
+//    
+//    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "UserHeaderId") as! UserHeader
+//        cell.headerTitle.text = self.title
+//        return cell
+//    }
 }
