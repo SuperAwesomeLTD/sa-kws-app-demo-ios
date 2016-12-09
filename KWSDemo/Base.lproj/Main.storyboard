@@ -45,7 +45,7 @@
             <objects>
                 <navigationController id="Z7G-hV-BTB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Platform" image="tab_platform_unsel" selectedImage="tab_platform_sel" id="KXs-Ny-lzX"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="W9X-I6-wI5" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W9X-I6-wI5" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -222,7 +222,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureAuthRowId" rowHeight="298" id="QgU-lU-uWh" customClass="FeatureAuthRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="298"/>
+                                        <rect key="frame" x="0.0" y="92" width="1000" height="298"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QgU-lU-uWh" id="TNn-Vo-RGm">
                                             <frame key="frameInset" width="600" height="298"/>
@@ -305,7 +305,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureNotifRowId" rowHeight="248" id="vTg-mh-kav" customClass="FeatureNotifRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="390" width="600" height="248"/>
+                                        <rect key="frame" x="0.0" y="390" width="1000" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vTg-mh-kav" id="281-TQ-NBb">
                                             <frame key="frameInset" width="600" height="248"/>
@@ -388,7 +388,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeaturePermRowId" rowHeight="248" id="quf-yd-1u7" customClass="FeaturePermRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="638" width="600" height="248"/>
+                                        <rect key="frame" x="0.0" y="638" width="1000" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="quf-yd-1u7" id="AEL-73-n9D">
                                             <frame key="frameInset" width="600" height="248"/>
@@ -471,7 +471,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureEventRowId" rowHeight="368" id="5QN-Wb-5m9" customClass="FeatureEventRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="886" width="600" height="368"/>
+                                        <rect key="frame" x="0.0" y="886" width="1000" height="368"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5QN-Wb-5m9" id="Z6T-Yy-aTM">
                                             <frame key="frameInset" width="600" height="368"/>
@@ -590,7 +590,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureInviteRowId" rowHeight="248" id="aux-XC-pDW" customClass="FeatureInviteRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1254" width="600" height="248"/>
+                                        <rect key="frame" x="0.0" y="1254" width="1000" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aux-XC-pDW" id="hy3-bl-rNe">
                                             <frame key="frameInset" width="600" height="248"/>
@@ -673,7 +673,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureAppDataRowId" rowHeight="248" id="CPD-3l-b5C" customClass="FeatureAppDataRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1502" width="600" height="248"/>
+                                        <rect key="frame" x="0.0" y="1502" width="1000" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CPD-3l-b5C" id="pwi-Sj-51f">
                                             <frame key="frameInset" width="600" height="248"/>
@@ -785,7 +785,7 @@
         <scene sceneID="O8z-UY-iSo">
             <objects>
                 <navigationController storyboardIdentifier="SignUpNavControllerId" id="LpG-5y-JA9" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="q18-zc-z2n" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q18-zc-z2n" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>
@@ -804,7 +804,7 @@
         <scene sceneID="Ves-K8-10S">
             <objects>
                 <navigationController id="69N-uK-yMO" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="p5H-9Y-DDM" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p5H-9Y-DDM" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>
@@ -1020,7 +1020,7 @@
         <scene sceneID="z2v-Mk-Frj">
             <objects>
                 <navigationController storyboardIdentifier="UserNavControllerId" id="Az1-PF-dGO" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eww-9K-xsI" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eww-9K-xsI" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>
@@ -1439,7 +1439,7 @@
         <scene sceneID="rlq-Uy-97j">
             <objects>
                 <navigationController storyboardIdentifier="GetAppDataNavControllerId" id="kUB-Ix-gsw" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0yO-Vf-F46" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0yO-Vf-F46" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>
@@ -1538,7 +1538,7 @@
         <scene sceneID="YXB-pu-xtp">
             <objects>
                 <navigationController storyboardIdentifier="LeaderboardNavControllerId" id="Axd-AN-p3c" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AKo-zv-JdA" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AKo-zv-JdA" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>

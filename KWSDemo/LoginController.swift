@@ -115,7 +115,7 @@ class LoginController: KWSBaseController, SignUpProtocol {
     func networkError () {
         SAPopup.sharedManager().show(withTitle: "login_popup_error_network_title".localized,
                                      andMessage: "login_popup_error_message".localized,
-                                     andOKTitle: "login_popup_error_network_message".localized,
+                                     andOKTitle: "login_popup_dismiss_button".localized,
                                      andNOKTitle: nil,
                                      andTextField: false,
                                      andKeyboardTyle: .decimalPad,
