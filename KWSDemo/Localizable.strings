@@ -20,13 +20,14 @@
 "feature_cell_auth_title" = "Secure single sign-on";
 "feature_cell_auth_content" = "Kids Web Services' federated identity system (Single Sign-On) allows kids and parents to create one secure login to access your collection of kid-safe apps and sites.";
 "feature_cell_auth_button_1_loggedout" = "AUTHENTICATE USER";
-"feature_cell_auth_button_1_loggedin" = "LOGGED IN AS";
+"feature_cell_auth_button_1_loggedin" = "LOGGED IN AS ";
 "feature_cell_auth_button_2" = "SEE DOCUMENTATION";
 "feature_cell_notif_title" = "Kid-safe push notifications";
 "feature_cell_notif_content" = "Safely manage Push Notifications for your users through Kids Web Services. Enable, disable and schedule notifications to be sent to your user base on a regular basis.";
 
 /*Fuzzy*/
 "feature_cell_notif_button_1_enable" = "ENABLE PUSH NOTIFICATIONS";
+"feature_cell_notif_button_1_disable" = "DISABLE PUSH NOTIFICATIONS";
 "feature_cell_notif_button_2" = "SEE DOCUMENTATION";
 "feature_cell_perm_title" = "Manage permissions";
 "feature_cell_perm_content" = "Kids Web Services handles the complexities of dealing with personally identifiable information for. It allows you to request permission from a parent when requesting such data.";
@@ -79,12 +80,25 @@
 "feature_friend_email_popup_error_message" = "An error occurred while inviting %@ to your app through KWS. Please try again!";
 "feature_popup_dismiss_button" = "Got it";
 
+/** login */
+"login_vc_title" = "Log in to KWS";
+"login_username_placeholder" = "Enter username";
+"login_password_placeholder" = "Enter password";
+"login_button_login" = "Login";
+"login_button_create" = "Create new user";
+"login_popup_error_title" = "Oops - something went wrong!";
+"login_popup_error_message" = "Seems like either the username or password you supplied were incorrect";
+"login_popup_error_network_title" = "Oops - something went wrong!";
+"login_popup_error_network_message" = "Seems like either the username or password you supplied were incorrect";
+"login_popup_dismiss_button" = "Got it";
+
 /*documentation
  sign-up*/
 "sign_up_vc_title" = "Sign up to KWS";
 "sign_up_username_placeholder" = "Enter a username";
 "sign_up_password1_placeholder" = "Enter a password";
 "sign_up_password2_placeholder" = "Repeat the password";
+"sign_up_parent_email_paceholder" = "Enter a parent email";
 "sign_up_year_placeholder" = "YYYY";
 "sign_up_month_placeholder" = "MM";
 "sign_up_day_placeholder" = "DD";
@@ -92,7 +106,7 @@
 "sign_up_popup_warning_title" = "Hey";
 "sign_up_popup_error_title" = "Oops - something went wrong!";
 "sign_up_popup_dismiss_button" = "Got it";
-"sign_up_popup_warning_message_username" = "Please enter a different username";
+"sign_up_popup_warning_message_username" = "Please enter a different username, unfortunately this one is already taken.";
 "sign_up_popup_warning_message_password1" = "Please enter a password that is longer than 8 characters";
 "sign_up_popup_warning_message_password2" = "Please make sure the two passwords match (and are both longer than 8 characters)";
 "sign_up_popup_warning_message_password12" = "The two passwords you entered do not match!";
@@ -172,7 +186,6 @@
 "user_row_perm_street" = "Street";
 
 /*feature_cell_notif_button_1_disable*/
-"feature_cell_notif_button_1_disable" = "DISABLE PUSH NOTIFICATIONS";
 
 /*feature_perm_popup_error_title*/
 "feature_perm_popup_error_title" = "Something went wrong!";

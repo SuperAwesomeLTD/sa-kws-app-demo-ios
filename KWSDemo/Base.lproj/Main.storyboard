@@ -24,7 +24,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="1mu-U8-a3y">
             <objects>
-                <tabBarController id="jYz-5m-eYT" sceneMemberID="viewController">
+                <tabBarController id="jYz-5m-eYT" customClass="KWSTabBarController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="BKq-MY-jib">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -38,14 +38,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BG-je-v5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-778" y="252"/>
+            <point key="canvasLocation" x="-639" y="251"/>
         </scene>
         <!--Platform-->
         <scene sceneID="4fd-0l-XqI">
             <objects>
                 <navigationController id="Z7G-hV-BTB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Platform" image="tab_platform_unsel" selectedImage="tab_platform_sel" id="KXs-Ny-lzX"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W9X-I6-wI5" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="W9X-I6-wI5" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -55,7 +55,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQM-hB-geD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="-1207"/>
+            <point key="canvasLocation" x="484" y="-1018"/>
         </scene>
         <!--Platform View Controller-->
         <scene sceneID="odJ-oz-TrX">
@@ -142,12 +142,15 @@
                                                     <constraint firstAttribute="height" constant="203" id="iPp-58-RfZ"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7If-f2-9Nb">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7If-f2-9Nb" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
+                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="pxo-jt-22y"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="knowMoreAction:" destination="LMb-gR-3IY" eventType="touchUpInside" id="dE7-mA-tFt"/>
                                                 </connections>
@@ -201,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Boq-uP-rLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="-1206"/>
+            <point key="canvasLocation" x="1313" y="-1019"/>
         </scene>
         <!--Feature View Controller-->
         <scene sceneID="q9M-Jj-Ix2">
@@ -225,7 +228,7 @@
                                             <frame key="frameInset" width="600" height="298"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itd-qY-Xkz">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itd-qY-Xkz" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_login_btn" translatesAutoresizingMaskIntoConstraints="NO" id="Tks-7g-u0Y">
                                                             <constraints>
@@ -233,7 +236,7 @@
                                                                 <constraint firstAttribute="width" constant="28" id="JnO-lJ-2kM"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lti-Gf-eoI">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lti-Gf-eoI" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="nyA-AY-UVv"/>
@@ -241,7 +244,7 @@
                                                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                                             <state key="normal" title="Button"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41E-kb-EeM">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41E-kb-EeM" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="WvI-NS-Ggs"/>
@@ -299,7 +302,6 @@
                                             <outlet property="authDocsButton" destination="41E-kb-EeM" id="BkS-tB-NR7"/>
                                             <outlet property="authMessage" destination="jWg-7p-afM" id="XpX-4Z-pgi"/>
                                             <outlet property="authTitle" destination="zTY-DA-E0Q" id="6pS-4M-0vL"/>
-                                            <outlet property="content" destination="Itd-qY-Xkz" id="OeP-N7-l19"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureNotifRowId" rowHeight="248" id="vTg-mh-kav" customClass="FeatureNotifRow" customModule="KWSDemo" customModuleProvider="target">
@@ -309,7 +311,7 @@
                                             <frame key="frameInset" width="600" height="248"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rf7-W9-RA4">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rf7-W9-RA4" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_bell" translatesAutoresizingMaskIntoConstraints="NO" id="pgN-Ne-7he">
                                                             <constraints>
@@ -333,7 +335,7 @@
                                                             <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5b-Ml-UUg">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5b-Ml-UUg" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="SVu-DB-CFO"/>
@@ -341,7 +343,7 @@
                                                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                                             <state key="normal" title="Button"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcm-eK-aUY">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcm-eK-aUY" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="WHS-Hz-rlm"/>
@@ -379,7 +381,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="content" destination="Rf7-W9-RA4" id="25D-E0-I6b"/>
                                             <outlet property="notifDocButton" destination="zcm-eK-aUY" id="62F-Qe-laF"/>
                                             <outlet property="notifEnableOrDisableButton" destination="S5b-Ml-UUg" id="mbV-3O-ZTf"/>
                                             <outlet property="notifMessage" destination="F7O-OM-gk0" id="fJg-5e-oNG"/>
@@ -393,7 +394,7 @@
                                             <frame key="frameInset" width="600" height="248"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hY-Ik-qUT">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hY-Ik-qUT" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_bell" translatesAutoresizingMaskIntoConstraints="NO" id="Tmt-D5-CMU">
                                                             <constraints>
@@ -417,7 +418,7 @@
                                                             <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDv-L0-bZO">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDv-L0-bZO" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="whP-kI-i2I"/>
@@ -425,7 +426,7 @@
                                                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                                             <state key="normal" title="Button"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRU-0N-bme">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRU-0N-bme" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="5wd-jm-gwE"/>
@@ -463,7 +464,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="content" destination="4hY-Ik-qUT" id="Skn-g6-vmh"/>
                                             <outlet property="permAddPermissionsButton" destination="IDv-L0-bZO" id="W4N-NM-pNK"/>
                                             <outlet property="permMessage" destination="gkq-ei-cTu" id="iXy-j1-zq8"/>
                                             <outlet property="permSeeDocsButton" destination="YRU-0N-bme" id="wZm-Gt-4kp"/>
@@ -477,7 +477,7 @@
                                             <frame key="frameInset" width="600" height="368"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoJ-tc-W7n">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoJ-tc-W7n" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_bell" translatesAutoresizingMaskIntoConstraints="NO" id="0TK-ej-xU4">
                                                             <constraints>
@@ -501,7 +501,7 @@
                                                             <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkc-JM-eoM">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkc-JM-eoM" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="j60-Zk-Fx0"/>
@@ -509,7 +509,7 @@
                                                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                                             <state key="normal" title="Button"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjQ-Ri-0Rg">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjQ-Ri-0Rg" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="ddR-Jz-Z1U"/>
@@ -517,7 +517,7 @@
                                                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                                             <state key="normal" title="Button"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85M-Lj-48f">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85M-Lj-48f" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="7pU-Mx-GNi"/>
@@ -525,7 +525,7 @@
                                                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                                             <state key="normal" title="Button"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyE-8K-Lq5">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyE-8K-Lq5" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="QB9-DK-0yj"/>
@@ -533,7 +533,7 @@
                                                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                                             <state key="normal" title="Button"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiR-da-HRI">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiR-da-HRI" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="evc-Ng-5b6"/>
@@ -580,7 +580,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="content" destination="EoJ-tc-W7n" id="tIA-qu-jDa"/>
                                             <outlet property="evtAdd20PointsButton" destination="Zkc-JM-eoM" id="IfE-ac-cuY"/>
                                             <outlet property="evtGetScoreButton" destination="85M-Lj-48f" id="qxV-Le-Rva"/>
                                             <outlet property="evtMessage" destination="HFg-VF-bGk" id="dYQ-fP-ipH"/>
@@ -597,7 +596,7 @@
                                             <frame key="frameInset" width="600" height="248"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmE-yr-1Ar">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmE-yr-1Ar" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_bell" translatesAutoresizingMaskIntoConstraints="NO" id="JwI-km-vWV">
                                                             <constraints>
@@ -613,7 +612,7 @@
                                                             <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGU-Ce-2sf">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGU-Ce-2sf" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="WPb-m5-GBb"/>
@@ -621,7 +620,7 @@
                                                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                                             <state key="normal" title="Button"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQN-pr-mD2">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQN-pr-mD2" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="2Xd-b5-D5t"/>
@@ -667,7 +666,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="content" destination="dmE-yr-1Ar" id="SET-Gw-3ca"/>
                                             <outlet property="invInviteFriendButton" destination="kGU-Ce-2sf" id="nXM-sQ-djv"/>
                                             <outlet property="invMessage" destination="iN8-Kg-fnX" id="4ZD-ME-cw5"/>
                                             <outlet property="invSeeDocsButton" destination="mQN-pr-mD2" id="eI0-9B-PNj"/>
@@ -681,7 +679,7 @@
                                             <frame key="frameInset" width="600" height="248"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cK6-8Y-LQD">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cK6-8Y-LQD" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_bell" translatesAutoresizingMaskIntoConstraints="NO" id="DaQ-nC-0Nn">
                                                             <constraints>
@@ -705,7 +703,7 @@
                                                             <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhc-LN-10t">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhc-LN-10t" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="Ynm-71-ZmU"/>
@@ -713,7 +711,7 @@
                                                             <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
                                                             <state key="normal" title="Button"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RwZ-Tf-NUr">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RwZ-Tf-NUr" customClass="KWSBlueButton" customModule="KWSDemo" customModuleProvider="target">
                                                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="FTb-Kj-pdp"/>
@@ -755,7 +753,6 @@
                                             <outlet property="appdSeeAppDataButton" destination="Bhc-LN-10t" id="BpY-9b-9h0"/>
                                             <outlet property="appdSeeDocsButton" destination="RwZ-Tf-NUr" id="NRU-xk-CPR"/>
                                             <outlet property="appdTitle" destination="AJh-2X-zr0" id="Y88-Oi-Y2h"/>
-                                            <outlet property="content" destination="cK6-8Y-LQD" id="3uN-GV-ebc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -774,19 +771,26 @@
                     <size key="freeformSize" width="600" height="1850"/>
                     <connections>
                         <outlet property="tableView" destination="APO-k3-Oph" id="rrg-dr-5Mg"/>
+                        <segue destination="kUB-Ix-gsw" kind="presentation" identifier="FeaturesToAddDataSegue" id="0CX-04-nO0"/>
+                        <segue destination="Axd-AN-p3c" kind="presentation" identifier="FeaturesToLeaderboardSegue" id="GBz-13-jHD"/>
+                        <segue destination="Az1-PF-dGO" kind="presentation" identifier="FeaturesToUserSegue" id="LXU-sp-RNd"/>
+                        <segue destination="69N-uK-yMO" kind="presentation" identifier="FeaturesToLoginSegue" id="Xo7-Me-FGU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg1-lC-a2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="74"/>
+            <point key="canvasLocation" x="1493" y="251"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O8z-UY-iSo">
             <objects>
-                <navigationController storyboardIdentifier="SignUpNavControllerId" id="LpG-5y-JA9" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q18-zc-z2n" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                <navigationController storyboardIdentifier="SignUpNavControllerId" id="LpG-5y-JA9" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="q18-zc-z2n" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="sign_up_vc_title"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="bYm-dT-Es4" kind="relationship" relationship="rootViewController" id="noY-Nn-nri"/>
@@ -794,7 +798,101 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAQ-8A-oxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2489" y="-846"/>
+            <point key="canvasLocation" x="4962" y="-842"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ves-K8-10S">
+            <objects>
+                <navigationController id="69N-uK-yMO" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="p5H-9Y-DDM" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="login_vc_title"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IyW-MZ-Uuc" kind="relationship" relationship="rootViewController" id="vbV-r9-U6d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Srr-f6-aPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3305" y="-842"/>
+        </scene>
+        <!--Login Controller-->
+        <scene sceneID="qXj-o8-aDF">
+            <objects>
+                <viewController id="IyW-MZ-Uuc" customClass="LoginController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LJa-AR-Syi"/>
+                        <viewControllerLayoutGuide type="bottom" id="TQH-oX-kTW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Q2-vu-UkF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pr5-In-TZ4" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gV6-xS-7rT"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OwE-IY-S4m" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="c9R-KN-c6h"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKB-RH-Hhg" customClass="KWSRedButton" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3nJ-s6-M2v"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ddp-nY-S4b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="12"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3N-A3-Mpa">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="L1A-EM-20F"/>
+                                    <constraint firstAttribute="height" constant="30" id="nHk-d1-hAH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="11"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OwE-IY-S4m" firstAttribute="leading" secondItem="4Q2-vu-UkF" secondAttribute="leading" constant="20" id="DBD-2f-fk7"/>
+                            <constraint firstAttribute="trailing" secondItem="uKB-RH-Hhg" secondAttribute="trailing" constant="20" id="E49-ev-zlp"/>
+                            <constraint firstItem="uKB-RH-Hhg" firstAttribute="top" secondItem="OwE-IY-S4m" secondAttribute="bottom" constant="16" id="K3h-fA-Wdp"/>
+                            <constraint firstItem="OwE-IY-S4m" firstAttribute="top" secondItem="Pr5-In-TZ4" secondAttribute="bottom" constant="8" id="N3k-IH-47F"/>
+                            <constraint firstItem="Pr5-In-TZ4" firstAttribute="leading" secondItem="4Q2-vu-UkF" secondAttribute="leading" constant="20" id="bGY-Zp-NBQ"/>
+                            <constraint firstItem="r3N-A3-Mpa" firstAttribute="leading" secondItem="4Q2-vu-UkF" secondAttribute="leading" constant="20" id="eJC-tU-EG0"/>
+                            <constraint firstAttribute="trailing" secondItem="OwE-IY-S4m" secondAttribute="trailing" constant="20" id="oOD-Xw-YpC"/>
+                            <constraint firstItem="Pr5-In-TZ4" firstAttribute="top" secondItem="LJa-AR-Syi" secondAttribute="bottom" constant="22" id="oP2-ch-RO0"/>
+                            <constraint firstItem="r3N-A3-Mpa" firstAttribute="top" secondItem="OwE-IY-S4m" secondAttribute="bottom" constant="16" id="qdR-3E-yHO"/>
+                            <constraint firstAttribute="trailing" secondItem="Pr5-In-TZ4" secondAttribute="trailing" constant="20" id="z7q-zL-eXs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7PK-On-NQS"/>
+                    <connections>
+                        <outlet property="createNewUserButton" destination="r3N-A3-Mpa" id="xws-je-IuA"/>
+                        <outlet property="loginButton" destination="uKB-RH-Hhg" id="gsK-5d-uPc"/>
+                        <outlet property="passwordTextField" destination="OwE-IY-S4m" id="PpY-bB-SbJ"/>
+                        <outlet property="usernameTextField" destination="Pr5-In-TZ4" id="Pam-DH-zqa"/>
+                        <segue destination="LpG-5y-JA9" kind="presentation" identifier="LoginToSignUpSegue" id="DWB-D6-8ww"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rsM-TG-Mgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4050" y="-842"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="GjS-wz-iaG">
@@ -808,88 +906,105 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vgd-Sg-yfY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vgd-Sg-yfY" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="GNe-7v-QsW"/>
+                                    <constraint firstAttribute="height" constant="30" id="w8Z-gb-T6m"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adU-nc-o50">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adU-nc-o50" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="roe-mw-gUj"/>
+                                    <constraint firstAttribute="height" constant="30" id="r5X-PV-5ZW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iCh-DE-AMl">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iCh-DE-AMl" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="JDY-hp-qc9"/>
+                                    <constraint firstAttribute="height" constant="30" id="fqe-G0-rzU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ZK-Wg-awI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ZK-Wg-awI" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="n7Z-D8-aaa"/>
+                                    <constraint firstAttribute="height" constant="30" id="Nf7-8b-yYa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wum-dX-MwU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wum-dX-MwU" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="S5E-Fg-rK9"/>
+                                    <constraint firstAttribute="height" constant="30" id="fcM-3H-Wud"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cle-JT-YD2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cle-JT-YD2" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="fMZ-MF-3WU"/>
+                                    <constraint firstAttribute="height" constant="30" id="2Or-HR-C0a"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVu-wa-78n">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVu-wa-78n" customClass="KWSRedButton" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="1aZ-wp-C4r"/>
-                                    <constraint firstAttribute="height" constant="30" id="7XT-9D-XOr"/>
+                                    <constraint firstAttribute="width" constant="90" id="IIe-fB-4my"/>
+                                    <constraint firstAttribute="height" constant="30" id="jy1-nL-BRE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="12"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="submitAction:" destination="bYm-dT-Es4" eventType="touchUpInside" id="Bt1-21-j9t"/>
-                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ba-c7-YFK" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="yxN-R6-WsK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Vgd-Sg-yfY" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="67N-og-f9O"/>
-                            <constraint firstItem="adU-nc-o50" firstAttribute="top" secondItem="Vgd-Sg-yfY" secondAttribute="bottom" constant="8" id="9mo-Ej-pfg"/>
-                            <constraint firstAttribute="trailing" secondItem="iCh-DE-AMl" secondAttribute="trailing" constant="20" id="BPT-Xn-ga8"/>
-                            <constraint firstItem="Wum-dX-MwU" firstAttribute="leading" secondItem="0ZK-Wg-awI" secondAttribute="trailing" constant="10" id="C55-Ld-jH1"/>
-                            <constraint firstItem="iVu-wa-78n" firstAttribute="top" secondItem="cle-JT-YD2" secondAttribute="bottom" constant="15" id="E3k-vb-FYg"/>
-                            <constraint firstItem="iCh-DE-AMl" firstAttribute="top" secondItem="adU-nc-o50" secondAttribute="bottom" constant="8" id="GFK-E4-y9S"/>
-                            <constraint firstItem="Wum-dX-MwU" firstAttribute="width" secondItem="0ZK-Wg-awI" secondAttribute="width" id="HeN-hq-WB6"/>
-                            <constraint firstItem="iCh-DE-AMl" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="JKZ-6N-pfp"/>
-                            <constraint firstAttribute="trailing" secondItem="iVu-wa-78n" secondAttribute="trailing" constant="20" id="QvU-pY-1zA"/>
-                            <constraint firstItem="cle-JT-YD2" firstAttribute="leading" secondItem="Wum-dX-MwU" secondAttribute="trailing" constant="10" id="Uty-i3-JBi"/>
-                            <constraint firstItem="0ZK-Wg-awI" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="XZQ-Rm-ccR"/>
-                            <constraint firstItem="adU-nc-o50" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="eak-9A-UuI"/>
-                            <constraint firstAttribute="trailing" secondItem="Vgd-Sg-yfY" secondAttribute="trailing" constant="20" id="hek-EH-5Z7"/>
-                            <constraint firstItem="Wum-dX-MwU" firstAttribute="top" secondItem="iCh-DE-AMl" secondAttribute="bottom" constant="8" id="iKB-Ag-96A"/>
-                            <constraint firstItem="0ZK-Wg-awI" firstAttribute="top" secondItem="iCh-DE-AMl" secondAttribute="bottom" constant="8" id="lMM-Ku-iEq"/>
-                            <constraint firstItem="Vgd-Sg-yfY" firstAttribute="top" secondItem="uPg-tE-YoI" secondAttribute="bottom" constant="22" id="rkg-Ve-BGA"/>
-                            <constraint firstAttribute="trailing" secondItem="cle-JT-YD2" secondAttribute="trailing" constant="20" id="sTU-Gb-Th3"/>
-                            <constraint firstItem="cle-JT-YD2" firstAttribute="top" secondItem="iCh-DE-AMl" secondAttribute="bottom" constant="8" id="tsg-9l-T5m"/>
-                            <constraint firstAttribute="trailing" secondItem="adU-nc-o50" secondAttribute="trailing" constant="20" id="w9q-MQ-xSf"/>
-                            <constraint firstItem="cle-JT-YD2" firstAttribute="width" secondItem="0ZK-Wg-awI" secondAttribute="width" id="wHb-ah-aiL"/>
+                            <constraint firstItem="cle-JT-YD2" firstAttribute="width" secondItem="0ZK-Wg-awI" secondAttribute="width" id="2n1-mb-m5t"/>
+                            <constraint firstItem="Wum-dX-MwU" firstAttribute="width" secondItem="0ZK-Wg-awI" secondAttribute="width" id="A7x-Mg-hIf"/>
+                            <constraint firstItem="adU-nc-o50" firstAttribute="top" secondItem="Vgd-Sg-yfY" secondAttribute="bottom" constant="8" id="CJv-kX-ayG"/>
+                            <constraint firstAttribute="trailing" secondItem="adU-nc-o50" secondAttribute="trailing" constant="20" id="Dgj-La-EDX"/>
+                            <constraint firstItem="Vgd-Sg-yfY" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="Ea9-By-6tc"/>
+                            <constraint firstAttribute="trailing" secondItem="2Ba-c7-YFK" secondAttribute="trailing" constant="20" id="Ivz-X6-fIu"/>
+                            <constraint firstItem="0ZK-Wg-awI" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="JtT-IG-kLu"/>
+                            <constraint firstItem="2Ba-c7-YFK" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="LyJ-ED-v3E"/>
+                            <constraint firstItem="iVu-wa-78n" firstAttribute="top" secondItem="cle-JT-YD2" secondAttribute="bottom" constant="15" id="Mgo-uy-cNb"/>
+                            <constraint firstAttribute="trailing" secondItem="Vgd-Sg-yfY" secondAttribute="trailing" constant="20" id="Ml6-U6-tI9"/>
+                            <constraint firstItem="Wum-dX-MwU" firstAttribute="top" secondItem="2Ba-c7-YFK" secondAttribute="bottom" constant="8" id="Ptg-uo-Bh0"/>
+                            <constraint firstAttribute="trailing" secondItem="iCh-DE-AMl" secondAttribute="trailing" constant="20" id="Tej-nz-tdK"/>
+                            <constraint firstItem="cle-JT-YD2" firstAttribute="top" secondItem="2Ba-c7-YFK" secondAttribute="bottom" constant="8" id="UBy-UK-LMc"/>
+                            <constraint firstItem="iCh-DE-AMl" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="Ur8-i9-ilz"/>
+                            <constraint firstAttribute="trailing" secondItem="cle-JT-YD2" secondAttribute="trailing" constant="20" id="V1o-Ui-qb4"/>
+                            <constraint firstItem="Wum-dX-MwU" firstAttribute="leading" secondItem="0ZK-Wg-awI" secondAttribute="trailing" constant="10" id="Xmi-7H-wQJ"/>
+                            <constraint firstItem="cle-JT-YD2" firstAttribute="leading" secondItem="Wum-dX-MwU" secondAttribute="trailing" constant="10" id="cY6-14-eSl"/>
+                            <constraint firstItem="2Ba-c7-YFK" firstAttribute="top" secondItem="iCh-DE-AMl" secondAttribute="bottom" constant="8" id="hx3-61-6x7"/>
+                            <constraint firstItem="iCh-DE-AMl" firstAttribute="top" secondItem="adU-nc-o50" secondAttribute="bottom" constant="8" id="qR2-kB-hzI"/>
+                            <constraint firstItem="0ZK-Wg-awI" firstAttribute="top" secondItem="2Ba-c7-YFK" secondAttribute="bottom" constant="8" id="uDy-s5-mu7"/>
+                            <constraint firstItem="adU-nc-o50" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="utw-dk-rP4"/>
+                            <constraint firstItem="0ZK-Wg-awI" firstAttribute="top" secondItem="2Ba-c7-YFK" secondAttribute="bottom" constant="8" id="wJV-7F-EZc"/>
+                            <constraint firstAttribute="trailing" secondItem="iVu-wa-78n" secondAttribute="trailing" constant="20" id="wTy-dy-JZU"/>
+                            <constraint firstItem="Vgd-Sg-yfY" firstAttribute="top" secondItem="uPg-tE-YoI" secondAttribute="bottom" constant="22" id="zJW-GH-Avx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aoM-ck-Nbq"/>
                     <connections>
                         <outlet property="dayTextView" destination="cle-JT-YD2" id="HfV-q2-bwm"/>
                         <outlet property="monthTextView" destination="Wum-dX-MwU" id="c96-Ot-Jr7"/>
+                        <outlet property="parentEmailTextView" destination="2Ba-c7-YFK" id="C1V-FA-VDf"/>
                         <outlet property="password1TextView" destination="adU-nc-o50" id="Jq4-ne-RM8"/>
                         <outlet property="password2TextView" destination="iCh-DE-AMl" id="Kre-cZ-eSt"/>
                         <outlet property="submitButton" destination="iVu-wa-78n" id="lbN-Kt-xeo"/>
@@ -899,15 +1014,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dr6-jJ-Dnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3175" y="-846"/>
+            <point key="canvasLocation" x="5770" y="-843"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z2v-Mk-Frj">
             <objects>
-                <navigationController storyboardIdentifier="UserNavControllerId" id="Az1-PF-dGO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eww-9K-xsI" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                <navigationController storyboardIdentifier="UserNavControllerId" id="Az1-PF-dGO" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eww-9K-xsI" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="user_vc_title"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="V6O-fP-TAn" kind="relationship" relationship="rootViewController" id="Vud-qJ-TAV"/>
@@ -915,7 +1033,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6p-56-TgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2255" y="-72"/>
+            <point key="canvasLocation" x="3305" y="-111"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="ZEX-xP-wMh">
@@ -1009,16 +1127,14 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8M-q0-3as">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiN-hB-euy">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiN-hB-euy" customClass="KWSRedButton" customModule="KWSDemo" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="83h-9x-45D"/>
                                             <constraint firstAttribute="width" constant="83" id="acO-2P-NOs"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="12"/>
                                         <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="logoutAction:" destination="V6O-fP-TAn" eventType="touchUpInside" id="GtE-zS-2hB"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1048,7 +1164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cm5-aZ-y3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2951" y="-72"/>
+            <point key="canvasLocation" x="4001" y="-111"/>
         </scene>
         <!--Leader View Controller-->
         <scene sceneID="o0B-XJ-q4T">
@@ -1208,7 +1324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fp5-mh-VwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2935" y="648"/>
+            <point key="canvasLocation" x="3985" y="606"/>
         </scene>
         <!--Get App Data Controller-->
         <scene sceneID="oHM-BA-hzR">
@@ -1279,16 +1395,14 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uc-Bi-8fX">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lV-IN-tyh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lV-IN-tyh" customClass="KWSRedButton" customModule="KWSDemo" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="mOA-bL-cXY"/>
                                             <constraint firstAttribute="width" constant="83" id="yhh-CJ-iww"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="12"/>
                                         <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="addNewNameValuePairAction:" destination="eER-0g-q6A" eventType="touchUpInside" id="Lp5-W2-Ea9"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1314,19 +1428,23 @@
                     <connections>
                         <outlet property="addButton" destination="6lV-IN-tyh" id="KuC-gp-g9V"/>
                         <outlet property="appDataTable" destination="fCQ-Ii-BZM" id="3ni-dL-Klo"/>
+                        <segue destination="1sq-9A-u3M" kind="presentation" identifier="GetAppDataToSetAppDataSegue" id="2l9-Lz-faJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3F-W4-fbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2935" y="1359"/>
+            <point key="canvasLocation" x="4001" y="1361"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rlq-Uy-97j">
             <objects>
-                <navigationController storyboardIdentifier="GetAppDataNavControllerId" id="kUB-Ix-gsw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0yO-Vf-F46" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                <navigationController storyboardIdentifier="GetAppDataNavControllerId" id="kUB-Ix-gsw" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0yO-Vf-F46" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="get_app_data_vc_title"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="eER-0g-q6A" kind="relationship" relationship="rootViewController" id="4GJ-tg-9YM"/>
@@ -1334,15 +1452,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofe-sF-5gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2255" y="1359"/>
+            <point key="canvasLocation" x="3305" y="1361"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dSX-tg-Eli">
             <objects>
-                <navigationController storyboardIdentifier="SetAppDataNavControllerId" id="1sq-9A-u3M" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R5Z-U7-z4Z" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                <navigationController storyboardIdentifier="SetAppDataNavControllerId" id="1sq-9A-u3M" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="R5Z-U7-z4Z" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="add_app_data_vc_title"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="gpW-go-jOj" kind="relationship" relationship="rootViewController" id="t11-YK-E8q"/>
@@ -1350,7 +1471,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cJ-XA-P5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2255" y="2114"/>
+            <point key="canvasLocation" x="4905" y="1361"/>
         </scene>
         <!--Set App Data Controller-->
         <scene sceneID="dV4-yS-lXg">
@@ -1364,31 +1485,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgC-lD-trm">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgC-lD-trm" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="aKf-IC-0VN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T9u-bg-gVr">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T9u-bg-gVr" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="tUr-oT-b7U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViL-ai-8wU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViL-ai-8wU" customClass="KWSRedButton" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="hD6-C3-NRs"/>
                                     <constraint firstAttribute="width" constant="90" id="nIo-3X-3IS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="12"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="submitAction:" destination="bYm-dT-Es4" eventType="touchUpInside" id="b14-gr-MFf"/>
-                                    <action selector="submitButtonAction:" destination="gpW-go-jOj" eventType="touchUpInside" id="dcz-NV-UeK"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1412,15 +1532,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zod-Wc-gds" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2935" y="2114"/>
+            <point key="canvasLocation" x="5585" y="1361"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YXB-pu-xtp">
             <objects>
-                <navigationController storyboardIdentifier="LeaderboardNavControllerId" id="Axd-AN-p3c" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AKo-zv-JdA" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                <navigationController storyboardIdentifier="LeaderboardNavControllerId" id="Axd-AN-p3c" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AKo-zv-JdA" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="leader_vc_title"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="1LL-rr-1o8" kind="relationship" relationship="rootViewController" id="9xd-Zl-PBH"/>
@@ -1428,7 +1551,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hjG-EB-yc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2255" y="648"/>
+            <point key="canvasLocation" x="3305" y="606"/>
         </scene>
         <!--Documentation View Controller-->
         <scene sceneID="Yne-7X-Yf7">
@@ -1461,14 +1584,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uu8-WX-MC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1450" y="1424"/>
+            <point key="canvasLocation" x="1313" y="1507"/>
         </scene>
         <!--Documentation-->
         <scene sceneID="9bc-vf-5GU">
             <objects>
                 <navigationController id="tGS-4H-HDB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="2" title="Documentation" image="documentation" selectedImage="documentation_selected" id="dQo-O4-DcM"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ayL-BU-lIb" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ayL-BU-lIb" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1478,14 +1601,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOB-9m-ghN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="1424"/>
+            <point key="canvasLocation" x="484" y="1507"/>
         </scene>
         <!--Features-->
         <scene sceneID="X1E-2q-06L">
             <objects>
                 <navigationController id="65E-2S-OuP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="Features" image="tab_features_unsel" selectedImage="tab_features_sel" id="5mN-d1-nMM"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oh9-4q-oeq" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Oh9-4q-oeq" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1495,7 +1618,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="djv-VY-hcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="-180"/>
+            <point key="canvasLocation" x="484" y="251"/>
         </scene>
     </scenes>
     <resources>

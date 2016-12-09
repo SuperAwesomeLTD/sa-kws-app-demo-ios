@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SAUtils
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,13 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        UITabBar.appearance().barTintColor = UIColorFromHex(0xf9f9f9)
-        UITabBar.appearance().tintColor = UIColorFromHex(0xED1C24)
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColorFromHex(0xED1C24)], for: .selected)
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColorFromHex(0x929292)], for: .normal)
-        
         return true
     }
 

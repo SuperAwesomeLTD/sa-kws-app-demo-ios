@@ -17,15 +17,14 @@ class PlatformViewController: UIViewController {
     @IBOutlet weak var platformFeature2: UILabel!
     @IBOutlet weak var platformFeature3: UILabel!
     @IBOutlet weak var platformFeature4: UILabel!
-    @IBOutlet weak var knowMoreButton: UIButton!
+    @IBOutlet weak var knowMoreButton: KWSBlueButton!
     
     // contants
     fileprivate let urlStr = "http://www.superawesome.tv/en/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNeedsStatusBarAppearanceUpdate()
-        knowMoreButton.blueButton()
+        setNeedsStatusBarAppearanceUpdate ()
         
         platformTitle.text = "platform_title".localized
         platformContent.text = "platform_content".localized
@@ -36,14 +35,13 @@ class PlatformViewController: UIViewController {
         knowMoreButton.setTitle("platform_main_button".localized.uppercased(), for: UIControlState())
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func didReceiveMemoryWarning () {
+        super.didReceiveMemoryWarning ()
     }
 
-    @IBAction func knowMoreAction(_ sender: AnyObject) {
+    @IBAction func knowMoreAction (_ sender: AnyObject) {
         let url = URL(string: urlStr)
-        UIApplication.shared.openURL(url!)
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
     
     // <Custom>

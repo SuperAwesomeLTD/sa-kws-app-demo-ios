@@ -8,25 +8,13 @@
 
 import UIKit
 
-class GetAppDataViewModel: AnyObject /*, ViewModel*/ {
+class GetAppDataViewModel: AnyObject {
     
     var name: String
-    var value: NSInteger = 0
+    var value: String
     
     init (_ name: String, _ value: NSInteger) {
         self.name = name
-        self.value = value
+        self.value = "\(value)"
     }
-    
-//    func heightForRow() -> CGFloat {
-//        return 44
-//    }
-    
-//    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "GetAppDataRowId") as! GetAppDataRow
-//        cell.nameLabel.text = name
-//        cell.valueLabel.text = "\(value)"
-//        return cell
-//    }
-    
 }

@@ -7,61 +7,292 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import SAUtils
+import KWSiOSSDKObjC
 
-class FeatureViewController: UIViewController {
+class FeatureViewController: KWSBaseController {
 
-    // constants
-//    fileprivate let DOCSURL: String = "https://developers.superawesome.tv/extdocs/sa-kws-android-sdk/html/index.html"
-//    fileprivate let KWS_API: String = "https://kwsapi.demo.superawesome.tv/v1/"
+    // constants to setup KWS
+    fileprivate let CLIENT = "sa-mobile-app-sdk-client-0"
+    fileprivate let SECRET = "_apikey_5cofe4ppp9xav2t9"
+    fileprivate let API = "https://kwsapi.demo.superawesome.tv/"
     
     // outlets
     @IBOutlet weak var tableView: UITableView!
-//    fileprivate var dataSource: FeatureDataSource!
-//    fileprivate var center: NotificationCenter!
-//    fileprivate var onStart: Bool = true
     
-    ////////////////////////////////////////////////////////////////////////////
-    // MARK: View Controller Setup
-    ////////////////////////////////////////////////////////////////////////////
-    
+    // the data source
+    var dataSource: Observable<RxDataSource>?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
-//        center = NotificationCenter.default
         
-//        // set observer
-//        center.addObserver(self, selector: #selector(didObserveAuth), name: NSNotification.Name(rawValue: Notifications.AUTH.rawValue), object: nil)
-//        center.addObserver(self, selector: #selector(didObservePerm), name: NSNotification.Name(rawValue: Notifications.PERM.rawValue), object: nil)
-//        center.addObserver(self, selector: #selector(didObserveAdd20Points), name: NSNotification.Name(rawValue: Notifications.ADD_20.rawValue), object: nil)
-//        center.addObserver(self, selector: #selector(didObserveSub10Points), name: NSNotification.Name(rawValue: Notifications.SUB_10.rawValue), object: nil)
-//        center.addObserver(self, selector: #selector(didObserveSeeLeader), name: NSNotification.Name(rawValue: Notifications.LEADER.rawValue), object: nil)
-//        center.addObserver(self, selector: #selector(didObserveSubscribe), name: NSNotification.Name(rawValue: Notifications.SUBSCRIBE.rawValue), object: nil)
-//        center.addObserver(self, selector: #selector(didObserveDocs), name: NSNotification.Name(rawValue: Notifications.DOCS.rawValue), object: nil)
-//        center.addObserver(self, selector: #selector(didObserveGetScore), name: NSNotification.Name(rawValue: Notifications.SCORE.rawValue), object: nil)
-//        center.addObserver(self, selector: #selector(didObserveInviteFriend), name: NSNotification.Name(rawValue: Notifications.INVITE.rawValue), object: nil)
-//        center.addObserver(self, selector: #selector(didObserveSeeAppData), name: NSNotification.Name(rawValue: Notifications.APPDATA.rawValue), object: nil)
-//        KWSSingleton.sharedInstance.addObserver(self, forKeyPath: "isRegistered", options: NSKeyValueObservingOptions.new, context: nil)
-//        KWSSingleton.sharedInstance.addObserver(self, forKeyPath: "isLogged", options: NSKeyValueObservingOptions.new, context: nil)
-//        KWSSingleton.sharedInstance.start()
-//        
-//        dataSource = FeatureDataSource()
-//        tableView.dataSource = dataSource
-//        tableView.delegate = dataSource
-//        dataSource.update(start: {
-//            // do nothing
-//            }, success: { 
-//                // do nothing
-//            }, error: {
-//                // do nothing
-//        })
+        // setup the session
+        KWS.sdk().startSession(withClientId: CLIENT, andClientSecret: SECRET, andAPIUrl: API)
+        
+        dataSource = Observable
+            .from([
+                FeatureAuthViewModel (),
+                FeatureNotifViewModel (),
+                FeaturePermViewModel (),
+                FeatureEventViewModel (),
+                FeatureInviteViewModel (),
+                FeatureAppDataViewModel ()
+            ])
+            .toArray()
+            .bindTable(tableView)
+            //
+            // customise Login & Logout row
+            .customiseRow(cellIdentifier: "FeatureAuthRowId",
+                          cellType: FeatureAuthViewModel.self,
+                          cellHeight: 298)
+            { (model, cell) in
+                
+                let cell = cell as? FeatureAuthRow
+                
+                let isLogged = KWS.sdk().getLoggedUser() != nil
+                let local = KWS.sdk().getLoggedUser()
+                
+                cell?.authActionButton.setTitle(
+                    isLogged ?
+                        "feature_cell_auth_button_1_loggedin".localized + (local?.username.uppercased())! :
+                        "feature_cell_auth_button_1_loggedout".localized, for: .normal)
+                
+                cell?.authActionButton.rx
+                    .tap
+                    .flatMap({ () -> Observable <UIViewController> in
+                        let lIsLogged = KWS.sdk().getLoggedUser() != nil
+                        return self.rxSeque(withIdentifier: lIsLogged ? "FeaturesToUserSegue" : "FeaturesToLoginSegue")
+                    })
+                    .subscribe(onNext: { (destination) in
+                        // do nothing
+                    })
+                    .addDisposableTo(self.disposeBag)
+                
+                cell?.authDocsButton.rx.tap.subscribe (onNext: { Void in
+                    
+                    self.openDocumentation()
+                    
+                }).addDisposableTo(self.disposeBag)
+                
+            }
+            //
+            // customise the Remote Notifications row
+            .customiseRow(cellIdentifier: "FeatureNotifRowId",
+                          cellType: FeatureNotifViewModel.self,
+                          cellHeight: 248)
+            { (model, cell) in
+                
+                let cell = cell as? FeatureNotifRow
+                
+                let isLogged = KWS.sdk().getLoggedUser() != nil
+                let isRegistered = isLogged && KWS.sdk().getLoggedUser().isRegisteredForNotifications()
+                
+                cell?.notifEnableOrDisableButton.isEnabled = isLogged
+                cell?.notifEnableOrDisableButton.setTitle(
+                    isRegistered ?
+                    "feature_cell_notif_button_1_disable".localized :
+                    "feature_cell_notif_button_1_enable".localized, for: .normal)
+                
+                cell?.notifEnableOrDisableButton.rx.tap.subscribe (onNext: { Void in
+                
+                    // do nothing for now
+                    
+                }).addDisposableTo(self.disposeBag)
+                
+                cell?.notifDocButton.rx.tap.subscribe (onNext: { Void in
+                    
+                    self.openDocumentation()
+                    
+                }).addDisposableTo(self.disposeBag)
+                
+            }
+            // 
+            // customise the Permissions row
+            .customiseRow(cellIdentifier: "FeaturePermRowId",
+                          cellType: FeaturePermViewModel.self,
+                          cellHeight: 248)
+            { (model, cell) in
+                
+                let cell = cell as? FeaturePermRow
+                
+                let isLogged = KWS.sdk().getLoggedUser() != nil
+                
+                cell?.permAddPermissionsButton.isEnabled = isLogged
+                
+                cell?.permAddPermissionsButton.rx.tap.subscribe (onNext: { Void in
+                
+                    // do nothing for now
+                    
+                }).addDisposableTo(self.disposeBag)
+                
+                cell?.permSeeDocsButton.rx.tap.subscribe (onNext: { Void in
+                    
+                    self.openDocumentation()
+                    
+                }).addDisposableTo(self.disposeBag)
+                
+            }
+            //
+            // customise the Events row
+            .customiseRow(cellIdentifier: "FeatureEventRowId",
+                          cellType: FeatureEventViewModel.self,
+                          cellHeight: 368)
+            { (model, cell) in
+             
+                let cell = cell as? FeatureEventRow
+                
+                let isLogged = KWS.sdk().getLoggedUser() != nil
+                
+                cell?.evtAdd20PointsButton.isEnabled = isLogged
+                cell?.evtSub10PointsButton.isEnabled = isLogged
+                cell?.evtGetScoreButton.isEnabled = isLogged
+                cell?.evtSeeLeaderboardButton.isEnabled = isLogged
+                
+                cell?.evtAdd20PointsButton.rx
+                    .tap
+                    .flatMap({ (Void) -> Observable <Bool> in
+                        return RxKWS.triggerEvent(event: "GabrielAdd20ForAwesomeApp")
+                    })
+                    .subscribe(onNext: { (isTriggered: Bool) in
+                        
+                        if isTriggered {
+                            
+                            self.featurePopup("feature_event_add20_popup_success_title".localized,
+                                              "feature_event_add20_popup_success_message".localized)
+                            
+                        } else {
+                            // do nothing
+                        }
+                        
+                    })
+                    .addDisposableTo(self.disposeBag)
+                
+                cell?.evtSub10PointsButton.rx
+                    .tap
+                    .flatMap({ (Void) -> Observable <Bool> in
+                        return RxKWS.triggerEvent(event: "GabrielSub10ForAwesomeApp")
+                    })
+                    .subscribe(onNext: { (isTriggered: Bool) in
+                        
+                        if isTriggered {
+                            
+                            self.featurePopup("feature_event_sub10_popup_success_title".localized,
+                                              "feature_event_sub10_popup_success_message".localized)
+                            
+                        } else {
+                            // do nothing
+                        }
+                        
+                    })
+                    .addDisposableTo(self.disposeBag)
+                
+                cell?.evtGetScoreButton.rx
+                    .tap
+                    .flatMap({ (Void) -> Observable <KWSScore?> in
+                        return RxKWS.getScore()
+                    })
+                    .subscribe(onNext: { (score: KWSScore?) in
+                        
+                        if let score = score {
+                            
+                            let message = NSString(format: "feature_event_getscore_success_message".localized as NSString, score.rank, score.score) as String
+                            
+                            self.featurePopup("feature_event_getscore_success_title".localized,
+                                              message)
+                            
+                        } else {
+                            // do nothing
+                        }
+                        
+                    })
+                    .addDisposableTo(self.disposeBag)
+                
+                cell?.evtSeeLeaderboardButton.rx
+                    .tap
+                    .flatMap({ () -> Observable <UIViewController> in
+                        return self.rxSeque(withIdentifier: "FeaturesToLeaderboardSegue")
+                    })
+                    .subscribe(onNext: { (destination) in
+                        // do nothing
+                    })
+                    .addDisposableTo(self.disposeBag)
+                
+                cell?.evtSeeDocsButton.rx.tap.subscribe (onNext: { Void in
+                
+                    self.openDocumentation()
+                    
+                }).addDisposableTo(self.disposeBag)
+                
+            }
+            //
+            // customise the Invite row
+            .customiseRow(cellIdentifier: "FeatureInviteRowId",
+                          cellType: FeatureInviteViewModel.self,
+                          cellHeight: 248)
+            { (model, cell) in
+                
+                let cell = cell as? FeatureInviteRow
+                
+                let isLogged = KWS.sdk().getLoggedUser() != nil
+                
+                cell?.invInviteFriendButton.isEnabled = isLogged
+                
+                
+                cell?.invInviteFriendButton.rx.tap.subscribe (onNext: { Void in
+                
+                    // do nothing
+                    
+                }).addDisposableTo(self.disposeBag)
+                
+                cell?.invSeeDocsButton.rx.tap.subscribe (onNext: { Void in
+                
+                    self.openDocumentation()
+                
+                }).addDisposableTo(self.disposeBag)
+                
+            }
+            //
+            // customise the App Data row
+            .customiseRow(cellIdentifier: "FeatureAppDataRowId",
+                          cellType: FeatureAppDataViewModel.self,
+                          cellHeight: 248)
+            { (model, cell) in
+                
+                let cell = cell as? FeatureAppDataRow
+                
+                let isLogged = KWS.sdk().getLoggedUser() != nil
+                
+                cell?.appdSeeAppDataButton.isEnabled = isLogged
+                
+                cell?.appdSeeAppDataButton.rx
+                    .tap
+                    .flatMap({ () -> Observable <UIViewController> in
+                        return self.rxSeque(withIdentifier: "FeaturesToAddDataSegue")
+                    })
+                    .subscribe(onNext: { (destination) in
+                        // do nothing
+                    })
+                    .addDisposableTo(self.disposeBag)
+                
+                cell?.appdSeeDocsButton.rx.tap.subscribe (onNext: { Void in
+                    
+                    self.openDocumentation()
+                    
+                }).addDisposableTo(self.disposeBag)
+            
+            }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return UIStatusBarStyle.default
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        dataSource?.update().addDisposableTo(self.disposeBag)
     }
     
 //    ////////////////////////////////////////////////////////////////////////////
@@ -286,21 +517,22 @@ class FeatureViewController: UIViewController {
 //        present(vc, animated: true, completion: nil)
 //    }
 //    
-//    func didObserveDocs () {
-//        let url = URL(string: DOCSURL)
-//        UIApplication.shared.openURL(url!)
-//    }
+    func openDocumentation () {
+        let docUrl: String = "http://doc.superawesome.tv/sa-kws-ios-sdk/latest/"
+        let url = URL(string: docUrl)
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    }
     
     
     func featurePopup(_ title: String, _ message: String) {
         
-//        SAPopup.sharedManager().show(withTitle: title,
-//                                              andMessage: message,
-//                                              andOKTitle: "feature_popup_dismiss_button".localized,
-//                                              andNOKTitle: nil,
-//                                              andTextField: false,
-//                                              andKeyboardTyle: .alphabet,
-//                                              andPressed: nil)
+        SAPopup.sharedManager().show(withTitle: title,
+                                     andMessage: message,
+                                     andOKTitle: "feature_popup_dismiss_button".localized,
+                                     andNOKTitle: nil,
+                                     andTextField: false,
+                                     andKeyboardTyle: .alphabet,
+                                     andPressed: nil)
         
     }
 }

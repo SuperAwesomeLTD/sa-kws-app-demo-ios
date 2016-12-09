@@ -35,6 +35,10 @@ class SetAppDataModel: NSObject {
         super.init()
     }
     
+    static func createEmpty () -> SetAppDataModel {
+        return SetAppDataModel (name: nil, value: nil)
+    }
+    
     func isValid () -> Bool {
         return name != nil && value != INVALID_VALID
     }

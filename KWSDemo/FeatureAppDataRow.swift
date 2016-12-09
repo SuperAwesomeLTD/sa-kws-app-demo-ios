@@ -12,9 +12,8 @@ class FeatureAppDataRow: UITableViewCell {
 
     @IBOutlet weak var appdTitle: UILabel!
     @IBOutlet weak var appdMessage: UILabel!
-    @IBOutlet weak var content: UIView!
-    @IBOutlet weak var appdSeeAppDataButton: UIButton!
-    @IBOutlet weak var appdSeeDocsButton: UIButton!
+    @IBOutlet weak var appdSeeAppDataButton: KWSBlueButton!
+    @IBOutlet weak var appdSeeDocsButton: KWSBlueButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,10 +22,6 @@ class FeatureAppDataRow: UITableViewCell {
         appdMessage.text = "feature_cell_appd_message".localized
         appdSeeAppDataButton.setTitle("feature_cell_appd_button_1".localized.uppercased(), for: UIControlState())
         appdSeeDocsButton.setTitle("feature_cell_appd_button_2".localized.uppercased(), for: UIControlState())
-        
-        content.addShadow()
-        appdSeeAppDataButton.blueButton()
-        appdSeeDocsButton.blueButton()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

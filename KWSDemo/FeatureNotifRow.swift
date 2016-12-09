@@ -12,9 +12,8 @@ class FeatureNotifRow: UITableViewCell {
 
     @IBOutlet weak var notifTitle: UILabel!
     @IBOutlet weak var notifMessage: UILabel!
-    @IBOutlet weak var content: UIView!
-    @IBOutlet weak var notifEnableOrDisableButton: UIButton!
-    @IBOutlet weak var notifDocButton: UIButton!
+    @IBOutlet weak var notifEnableOrDisableButton: KWSBlueButton!
+    @IBOutlet weak var notifDocButton: KWSBlueButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,9 +22,5 @@ class FeatureNotifRow: UITableViewCell {
         notifMessage.text = "feature_cell_notif_content".localized
         notifEnableOrDisableButton.setTitle("feature_cell_notif_button_1_enable".localized.uppercased(), for: UIControlState())
         notifDocButton.setTitle("feature_cell_notif_button_2".localized.uppercased(), for: UIControlState())
-        
-        content.addShadow()
-        notifEnableOrDisableButton.blueButton()
-        notifDocButton.blueButton()
     }
 }

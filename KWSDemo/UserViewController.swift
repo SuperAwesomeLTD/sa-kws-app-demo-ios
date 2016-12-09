@@ -7,74 +7,125 @@
 //
 
 import UIKit
+import KWSiOSSDKObjC
+import RxCocoa
+import RxSwift
+import RxGesture
+import SAUtils
 
 // vc
-class UserViewController: UIViewController/*, KWSPopupNavigationBarProtocol, UITableViewDelegate*/ {
+class UserViewController: KWSBaseController {
     
-    // vars
-//    var dataSource: UserDataSource!
-//    var spinnerM: SAActivityView!
-//    var popupM: SAPopup!
-    @IBOutlet weak var logoutButton: UIButton!
+    // outlets
+    @IBOutlet weak var logoutButton: KWSRedButton!
     @IBOutlet weak var userDetailsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        if let bar = navigationController?.navigationBar as? KWSPopupNavigationBar {
-//            bar.kwsdelegate = self
-//        }
-//        
-//        logoutButton.setTitle("user_logout".localized.uppercased(), for: UIControlState())
-//        logoutButton.redButton()
-//        spinnerM = SAActivityView.sharedManager()
-//        popupM = SAPopup.sharedManager()
-//        dataSource = UserDataSource()
-//        userDetailsTableView.dataSource = dataSource
-//        userDetailsTableView.delegate = dataSource
-//        dataSource?.update(start: {
-//                self.spinnerM.show()
-//            }, success: {
-//                self.spinnerM.hide()
-//                self.userDetailsTableView.reloadData()
-//            }, error: {
-//                self.spinnerM.hide()
-//                self.popupM.show(
-//                    withTitle: "user_popup_error_title".localized,
-//                    andMessage: "user_popup_error_message".localized,
-//                    andOKTitle: "user_popup_dismiss_button".localized,
-//                    andNOKTitle: nil,
-//                    andTextField: false,
-//                    andKeyboardTyle: .default,
-//                    andPressed: nil)
-//        })
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        navigationController?.navigationBar.barStyle = .black
+        
+        logoutButton.setTitle("user_logout".localized.uppercased(), for: UIControlState())
+        
+        // get the user data
+        RxKWS.getUser()
+            .map { (user: KWSUser?) -> [ViewModel] in
+                
+                var array: [ViewModel] = []
+                
+                if let user = user {
+                    
+                    array.append(UserHeaderViewModel(title: user.username))
+                    array.append(UserRowViewModel(item: "user_row_details_first_name".localized, value: user.firstName as AnyObject?))
+                    array.append(UserRowViewModel(item: "user_row_details_last_name".localized, value: user.lastName as AnyObject?))
+                    array.append(UserRowViewModel(item: "user_row_details_birth_date".localized, value: user.dateOfBirth as AnyObject?))
+                    array.append(UserRowViewModel(item: "user_row_details_email".localized, value: user.email as AnyObject?))
+                    array.append(UserRowViewModel(item: "user_row_details_phone".localized, value: user.phoneNumber as AnyObject?))
+                    array.append(UserRowViewModel(item: "user_row_details_gender".localized, value: user.gender as AnyObject?))
+                    array.append(UserRowViewModel(item: "user_row_details_language".localized, value: user.language as AnyObject?))
+                    
+                    if let address = user.address {
+                        array.append(UserHeaderViewModel(title: "user_header_address".localized))
+                        array.append(UserRowViewModel(item: "user_row_address_street".localized, value: address.street as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_address_city".localized, value: address.city as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_address_post_code".localized, value: address.postCode as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_address_country".localized, value: address.country as AnyObject?))
+                    }
+                    
+                    if let points = user.points {
+                        array.append(UserHeaderViewModel(title: "user_header_points".localized))
+                        array.append(UserRowViewModel(item: "user_row_points_received".localized, value: points.totalReceived as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_points_total".localized, value: points.total as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_points_app".localized, value: points.totalPointsReceivedInCurrentApp as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_points_available".localized, value: points.availableBalance as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_points_pending".localized, value: points.pending as AnyObject?))
+                    }
+                    
+                    if let permissions = user.applicationPermissions {
+                        array.append(UserHeaderViewModel(title: "user_header_perm".localized))
+                        array.append(UserRowViewModel(item: "user_row_perm_address".localized, value: permissions.accessAddress as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_perm_phone".localized, value: permissions.accessPhoneNumber as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_perm_first_name".localized, value: permissions.accessFirstName as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_perm_last_name".localized, value: permissions.accessLastName as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_perm_email".localized, value: permissions.accessEmail as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_perm_street".localized, value: permissions.accessStreetAddress as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_perm_city".localized, value: permissions.accessCity as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_perm_post_code".localized, value: permissions.accessPostalCode as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_perm_country".localized, value: permissions.accessCountry as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_perm_notifications".localized, value: permissions.sendPushNotification as AnyObject?))
+                        array.append(UserRowViewModel(item: "user_row_perm_newsletter".localized, value: permissions.sendNewsletter as AnyObject?))
+                    }
+                }
+                
+                return array
+            }
+            .do(onNext: { (elems) in
+                // do nothing
+            }, onError: { (error) in
+                SAActivityView.sharedManager().hide()
+            }, onCompleted: {
+                SAActivityView.sharedManager().hide()
+            }, onSubscribe: {
+                SAActivityView.sharedManager().show()
+            })
+            .bindTable(userDetailsTableView)
+            .customiseRow(cellIdentifier: "UserHeaderId",
+                          cellType: UserHeaderViewModel.self,
+                          cellHeight: 44)
+            { (model, cell) in
+                
+                let cell = cell as? UserHeader
+                let model = model as? UserHeaderViewModel
+                
+                cell?.headerTitle.text = model?.title
+                
+            }
+            .customiseRow(cellIdentifier: "UserRowId",
+                          cellType: UserRowViewModel.self,
+                          cellHeight: 44)
+            { (model, cell) in
+                
+                let cell = cell as? UserRow
+                let model = model as? UserRowViewModel
+                
+                cell?.titleLabel.text = model?.item
+                cell?.valueLabel.text = model?.value
+                cell?.valueLabel.textColor = model?.valueColor
+                
+            }
+            .update()
+            .addDisposableTo(disposeBag)
+        
+        // tap to logout
+        logoutButton.rx
+            .tap
+            .subscribe ( { (Void) in
+                KWS.sdk().logoutUser()
+                self.dismiss(animated: true, completion: nil)
+            })
+            .addDisposableTo(disposeBag)
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-//    // MARK: KWSPopupNavigationBarProtocol
-//    
-//    func kwsPopupNavGetTitle() -> String {
-//        return "user_vc_title".localized
-//    }
-//    
-//    func kwsPopupNavDidPressOnClose() {
-//        dismiss(animated: true) {
-//            // flush
-//        }
-//    }
-    
-    // MARK: Actions
-    
-    @IBAction func logoutAction(_ sender: AnyObject) {
-//        dismiss(animated: true) { 
-//            KWSSingleton.sharedInstance.logoutUser()
-//        }
     }
 }

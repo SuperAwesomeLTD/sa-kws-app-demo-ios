@@ -7,64 +7,68 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import KWSiOSSDKObjC
+import SAUtils
 
-class LeaderViewController: UIViewController/*, KWSPopupNavigationBarProtocol*/ {
+class LeaderViewController: KWSBaseController {
 
     @IBOutlet weak var tableView: UITableView!
-//    fileprivate var dataSource: LeaderDataSource!
-//    fileprivate var spinnerM: SAActivityView!
-//    fileprivate var popupM: SAPopup!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
+        
+        RxKWS.getLeaderboard()
+            .map { (leader: KWSLeader) -> ViewModel in
+                return LeaderRowViewModel (leader.rank, leader.score, leader.user)
+            }
+            .toArray()
+            .do(onNext: { (elems) in
+                // do nothing
+            }, onError: { (error) in
+                SAActivityView.sharedManager().hide()
+            }, onCompleted: {
+                SAActivityView.sharedManager().hide()
+            }, onSubscribe: {
+                SAActivityView.sharedManager().show()
+            })
+            .map { (models: [ViewModel]) -> [ViewModel] in
+                return [LeaderHeaderViewModel()] + models
+            }
+            .bindTable(tableView)
+            .customiseRow(cellIdentifier: "LeaderHeaderId",
+                          cellType: LeaderHeaderViewModel.self,
+                          cellHeight: 44)
+            { (model, cell) in
+                
+                let cell = cell as? LeaderHeader
+                let model = model as? LeaderHeaderViewModel
+                
+                cell?.rankLabel.text = model?.col1title
+                cell?.usernameLabel.text = model?.col2title
+                cell?.pointsLabel.text = model?.col3title
 
-//        if let bar = navigationController?.navigationBar as? KWSPopupNavigationBar {
-//            bar.kwsdelegate = self
-//        }
-        
-        
-//        spinnerM = SAActivityView.sharedManager()
-//        popupM = SAPopup.sharedManager()
-//        dataSource = LeaderDataSource()
-//        tableView.dataSource = dataSource
-//        tableView.delegate = dataSource
-//        dataSource.update(start: {
-//                self.spinnerM.show()
-//            }, success: { 
-//                self.spinnerM.hide()
-//                self.tableView.reloadData()
-//            }, error: {
-//                self.spinnerM.hide()
-//                self.popupM.show(
-//                    withTitle: "leader_popup_error_title".localized,
-//                    andMessage: "leader_popup_error_message".localized,
-//                    andOKTitle: "leader_popup_dismiss_button".localized,
-//                    andNOKTitle: nil,
-//                    andTextField: false,
-//                    andKeyboardTyle: UIKeyboardType.default,
-//                    andPressed: nil)
-//        })
+            }
+            .customiseRow(cellIdentifier: "LeaderRowId",
+                          cellType: LeaderRowViewModel.self,
+                          cellHeight: 44)
+            { (model, cell) in
+                
+                let cell = cell as? LeaderRow
+                let model = model as? LeaderRowViewModel
+                
+                cell?.RankLabel.text = model?.rank
+                cell?.UsernameLabel.text = model?.username
+                cell?.PointsLabel.text = model?.score
+
+            }
+            .update()
+            .addDisposableTo(disposeBag)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        navigationController?.navigationBar.barStyle = .black
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-//    // MARK: KWSPopupNavigationBarProtocol
-//    
-//    func kwsPopupNavGetTitle() -> String {
-//        return "leader_vc_title".localized
-//    }
-//    
-//    func kwsPopupNavDidPressOnClose() {
-//        dismiss(animated: true) {
-//            // flush
-//        }
-//    }
 
 }

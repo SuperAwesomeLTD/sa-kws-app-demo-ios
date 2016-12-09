@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LeaderHeaderViewModel: AnyObject/*, ViewModel*/ {
+class LeaderHeaderViewModel: AnyObject, ViewModel {
 
     var col1title: String
     var col2title: String
@@ -19,18 +19,4 @@ class LeaderHeaderViewModel: AnyObject/*, ViewModel*/ {
         col2title = "leader_col_2_title".localized
         col3title = "leader_col_3_title".localized
     }
-    
-//    func heightForRow() -> CGFloat {
-//        return 44
-//    }
-    
-//    func representationAsRow(_ tableView: UITableView) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderHeaderId") as! LeaderHeader
-//        cell.rankLabel.text = col1title
-//        cell.usernameLabel.text = col2title
-//        cell.pointsLabel.text = col3title
-//        return cell
-//    }
-    
-    
 }

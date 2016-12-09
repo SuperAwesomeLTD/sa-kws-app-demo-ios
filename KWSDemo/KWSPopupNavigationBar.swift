@@ -10,17 +10,21 @@ import UIKit
 import SAUtils
 
 protocol KWSPopupNavigationBarProtocol {
-    func kwsPopupNavGetTitle () -> String
     func kwsPopupNavDidPressOnClose()
 }
 
 class KWSPopupNavigationBar: UINavigationBar {
 
+    @IBInspectable var navigationBarTitle: String = ""
+    
     var close: UIButton!
     var kwsdelegate: KWSPopupNavigationBarProtocol?
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        // set bar style
+        barStyle = .black
         
         // customize background
         backgroundColor = UIColorFromHex(0xED1C24)
@@ -35,8 +39,8 @@ class KWSPopupNavigationBar: UINavigationBar {
         // add close button
         let btnframe = CGRect(x: W - 80, y: 0, width: 80, height: H)
         close = UIButton(frame: btnframe)
-        close.setTitleColor(UIColor.white, for: UIControlState())
-        close.setTitle("kws_popup_nav_bar_close".localized.uppercased(), for: UIControlState())
+        close.setTitleColor(UIColor.white, for: .normal)
+        close.setTitle("kws_popup_nav_bar_close".localized.uppercased(), for: .normal)
         close.titleLabel!.font = font
         close.addTarget(self, action: #selector(KWSPopupNavigationBar.doSometing), for: .touchUpInside)
         addSubview(close)
@@ -44,7 +48,7 @@ class KWSPopupNavigationBar: UINavigationBar {
         // add title
         let titleframe = CGRect(x: 8, y: 0, width: W - 72, height: H)
         let title = UILabel(frame: titleframe)
-        title.text = kwsdelegate?.kwsPopupNavGetTitle() // "Sign Up to KWS"
+        title.text = navigationBarTitle.localized
         title.textColor = UIColor.white
         title.font = font
         addSubview(title)
@@ -53,4 +57,5 @@ class KWSPopupNavigationBar: UINavigationBar {
     func doSometing () {
         kwsdelegate?.kwsPopupNavDidPressOnClose()
     }
+    
 }

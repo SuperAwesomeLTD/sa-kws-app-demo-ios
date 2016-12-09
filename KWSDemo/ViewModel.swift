@@ -9,6 +9,4 @@
 import UIKit
 
 protocol ViewModel {
-    func heightForRow () -> CGFloat
-    func representationAsRow(_ tableView: UITableView) -> UITableViewCell
 }

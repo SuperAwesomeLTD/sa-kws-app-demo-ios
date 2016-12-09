@@ -12,16 +12,14 @@ class FeatureEventRow: UITableViewCell {
     
     @IBOutlet weak var evtTitle: UILabel!
     @IBOutlet weak var evtMessage: UILabel!
-    @IBOutlet weak var content: UIView!
-    @IBOutlet weak var evtAdd20PointsButton: UIButton!
-    @IBOutlet weak var evtSub10PointsButton: UIButton!
-    @IBOutlet weak var evtGetScoreButton: UIButton!
-    @IBOutlet weak var evtSeeLeaderboardButton: UIButton!
-    @IBOutlet weak var evtSeeDocsButton: UIButton!
+    @IBOutlet weak var evtAdd20PointsButton: KWSBlueButton!
+    @IBOutlet weak var evtSub10PointsButton: KWSBlueButton!
+    @IBOutlet weak var evtGetScoreButton: KWSBlueButton!
+    @IBOutlet weak var evtSeeLeaderboardButton: KWSBlueButton!
+    @IBOutlet weak var evtSeeDocsButton: KWSBlueButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        content.addShadow()
         
         evtTitle.text = "feature_cell_evt_title".localized
         evtMessage.text = "feature_cell_evt_message".localized
@@ -30,12 +28,6 @@ class FeatureEventRow: UITableViewCell {
         evtGetScoreButton.setTitle("feature_cell_evt_button_3".localized.uppercased(), for: UIControlState())
         evtSeeLeaderboardButton.setTitle("feature_cell_evt_button_4".localized.uppercased(), for: UIControlState())
         evtSeeDocsButton.setTitle("feature_cell_evt_button_5".localized.uppercased(), for: UIControlState())
-        
-        evtAdd20PointsButton.blueButton()
-        evtSub10PointsButton.blueButton()
-        evtGetScoreButton.blueButton()
-        evtSeeLeaderboardButton.blueButton()
-        evtSeeDocsButton.blueButton()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

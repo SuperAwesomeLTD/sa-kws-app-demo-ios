@@ -12,9 +12,8 @@ class FeatureInviteRow: UITableViewCell {
 
     @IBOutlet weak var inviteTitle: UILabel!
     @IBOutlet weak var invMessage: UILabel!
-    @IBOutlet weak var content: UIView!
-    @IBOutlet weak var invInviteFriendButton: UIButton!
-    @IBOutlet weak var invSeeDocsButton: UIButton!
+    @IBOutlet weak var invInviteFriendButton: KWSBlueButton!
+    @IBOutlet weak var invSeeDocsButton: KWSBlueButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,9 +23,6 @@ class FeatureInviteRow: UITableViewCell {
         invInviteFriendButton.setTitle("feature_cell_inv_button_1".localized.uppercased(), for: UIControlState())
         invSeeDocsButton.setTitle("feature_cell_inv_button_2".localized.uppercased(), for: UIControlState())
         
-        content.addShadow()
-        invInviteFriendButton.blueButton()
-        invSeeDocsButton.blueButton()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
