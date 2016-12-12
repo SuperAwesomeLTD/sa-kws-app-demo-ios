@@ -10,6 +10,8 @@ import UIKit
 
 class UserHeader: UITableViewCell {
 
+    public static let Identifier: String = "UserHeaderId"
+    
     @IBOutlet weak var headerTitle: UILabel!
     
     override func awakeFromNib() {

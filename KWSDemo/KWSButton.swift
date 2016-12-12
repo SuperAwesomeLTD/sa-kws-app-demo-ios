@@ -36,3 +36,28 @@ class KWSRedButton : UIButton {
     }
     
 }
+
+class KWSCountryButton: UIButton {
+    
+    public var border: UIView?
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.backgroundColor = UIColor.clear
+        
+        // set size
+        let W = UIScreen.main.bounds.width - 88
+        let H = 30
+        
+        // add a border
+        border = UIView()
+        border?.frame = CGRect(x: 0, y: H-1, width: Int(W), height: 1)
+        border?.backgroundColor = UIColor.lightGray
+        self.addSubview(border!)
+        
+        // set button text color
+        self.setTitleColor(UIColor.lightGray, for: .normal)
+    }
+    
+}

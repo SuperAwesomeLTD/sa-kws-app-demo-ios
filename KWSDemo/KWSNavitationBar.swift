@@ -11,8 +11,8 @@ import SAUtils
 
 class KWSNavitationBar: UINavigationBar {
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
         // background
         self.barTintColor = UIColorFromHex(0xffffff)
@@ -33,6 +33,12 @@ class KWSNavitationBar: UINavigationBar {
         border.backgroundColor = UIColorFromHex(0xED1C24)
         self.addSubview(border)
     }
+    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        
+//        
+//    }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         var amendedSize = super.sizeThatFits(size)

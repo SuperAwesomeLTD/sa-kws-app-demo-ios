@@ -17,7 +17,7 @@ protocol SignUpProtocol {
 }
 
 // vc
-class SignUpViewController: KWSBaseController  {
+class SignUpViewController: KWSBaseController, CountryProtocol  {
 
     // outlets
     @IBOutlet weak var usernameTextView: KWSTextField!
@@ -28,8 +28,11 @@ class SignUpViewController: KWSBaseController  {
     @IBOutlet weak var monthTextView: KWSTextField!
     @IBOutlet weak var dayTextView: KWSTextField!
     @IBOutlet weak var submitButton: KWSRedButton!
+    @IBOutlet weak var countryButton: KWSCountryButton!
+    @IBOutlet weak var countryIcon: UIImageView!
     
     // current model
+    private let countrySubject: PublishSubject <String?> = PublishSubject<String?>()
     private var currentModel: SignUpModel = SignUpModel.createEmpty()
     
     // delegate
@@ -45,7 +48,8 @@ class SignUpViewController: KWSBaseController  {
         yearTextView.placeholder = "sign_up_year_placeholder".localized
         monthTextView.placeholder = "sign_up_month_placeholder".localized
         dayTextView.placeholder = "sign_up_day_placeholder".localized
-        submitButton.setTitle("sign_up_submit".localized.uppercased(), for: UIControlState())
+        submitButton.setTitle("sign_up_submit".localized.uppercased(), for: .normal)
+        countryButton.setTitle("sign_up_country_placeholder".localized, for: .normal)
         
         // determine if the submit button should be enabled or not
         Observable
@@ -55,15 +59,17 @@ class SignUpViewController: KWSBaseController  {
                            parentEmailTextView.rx.text.orEmpty,
                            yearTextView.rx.text.orEmpty,
                            monthTextView.rx.text.orEmpty,
-                           dayTextView.rx.text.orEmpty)
-            { (username, password1, password2, parentEmail, year, month, day) -> SignUpModel in
+                           dayTextView.rx.text.orEmpty,
+                           countrySubject.asObserver())
+            { (username, password1, password2, parentEmail, year, month, day, isoCode) -> SignUpModel in
                 return SignUpModel(withUsername: username,
                                    andPassword1: password1,
                                    andPassword2: password2,
                                    andParentEmail: parentEmail,
                                    andYear: year,
                                    andMonth: month,
-                                   andDay: day)
+                                   andDay: day,
+                                   andCountry: isoCode)
             }
             .do(onNext: { (signUpModel) in
                 self.currentModel = signUpModel
@@ -148,6 +154,20 @@ class SignUpViewController: KWSBaseController  {
             })
             .addDisposableTo(disposeBag)
         
+        // contry button
+        countryButton.rx
+            .tap
+            .flatMap { () -> Observable <UIViewController> in
+                return self.rxSeque(withIdentifier: "SignUpToCountrySegue")
+            }
+            .subscribe(onNext: { (vc) in
+                if let vc = vc as? KWSNavigationController,
+                    let destination = vc.viewControllers.first as? CountryController {
+                    destination.delegate = self
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
         // now the click
         submitButton.rx.tap
             // .skip (1)
@@ -155,6 +175,7 @@ class SignUpViewController: KWSBaseController  {
                 return RxKWS.signUp(withUsername: self.currentModel.getUsername(),
                                     andPassword: self.currentModel.getPassword(),
                                     andBirthdate: self.currentModel.getDate(),
+                                    andCountryCode: self.currentModel.getISOCode(),
                                     andParentEmail: self.currentModel.getParentEmail())
             }
             .subscribe(onNext: { (status: KWSCreateUserStatus) in
@@ -165,13 +186,21 @@ class SignUpViewController: KWSBaseController  {
                 }
                 else if status == KWSCreateUserStatus.duplicateUsername {
                     self.signUpError()
-
                 }
                 else {
                     self.networkError()
                 }
             })
             .addDisposableTo(disposeBag)
+        
+        countrySubject.onNext(nil)
+    }
+    
+    func didSelectCountry(isoCode: String, name: String, flag: UIImage) {
+        countryButton.setTitle(name, for: .normal)
+        countryIcon.image = flag
+        countryButton.setTitleColor(UIColor.black, for: .normal)
+        countrySubject.onNext(isoCode)
     }
     
     override func didReceiveMemoryWarning() {

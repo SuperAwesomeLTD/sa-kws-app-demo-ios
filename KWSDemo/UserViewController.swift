@@ -87,7 +87,7 @@ class UserViewController: KWSBaseController {
                 SAActivityView.sharedManager().show()
             })
             .bindTable(userDetailsTableView)
-            .customiseRow(cellIdentifier: "UserHeaderId",
+            .customiseRow(cellIdentifier: UserHeader.Identifier,
                           cellType: UserHeaderViewModel.self,
                           cellHeight: 44)
             { (model, cell) in
@@ -98,7 +98,7 @@ class UserViewController: KWSBaseController {
                 cell?.headerTitle.text = model?.title
                 
             }
-            .customiseRow(cellIdentifier: "UserRowId",
+            .customiseRow(cellIdentifier: UserRow.Identifier,
                           cellType: UserRowViewModel.self,
                           cellHeight: 44)
             { (model, cell) in

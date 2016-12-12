@@ -17,6 +17,7 @@ class RxDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     var table: UITableView?
     var data: [Any] = []
     fileprivate var viewModelToRxRow: [String : RxDataRow] = [:]
+    fileprivate var clickMap: [String : (IndexPath, Any)->()] = [:]
     
     init (key: Int) {
         self.key = key
@@ -64,7 +65,16 @@ class RxDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        
+        let dt = data[indexPath.row]
+        let key = "\(type(of: dt))"
+        let row = viewModelToRxRow [key]
+        
+        let cellID = row?.cellIdentifier ?? ""
+        let clickFunc = clickMap[cellID]
+        
+        clickFunc? (indexPath, dt)
+        
     }
     
     func update () -> Void {
@@ -72,20 +82,12 @@ class RxDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
         table?.delegate = self
         table?.dataSource = self
         
-        Observable
-            .from(data)
-            .filter { (element) -> Bool in
-                let key = "\(type(of: element))"
-                return self.viewModelToRxRow[key] != nil
-            }
-            .toArray()
-            .subscribe(onNext: { (newData: [Any]) in
-                
-                self.data = newData
-                self.table?.reloadData()
-                
-            })
-            .addDisposableTo(RxDataSourceStore.sharedInstance.disposeBag)
+        self.data = self.data.filter { (element: Any) -> Bool in
+            let key = "\(type(of: element))"
+            return self.viewModelToRxRow[key] != nil
+        }
+        
+        self.table?.reloadData()
     }
 }
 
@@ -114,6 +116,7 @@ extension Observable {
             self.subscribe(onNext: { (element) in
                 
                 if let data = element as? [Any] {
+                    
                     dataSource.setDataSourceTable(table)
                     dataSource.setDataSourceData(data)
                     subscriber.onNext(dataSource)
@@ -160,6 +163,28 @@ extension Observable {
         })
     }
     
+    func clickRow (cellIdentifier: String,
+                   click: @escaping (IndexPath, Any) -> ()) -> Observable <RxDataSource> {
+        
+        return Observable<RxDataSource>.create({ (subscriber) -> Disposable in
+            
+            self.subscribe(onNext: { (element) in
+             
+                if let source = element as? RxDataSource {
+                    
+                    source.clickMap[cellIdentifier] = click
+                    subscriber.onNext(source)
+                    subscriber.onCompleted()
+                    
+                }
+                
+            }).addDisposableTo(RxDataSourceStore.sharedInstance.disposeBag)
+            
+            return Disposables.create()
+        })
+        
+    }
+    
     func update () -> Disposable {
         
         return Observable<RxDataSource>.create({ (subscriber) -> Disposable in
@@ -170,6 +195,7 @@ extension Observable {
                     subscriber.onNext(source)
                     subscriber.onCompleted()
                 }
+                
             }).addDisposableTo(RxDataSourceStore.sharedInstance.disposeBag)
             
             return Disposables.create()

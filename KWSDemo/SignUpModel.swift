@@ -17,6 +17,7 @@ class SignUpModel: NSObject {
     private var password1: String?
     private var password2: String?
     private var parrentEmail: String?
+    private var isoCode: String?
     private var year: Int?
     private var month: Int?
     private var day: Int?
@@ -27,13 +28,15 @@ class SignUpModel: NSObject {
          andParentEmail parentEmail: String?,
          andYear year: String?,
          andMonth month: String?,
-         andDay day: String?) {
+         andDay day: String?,
+         andCountry isoCode: String?) {
         super.init()
         
         self.username = username
         self.password1 = password1
         self.password2 = password2
         self.parrentEmail = parentEmail
+        self.isoCode = isoCode
         if let year = year {
             self.year = Int(year)
         }
@@ -46,7 +49,7 @@ class SignUpModel: NSObject {
     }
     
     static func createEmpty () -> SignUpModel {
-        return SignUpModel (withUsername: nil, andPassword1: nil, andPassword2: nil, andParentEmail: nil, andYear: nil, andMonth: nil, andDay: nil)
+        return SignUpModel (withUsername: nil, andPassword1: nil, andPassword2: nil, andParentEmail: nil, andYear: nil, andMonth: nil, andDay: nil, andCountry: nil)
     }
     
     func isUserOK () -> Bool {
@@ -105,8 +108,15 @@ class SignUpModel: NSObject {
         return false
     }
     
+    func isCountryOK () -> Bool {
+        if isoCode != nil {
+            return true
+        }
+        return false
+    }
+    
     func isValid () -> Bool {
-        return isUserOK() && isPassword1OK() && isPassword2OK() && arePasswordsSame() && isParentEmailOK() && isYearOK() && isMonthOK() && isDayOK()
+        return isUserOK() && isPassword1OK() && isPassword2OK() && arePasswordsSame() && isParentEmailOK() && isCountryOK() && isYearOK() && isMonthOK() && isDayOK()
     }
     
     func getParentEmail () -> String {
@@ -136,6 +146,13 @@ class SignUpModel: NSObject {
             let monthStr = month < 10 ? "0\(month)" : "\(month)"
             let dayStr = day < 10 ? "0\(day)" : "\(day)"
             return "\(yearStr)-\(monthStr)-\(dayStr)"
+        }
+        return ""
+    }
+    
+    func getISOCode () -> String {
+        if let isoCode = isoCode {
+            return isoCode
         }
         return ""
     }

@@ -47,6 +47,10 @@
 		1BA9F0F31D784EA4002150A7 /* SetAppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0F21D784EA4002150A7 /* SetAppDataModel.swift */; };
 		1BAE465D1DFAE70000377895 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAE465C1DFAE70000377895 /* LoginController.swift */; };
 		1BAE465F1DFAE71800377895 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAE465E1DFAE71800377895 /* LoginModel.swift */; };
+		1BAE46621DFAF75B00377895 /* CountryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAE46611DFAF75B00377895 /* CountryController.swift */; };
+		1BAE46641DFAFC8300377895 /* CountryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAE46631DFAFC8300377895 /* CountryRow.swift */; };
+		1BAE46661DFAFC9500377895 /* CountryRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAE46651DFAFC9500377895 /* CountryRowViewModel.swift */; };
+		1BAE46681DFB29C600377895 /* RxDataSource2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAE46671DFB29C600377895 /* RxDataSource2.swift */; };
 		1BDC11A61D1953C900B1111A /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A51D1953C900B1111A /* FeatureViewController.swift */; };
 		1BDC11A81D1953E000B1111A /* DocumentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */; };
 		1BDC11AB1D197EB200B1111A /* KWSNavitationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */; };
@@ -120,6 +124,10 @@
 		1BA9F0F21D784EA4002150A7 /* SetAppDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetAppDataModel.swift; sourceTree = "<group>"; };
 		1BAE465C1DFAE70000377895 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		1BAE465E1DFAE71800377895 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		1BAE46611DFAF75B00377895 /* CountryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryController.swift; sourceTree = "<group>"; };
+		1BAE46631DFAFC8300377895 /* CountryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryRow.swift; sourceTree = "<group>"; };
+		1BAE46651DFAFC9500377895 /* CountryRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryRowViewModel.swift; sourceTree = "<group>"; };
+		1BAE46671DFB29C600377895 /* RxDataSource2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxDataSource2.swift; sourceTree = "<group>"; };
 		1BDC11A51D1953C900B1111A /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
 		1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentationViewController.swift; sourceTree = "<group>"; };
 		1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSNavitationBar.swift; sourceTree = "<group>"; };
@@ -217,13 +225,14 @@
 		1B56DFE71D194B3800973075 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1BAE46601DFAF74C00377895 /* Country */,
+				1B7AD58F1D5CA64F003400B4 /* SignUp */,
 				1BAE465B1DFAE6EA00377895 /* Login */,
 				1BA9F0E71D783CD3002150A7 /* GetAppData */,
 				1BA9F0E61D783CC9002150A7 /* SetAppData */,
 				1B7AD58A1D5CA4C6003400B4 /* Leaderboard */,
 				1B7AD5851D5CA12D003400B4 /* UserDetails */,
 				1B7AD5901D5CA657003400B4 /* Features */,
-				1B7AD58F1D5CA64F003400B4 /* SignUp */,
 				1B7AD58E1D5CA644003400B4 /* Documentation */,
 				1B7AD58D1D5CA637003400B4 /* Platform */,
 			);
@@ -234,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */,
-				1B56DFDB1D194A6200973075 /* Assets.xcassets */,
 				1B56DFE01D194A6200973075 /* Info.plist */,
 				1B56DFE91D194B6700973075 /* KWSDemo-Bridging-Header.h */,
 			);
@@ -247,6 +255,7 @@
 				1B7AD5951D5CB074003400B4 /* ViewModel.swift */,
 				1B085FF91DF96B6100986E56 /* RxKWS.swift */,
 				1B4298DB1DFABD19008F9FFF /* RxDataSource.swift */,
+				1BAE46671DFB29C600377895 /* RxDataSource2.swift */,
 			);
 			name = Aux;
 			sourceTree = "<group>";
@@ -348,6 +357,16 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		1BAE46601DFAF74C00377895 /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				1BAE46611DFAF75B00377895 /* CountryController.swift */,
+				1BAE46631DFAFC8300377895 /* CountryRow.swift */,
+				1BAE46651DFAFC9500377895 /* CountryRowViewModel.swift */,
+			);
+			name = Country;
+			sourceTree = "<group>";
+		};
 		1BDC11A91D197DB200B1111A /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +382,7 @@
 		1BDC11B01D198B3900B1111A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1B56DFDB1D194A6200973075 /* Assets.xcassets */,
 				1BE8CEF51D8FF2A000572070 /* Localizable.strings */,
 				1BDC11B11D198B5600B1111A /* SF-UI-Text-Bold.otf */,
 				1BDC11B21D198B5600B1111A /* SF-UI-Text-BoldItalic.otf */,
@@ -445,8 +465,9 @@
 				TargetAttributes = {
 					1B56DFD01D194A6200973075 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = K79XEZP48K;
+						DevelopmentTeam = DCC9L689QJ;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -558,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BAE46661DFAFC9500377895 /* CountryRowViewModel.swift in Sources */,
 				1BDC11FE1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift in Sources */,
 				1BA9F0F11D78442A002150A7 /* SetAppDataController.swift in Sources */,
 				1BDC11FC1D1ABF8E00B1111A /* SignUpViewController.swift in Sources */,
@@ -574,6 +596,7 @@
 				1B0860001DF9C28F00986E56 /* SignUpModel.swift in Sources */,
 				1B7AD59A1D5CB7DA003400B4 /* LeaderHeader.swift in Sources */,
 				1B085FFE1DF9B1E000986E56 /* KWSNavigationController.swift in Sources */,
+				1BAE46641DFAFC8300377895 /* CountryRow.swift in Sources */,
 				1BE8CEFD1D90342300572070 /* NSString+KWSStyle.swift in Sources */,
 				1BA9F0E51D78390D002150A7 /* FeatureAppDataViewModel.swift in Sources */,
 				1BA9F0E91D783CF0002150A7 /* GetAppDataController.swift in Sources */,
@@ -600,10 +623,12 @@
 				1BA9F0ED1D783FCE002150A7 /* GetAppDataViewModel.swift in Sources */,
 				1BDC11ED1D1AA3BD00B1111A /* KWSButton.swift in Sources */,
 				1B92FCDD1D218BEA00B75617 /* UserViewController.swift in Sources */,
+				1BAE46621DFAF75B00377895 /* CountryController.swift in Sources */,
 				1BDC11F31D1AA99800B1111A /* FeatureAuthRow.swift in Sources */,
 				1BDC12001D1AECC300B1111A /* KWSTextField.swift in Sources */,
 				1B6463A51D5CCAFE00FB81FD /* FeatureEventViewModel.swift in Sources */,
 				1B64639F1D5CCADA00FB81FD /* FeatureAuthViewModel.swift in Sources */,
+				1BAE46681DFB29C600377895 /* RxDataSource2.swift in Sources */,
 				1BAE465D1DFAE70000377895 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -734,13 +759,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: SuperAwesome Ltd (DCC9L689QJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SuperAwesome Ltd (DCC9L689QJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = DCC9L689QJ;
 				INFOPLIST_FILE = KWSDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = superawesome.tv.kwsdemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "250cb52e-a609-43a8-867c-86a340b88213";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KWSDemo/KWSDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -755,13 +782,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: SuperAwesome Ltd (DCC9L689QJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SuperAwesome Ltd (DCC9L689QJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = DCC9L689QJ;
 				INFOPLIST_FILE = KWSDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = superawesome.tv.kwsdemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "250cb52e-a609-43a8-867c-86a340b88213";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KWSDemo/KWSDemo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

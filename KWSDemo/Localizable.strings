@@ -99,6 +99,7 @@
 "sign_up_password1_placeholder" = "Enter a password";
 "sign_up_password2_placeholder" = "Repeat the password";
 "sign_up_parent_email_paceholder" = "Enter a parent email";
+"sign_up_country_placeholder" = "Select a country";
 "sign_up_year_placeholder" = "YYYY";
 "sign_up_month_placeholder" = "MM";
 "sign_up_day_placeholder" = "DD";
@@ -114,6 +115,13 @@
 "sign_up_popup_warning_message_month" = "Please enter a valid month of birth.";
 "sign_up_popup_warning_message_day" = "Please enter a valid day of birth.";
 "sign_up_popup_error_message" = "Sign up failed - please try again!";
+
+/** country */
+"country_vc_title" = "Select your country";
+"country_search_placeholder" = "Type country name";
+"country_row_code_default" = "UN";
+"country_row_name_default" = "United Nations";
+"country_row_flag_default" = "unitednations.png";
 
 /*user*/
 "user_vc_title" = "User details";

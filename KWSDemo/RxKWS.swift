@@ -16,6 +16,7 @@ class RxKWS: NSObject {
     static func signUp (withUsername username: String,
                         andPassword password: String,
                         andBirthdate dateOfBirth: String,
+                        andCountryCode isoCode: String,
                         andParentEmail parentEmail: String) -> Observable <KWSCreateUserStatus> {
         
         return Observable.create ({ (subscriber) -> Disposable in
@@ -23,7 +24,7 @@ class RxKWS: NSObject {
             KWS.sdk().createUser(username,
                                  withPassword: password,
                                  andDateOfBirth: dateOfBirth,
-                                 andCountry: "US",
+                                 andCountry: isoCode,
                                  andParentEmail: parentEmail)
             { (status: KWSCreateUserStatus) in
                 

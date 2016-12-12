@@ -10,6 +10,8 @@ import UIKit
 
 class LeaderRow: UITableViewCell {
 
+    public static let Identifier: String = "LeaderRowId"
+    
     @IBOutlet weak var RankLabel: UILabel!
     @IBOutlet weak var UsernameLabel: UILabel!
     @IBOutlet weak var PointsLabel: UILabel!

@@ -41,7 +41,11 @@ class PlatformViewController: UIViewController {
 
     @IBAction func knowMoreAction (_ sender: AnyObject) {
         let url = URL(string: urlStr)
-        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url!)
+        }
     }
     
     // <Custom>

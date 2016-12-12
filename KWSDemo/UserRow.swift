@@ -10,6 +10,8 @@ import UIKit
 
 class UserRow: UITableViewCell {
 
+    public static let Identifier: String = "UserRowId"
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     

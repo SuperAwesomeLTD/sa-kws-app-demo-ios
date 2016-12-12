@@ -45,7 +45,7 @@
             <objects>
                 <navigationController id="Z7G-hV-BTB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Platform" image="tab_platform_unsel" selectedImage="tab_platform_sel" id="KXs-Ny-lzX"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W9X-I6-wI5" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="W9X-I6-wI5" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -222,7 +222,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureAuthRowId" rowHeight="298" id="QgU-lU-uWh" customClass="FeatureAuthRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="1000" height="298"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="298"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QgU-lU-uWh" id="TNn-Vo-RGm">
                                             <frame key="frameInset" width="600" height="298"/>
@@ -305,7 +305,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureNotifRowId" rowHeight="248" id="vTg-mh-kav" customClass="FeatureNotifRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="390" width="1000" height="248"/>
+                                        <rect key="frame" x="0.0" y="390" width="600" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vTg-mh-kav" id="281-TQ-NBb">
                                             <frame key="frameInset" width="600" height="248"/>
@@ -388,7 +388,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeaturePermRowId" rowHeight="248" id="quf-yd-1u7" customClass="FeaturePermRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="638" width="1000" height="248"/>
+                                        <rect key="frame" x="0.0" y="638" width="600" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="quf-yd-1u7" id="AEL-73-n9D">
                                             <frame key="frameInset" width="600" height="248"/>
@@ -471,7 +471,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureEventRowId" rowHeight="368" id="5QN-Wb-5m9" customClass="FeatureEventRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="886" width="1000" height="368"/>
+                                        <rect key="frame" x="0.0" y="886" width="600" height="368"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5QN-Wb-5m9" id="Z6T-Yy-aTM">
                                             <frame key="frameInset" width="600" height="368"/>
@@ -590,7 +590,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureInviteRowId" rowHeight="248" id="aux-XC-pDW" customClass="FeatureInviteRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1254" width="1000" height="248"/>
+                                        <rect key="frame" x="0.0" y="1254" width="600" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aux-XC-pDW" id="hy3-bl-rNe">
                                             <frame key="frameInset" width="600" height="248"/>
@@ -673,7 +673,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureAppDataRowId" rowHeight="248" id="CPD-3l-b5C" customClass="FeatureAppDataRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1502" width="1000" height="248"/>
+                                        <rect key="frame" x="0.0" y="1502" width="600" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CPD-3l-b5C" id="pwi-Sj-51f">
                                             <frame key="frameInset" width="600" height="248"/>
@@ -785,7 +785,7 @@
         <scene sceneID="O8z-UY-iSo">
             <objects>
                 <navigationController storyboardIdentifier="SignUpNavControllerId" id="LpG-5y-JA9" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q18-zc-z2n" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="q18-zc-z2n" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>
@@ -803,8 +803,8 @@
         <!--Navigation Controller-->
         <scene sceneID="Ves-K8-10S">
             <objects>
-                <navigationController id="69N-uK-yMO" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p5H-9Y-DDM" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                <navigationController id="69N-uK-yMO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="p5H-9Y-DDM" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>
@@ -909,7 +909,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vgd-Sg-yfY" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="w8Z-gb-T6m"/>
+                                    <constraint firstAttribute="height" constant="30" id="5pI-7S-tzD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -917,7 +917,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adU-nc-o50" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="r5X-PV-5ZW"/>
+                                    <constraint firstAttribute="height" constant="30" id="Dai-Hg-456"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -925,7 +925,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iCh-DE-AMl" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="fqe-G0-rzU"/>
+                                    <constraint firstAttribute="height" constant="30" id="f4e-Fl-aVb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -933,7 +933,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ZK-Wg-awI" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Nf7-8b-yYa"/>
+                                    <constraint firstAttribute="height" constant="30" id="udv-sk-166"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -941,7 +941,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wum-dX-MwU" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="fcM-3H-Wud"/>
+                                    <constraint firstAttribute="height" constant="30" id="DNK-kf-ZLk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -949,7 +949,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cle-JT-YD2" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2Or-HR-C0a"/>
+                                    <constraint firstAttribute="height" constant="30" id="pwF-VO-hNi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -957,8 +957,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVu-wa-78n" customClass="KWSRedButton" customModule="KWSDemo" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="IIe-fB-4my"/>
-                                    <constraint firstAttribute="height" constant="30" id="jy1-nL-BRE"/>
+                                    <constraint firstAttribute="height" constant="30" id="k48-Xh-ihQ"/>
+                                    <constraint firstAttribute="width" constant="90" id="kj3-5q-wPX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="12"/>
                                 <state key="normal" title="Button"/>
@@ -966,42 +966,62 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ba-c7-YFK" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="yxN-R6-WsK"/>
+                                    <constraint firstAttribute="height" constant="30" id="F6J-Fd-dyp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06I-P9-osd" customClass="KWSCountryButton" customModule="KWSDemo" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="P99-Jm-7vy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="11"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unitednations.png" translatesAutoresizingMaskIntoConstraints="NO" id="Drr-AR-2QO">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8yt-dv-Vuc"/>
+                                    <constraint firstAttribute="width" constant="40" id="h01-MK-jzR"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cle-JT-YD2" firstAttribute="width" secondItem="0ZK-Wg-awI" secondAttribute="width" id="2n1-mb-m5t"/>
-                            <constraint firstItem="Wum-dX-MwU" firstAttribute="width" secondItem="0ZK-Wg-awI" secondAttribute="width" id="A7x-Mg-hIf"/>
-                            <constraint firstItem="adU-nc-o50" firstAttribute="top" secondItem="Vgd-Sg-yfY" secondAttribute="bottom" constant="8" id="CJv-kX-ayG"/>
-                            <constraint firstAttribute="trailing" secondItem="adU-nc-o50" secondAttribute="trailing" constant="20" id="Dgj-La-EDX"/>
-                            <constraint firstItem="Vgd-Sg-yfY" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="Ea9-By-6tc"/>
-                            <constraint firstAttribute="trailing" secondItem="2Ba-c7-YFK" secondAttribute="trailing" constant="20" id="Ivz-X6-fIu"/>
-                            <constraint firstItem="0ZK-Wg-awI" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="JtT-IG-kLu"/>
-                            <constraint firstItem="2Ba-c7-YFK" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="LyJ-ED-v3E"/>
-                            <constraint firstItem="iVu-wa-78n" firstAttribute="top" secondItem="cle-JT-YD2" secondAttribute="bottom" constant="15" id="Mgo-uy-cNb"/>
-                            <constraint firstAttribute="trailing" secondItem="Vgd-Sg-yfY" secondAttribute="trailing" constant="20" id="Ml6-U6-tI9"/>
-                            <constraint firstItem="Wum-dX-MwU" firstAttribute="top" secondItem="2Ba-c7-YFK" secondAttribute="bottom" constant="8" id="Ptg-uo-Bh0"/>
-                            <constraint firstAttribute="trailing" secondItem="iCh-DE-AMl" secondAttribute="trailing" constant="20" id="Tej-nz-tdK"/>
-                            <constraint firstItem="cle-JT-YD2" firstAttribute="top" secondItem="2Ba-c7-YFK" secondAttribute="bottom" constant="8" id="UBy-UK-LMc"/>
-                            <constraint firstItem="iCh-DE-AMl" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="Ur8-i9-ilz"/>
-                            <constraint firstAttribute="trailing" secondItem="cle-JT-YD2" secondAttribute="trailing" constant="20" id="V1o-Ui-qb4"/>
-                            <constraint firstItem="Wum-dX-MwU" firstAttribute="leading" secondItem="0ZK-Wg-awI" secondAttribute="trailing" constant="10" id="Xmi-7H-wQJ"/>
-                            <constraint firstItem="cle-JT-YD2" firstAttribute="leading" secondItem="Wum-dX-MwU" secondAttribute="trailing" constant="10" id="cY6-14-eSl"/>
-                            <constraint firstItem="2Ba-c7-YFK" firstAttribute="top" secondItem="iCh-DE-AMl" secondAttribute="bottom" constant="8" id="hx3-61-6x7"/>
-                            <constraint firstItem="iCh-DE-AMl" firstAttribute="top" secondItem="adU-nc-o50" secondAttribute="bottom" constant="8" id="qR2-kB-hzI"/>
-                            <constraint firstItem="0ZK-Wg-awI" firstAttribute="top" secondItem="2Ba-c7-YFK" secondAttribute="bottom" constant="8" id="uDy-s5-mu7"/>
-                            <constraint firstItem="adU-nc-o50" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="utw-dk-rP4"/>
-                            <constraint firstItem="0ZK-Wg-awI" firstAttribute="top" secondItem="2Ba-c7-YFK" secondAttribute="bottom" constant="8" id="wJV-7F-EZc"/>
-                            <constraint firstAttribute="trailing" secondItem="iVu-wa-78n" secondAttribute="trailing" constant="20" id="wTy-dy-JZU"/>
-                            <constraint firstItem="Vgd-Sg-yfY" firstAttribute="top" secondItem="uPg-tE-YoI" secondAttribute="bottom" constant="22" id="zJW-GH-Avx"/>
+                            <constraint firstAttribute="trailing" secondItem="2Ba-c7-YFK" secondAttribute="trailing" constant="20" id="0FE-Xz-ZTh"/>
+                            <constraint firstItem="cle-JT-YD2" firstAttribute="width" secondItem="0ZK-Wg-awI" secondAttribute="width" id="6bv-eh-wia"/>
+                            <constraint firstItem="2Ba-c7-YFK" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="93e-WO-7ya"/>
+                            <constraint firstAttribute="trailing" secondItem="iVu-wa-78n" secondAttribute="trailing" constant="20" id="9gA-84-Z5i"/>
+                            <constraint firstItem="2Ba-c7-YFK" firstAttribute="top" secondItem="iCh-DE-AMl" secondAttribute="bottom" constant="8" id="Bcn-D5-b7U"/>
+                            <constraint firstItem="adU-nc-o50" firstAttribute="top" secondItem="Vgd-Sg-yfY" secondAttribute="bottom" constant="8" id="Bqy-09-auK"/>
+                            <constraint firstItem="0ZK-Wg-awI" firstAttribute="top" secondItem="06I-P9-osd" secondAttribute="bottom" constant="8" id="HiK-jC-d2F"/>
+                            <constraint firstItem="iVu-wa-78n" firstAttribute="top" secondItem="cle-JT-YD2" secondAttribute="bottom" constant="15" id="HtZ-5g-oEZ"/>
+                            <constraint firstItem="06I-P9-osd" firstAttribute="leading" secondItem="Drr-AR-2QO" secondAttribute="trailing" constant="8" id="Mmg-0C-TTW"/>
+                            <constraint firstItem="Drr-AR-2QO" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="NTW-96-1HO"/>
+                            <constraint firstItem="cle-JT-YD2" firstAttribute="leading" secondItem="Wum-dX-MwU" secondAttribute="trailing" constant="10" id="P2U-1L-FHf"/>
+                            <constraint firstAttribute="trailing" secondItem="iCh-DE-AMl" secondAttribute="trailing" constant="20" id="UNX-2R-39Z"/>
+                            <constraint firstAttribute="trailing" secondItem="cle-JT-YD2" secondAttribute="trailing" constant="20" id="V48-u1-Sub"/>
+                            <constraint firstItem="iCh-DE-AMl" firstAttribute="top" secondItem="adU-nc-o50" secondAttribute="bottom" constant="8" id="b5g-FW-4S3"/>
+                            <constraint firstItem="cle-JT-YD2" firstAttribute="top" secondItem="06I-P9-osd" secondAttribute="bottom" constant="8" id="clv-rn-G1v"/>
+                            <constraint firstItem="Wum-dX-MwU" firstAttribute="leading" secondItem="0ZK-Wg-awI" secondAttribute="trailing" constant="10" id="fo4-1C-odq"/>
+                            <constraint firstItem="Wum-dX-MwU" firstAttribute="width" secondItem="0ZK-Wg-awI" secondAttribute="width" id="g0l-Bo-VDQ"/>
+                            <constraint firstItem="Vgd-Sg-yfY" firstAttribute="top" secondItem="uPg-tE-YoI" secondAttribute="bottom" constant="22" id="g3d-y0-JEt"/>
+                            <constraint firstItem="iCh-DE-AMl" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="h9M-5E-DGS"/>
+                            <constraint firstItem="Wum-dX-MwU" firstAttribute="top" secondItem="06I-P9-osd" secondAttribute="bottom" constant="8" id="hVl-wr-8m6"/>
+                            <constraint firstItem="adU-nc-o50" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="jEJ-mg-2Hm"/>
+                            <constraint firstItem="0ZK-Wg-awI" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="jjg-Lo-l7F"/>
+                            <constraint firstAttribute="trailing" secondItem="adU-nc-o50" secondAttribute="trailing" constant="20" id="jlg-f2-d9c"/>
+                            <constraint firstItem="Vgd-Sg-yfY" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="l36-RL-fn7"/>
+                            <constraint firstAttribute="trailing" secondItem="Vgd-Sg-yfY" secondAttribute="trailing" constant="20" id="qYS-Rp-uey"/>
+                            <constraint firstAttribute="trailing" secondItem="06I-P9-osd" secondAttribute="trailing" constant="20" id="rOK-qO-AHq"/>
+                            <constraint firstItem="Drr-AR-2QO" firstAttribute="top" secondItem="2Ba-c7-YFK" secondAttribute="bottom" constant="8" id="xZn-YO-cXu"/>
+                            <constraint firstItem="06I-P9-osd" firstAttribute="top" secondItem="2Ba-c7-YFK" secondAttribute="bottom" constant="8" id="yh5-Ps-5Jk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aoM-ck-Nbq"/>
                     <connections>
+                        <outlet property="countryButton" destination="06I-P9-osd" id="6FL-PO-FHB"/>
+                        <outlet property="countryIcon" destination="Drr-AR-2QO" id="QIb-pX-tjW"/>
                         <outlet property="dayTextView" destination="cle-JT-YD2" id="HfV-q2-bwm"/>
                         <outlet property="monthTextView" destination="Wum-dX-MwU" id="c96-Ot-Jr7"/>
                         <outlet property="parentEmailTextView" destination="2Ba-c7-YFK" id="C1V-FA-VDf"/>
@@ -1010,17 +1030,142 @@
                         <outlet property="submitButton" destination="iVu-wa-78n" id="lbN-Kt-xeo"/>
                         <outlet property="usernameTextView" destination="Vgd-Sg-yfY" id="ZSN-od-Hf1"/>
                         <outlet property="yearTextView" destination="0ZK-Wg-awI" id="7Am-w3-Mmb"/>
+                        <segue destination="ehL-fw-Sey" kind="presentation" identifier="SignUpToCountrySegue" id="PmO-QT-jYT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dr6-jJ-Dnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5770" y="-843"/>
+            <point key="canvasLocation" x="5768.8000000000002" y="-843.32833583208401"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Olg-5J-RIQ">
+            <objects>
+                <navigationController id="ehL-fw-Sey" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iq7-JK-AwS" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="country_vc_title"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Smb-6r-qic" kind="relationship" relationship="rootViewController" id="2fJ-3c-edZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4SZ-7l-3fb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6708" y="-842"/>
+        </scene>
+        <!--Country Controller-->
+        <scene sceneID="IQs-mJ-my7">
+            <objects>
+                <viewController id="Smb-6r-qic" customClass="CountryController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hve-Bp-SKh"/>
+                        <viewControllerLayoutGuide type="bottom" id="dmB-gV-ctu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SrI-j5-Kvk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y96-CM-rwq">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qe0-9X-3yF" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="4GB-FX-g86"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5D2-sh-0CA"/>
+                                    <constraint firstItem="qe0-9X-3yF" firstAttribute="leading" secondItem="y96-CM-rwq" secondAttribute="leading" constant="20" id="P3Q-Rb-ohB"/>
+                                    <constraint firstItem="qe0-9X-3yF" firstAttribute="top" secondItem="y96-CM-rwq" secondAttribute="top" constant="15" id="hc0-Ez-nnY"/>
+                                    <constraint firstAttribute="trailing" secondItem="qe0-9X-3yF" secondAttribute="trailing" constant="20" id="kqe-rH-Q70"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a2f-1d-n8e">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CountryRowId" rowHeight="50" id="uOH-9x-CuH" customClass="CountryRow" customModule="KWSDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uOH-9x-CuH" id="Goa-8K-Sum">
+                                            <frame key="frameInset" width="375" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpa-b8-Vxf">
+                                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="Ky0-0o-tQY"/>
+                                                    </constraints>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EVR-RP-hCf">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="34D-dg-6iz"/>
+                                                        <constraint firstAttribute="width" constant="40" id="IgD-b4-zn3"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AM-QO-ML0">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="hlX-ue-mrX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Dpa-b8-Vxf" secondAttribute="trailing" id="9av-cR-yon"/>
+                                                <constraint firstItem="EVR-RP-hCf" firstAttribute="top" secondItem="Goa-8K-Sum" secondAttribute="top" constant="10" id="9oD-uK-KOH"/>
+                                                <constraint firstItem="8AM-QO-ML0" firstAttribute="leading" secondItem="EVR-RP-hCf" secondAttribute="trailing" constant="20" id="C1b-DS-f1P"/>
+                                                <constraint firstItem="Dpa-b8-Vxf" firstAttribute="leading" secondItem="Goa-8K-Sum" secondAttribute="leading" id="RF0-kY-YyF"/>
+                                                <constraint firstAttribute="trailing" secondItem="8AM-QO-ML0" secondAttribute="trailing" constant="8" id="YKj-xC-QSg"/>
+                                                <constraint firstItem="EVR-RP-hCf" firstAttribute="leading" secondItem="Goa-8K-Sum" secondAttribute="leading" constant="20" id="gXK-ZV-QHn"/>
+                                                <constraint firstAttribute="bottom" secondItem="Dpa-b8-Vxf" secondAttribute="bottom" id="jlo-BN-YlD"/>
+                                                <constraint firstItem="8AM-QO-ML0" firstAttribute="top" secondItem="Goa-8K-Sum" secondAttribute="top" constant="15" id="tAu-lc-n1e"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="countryName" destination="8AM-QO-ML0" id="dQs-wS-dSK"/>
+                                            <outlet property="flagIcon" destination="EVR-RP-hCf" id="jhs-gk-ILw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="y96-CM-rwq" secondAttribute="trailing" id="2Dc-5y-Tb4"/>
+                            <constraint firstItem="a2f-1d-n8e" firstAttribute="leading" secondItem="SrI-j5-Kvk" secondAttribute="leading" id="Dwh-r4-8cq"/>
+                            <constraint firstAttribute="trailing" secondItem="a2f-1d-n8e" secondAttribute="trailing" id="Ki2-yk-YWd"/>
+                            <constraint firstItem="y96-CM-rwq" firstAttribute="leading" secondItem="SrI-j5-Kvk" secondAttribute="leading" id="QbF-nK-Fga"/>
+                            <constraint firstItem="a2f-1d-n8e" firstAttribute="top" secondItem="y96-CM-rwq" secondAttribute="bottom" id="UW5-o7-qO7"/>
+                            <constraint firstItem="dmB-gV-ctu" firstAttribute="top" secondItem="a2f-1d-n8e" secondAttribute="bottom" id="mYo-gq-LDW"/>
+                            <constraint firstItem="y96-CM-rwq" firstAttribute="top" secondItem="Hve-Bp-SKh" secondAttribute="bottom" id="qM6-Mi-tEe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8Eq-mZ-Bi3"/>
+                    <connections>
+                        <outlet property="countrySearch" destination="qe0-9X-3yF" id="TQh-rc-pp5"/>
+                        <outlet property="countryTable" destination="a2f-1d-n8e" id="YgP-nT-bjF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x4O-br-Pfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7533.6000000000004" y="-842.42878560719646"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z2v-Mk-Frj">
             <objects>
                 <navigationController storyboardIdentifier="UserNavControllerId" id="Az1-PF-dGO" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eww-9K-xsI" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eww-9K-xsI" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>
@@ -1439,7 +1584,7 @@
         <scene sceneID="rlq-Uy-97j">
             <objects>
                 <navigationController storyboardIdentifier="GetAppDataNavControllerId" id="kUB-Ix-gsw" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0yO-Vf-F46" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0yO-Vf-F46" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>
@@ -1538,7 +1683,7 @@
         <scene sceneID="YXB-pu-xtp">
             <objects>
                 <navigationController storyboardIdentifier="LeaderboardNavControllerId" id="Axd-AN-p3c" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AKo-zv-JdA" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AKo-zv-JdA" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userDefinedRuntimeAttributes>
@@ -1584,7 +1729,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uu8-WX-MC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="1507"/>
+            <point key="canvasLocation" x="1313" y="1505"/>
         </scene>
         <!--Documentation-->
         <scene sceneID="9bc-vf-5GU">
@@ -1601,7 +1746,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOB-9m-ghN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="1507"/>
+            <point key="canvasLocation" x="484" y="1505"/>
         </scene>
         <!--Features-->
         <scene sceneID="X1E-2q-06L">
@@ -1634,5 +1779,6 @@
         <image name="tab_features_unsel" width="22" height="30"/>
         <image name="tab_platform_sel" width="21" height="30"/>
         <image name="tab_platform_unsel" width="21" height="30"/>
+        <image name="unitednations.png" width="37" height="28"/>
     </resources>
 </document>

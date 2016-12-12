@@ -63,8 +63,7 @@ class SetAppDataController: KWSBaseController {
                 if success {
                     self.dismiss(animated: true, completion: nil)
                 } else {
-                    self.appDataError("add_app_data_popup_error_title".localized,
-                                      "add_app_data_error_message".localized)
+                    self.appDataError ()
                 }
                 
             })
@@ -80,9 +79,9 @@ class SetAppDataController: KWSBaseController {
         super.viewDidAppear(animated)
     }
     
-    func appDataError(_ title: String, _ message: String) {
-        SAPopup.sharedManager().show(withTitle: title,
-                                     andMessage: message,
+    func appDataError() {
+        SAPopup.sharedManager().show(withTitle: "add_app_data_popup_error_title".localized,
+                                     andMessage: "add_app_data_error_message".localized,
                                      andOKTitle: "add_app_data_popup_dismiss_button".localized,
                                      andNOKTitle: nil,
                                      andTextField: false,

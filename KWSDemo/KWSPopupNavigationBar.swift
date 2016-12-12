@@ -20,8 +20,8 @@ class KWSPopupNavigationBar: UINavigationBar {
     var close: UIButton!
     var kwsdelegate: KWSPopupNavigationBarProtocol?
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
         // set bar style
         barStyle = .black
@@ -53,6 +53,12 @@ class KWSPopupNavigationBar: UINavigationBar {
         title.font = font
         addSubview(title)
     }
+    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        
+//        
+//    }
     
     func doSometing () {
         kwsdelegate?.kwsPopupNavDidPressOnClose()
