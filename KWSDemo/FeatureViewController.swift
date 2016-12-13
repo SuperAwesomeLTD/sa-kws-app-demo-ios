@@ -45,11 +45,11 @@ class FeatureViewController: KWSBaseController {
                 
                 self.dataSource = RxDataSource
                     .bindTable(self.tableView)
+                    .estimateRowHeight(100)
                     //
                     // customise Login & Logout row
                     .customiseRow(cellIdentifier: "FeatureAuthRowId",
-                                  cellType: FeatureAuthViewModel.self,
-                                  cellHeight: 298)
+                                  cellType: FeatureAuthViewModel.self)
                     { (model, cell) in
                         
                         let cell = cell as? FeatureAuthRow
@@ -74,8 +74,7 @@ class FeatureViewController: KWSBaseController {
                     //
                     // customise the Remote Notifications row
                     .customiseRow(cellIdentifier: "FeatureNotifRowId",
-                                  cellType: FeatureNotifViewModel.self,
-                                  cellHeight: 248)
+                                  cellType: FeatureNotifViewModel.self)
                     { (model, cell) in
                         
                         let cell = cell as? FeatureNotifRow
@@ -164,8 +163,7 @@ class FeatureViewController: KWSBaseController {
                     //
                     // customise the Permissions row
                     .customiseRow(cellIdentifier: "FeaturePermRowId",
-                                  cellType: FeaturePermViewModel.self,
-                                  cellHeight: 248)
+                                  cellType: FeaturePermViewModel.self)
                     { (model, cell) in
                         
                         let cell = cell as? FeaturePermRow
@@ -234,8 +232,7 @@ class FeatureViewController: KWSBaseController {
                     //
                     // customise the Events row
                     .customiseRow(cellIdentifier: "FeatureEventRowId",
-                                  cellType: FeatureEventViewModel.self,
-                                  cellHeight: 368)
+                                  cellType: FeatureEventViewModel.self)
                     { (model, cell) in
                         
                         let cell = cell as? FeatureEventRow
@@ -313,8 +310,7 @@ class FeatureViewController: KWSBaseController {
                     //
                     // customise the Invite row
                     .customiseRow(cellIdentifier: "FeatureInviteRowId",
-                                  cellType: FeatureInviteViewModel.self,
-                                  cellHeight: 248)
+                                  cellType: FeatureInviteViewModel.self)
                     { (model, cell) in
                         
                         let cell = cell as? FeatureInviteRow
@@ -361,8 +357,7 @@ class FeatureViewController: KWSBaseController {
                     //
                     // customise the App Data row
                     .customiseRow(cellIdentifier: "FeatureAppDataRowId",
-                                  cellType: FeatureAppDataViewModel.self,
-                                  cellHeight: 248)
+                                  cellType: FeatureAppDataViewModel.self)
                     { (model, cell) in
                         
                         let cell = cell as? FeatureAppDataRow

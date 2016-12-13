@@ -24,7 +24,7 @@
 "feature_cell_auth_button_1_loggedout" = "AUTHENTICATE USER";
 "feature_cell_auth_button_1_loggedin" = "LOGGED IN AS ";
 "feature_cell_auth_button_2" = "SEE DOCUMENTATION";
-"feature_cell_notif_title" = "Kid-safe push notifications";
+"feature_cell_notif_title" = "Push notifications";
 "feature_cell_notif_content" = "Safely manage Push Notifications for your users through Kids Web Services. Enable, disable and schedule notifications to be sent to your user base on a regular basis.";
 
 /*Fuzzy*/
