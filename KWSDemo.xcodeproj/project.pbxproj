@@ -50,7 +50,6 @@
 		1BAE46621DFAF75B00377895 /* CountryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAE46611DFAF75B00377895 /* CountryController.swift */; };
 		1BAE46641DFAFC8300377895 /* CountryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAE46631DFAFC8300377895 /* CountryRow.swift */; };
 		1BAE46661DFAFC9500377895 /* CountryRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAE46651DFAFC9500377895 /* CountryRowViewModel.swift */; };
-		1BAE46681DFB29C600377895 /* RxDataSource2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAE46671DFB29C600377895 /* RxDataSource2.swift */; };
 		1BDC11A61D1953C900B1111A /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A51D1953C900B1111A /* FeatureViewController.swift */; };
 		1BDC11A81D1953E000B1111A /* DocumentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */; };
 		1BDC11AB1D197EB200B1111A /* KWSNavitationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */; };
@@ -127,7 +126,6 @@
 		1BAE46611DFAF75B00377895 /* CountryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryController.swift; sourceTree = "<group>"; };
 		1BAE46631DFAFC8300377895 /* CountryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryRow.swift; sourceTree = "<group>"; };
 		1BAE46651DFAFC9500377895 /* CountryRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryRowViewModel.swift; sourceTree = "<group>"; };
-		1BAE46671DFB29C600377895 /* RxDataSource2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxDataSource2.swift; sourceTree = "<group>"; };
 		1BDC11A51D1953C900B1111A /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
 		1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentationViewController.swift; sourceTree = "<group>"; };
 		1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSNavitationBar.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 				1B7AD5951D5CB074003400B4 /* ViewModel.swift */,
 				1B085FF91DF96B6100986E56 /* RxKWS.swift */,
 				1B4298DB1DFABD19008F9FFF /* RxDataSource.swift */,
-				1BAE46671DFB29C600377895 /* RxDataSource2.swift */,
 			);
 			name = Aux;
 			sourceTree = "<group>";
@@ -628,7 +625,6 @@
 				1BDC12001D1AECC300B1111A /* KWSTextField.swift in Sources */,
 				1B6463A51D5CCAFE00FB81FD /* FeatureEventViewModel.swift in Sources */,
 				1B64639F1D5CCADA00FB81FD /* FeatureAuthViewModel.swift in Sources */,
-				1BAE46681DFB29C600377895 /* RxDataSource2.swift in Sources */,
 				1BAE465D1DFAE70000377895 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -762,7 +758,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = DCC9L689QJ;
 				INFOPLIST_FILE = KWSDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = superawesome.tv.kwsdemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -785,7 +781,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = DCC9L689QJ;
 				INFOPLIST_FILE = KWSDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = superawesome.tv.kwsdemoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

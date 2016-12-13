@@ -10,7 +10,6 @@ import UIKit
 import KWSiOSSDKObjC
 import RxCocoa
 import RxSwift
-import RxGesture
 import SAUtils
 
 // vc
@@ -19,6 +18,9 @@ class UserViewController: KWSBaseController {
     // outlets
     @IBOutlet weak var logoutButton: KWSRedButton!
     @IBOutlet weak var userDetailsTableView: UITableView!
+    
+    // data source
+    private var dataSource: RxDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,32 +88,40 @@ class UserViewController: KWSBaseController {
             }, onSubscribe: {
                 SAActivityView.sharedManager().show()
             })
-            .bindTable(userDetailsTableView)
-            .customiseRow(cellIdentifier: UserHeader.Identifier,
-                          cellType: UserHeaderViewModel.self,
-                          cellHeight: 44)
-            { (model, cell) in
+            .subscribe(onNext: { (models: [ViewModel]) in
+              
+                // create data source
+                self.dataSource = RxDataSource
+                    .bindTable(self.userDetailsTableView)
+                    .customiseRow(cellIdentifier: UserHeader.Identifier,
+                                  cellType: UserHeaderViewModel.self,
+                                  cellHeight: 44)
+                    { (model, cell) in
+                        
+                        let cell = cell as? UserHeader
+                        let model = model as? UserHeaderViewModel
+                        
+                        cell?.headerTitle.text = model?.title
+                        
+                    }
+                    .customiseRow(cellIdentifier: UserRow.Identifier,
+                                  cellType: UserRowViewModel.self,
+                                  cellHeight: 44)
+                    { (model, cell) in
+                        
+                        let cell = cell as? UserRow
+                        let model = model as? UserRowViewModel
+                        
+                        cell?.titleLabel.text = model?.item
+                        cell?.valueLabel.text = model?.value
+                        cell?.valueLabel.textColor = model?.valueColor
+                        
+                    }
                 
-                let cell = cell as? UserHeader
-                let model = model as? UserHeaderViewModel
+                // update
+                self.dataSource?.update(models)
                 
-                cell?.headerTitle.text = model?.title
-                
-            }
-            .customiseRow(cellIdentifier: UserRow.Identifier,
-                          cellType: UserRowViewModel.self,
-                          cellHeight: 44)
-            { (model, cell) in
-                
-                let cell = cell as? UserRow
-                let model = model as? UserRowViewModel
-                
-                cell?.titleLabel.text = model?.item
-                cell?.valueLabel.text = model?.value
-                cell?.valueLabel.textColor = model?.valueColor
-                
-            }
-            .update()
+            })
             .addDisposableTo(disposeBag)
         
         // tap to logout

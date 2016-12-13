@@ -1,7 +1,8 @@
 target 'KWSDemo' do
   use_frameworks!
 
-  pod 'RxGesture', '0.2.0'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'SAUtils'
   pod 'KWSiOSSDKObjC'
   pod 'Firebase', '3.7.1'

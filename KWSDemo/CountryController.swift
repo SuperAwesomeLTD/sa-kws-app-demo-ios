@@ -23,6 +23,9 @@ class CountryController: KWSBaseController {
     // delegate
     var delegate: CountryProtocol?
     
+    // create data source
+    private var dataSource: RxDataSource?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,31 +52,39 @@ class CountryController: KWSBaseController {
                         return CountryRowViewModel(isoCode: countryCode)
                     }
                     .toArray()
-                    .bindTable(self.countryTable)
-                    .customiseRow(cellIdentifier: CountryRow.Identifier,
-                                  cellType: CountryRowViewModel.self,
-                                  cellHeight: 50)
-                    { (model, cell) in
+                    .subscribe(onNext: { (countries: [CountryRowViewModel]) in
+                      
+                        // create data source
+                        self.dataSource = RxDataSource
+                            .bindTable(self.countryTable)
+                            .customiseRow(cellIdentifier: CountryRow.Identifier,
+                                          cellType: CountryRowViewModel.self,
+                                          cellHeight: 50)
+                            { (model, cell) in
+                                
+                                let cell = cell as? CountryRow
+                                let model = model as? CountryRowViewModel
+                                
+                                cell?.countryName.text = model?.getCountryName()
+                                cell?.flagIcon.image = model?.getFlag()
+                                
+                            }
+                            .clickRow(cellIdentifier: CountryRow.Identifier) { (index, model) in
+                                
+                                if let model = model as? CountryRowViewModel {
+                                    
+                                    self.delegate?.didSelectCountry(isoCode: model.getISOCode(),
+                                                                    name: model.getCountryName(),
+                                                                    flag: model.getFlag())
+                                    
+                                    self.dismiss(animated: true, completion: nil)
+                                }
+                            }
                         
-                        let cell = cell as? CountryRow
-                        let model = model as? CountryRowViewModel
+                        // update
+                        self.dataSource?.update(countries)
                         
-                        cell?.countryName.text = model?.getCountryName()
-                        cell?.flagIcon.image = model?.getFlag()
-                        
-                    }
-                    .clickRow(cellIdentifier: CountryRow.Identifier) { (index, model) in
-                        
-                        if let model = model as? CountryRowViewModel {
-                            
-                            self.delegate?.didSelectCountry(isoCode: model.getISOCode(),
-                                                            name: model.getCountryName(),
-                                                            flag: model.getFlag())
-                            
-                            self.dismiss(animated: true, completion: nil)
-                        }
-                    }
-                    .update()
+                    })
                     .addDisposableTo(self.disposeBag)
                 
             })

@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxGesture
 import KWSiOSSDKObjC
 import SAUtils
 
@@ -20,39 +19,10 @@ class GetAppDataController: KWSBaseController {
     @IBOutlet weak var addButton: KWSRedButton!
     
     // data source
-    var dataSource: Observable<RxDataSource>?
+    private var dataSource: RxDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // set data source
-        dataSource = RxKWS.getAppData()
-            .map { (appData: KWSAppData) -> GetAppDataViewModel in
-                return GetAppDataViewModel (appData.name, appData.value)
-            }
-            .toArray()
-            .do(onNext: { (elems) in
-                // do nothing
-            }, onError: { (error) in
-                SAActivityView.sharedManager().hide()
-            }, onCompleted: { 
-                SAActivityView.sharedManager().hide()
-            }, onSubscribe: { 
-                SAActivityView.sharedManager().show()
-            })
-            .bindTable(appDataTable)
-            .customiseRow(cellIdentifier: "GetAppDataRowId",
-                          cellType: GetAppDataViewModel.self,
-                          cellHeight: 44)
-            { (model, cell) in
-                            
-                let cell = cell as? GetAppDataRow
-                let model = model as? GetAppDataViewModel
-                
-                cell?.nameLabel.text = model?.name
-                cell?.valueLabel.text = model?.value
-                
-            }
         
         // button tap
         addButton.rx
@@ -65,13 +35,51 @@ class GetAppDataController: KWSBaseController {
             })
             .addDisposableTo(disposeBag)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        dataSource?.update().addDisposableTo(disposeBag)
+        
+        // set data source
+        RxKWS.getAppData()
+            .map { (appData: KWSAppData) -> GetAppDataViewModel in
+                return GetAppDataViewModel (appData.name, appData.value)
+            }
+            .toArray()
+            .do(onNext: { (elems) in
+                // do nothing
+                }, onError: { (error) in
+                    
+                }, onCompleted: {
+                    
+                }, onSubscribe: {
+                    
+                }, onDispose: {
+                    
+            })
+            .subscribe(onNext: { (models: [GetAppDataViewModel]) in
+                
+                self.dataSource = RxDataSource
+                    .bindTable(self.appDataTable)
+                    .customiseRow(cellIdentifier: "GetAppDataRowId",
+                                  cellType: GetAppDataViewModel.self,
+                                  cellHeight: 44)
+                    { (model, cell) in
+                        
+                        let cell = cell as? GetAppDataRow
+                        let model = model as? GetAppDataViewModel
+                        
+                        cell?.nameLabel.text = model?.name
+                        cell?.valueLabel.text = model?.value
+                        
+                }
+                
+                self.dataSource?.update(models)
+                
+            })
+            .addDisposableTo(disposeBag)
     }
 }
