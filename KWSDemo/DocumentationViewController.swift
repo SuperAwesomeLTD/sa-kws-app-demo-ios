@@ -18,7 +18,6 @@ class DocumentationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNeedsStatusBarAppearanceUpdate()
         webView.loadRequest(URLRequest(url: URL(string: urlStr)!))
     }
     
@@ -26,9 +25,8 @@ class DocumentationViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // <Custom>
-    
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return UIStatusBarStyle.default
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.topItem?.title = "documentation_vc_title".localized
     }
 }

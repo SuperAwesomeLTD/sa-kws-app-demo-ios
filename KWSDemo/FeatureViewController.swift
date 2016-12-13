@@ -27,18 +27,9 @@ class FeatureViewController: KWSBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNeedsStatusBarAppearanceUpdate()
         
         // setup the session
         KWS.sdk().startSession(withClientId: CLIENT, andClientSecret: SECRET, andAPIUrl: API)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
         Observable
             .from([
@@ -48,7 +39,7 @@ class FeatureViewController: KWSBaseController {
                 FeatureEventViewModel (),
                 FeatureInviteViewModel (),
                 FeatureAppDataViewModel ()
-                ])
+            ])
             .toArray()
             .subscribe(onNext: { (features: [ViewModel]) in
                 
@@ -71,23 +62,14 @@ class FeatureViewController: KWSBaseController {
                                 "feature_cell_auth_button_1_loggedin".localized + (local?.username.uppercased())! :
                                 "feature_cell_auth_button_1_loggedout".localized, for: .normal)
                         
-                        cell?.authActionButton.rx
-                            .tap
-                            .flatMap({ () -> Observable <UIViewController> in
-                                let lIsLogged = KWS.sdk().getLoggedUser() != nil
-                                return self.rxSeque(withIdentifier: lIsLogged ? "FeaturesToUserSegue" : "FeaturesToLoginSegue")
-                            })
-                            .subscribe(onNext: { (destination) in
-                                // do nothing
-                            })
-                            .addDisposableTo(self.disposeBag)
+                        cell?.authActionButton.onAction {
+                            let lIsLogged = KWS.sdk().getLoggedUser() != nil
+                            self.performSegue(withIdentifier: lIsLogged ? "FeaturesToUserSegue" : "FeaturesToLoginSegue", sender: self)
+                        }
                         
-                        cell?.authDocsButton.rx.tap.subscribe (onNext: { Void in
-                            
+                        cell?.authDocsButton.onAction {
                             self.openDocumentation()
-                            
-                        }).addDisposableTo(self.disposeBag)
-                        
+                        }
                     }
                     //
                     // customise the Remote Notifications row
@@ -107,18 +89,77 @@ class FeatureViewController: KWSBaseController {
                                 "feature_cell_notif_button_1_disable".localized :
                                 "feature_cell_notif_button_1_enable".localized, for: .normal)
                         
-                        cell?.notifEnableOrDisableButton.rx.tap.subscribe (onNext: { Void in
+                        cell?.notifEnableOrDisableButton.onAction {
                             
-                            // do nothing for now
+                            let lIsRegistered = KWS.sdk().getLoggedUser() != nil && KWS.sdk().getLoggedUser().isRegisteredForNotifications()
                             
-                        }).addDisposableTo(self.disposeBag)
+                            if lIsRegistered {
+                                
+                                RxKWS.unregisterForNotifications()
+                                    .subscribe(onNext: { (isUnregistered: Bool) in
+                                        
+                                        if isUnregistered {
+                                            
+                                            self.featurePopup("feature_notif_unreg_popup_success_title".localized,
+                                                              "feature_notif_unreg_popup_success_message".localized)
+                                            
+                                        } else {
+                                            
+                                            self.featurePopup("feature_notif_unreg_popup_error_title".localized,
+                                                              "feature_notif_unreg_popup_error_message".localized)
+                                        }
+                                        
+                                        // update data source
+                                        self.dataSource?.update()
+                                        
+                                    })
+                                    .addDisposableTo(self.disposeBag)
+                                
+                            } else {
+                                
+                                RxKWS.registerForNotifications()
+                                    .subscribe(onNext: { (status: KWSNotificationStatus) in
+                                        
+                                        switch status {
+                                        case .success:
+                                            self.featurePopup("feature_notif_reg_popup_success_title".localized,
+                                                              "feature_notif_reg_popup_success_message".localized)
+                                            break
+                                            
+                                        case .parentDisabledNotifications:
+                                            break
+                                            
+                                        case .userDisabledNotifications:
+                                            break
+                                            
+                                        case .noParentEmail:
+                                            break
+                                            
+                                        case .firebaseNotSetup:
+                                            break
+                                            
+                                        case .firebaseCouldNotGetToken:
+                                            break
+                                            
+                                        case .networkError:
+                                            self.featurePopup("feature_notif_reg_popup_error_title".localized,
+                                                              "feature_notif_reg_popup_error_message".localized)
+                                            break
+                                        }
+                                        
+                                        // update data source
+                                        self.dataSource?.update()
+                                        
+                                    })
+                                    .addDisposableTo(self.disposeBag)
+                                
+                            }
+                            
+                        }
                         
-                        cell?.notifDocButton.rx.tap.subscribe (onNext: { Void in
-                            
+                        cell?.notifDocButton.onAction {
                             self.openDocumentation()
-                            
-                        }).addDisposableTo(self.disposeBag)
-                        
+                        }
                     }
                     //
                     // customise the Permissions row
@@ -133,18 +174,62 @@ class FeatureViewController: KWSBaseController {
                         
                         cell?.permAddPermissionsButton.isEnabled = isLogged
                         
-                        cell?.permAddPermissionsButton.rx.tap.subscribe (onNext: { Void in
+                        cell?.permAddPermissionsButton.onAction {
                             
-                            // do nothing for now
+                            let myActionSheet = UIAlertController(title: "feature_perm_alert_title".localized,
+                                                                  message: "feature_perm_alert_message".localized,
+                                                                  preferredStyle: .actionSheet)
                             
-                        }).addDisposableTo(self.disposeBag)
+                            let permissions = [
+                                ["name":"Email", "type":KWSPermissionType.accessEmail.rawValue],
+                                ["name":"Address", "type":KWSPermissionType.accessAddress.rawValue],
+                                ["name":"First name", "type":KWSPermissionType.accessFirstName.rawValue],
+                                ["name":"Last name", "type":KWSPermissionType.accessLastName.rawValue],
+                                ["name":"Newesletter", "type":KWSPermissionType.sendNewsletter.rawValue],
+                                
+                            ]
+                            
+                            for i in 0 ..< permissions.count {
+                                
+                                if let title = permissions[i]["name"] as? String,
+                                    let type = permissions[i]["type"] as? NSInteger {
+                                    
+                                    myActionSheet.addAction(UIAlertAction(title: title, style: .default, handler: { (action) in
+                                        
+                                        let requestedPermission = [type]
+                                        
+                                        RxKWS.addPermissions(permissions: requestedPermission as [NSNumber]!)
+                                            .subscribe(onNext: { (status: KWSPermissionStatus) in
+                                                
+                                                switch status {
+                                                    case .success:
+                                                        self.featurePopup("feature_perm_popup_success_title".localized,
+                                                                          "feature_perm_popup_success_message".localized)
+                                                    break
+                                                    case .networkError:
+                                                        // do nothing
+                                                    break
+                                                    case .noParentEmail:
+                                                        // will now never get here
+                                                    break
+                                                }
+                                                
+                                            })
+                                            .addDisposableTo(self.disposeBag)
+                                        
+                                    }))
+                                    
+                                }
+                                
+                            }
+                            
+                            // present action sheet
+                            self.present(myActionSheet, animated: true, completion: nil)
+                        }
                         
-                        cell?.permSeeDocsButton.rx.tap.subscribe (onNext: { Void in
-                            
+                        cell?.permSeeDocsButton.onAction {
                             self.openDocumentation()
-                            
-                        }).addDisposableTo(self.disposeBag)
-                        
+                        }
                     }
                     //
                     // customise the Events row
@@ -162,81 +247,68 @@ class FeatureViewController: KWSBaseController {
                         cell?.evtGetScoreButton.isEnabled = isLogged
                         cell?.evtSeeLeaderboardButton.isEnabled = isLogged
                         
-                        cell?.evtAdd20PointsButton.rx
-                            .tap
-                            .flatMap({ (Void) -> Observable <Bool> in
-                                return RxKWS.triggerEvent(event: "GabrielAdd20ForAwesomeApp")
-                            })
-                            .subscribe(onNext: { (isTriggered: Bool) in
+                        cell?.evtAdd20PointsButton.onAction {
+                            RxKWS.triggerEvent(event: "GabrielAdd20ForAwesomeApp")
+                                .subscribe(onNext: { (isTriggered) in
                                 
-                                if isTriggered {
+                                    if isTriggered {
+                                        
+                                        self.featurePopup("feature_event_add20_popup_success_title".localized,
+                                                          "feature_event_add20_popup_success_message".localized)
+                                        
+                                    } else {
+                                        // do nothing
+                                    }
                                     
-                                    self.featurePopup("feature_event_add20_popup_success_title".localized,
-                                                      "feature_event_add20_popup_success_message".localized)
-                                    
-                                } else {
-                                    // do nothing
-                                }
-                                
-                            })
-                            .addDisposableTo(self.disposeBag)
+                                })
+                                .addDisposableTo(self.disposeBag)
+                        }
                         
-                        cell?.evtSub10PointsButton.rx
-                            .tap
-                            .flatMap({ (Void) -> Observable <Bool> in
-                                return RxKWS.triggerEvent(event: "GabrielSub10ForAwesomeApp")
-                            })
-                            .subscribe(onNext: { (isTriggered: Bool) in
+                        cell?.evtSub10PointsButton.onAction {
+                            RxKWS.triggerEvent(event: "GabrielSub10ForAwesomeApp")
+                                .subscribe(onNext: { (isTriggered) in
                                 
-                                if isTriggered {
+                                    if isTriggered {
+                                        
+                                        self.featurePopup("feature_event_sub10_popup_success_title".localized,
+                                                          "feature_event_sub10_popup_success_message".localized)
+                                        
+                                    } else {
+                                        // do nothing
+                                    }
                                     
-                                    self.featurePopup("feature_event_sub10_popup_success_title".localized,
-                                                      "feature_event_sub10_popup_success_message".localized)
-                                    
-                                } else {
-                                    // do nothing
-                                }
-                                
-                            })
-                            .addDisposableTo(self.disposeBag)
+                                })
+                                .addDisposableTo(self.disposeBag)
+                        }
                         
-                        cell?.evtGetScoreButton.rx
-                            .tap
-                            .flatMap({ (Void) -> Observable <KWSScore?> in
-                                return RxKWS.getScore()
-                            })
-                            .subscribe(onNext: { (score: KWSScore?) in
-                                
-                                if let score = score {
-                                    
-                                    let message = NSString(format: "feature_event_getscore_success_message".localized as NSString, score.rank, score.score) as String
-                                    
-                                    self.featurePopup("feature_event_getscore_success_title".localized,
-                                                      message)
-                                    
-                                } else {
-                                    // do nothing
-                                }
-                                
-                            })
-                            .addDisposableTo(self.disposeBag)
-                        
-                        cell?.evtSeeLeaderboardButton.rx
-                            .tap
-                            .flatMap({ () -> Observable <UIViewController> in
-                                return self.rxSeque(withIdentifier: "FeaturesToLeaderboardSegue")
-                            })
-                            .subscribe(onNext: { (destination) in
-                                // do nothing
-                            })
-                            .addDisposableTo(self.disposeBag)
-                        
-                        cell?.evtSeeDocsButton.rx.tap.subscribe (onNext: { Void in
+                        cell?.evtGetScoreButton.onAction {
                             
+                            RxKWS.getScore()
+                                .subscribe(onNext: { (score: KWSScore?) in
+                                    
+                                    if let score = score {
+                                        
+                                        let message = NSString(format: "feature_event_getscore_success_message".localized as NSString, score.rank, score.score) as String
+                                        
+                                        self.featurePopup("feature_event_getscore_success_title".localized,
+                                                          message)
+                                        
+                                    } else {
+                                        // do nothing
+                                    }
+                                    
+                                })
+                                .addDisposableTo(self.disposeBag)
+                            
+                        }
+                        
+                        cell?.evtSeeLeaderboardButton.onAction {
+                            self.performSegue(withIdentifier: "FeaturesToLeaderboardSegue", sender: self)
+                        }
+                        
+                        cell?.evtSeeDocsButton.onAction {
                             self.openDocumentation()
-                            
-                        }).addDisposableTo(self.disposeBag)
-                        
+                        }
                     }
                     //
                     // customise the Invite row
@@ -251,19 +323,40 @@ class FeatureViewController: KWSBaseController {
                         
                         cell?.invInviteFriendButton.isEnabled = isLogged
                         
+                        cell?.invInviteFriendButton.onAction {
+                            
+                            SAPopup.sharedManager().show(withTitle: "feature_friend_email_popup_title".localized,
+                                                         andMessage: "feature_friend_email_popup_message".localized,
+                                                         andOKTitle: "feature_friend_email_popup_submit".localized,
+                                                         andNOKTitle: "feature_friend_email_popup_cancel".localized,
+                                                         andTextField: true,
+                                                         andKeyboardTyle: UIKeyboardType.emailAddress)
+                            { (button: Int32, email: String?) in
+                                
+                                if let email = email, button == 0 {
+                                    
+                                    RxKWS.inviteFriend(email: email)
+                                        .subscribe(onNext: { (invited: Bool) in
+                                            
+                                            if invited {
+                                                
+                                                self.featurePopup("feature_friend_email_popup_success_title".localized,
+                                                                  "feature_friend_email_popup_success_message".localized)
+                                                
+                                            } else {
+                                                // send some error
+                                            }
+                                            
+                                        })
+                                        .addDisposableTo(self.disposeBag)
+                                    
+                                }
+                            }
+                        }
                         
-                        cell?.invInviteFriendButton.rx.tap.subscribe (onNext: { Void in
-                            
-                            // do nothing
-                            
-                        }).addDisposableTo(self.disposeBag)
-                        
-                        cell?.invSeeDocsButton.rx.tap.subscribe (onNext: { Void in
-                            
+                        cell?.invSeeDocsButton.onAction {
                             self.openDocumentation()
-                            
-                        }).addDisposableTo(self.disposeBag)
-                        
+                        }
                     }
                     //
                     // customise the App Data row
@@ -278,28 +371,30 @@ class FeatureViewController: KWSBaseController {
                         
                         cell?.appdSeeAppDataButton.isEnabled = isLogged
                         
-                        cell?.appdSeeAppDataButton.rx
-                            .tap
-                            .flatMap({ () -> Observable <UIViewController> in
-                                return self.rxSeque(withIdentifier: "FeaturesToAddDataSegue")
-                            })
-                            .subscribe(onNext: { (destination) in
-                                // do nothing
-                            })
-                            .addDisposableTo(self.disposeBag)
+                        cell?.appdSeeAppDataButton.onAction {
+                            self.performSegue(withIdentifier: "FeaturesToAddDataSegue", sender: self)
+                        }
                         
-                        cell?.appdSeeDocsButton.rx.tap.subscribe (onNext: { Void in
-                            
+                        cell?.appdSeeDocsButton.onAction {
                             self.openDocumentation()
-                            
-                        }).addDisposableTo(self.disposeBag)
+                        }
                 }
                 
-                // update
+                // update the data for the first time
                 self.dataSource?.update(features)
                 
             })
             .addDisposableTo(disposeBag)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        dataSource?.update()
+        self.navigationController?.navigationBar.topItem?.title = "feature_vc_title".localized
     }
 
     func openDocumentation () {

@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B085FF51DF8246B00986E56 /* KWSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B085FF41DF8246B00986E56 /* KWSTabBarController.swift */; };
 		1B085FFA1DF96B6100986E56 /* RxKWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B085FF91DF96B6100986E56 /* RxKWS.swift */; };
 		1B085FFC1DF9A44800986E56 /* KWSBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B085FFB1DF9A44800986E56 /* KWSBaseController.swift */; };
-		1B085FFE1DF9B1E000986E56 /* KWSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B085FFD1DF9B1E000986E56 /* KWSNavigationController.swift */; };
 		1B0860001DF9C28F00986E56 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B085FFF1DF9C28F00986E56 /* SignUpModel.swift */; };
 		1B4298DC1DFABD19008F9FFF /* RxDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4298DB1DFABD19008F9FFF /* RxDataSource.swift */; };
 		1B56DFD51D194A6200973075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B56DFD41D194A6200973075 /* AppDelegate.swift */; };
@@ -52,7 +50,6 @@
 		1BAE46661DFAFC9500377895 /* CountryRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAE46651DFAFC9500377895 /* CountryRowViewModel.swift */; };
 		1BDC11A61D1953C900B1111A /* FeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A51D1953C900B1111A /* FeatureViewController.swift */; };
 		1BDC11A81D1953E000B1111A /* DocumentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */; };
-		1BDC11AB1D197EB200B1111A /* KWSNavitationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */; };
 		1BDC11BF1D198B5600B1111A /* SF-UI-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDC11B11D198B5600B1111A /* SF-UI-Text-Bold.otf */; };
 		1BDC11C01D198B5600B1111A /* SF-UI-Text-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDC11B21D198B5600B1111A /* SF-UI-Text-BoldItalic.otf */; };
 		1BDC11C11D198B5600B1111A /* SF-UI-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1BDC11B31D198B5600B1111A /* SF-UI-Text-Heavy.otf */; };
@@ -72,7 +69,6 @@
 		1BDC11F71D1AA9A400B1111A /* FeatureNotifRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11F51D1AA9A400B1111A /* FeatureNotifRow.swift */; };
 		1BDC11FA1D1AABBD00B1111A /* KWSShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11F91D1AABBD00B1111A /* KWSShadowView.swift */; };
 		1BDC11FC1D1ABF8E00B1111A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FB1D1ABF8E00B1111A /* SignUpViewController.swift */; };
-		1BDC11FE1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FD1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift */; };
 		1BDC12001D1AECC300B1111A /* KWSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FF1D1AECC300B1111A /* KWSTextField.swift */; };
 		1BE8CEF61D8FF2A000572070 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CEF51D8FF2A000572070 /* Localizable.strings */; };
 		1BE8CEFD1D90342300572070 /* NSString+KWSStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8CEFC1D90342300572070 /* NSString+KWSStyle.swift */; };
@@ -80,10 +76,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B085FF41DF8246B00986E56 /* KWSTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSTabBarController.swift; sourceTree = "<group>"; };
 		1B085FF91DF96B6100986E56 /* RxKWS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxKWS.swift; sourceTree = "<group>"; };
 		1B085FFB1DF9A44800986E56 /* KWSBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSBaseController.swift; sourceTree = "<group>"; };
-		1B085FFD1DF9B1E000986E56 /* KWSNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSNavigationController.swift; sourceTree = "<group>"; };
 		1B085FFF1DF9C28F00986E56 /* SignUpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		1B4298DB1DFABD19008F9FFF /* RxDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxDataSource.swift; sourceTree = "<group>"; };
 		1B56DFD11D194A6200973075 /* KWSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KWSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +122,6 @@
 		1BAE46651DFAFC9500377895 /* CountryRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryRowViewModel.swift; sourceTree = "<group>"; };
 		1BDC11A51D1953C900B1111A /* FeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureViewController.swift; sourceTree = "<group>"; };
 		1BDC11A71D1953E000B1111A /* DocumentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentationViewController.swift; sourceTree = "<group>"; };
-		1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSNavitationBar.swift; sourceTree = "<group>"; };
 		1BDC11B11D198B5600B1111A /* SF-UI-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Bold.otf"; sourceTree = "<group>"; };
 		1BDC11B21D198B5600B1111A /* SF-UI-Text-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-BoldItalic.otf"; sourceTree = "<group>"; };
 		1BDC11B31D198B5600B1111A /* SF-UI-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Heavy.otf"; sourceTree = "<group>"; };
@@ -148,7 +141,6 @@
 		1BDC11F51D1AA9A400B1111A /* FeatureNotifRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureNotifRow.swift; sourceTree = "<group>"; };
 		1BDC11F91D1AABBD00B1111A /* KWSShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSShadowView.swift; sourceTree = "<group>"; };
 		1BDC11FB1D1ABF8E00B1111A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		1BDC11FD1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSPopupNavigationBar.swift; sourceTree = "<group>"; };
 		1BDC11FF1D1AECC300B1111A /* KWSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSTextField.swift; sourceTree = "<group>"; };
 		1BE8CEF51D8FF2A000572070 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1BE8CEF81D8FF92900572070 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -204,7 +196,6 @@
 				1B6392941D5B7053005FDCE2 /* Aux */,
 				1BDC11EB1D1AA39300B1111A /* Styles */,
 				1BDC11B01D198B3900B1111A /* Assets */,
-				1BDC11A91D197DB200B1111A /* Navigation */,
 				1B56DFE81D194B4700973075 /* Meta */,
 				1B56DFE71D194B3800973075 /* Controllers */,
 				1B56DFE61D194B3400973075 /* Delegate */,
@@ -300,8 +291,8 @@
 		1B7AD58F1D5CA64F003400B4 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				1BDC11FB1D1ABF8E00B1111A /* SignUpViewController.swift */,
 				1B085FFF1DF9C28F00986E56 /* SignUpModel.swift */,
+				1BDC11FB1D1ABF8E00B1111A /* SignUpViewController.swift */,
 			);
 			name = SignUp;
 			sourceTree = "<group>";
@@ -329,8 +320,8 @@
 		1BA9F0E61D783CC9002150A7 /* SetAppData */ = {
 			isa = PBXGroup;
 			children = (
-				1BA9F0F01D78442A002150A7 /* SetAppDataController.swift */,
 				1BA9F0F21D784EA4002150A7 /* SetAppDataModel.swift */,
+				1BA9F0F01D78442A002150A7 /* SetAppDataController.swift */,
 			);
 			name = SetAppData;
 			sourceTree = "<group>";
@@ -348,8 +339,8 @@
 		1BAE465B1DFAE6EA00377895 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				1BAE465C1DFAE70000377895 /* LoginController.swift */,
 				1BAE465E1DFAE71800377895 /* LoginModel.swift */,
+				1BAE465C1DFAE70000377895 /* LoginController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -357,23 +348,11 @@
 		1BAE46601DFAF74C00377895 /* Country */ = {
 			isa = PBXGroup;
 			children = (
-				1BAE46611DFAF75B00377895 /* CountryController.swift */,
 				1BAE46631DFAFC8300377895 /* CountryRow.swift */,
 				1BAE46651DFAFC9500377895 /* CountryRowViewModel.swift */,
+				1BAE46611DFAF75B00377895 /* CountryController.swift */,
 			);
 			name = Country;
-			sourceTree = "<group>";
-		};
-		1BDC11A91D197DB200B1111A /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				1B085FF41DF8246B00986E56 /* KWSTabBarController.swift */,
-				1BDC11AA1D197EB200B1111A /* KWSNavitationBar.swift */,
-				1BDC11FD1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift */,
-				1B085FFB1DF9A44800986E56 /* KWSBaseController.swift */,
-				1B085FFD1DF9B1E000986E56 /* KWSNavigationController.swift */,
-			);
-			name = Navigation;
 			sourceTree = "<group>";
 		};
 		1BDC11B01D198B3900B1111A /* Assets */ = {
@@ -402,6 +381,7 @@
 		1BDC11EB1D1AA39300B1111A /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				1B085FFB1DF9A44800986E56 /* KWSBaseController.swift */,
 				1BDC11EC1D1AA3BD00B1111A /* KWSButton.swift */,
 				1BDC11F91D1AABBD00B1111A /* KWSShadowView.swift */,
 				1BDC11FF1D1AECC300B1111A /* KWSTextField.swift */,
@@ -577,7 +557,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BAE46661DFAFC9500377895 /* CountryRowViewModel.swift in Sources */,
-				1BDC11FE1D1ACB5F00B1111A /* KWSPopupNavigationBar.swift in Sources */,
 				1BA9F0F11D78442A002150A7 /* SetAppDataController.swift in Sources */,
 				1BDC11FC1D1ABF8E00B1111A /* SignUpViewController.swift in Sources */,
 				1BA9F0EB1D783FC3002150A7 /* GetAppDataRow.swift in Sources */,
@@ -592,15 +571,12 @@
 				1B7AD5961D5CB074003400B4 /* ViewModel.swift in Sources */,
 				1B0860001DF9C28F00986E56 /* SignUpModel.swift in Sources */,
 				1B7AD59A1D5CB7DA003400B4 /* LeaderHeader.swift in Sources */,
-				1B085FFE1DF9B1E000986E56 /* KWSNavigationController.swift in Sources */,
 				1BAE46641DFAFC8300377895 /* CountryRow.swift in Sources */,
 				1BE8CEFD1D90342300572070 /* NSString+KWSStyle.swift in Sources */,
 				1BA9F0E51D78390D002150A7 /* FeatureAppDataViewModel.swift in Sources */,
 				1BA9F0E91D783CF0002150A7 /* GetAppDataController.swift in Sources */,
 				1B6392A31D5B72E5005FDCE2 /* UserHeader.swift in Sources */,
 				1B4298DC1DFABD19008F9FFF /* RxDataSource.swift in Sources */,
-				1BDC11AB1D197EB200B1111A /* KWSNavitationBar.swift in Sources */,
-				1B085FF51DF8246B00986E56 /* KWSTabBarController.swift in Sources */,
 				1BDC11A61D1953C900B1111A /* FeatureViewController.swift in Sources */,
 				1B6392B51D5C768B005FDCE2 /* LeaderViewController.swift in Sources */,
 				1B085FFA1DF96B6100986E56 /* RxKWS.swift in Sources */,

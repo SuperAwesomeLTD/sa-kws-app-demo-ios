@@ -24,14 +24,15 @@ class GetAppDataController: KWSBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "get_app_data_vc_title".localized
+        
         // button tap
         addButton.rx
             .tap
-            .flatMap { () -> Observable <UIViewController> in
-                return self.rxSeque(withIdentifier: "GetAppDataToSetAppDataSegue")
-            }
-            .subscribe(onNext: { (controller) in
-                // do nothing
+            .subscribe(onNext: { (Void) in
+                
+                self.performSegue(withIdentifier: "GetAppDataToSetAppDataSegue", sender: self)
+            
             })
             .addDisposableTo(disposeBag)
     }

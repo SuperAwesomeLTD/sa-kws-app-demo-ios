@@ -25,6 +25,8 @@ class UserViewController: KWSBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "user_vc_title".localized
+        
         logoutButton.setTitle("user_logout".localized.uppercased(), for: UIControlState())
         
         // get the user data
@@ -129,7 +131,7 @@ class UserViewController: KWSBaseController {
             .tap
             .subscribe ( { (Void) in
                 KWS.sdk().logoutUser()
-                self.dismiss(animated: true, completion: nil)
+                _ = self.navigationController?.popViewController(animated: true)
             })
             .addDisposableTo(disposeBag)
         

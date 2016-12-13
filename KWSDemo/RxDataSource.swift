@@ -118,8 +118,6 @@ class RxDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     func update () -> Void {
-        table?.delegate = self
-        table?.dataSource = self
         table?.reloadData()
     }
     

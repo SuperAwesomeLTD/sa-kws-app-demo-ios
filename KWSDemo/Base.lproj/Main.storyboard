@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jYz-5m-eYT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nkh-qk-YpS">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,40 +23,50 @@
         <!--Tab Bar Controller-->
         <scene sceneID="1mu-U8-a3y">
             <objects>
-                <tabBarController id="jYz-5m-eYT" customClass="KWSTabBarController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="BKq-MY-jib">
+                <tabBarController id="jYz-5m-eYT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NaB-Sv-n51"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="BKq-MY-jib">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Z7G-hV-BTB" kind="relationship" relationship="viewControllers" id="VgT-Ys-FGT"/>
-                        <segue destination="65E-2S-OuP" kind="relationship" relationship="viewControllers" id="dS9-AA-JN0"/>
-                        <segue destination="tGS-4H-HDB" kind="relationship" relationship="viewControllers" id="yNt-5o-Ywt"/>
+                        <segue destination="LMb-gR-3IY" kind="relationship" relationship="viewControllers" id="cLC-Wg-ffs"/>
+                        <segue destination="hSF-G0-MiL" kind="relationship" relationship="viewControllers" id="e0u-2n-mpE"/>
+                        <segue destination="AY7-Yd-UUC" kind="relationship" relationship="viewControllers" id="SNj-sp-doF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BG-je-v5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-639" y="251"/>
+            <point key="canvasLocation" x="84" y="251"/>
         </scene>
-        <!--Platform-->
-        <scene sceneID="4fd-0l-XqI">
+        <!--Navigation Controller-->
+        <scene sceneID="7gA-Ev-ShT">
             <objects>
-                <navigationController id="Z7G-hV-BTB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Platform" image="tab_platform_unsel" selectedImage="tab_platform_sel" id="KXs-Ny-lzX"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="W9X-I6-wI5" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <navigationController id="Nkh-qk-YpS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="nRo-jp-VAB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.92941176469999998" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="LMb-gR-3IY" kind="relationship" relationship="rootViewController" id="KnS-be-jNE"/>
+                        <segue destination="jYz-5m-eYT" kind="relationship" relationship="rootViewController" id="foH-Yo-5jX"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dQM-hB-geD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ndX-A1-070" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="-1018"/>
+            <point key="canvasLocation" x="-955" y="251"/>
         </scene>
-        <!--Platform View Controller-->
+        <!--Platform-->
         <scene sceneID="odJ-oz-TrX">
             <objects>
                 <viewController id="LMb-gR-3IY" customClass="PlatformViewController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,7 +75,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ILV-Ho-86n"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RPF-pa-7D5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wG-At-NzI">
@@ -173,24 +182,31 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="VHi-Dc-kg8" firstAttribute="top" secondItem="1wG-At-NzI" secondAttribute="top" constant="-104" id="3D0-1h-ieO"/>
+                                    <constraint firstItem="VHi-Dc-kg8" firstAttribute="top" secondItem="1wG-At-NzI" secondAttribute="top" id="3D0-1h-ieO"/>
                                     <constraint firstAttribute="trailing" secondItem="VHi-Dc-kg8" secondAttribute="trailing" id="N3C-Az-Vwb"/>
-                                    <constraint firstAttribute="bottom" secondItem="VHi-Dc-kg8" secondAttribute="bottom" constant="-48" id="fd6-pX-Gfa"/>
+                                    <constraint firstAttribute="bottom" secondItem="VHi-Dc-kg8" secondAttribute="bottom" constant="54" id="fd6-pX-Gfa"/>
                                     <constraint firstItem="VHi-Dc-kg8" firstAttribute="leading" secondItem="1wG-At-NzI" secondAttribute="leading" id="fkM-gF-Z48"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ILV-Ho-86n" firstAttribute="top" secondItem="1wG-At-NzI" secondAttribute="bottom" id="GVZ-gW-eyh"/>
                             <constraint firstItem="1wG-At-NzI" firstAttribute="leading" secondItem="RPF-pa-7D5" secondAttribute="leading" id="Tjx-4T-yv3"/>
+                            <constraint firstAttribute="bottom" secondItem="1wG-At-NzI" secondAttribute="bottom" id="c5O-Yi-uTN"/>
                             <constraint firstAttribute="trailing" secondItem="1wG-At-NzI" secondAttribute="trailing" id="iGY-be-ncB"/>
                             <constraint firstItem="1wG-At-NzI" firstAttribute="top" secondItem="ml2-bq-qg9" secondAttribute="bottom" id="ue8-yO-3rG"/>
                             <constraint firstItem="VHi-Dc-kg8" firstAttribute="width" secondItem="RPF-pa-7D5" secondAttribute="width" id="xZe-wT-nfS"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Platform" image="tab_platform_unsel" selectedImage="tab_platform_sel" id="vbq-er-52h">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.92941176470588238" green="0.10980392156862745" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="UUR-9E-efM"/>
                     <connections>
                         <outlet property="knowMoreButton" destination="7If-f2-9Nb" id="Jrz-Wb-KzE"/>
@@ -204,9 +220,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Boq-uP-rLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="-1019"/>
+            <point key="canvasLocation" x="1312.8" y="-1022.3388305847077"/>
         </scene>
-        <!--Feature View Controller-->
+        <!--Features-->
         <scene sceneID="q9M-Jj-Ix2">
             <objects>
                 <viewController id="hSF-G0-MiL" customClass="FeatureViewController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -215,17 +231,17 @@
                         <viewControllerLayoutGuide type="bottom" id="b0F-oZ-OR9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4fi-uH-9hH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1850"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="1737"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="APO-k3-Oph">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureAuthRowId" rowHeight="298" id="QgU-lU-uWh" customClass="FeatureAuthRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="298"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="298"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QgU-lU-uWh" id="TNn-Vo-RGm">
-                                            <frame key="frameInset" width="600" height="298"/>
+                                            <frame key="frameInset" width="375" height="298"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itd-qY-Xkz" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
@@ -305,10 +321,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureNotifRowId" rowHeight="248" id="vTg-mh-kav" customClass="FeatureNotifRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="390" width="600" height="248"/>
+                                        <rect key="frame" x="0.0" y="326" width="375" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vTg-mh-kav" id="281-TQ-NBb">
-                                            <frame key="frameInset" width="600" height="248"/>
+                                            <frame key="frameInset" width="375" height="248"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rf7-W9-RA4" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
@@ -388,10 +404,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeaturePermRowId" rowHeight="248" id="quf-yd-1u7" customClass="FeaturePermRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="638" width="600" height="248"/>
+                                        <rect key="frame" x="0.0" y="574" width="375" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="quf-yd-1u7" id="AEL-73-n9D">
-                                            <frame key="frameInset" width="600" height="248"/>
+                                            <frame key="frameInset" width="375" height="248"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hY-Ik-qUT" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
@@ -471,10 +487,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureEventRowId" rowHeight="368" id="5QN-Wb-5m9" customClass="FeatureEventRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="886" width="600" height="368"/>
+                                        <rect key="frame" x="0.0" y="822" width="375" height="368"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5QN-Wb-5m9" id="Z6T-Yy-aTM">
-                                            <frame key="frameInset" width="600" height="368"/>
+                                            <frame key="frameInset" width="375" height="368"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoJ-tc-W7n" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
@@ -590,10 +606,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureInviteRowId" rowHeight="248" id="aux-XC-pDW" customClass="FeatureInviteRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1254" width="600" height="248"/>
+                                        <rect key="frame" x="0.0" y="1190" width="375" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aux-XC-pDW" id="hy3-bl-rNe">
-                                            <frame key="frameInset" width="600" height="248"/>
+                                            <frame key="frameInset" width="375" height="248"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmE-yr-1Ar" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
@@ -673,10 +689,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureAppDataRowId" rowHeight="248" id="CPD-3l-b5C" customClass="FeatureAppDataRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1502" width="600" height="248"/>
+                                        <rect key="frame" x="0.0" y="1438" width="375" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CPD-3l-b5C" id="pwi-Sj-51f">
-                                            <frame key="frameInset" width="600" height="248"/>
+                                            <frame key="frameInset" width="375" height="248"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cK6-8Y-LQD" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
@@ -766,58 +782,27 @@
                             <constraint firstAttribute="trailing" secondItem="APO-k3-Oph" secondAttribute="trailing" id="tSD-w2-Gpv"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Features" image="tab_features_unsel" selectedImage="tab_features_sel" id="gOC-IR-KFd">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.92941176470588238" green="0.10980392156862745" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="0nf-hL-u1R"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1850"/>
+                    <size key="freeformSize" width="375" height="1850"/>
                     <connections>
                         <outlet property="tableView" destination="APO-k3-Oph" id="rrg-dr-5Mg"/>
-                        <segue destination="kUB-Ix-gsw" kind="presentation" identifier="FeaturesToAddDataSegue" id="0CX-04-nO0"/>
-                        <segue destination="Axd-AN-p3c" kind="presentation" identifier="FeaturesToLeaderboardSegue" id="GBz-13-jHD"/>
-                        <segue destination="Az1-PF-dGO" kind="presentation" identifier="FeaturesToUserSegue" id="LXU-sp-RNd"/>
-                        <segue destination="69N-uK-yMO" kind="presentation" identifier="FeaturesToLoginSegue" id="Xo7-Me-FGU"/>
+                        <segue destination="V6O-fP-TAn" kind="show" identifier="FeaturesToUserSegue" id="x2L-lp-YsQ"/>
+                        <segue destination="1LL-rr-1o8" kind="show" identifier="FeaturesToLeaderboardSegue" id="XXR-OH-mnd"/>
+                        <segue destination="eER-0g-q6A" kind="show" identifier="FeaturesToAddDataSegue" id="aWa-dr-FP0"/>
+                        <segue destination="IyW-MZ-Uuc" kind="show" identifier="FeaturesToLoginSegue" id="oBa-7X-RLz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg1-lC-a2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1493" y="251"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="O8z-UY-iSo">
-            <objects>
-                <navigationController storyboardIdentifier="SignUpNavControllerId" id="LpG-5y-JA9" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="q18-zc-z2n" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="sign_up_vc_title"/>
-                        </userDefinedRuntimeAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="bYm-dT-Es4" kind="relationship" relationship="rootViewController" id="noY-Nn-nri"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cAQ-8A-oxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4962" y="-842"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ves-K8-10S">
-            <objects>
-                <navigationController id="69N-uK-yMO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="p5H-9Y-DDM" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="login_vc_title"/>
-                        </userDefinedRuntimeAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="IyW-MZ-Uuc" kind="relationship" relationship="rootViewController" id="vbV-r9-U6d"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Srr-f6-aPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3305" y="-842"/>
+            <point key="canvasLocation" x="1313" y="210"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="qXj-o8-aDF">
@@ -828,7 +813,7 @@
                         <viewControllerLayoutGuide type="bottom" id="TQH-oX-kTW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Q2-vu-UkF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pr5-In-TZ4" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
@@ -882,17 +867,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7PK-On-NQS"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="createNewUserButton" destination="r3N-A3-Mpa" id="xws-je-IuA"/>
                         <outlet property="loginButton" destination="uKB-RH-Hhg" id="gsK-5d-uPc"/>
                         <outlet property="passwordTextField" destination="OwE-IY-S4m" id="PpY-bB-SbJ"/>
                         <outlet property="usernameTextField" destination="Pr5-In-TZ4" id="Pam-DH-zqa"/>
-                        <segue destination="LpG-5y-JA9" kind="presentation" identifier="LoginToSignUpSegue" id="DWB-D6-8ww"/>
+                        <segue destination="bYm-dT-Es4" kind="show" identifier="LoginToSignUpSegue" id="DpY-Rb-KhH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsM-TG-Mgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4050" y="-842"/>
+            <point key="canvasLocation" x="3654" y="-829"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="GjS-wz-iaG">
@@ -903,7 +890,7 @@
                         <viewControllerLayoutGuide type="bottom" id="U2g-Fo-uLT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1Mh-d3-X0U">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vgd-Sg-yfY" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
@@ -1030,31 +1017,12 @@
                         <outlet property="submitButton" destination="iVu-wa-78n" id="lbN-Kt-xeo"/>
                         <outlet property="usernameTextView" destination="Vgd-Sg-yfY" id="ZSN-od-Hf1"/>
                         <outlet property="yearTextView" destination="0ZK-Wg-awI" id="7Am-w3-Mmb"/>
-                        <segue destination="ehL-fw-Sey" kind="presentation" identifier="SignUpToCountrySegue" id="PmO-QT-jYT"/>
+                        <segue destination="Smb-6r-qic" kind="show" identifier="SignUpToCountrySegue" id="0Cw-SJ-8KV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dr6-jJ-Dnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5768.8000000000002" y="-843.32833583208401"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Olg-5J-RIQ">
-            <objects>
-                <navigationController id="ehL-fw-Sey" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iq7-JK-AwS" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="country_vc_title"/>
-                        </userDefinedRuntimeAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Smb-6r-qic" kind="relationship" relationship="rootViewController" id="2fJ-3c-edZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4SZ-7l-3fb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6708" y="-842"/>
+            <point key="canvasLocation" x="4554" y="-829"/>
         </scene>
         <!--Country Controller-->
         <scene sceneID="IQs-mJ-my7">
@@ -1065,7 +1033,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dmB-gV-ctu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SrI-j5-Kvk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y96-CM-rwq">
@@ -1159,26 +1127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4O-br-Pfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7533.6000000000004" y="-842.42878560719646"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="z2v-Mk-Frj">
-            <objects>
-                <navigationController storyboardIdentifier="UserNavControllerId" id="Az1-PF-dGO" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eww-9K-xsI" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="user_vc_title"/>
-                        </userDefinedRuntimeAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="V6O-fP-TAn" kind="relationship" relationship="rootViewController" id="Vud-qJ-TAV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R6p-56-TgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3305" y="-111"/>
+            <point key="canvasLocation" x="5490" y="-829"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="ZEX-xP-wMh">
@@ -1189,14 +1138,14 @@
                         <viewControllerLayoutGuide type="bottom" id="mDc-H5-38x"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZwZ-jL-R8t">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BCJ-GN-k86">
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserHeaderId" id="sxo-94-fAm" customClass="UserHeader" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sxo-94-fAm" id="8PO-tR-A8I">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -1221,7 +1170,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserRowId" id="fwl-uT-91V" customClass="UserRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="136" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fwl-uT-91V" id="hAe-A0-P95">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -1302,6 +1251,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Xf-Qi-KMj"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="logoutButton" destination="JiN-hB-euy" id="l0u-Qm-puu"/>
                         <outlet property="userDetailsTableView" destination="BCJ-GN-k86" id="XxY-L9-LGv"/>
@@ -1309,7 +1260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cm5-aZ-y3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4001" y="-111"/>
+            <point key="canvasLocation" x="3654" y="-98"/>
         </scene>
         <!--Leader View Controller-->
         <scene sceneID="o0B-XJ-q4T">
@@ -1320,14 +1271,14 @@
                         <viewControllerLayoutGuide type="bottom" id="ULx-9U-g32"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Du9-t4-p3Z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pex-dx-mCH">
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LeaderHeaderId" id="YIw-8p-GNC" customClass="LeaderHeader" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YIw-8p-GNC" id="OXq-7W-ogU">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -1391,7 +1342,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LeaderRowId" id="o9C-c7-Gmy" customClass="LeaderRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="136" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o9C-c7-Gmy" id="d79-ZQ-vjb">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -1463,13 +1414,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L21-69-mE5"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="tableView" destination="pex-dx-mCH" id="V2T-Yz-c4u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fp5-mh-VwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3985" y="606"/>
+            <point key="canvasLocation" x="3654" y="606"/>
         </scene>
         <!--Get App Data Controller-->
         <scene sceneID="oHM-BA-hzR">
@@ -1480,14 +1433,14 @@
                         <viewControllerLayoutGuide type="bottom" id="ZUV-ap-7yW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hN8-9z-7ck">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fCQ-Ii-BZM">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GetAppDataRowId" id="zPC-m8-8WA" customClass="GetAppDataRow" customModule="KWSDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zPC-m8-8WA" id="Yhj-Fg-cW5">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -1570,53 +1523,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FeR-ks-5k5"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="addButton" destination="6lV-IN-tyh" id="KuC-gp-g9V"/>
                         <outlet property="appDataTable" destination="fCQ-Ii-BZM" id="3ni-dL-Klo"/>
-                        <segue destination="1sq-9A-u3M" kind="presentation" identifier="GetAppDataToSetAppDataSegue" id="2l9-Lz-faJ"/>
+                        <segue destination="gpW-go-jOj" kind="show" identifier="GetAppDataToSetAppDataSegue" id="00t-gm-lMZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3F-W4-fbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4001" y="1361"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rlq-Uy-97j">
-            <objects>
-                <navigationController storyboardIdentifier="GetAppDataNavControllerId" id="kUB-Ix-gsw" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0yO-Vf-F46" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="get_app_data_vc_title"/>
-                        </userDefinedRuntimeAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="eER-0g-q6A" kind="relationship" relationship="rootViewController" id="4GJ-tg-9YM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ofe-sF-5gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3305" y="1361"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dSX-tg-Eli">
-            <objects>
-                <navigationController storyboardIdentifier="SetAppDataNavControllerId" id="1sq-9A-u3M" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="R5Z-U7-z4Z" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="add_app_data_vc_title"/>
-                        </userDefinedRuntimeAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="gpW-go-jOj" kind="relationship" relationship="rootViewController" id="t11-YK-E8q"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9cJ-XA-P5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4905" y="1361"/>
+            <point key="canvasLocation" x="3654" y="1331"/>
         </scene>
         <!--Set App Data Controller-->
         <scene sceneID="dV4-yS-lXg">
@@ -1627,7 +1544,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4sq-Ou-DWC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xwr-Ms-vJ1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgC-lD-trm" customClass="KWSTextField" customModule="KWSDemo" customModuleProvider="target">
@@ -1677,28 +1594,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zod-Wc-gds" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5585" y="1361"/>
+            <point key="canvasLocation" x="4554" y="1331"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="YXB-pu-xtp">
-            <objects>
-                <navigationController storyboardIdentifier="LeaderboardNavControllerId" id="Axd-AN-p3c" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AKo-zv-JdA" customClass="KWSPopupNavigationBar" customModule="KWSDemo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="navigationBarTitle" value="leader_vc_title"/>
-                        </userDefinedRuntimeAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="1LL-rr-1o8" kind="relationship" relationship="rootViewController" id="9xd-Zl-PBH"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hjG-EB-yc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3305" y="606"/>
-        </scene>
-        <!--Documentation View Controller-->
+        <!--Documentation-->
         <scene sceneID="Yne-7X-Yf7">
             <objects>
                 <viewController id="AY7-Yd-UUC" customClass="DocumentationViewController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -1707,7 +1605,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vmv-6s-8rd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Lvo-oF-6EX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaW-bb-9yZ">
@@ -1722,6 +1620,13 @@
                             <constraint firstAttribute="bottom" secondItem="kaW-bb-9yZ" secondAttribute="bottom" id="t42-hp-lJr"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Documentation" image="documentation" selectedImage="documentation_selected" id="DIJ-ou-74N">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.92941176470588238" green="0.10980392156862745" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="bX1-88-8Lr"/>
                     <connections>
                         <outlet property="webView" destination="kaW-bb-9yZ" id="M7F-32-Bs8"/>
@@ -1729,41 +1634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uu8-WX-MC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="1505"/>
-        </scene>
-        <!--Documentation-->
-        <scene sceneID="9bc-vf-5GU">
-            <objects>
-                <navigationController id="tGS-4H-HDB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="Documentation" image="documentation" selectedImage="documentation_selected" id="dQo-O4-DcM"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ayL-BU-lIb" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="AY7-Yd-UUC" kind="relationship" relationship="rootViewController" id="x9B-Oy-sL9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zOB-9m-ghN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="484" y="1505"/>
-        </scene>
-        <!--Features-->
-        <scene sceneID="X1E-2q-06L">
-            <objects>
-                <navigationController id="65E-2S-OuP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="Features" image="tab_features_unsel" selectedImage="tab_features_sel" id="5mN-d1-nMM"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Oh9-4q-oeq" customClass="KWSNavitationBar" customModule="KWSDemo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="hSF-G0-MiL" kind="relationship" relationship="rootViewController" id="PKJ-ga-h5y"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="djv-VY-hcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="484" y="251"/>
+            <point key="canvasLocation" x="1312.8" y="1602.5487256371816"/>
         </scene>
     </scenes>
     <resources>

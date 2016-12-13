@@ -29,6 +29,8 @@ class CountryController: KWSBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "country_vc_title".localized
+        
         // view setup
         countrySearch.placeholder = "country_search_placeholder".localized
         
@@ -77,7 +79,7 @@ class CountryController: KWSBaseController {
                                                                     name: model.getCountryName(),
                                                                     flag: model.getFlag())
                                     
-                                    self.dismiss(animated: true, completion: nil)
+                                    _ = self.navigationController?.popViewController(animated: true)
                                 }
                             }
                         

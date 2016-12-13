@@ -10,7 +10,22 @@ import UIKit
 import SAUtils
 import QuartzCore
 
-class KWSBlueButton : UIButton {
+class KWSButton : UIButton {
+    
+    private var act: (() -> Void)?
+    
+    func onAction (_ act: @escaping () -> Void) {
+        self.act = act
+        self.addTarget(self, action: #selector (customAction), for: .touchUpInside)
+    }
+    
+    @objc private func customAction () {
+        act?()
+    }
+    
+}
+
+class KWSBlueButton : KWSButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -25,7 +40,7 @@ class KWSBlueButton : UIButton {
     
 }
 
-class KWSRedButton : UIButton {
+class KWSRedButton : KWSButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,7 +52,7 @@ class KWSRedButton : UIButton {
     
 }
 
-class KWSCountryButton: UIButton {
+class KWSCountryButton: KWSButton {
     
     public var border: UIView?
     

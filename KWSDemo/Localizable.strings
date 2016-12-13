@@ -2,12 +2,13 @@
 /*tabs*/
 "tab_platform" = "Platform";
 "tab_features" = "Features";
-"tab_doc" = "Docs";
+"tab_documentation" = "Documentation";
 
 /*navigation*/
 "kws_popup_nav_bar_close" = "Close";
 
 /*platform*/
+"platform_vc_title" = "Platform";
 "platform_title" = "Welcome to your\nKWS Demo App";
 "platform_content" = "This KWS Demo App is powered by Kids Web Services (KWS). KWS is a platform that provides a set of compliance-as-a-service tools to create a kid-safe, COPPA-compliant sites and apps; KWS allows you to focus on delivering awesome content, by handling all the legal complexity related to data-collection in the kids space in one simple, customizable package.";
 "platform_feature_1" = "Verifiable\nparental\nconsent";
@@ -17,6 +18,7 @@
 "platform_main_button" = "KNOW MORE ABOUT KIDS WEB SERVICES";
 
 /*features*/
+"feature_vc_title" = "Features";
 "feature_cell_auth_title" = "Secure single sign-on";
 "feature_cell_auth_content" = "Kids Web Services' federated identity system (Single Sign-On) allows kids and parents to create one secure login to access your collection of kid-safe apps and sites.";
 "feature_cell_auth_button_1_loggedout" = "AUTHENTICATE USER";
@@ -75,13 +77,13 @@
 "feature_friend_email_popup_submit" = "Submit";
 "feature_friend_email_popup_cancel" = "Cancel";
 "feature_friend_email_popup_success_title" = "Hey!";
-"feature_friend_email_popup_success_message" = "You successfully invited %@ to your app through KWS!";
+"feature_friend_email_popup_success_message" = "You successfully invited your friend to your app through KWS!";
 "feature_friend_email_popup_error_title" = "Something went wrong...";
 "feature_friend_email_popup_error_message" = "An error occurred while inviting %@ to your app through KWS. Please try again!";
 "feature_popup_dismiss_button" = "Got it";
 
 /** login */
-"login_vc_title" = "Log in to KWS";
+"login_vc_title" = "Login";
 "login_username_placeholder" = "Enter username";
 "login_password_placeholder" = "Enter password";
 "login_button_login" = "Login";
@@ -94,7 +96,7 @@
 
 /*documentation
  sign-up*/
-"sign_up_vc_title" = "Sign up to KWS";
+"sign_up_vc_title" = "Sign Up";
 "sign_up_username_placeholder" = "Enter a username";
 "sign_up_password1_placeholder" = "Enter a password";
 "sign_up_password2_placeholder" = "Repeat the password";
@@ -117,7 +119,7 @@
 "sign_up_popup_error_message" = "Sign up failed - please try again!";
 
 /** country */
-"country_vc_title" = "Select your country";
+"country_vc_title" = "Select country";
 "country_search_placeholder" = "Type country name";
 "country_row_code_default" = "UN";
 "country_row_name_default" = "United Nations";
@@ -212,3 +214,6 @@
 
 /*feature_parent_email_request_popup_cancel*/
 "feature_parent_email_request_popup_cancel" = "Cancel";
+
+/** documentation */
+"documentation_vc_title" = "Documentation";

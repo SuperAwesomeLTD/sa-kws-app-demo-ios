@@ -25,6 +25,8 @@ class SetAppDataController: KWSBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "add_app_data_vc_title".localized
+        
         namePairTextField.placeholder = "add_app_data_name_placeholder".localized
         valuePairTextField.placeholder = "add_app_data_value_placeholder".localized
         submitButton.setTitle("add_app_data_submit".localized.uppercased(), for: UIControlState())
@@ -60,7 +62,7 @@ class SetAppDataController: KWSBaseController {
             .subscribe(onNext: { (success) in
                 
                 if success {
-                    self.dismiss(animated: true, completion: nil)
+                    _ = self.navigationController?.popViewController(animated: true)
                 } else {
                     self.appDataError ()
                 }

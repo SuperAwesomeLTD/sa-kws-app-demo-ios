@@ -24,7 +24,6 @@ class PlatformViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNeedsStatusBarAppearanceUpdate ()
         
         platformTitle.text = "platform_title".localized
         platformContent.text = "platform_content".localized
@@ -33,6 +32,11 @@ class PlatformViewController: UIViewController {
         platformFeature3.text = "platform_feature_3".localized
         platformFeature4.text = "platform_feature_4".localized
         knowMoreButton.setTitle("platform_main_button".localized.uppercased(), for: UIControlState())
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.topItem?.title = "platform_vc_title".localized
     }
 
     override func didReceiveMemoryWarning () {
@@ -46,12 +50,6 @@ class PlatformViewController: UIViewController {
         } else {
             UIApplication.shared.openURL(url!)
         }
-    }
-    
-    // <Custom>
-    
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return UIStatusBarStyle.default
     }
 }
 

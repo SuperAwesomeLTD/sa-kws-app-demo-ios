@@ -41,6 +41,8 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "sign_up_vc_title".localized
+        
         usernameTextView.placeholder = "sign_up_username_placeholder".localized
         password1TextView.placeholder = "sign_up_password1_placeholder".localized
         password2TextView.placeholder = "sign_up_password2_placeholder".localized
@@ -157,14 +159,9 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
         // contry button
         countryButton.rx
             .tap
-            .flatMap { () -> Observable <UIViewController> in
-                return self.rxSeque(withIdentifier: "SignUpToCountrySegue")
-            }
-            .subscribe(onNext: { (vc) in
-                if let vc = vc as? KWSNavigationController,
-                    let destination = vc.viewControllers.first as? CountryController {
-                    destination.delegate = self
-                }
+            .subscribe(onNext: { (Void) in
+                
+                self.performSegue(withIdentifier: "SignUpToCountrySegue", sender: self)
             })
             .addDisposableTo(disposeBag)
         
@@ -182,7 +179,7 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
                 
                 if status == KWSCreateUserStatus.success {
                     self.delegate?.didSignUp()
-                    self.dismiss(animated: true, completion: nil)
+                    _ = self.navigationController?.popViewController(animated: true)
                 }
                 else if status == KWSCreateUserStatus.duplicateUsername {
                     self.signUpError()
@@ -207,6 +204,10 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     func signUpError() {
         SAPopup.sharedManager().show(withTitle: "sign_up_popup_error_title".localized,
                                      andMessage: "sign_up_popup_warning_message_username".localized,
@@ -225,5 +226,11 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
                                      andTextField: false,
                                      andKeyboardTyle: .decimalPad,
                                      andPressed: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? CountryController {
+            destination.delegate = self
+        }
     }
 }

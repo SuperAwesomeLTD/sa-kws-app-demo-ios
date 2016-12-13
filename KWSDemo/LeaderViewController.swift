@@ -23,6 +23,8 @@ class LeaderViewController: KWSBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "leader_vc_title".localized
+        
         RxKWS.getLeaderboard()
             .map { (leader: KWSLeader) -> ViewModel in
                 return LeaderRowViewModel (leader.rank, leader.score, leader.user)

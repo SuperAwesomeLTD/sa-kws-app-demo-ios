@@ -26,6 +26,8 @@ class LoginController: KWSBaseController, SignUpProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "login_vc_title".localized
+        
         // add text
         usernameTextField.placeholder = "login_username_placeholder".localized
         passwordTextField.placeholder = "login_password_placeholder".localized
@@ -54,14 +56,10 @@ class LoginController: KWSBaseController, SignUpProtocol {
         // add actions
         createNewUserButton.rx
             .tap
-            .flatMap { () -> Observable <UIViewController> in
-                return self.rxSeque(withIdentifier: "LoginToSignUpSegue")
-            }
-            .subscribe(onNext: { (vc) in
-                if let dest = vc as? KWSNavigationController,
-                    let destination = dest.viewControllers.first as? SignUpViewController {
-                    destination.delegate = self
-                }
+            .subscribe(onNext: { (Void) in
+                
+                self.performSegue(withIdentifier: "LoginToSignUpSegue", sender: self)
+            
             })
             .addDisposableTo(disposeBag)
         
@@ -77,7 +75,7 @@ class LoginController: KWSBaseController, SignUpProtocol {
                 switch status {
                     
                 case KWSAuthUserStatus.success:
-                    self.dismiss(animated: true, completion: nil)
+                    _ = self.navigationController?.popViewController(animated: true)
                     break
                 case KWSAuthUserStatus.invalidCredentials:
                     self.loginError()
@@ -97,8 +95,13 @@ class LoginController: KWSBaseController, SignUpProtocol {
     }
     
     func didSignUp() {
-        self.dismiss(animated: true, completion: nil)
-        self.dismiss(animated: true, completion: nil)
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SignUpViewController {
+            destination.delegate = self
+        }
     }
     
     func loginError () {

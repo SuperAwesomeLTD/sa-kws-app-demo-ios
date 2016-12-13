@@ -159,4 +159,61 @@ class RxKWS: NSObject {
         
     }
     
+    static func inviteFriend(email: String) -> Observable <Bool> {
+        
+        return Observable.create({ (subscriber) -> Disposable in
+        
+            
+            KWS.sdk().inviteUser(email) { (isInvited) in
+                
+                subscriber.onNext(isInvited)
+                subscriber.onCompleted()
+                
+            }
+            
+            return Disposables.create()
+        })
+    }
+    
+    static func addPermissions (permissions: [NSNumber]) -> Observable <KWSPermissionStatus> {
+        
+        return Observable.create({ (subscriber) -> Disposable in
+            
+            KWS.sdk().requestPermission(permissions) { (permissionStatus: KWSPermissionStatus) in
+                subscriber.onNext(permissionStatus)
+                subscriber.onCompleted()
+            }
+            
+            return Disposables.create()
+        })
+    }
+    
+    static func registerForNotifications () -> Observable <KWSNotificationStatus> {
+        
+        return Observable.create({ (subscriber) -> Disposable in
+        
+            KWS.sdk().register({ (status: KWSNotificationStatus) in
+                subscriber.onNext(status)
+                subscriber.onCompleted()
+            })
+            
+            return Disposables.create()
+        })
+        
+    }
+    
+    static func unregisterForNotifications () -> Observable <Bool> {
+        
+        return Observable.create({ (subscriber) -> Disposable in
+            
+            KWS.sdk().unregister { (isUnregistered) in
+                subscriber.onNext(isUnregistered)
+                subscriber.onCompleted()
+            }
+            
+            return Disposables.create()
+        })
+        
+    }
+    
 }
