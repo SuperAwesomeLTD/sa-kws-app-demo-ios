@@ -71,7 +71,7 @@
 		1BDC11FC1D1ABF8E00B1111A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FB1D1ABF8E00B1111A /* SignUpViewController.swift */; };
 		1BDC12001D1AECC300B1111A /* KWSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FF1D1AECC300B1111A /* KWSTextField.swift */; };
 		1BE8CEF61D8FF2A000572070 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CEF51D8FF2A000572070 /* Localizable.strings */; };
-		1BE8CEFD1D90342300572070 /* NSString+KWSStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8CEFC1D90342300572070 /* NSString+KWSStyle.swift */; };
+		1BE8CEFD1D90342300572070 /* KWSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8CEFC1D90342300572070 /* KWSString.swift */; };
 		486C55E87962109585629F6B /* Pods_KWSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FC682E29A423CEE036B9BD /* Pods_KWSDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,7 +144,7 @@
 		1BDC11FF1D1AECC300B1111A /* KWSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSTextField.swift; sourceTree = "<group>"; };
 		1BE8CEF51D8FF2A000572070 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1BE8CEF81D8FF92900572070 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		1BE8CEFC1D90342300572070 /* NSString+KWSStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+KWSStyle.swift"; sourceTree = "<group>"; };
+		1BE8CEFC1D90342300572070 /* KWSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSString.swift; sourceTree = "<group>"; };
 		35FC682E29A423CEE036B9BD /* Pods_KWSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KWSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73EC6CD53EA0788DF07CB27A /* Pods-KWSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A57993F2A900C4293C24C6FD /* Pods-KWSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -385,7 +385,7 @@
 				1BDC11EC1D1AA3BD00B1111A /* KWSButton.swift */,
 				1BDC11F91D1AABBD00B1111A /* KWSShadowView.swift */,
 				1BDC11FF1D1AECC300B1111A /* KWSTextField.swift */,
-				1BE8CEFC1D90342300572070 /* NSString+KWSStyle.swift */,
+				1BE8CEFC1D90342300572070 /* KWSString.swift */,
 			);
 			name = Styles;
 			sourceTree = "<group>";
@@ -572,7 +572,7 @@
 				1B0860001DF9C28F00986E56 /* SignUpModel.swift in Sources */,
 				1B7AD59A1D5CB7DA003400B4 /* LeaderHeader.swift in Sources */,
 				1BAE46641DFAFC8300377895 /* CountryRow.swift in Sources */,
-				1BE8CEFD1D90342300572070 /* NSString+KWSStyle.swift in Sources */,
+				1BE8CEFD1D90342300572070 /* KWSString.swift in Sources */,
 				1BA9F0E51D78390D002150A7 /* FeatureAppDataViewModel.swift in Sources */,
 				1BA9F0E91D783CF0002150A7 /* GetAppDataController.swift in Sources */,
 				1B6392A31D5B72E5005FDCE2 /* UserHeader.swift in Sources */,

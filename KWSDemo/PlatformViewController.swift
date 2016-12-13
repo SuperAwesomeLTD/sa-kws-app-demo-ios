@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlatformViewController: UIViewController {
+class PlatformViewController: KWSBaseController {
 
     // outlets
     @IBOutlet weak var platformTitle: UILabel!
@@ -32,6 +32,20 @@ class PlatformViewController: UIViewController {
         platformFeature3.text = "platform_feature_3".localized
         platformFeature4.text = "platform_feature_4".localized
         knowMoreButton.setTitle("platform_main_button".localized.uppercased(), for: UIControlState())
+        
+        // on tap
+        knowMoreButton.rx.tap
+            .subscribe (onNext: { (Void) in
+    
+                let url = URL(string: self.urlStr)
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url!)
+                }
+                
+            })
+            .addDisposableTo(disposeBag)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,15 +55,6 @@ class PlatformViewController: UIViewController {
 
     override func didReceiveMemoryWarning () {
         super.didReceiveMemoryWarning ()
-    }
-
-    @IBAction func knowMoreAction (_ sender: AnyObject) {
-        let url = URL(string: urlStr)
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url!)
-        }
     }
 }
 

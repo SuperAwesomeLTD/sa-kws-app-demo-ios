@@ -22,6 +22,9 @@ class SetAppDataController: KWSBaseController {
     // variables
     var currentModel: SetAppDataModel = SetAppDataModel.createEmpty()
     
+    // touch
+    private var touch: UIGestureRecognizer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,6 +56,27 @@ class SetAppDataController: KWSBaseController {
             })
             .addDisposableTo(disposeBag)
         
+        // determine if the text field border should be red or gray
+        namePairTextField.rx
+            .controlEvent(.editingDidEnd)
+            .map { () -> Bool in
+                return self.currentModel.isValidName()
+            }
+            .subscribe(onNext: { (isValid) in
+                self.namePairTextField.setRedOrGrayBorder(isValid)
+            })
+            .addDisposableTo(disposeBag)
+        
+        valuePairTextField.rx
+            .controlEvent(.editingDidEnd)
+            .map { () -> Bool in
+                return self.currentModel.isValidValue()
+            }
+            .subscribe(onNext: { (isValid) in
+                self.valuePairTextField.setRedOrGrayBorder(isValid)
+            })
+            .addDisposableTo(disposeBag)
+        
         // the button click
         submitButton.rx
             .tap
@@ -69,6 +93,16 @@ class SetAppDataController: KWSBaseController {
                 
             })
             .addDisposableTo(disposeBag)
+        
+        // the touch gesture recogniser
+        touch = UITapGestureRecognizer ()
+        touch?.rx.event.asObservable()
+            .subscribe(onNext: { (event) in
+                self.namePairTextField.resignFirstResponder()
+                self.valuePairTextField.resignFirstResponder()
+            })
+            .addDisposableTo(disposeBag)
+        self.view.addGestureRecognizer(touch!)
         
     }
 

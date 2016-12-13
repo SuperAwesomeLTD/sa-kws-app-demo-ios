@@ -38,6 +38,9 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
     // delegate
     public var delegate: SignUpProtocol?
     
+    // touch
+    private var touch: UIGestureRecognizer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -191,6 +194,21 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
             .addDisposableTo(disposeBag)
         
         countrySubject.onNext(nil)
+        
+        // the touch gesture recogniser
+        touch = UITapGestureRecognizer ()
+        touch?.rx.event.asObservable()
+            .subscribe(onNext: { (event) in
+                self.usernameTextView.resignFirstResponder()
+                self.password1TextView.resignFirstResponder()
+                self.password2TextView.resignFirstResponder()
+                self.parentEmailTextView.resignFirstResponder()
+                self.yearTextView.resignFirstResponder()
+                self.monthTextView.resignFirstResponder()
+                self.dayTextView.resignFirstResponder()
+            })
+            .addDisposableTo(disposeBag)
+        self.view.addGestureRecognizer(touch!)
     }
     
     func didSelectCountry(isoCode: String, name: String, flag: UIImage) {

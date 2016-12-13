@@ -23,6 +23,9 @@ class LoginController: KWSBaseController, SignUpProtocol {
     // model
     private var currentModel = LoginModel.createEmpty()
     
+    // touch
+    private var touch: UIGestureRecognizer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,6 +91,16 @@ class LoginController: KWSBaseController, SignUpProtocol {
                 
             })
             .addDisposableTo(disposeBag)
+        
+        // the touch gesture recogniser
+        touch = UITapGestureRecognizer ()
+        touch?.rx.event.asObservable()
+            .subscribe(onNext: { (event) in
+                self.usernameTextField.resignFirstResponder()
+                self.passwordTextField.resignFirstResponder()
+            })
+            .addDisposableTo(disposeBag)
+        self.view.addGestureRecognizer(touch!)
     }
 
     override func didReceiveMemoryWarning() {
