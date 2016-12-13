@@ -81,15 +81,6 @@ class UserViewController: KWSBaseController {
                 
                 return array
             }
-            .do(onNext: { (elems) in
-                // do nothing
-            }, onError: { (error) in
-                SAActivityView.sharedManager().hide()
-            }, onCompleted: {
-                SAActivityView.sharedManager().hide()
-            }, onSubscribe: {
-                SAActivityView.sharedManager().show()
-            })
             .subscribe(onNext: { (models: [ViewModel]) in
               
                 // create data source

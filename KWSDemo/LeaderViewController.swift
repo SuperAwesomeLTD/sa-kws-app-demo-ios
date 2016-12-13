@@ -30,15 +30,6 @@ class LeaderViewController: KWSBaseController {
                 return LeaderRowViewModel (leader.rank, leader.score, leader.user)
             }
             .toArray()
-            .do(onNext: { (elems) in
-                // do nothing
-            }, onError: { (error) in
-                SAActivityView.sharedManager().hide()
-            }, onCompleted: {
-                SAActivityView.sharedManager().hide()
-            }, onSubscribe: {
-                SAActivityView.sharedManager().show()
-            })
             .map { (models: [ViewModel]) -> [ViewModel] in
                 return [LeaderHeaderViewModel()] + models
             }

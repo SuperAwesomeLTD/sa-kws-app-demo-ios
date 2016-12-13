@@ -50,17 +50,6 @@ class GetAppDataController: KWSBaseController {
                 return GetAppDataViewModel (appData.name, appData.value)
             }
             .toArray()
-            .do(onNext: { (elems) in
-                // do nothing
-                }, onError: { (error) in
-                    
-                }, onCompleted: {
-                    
-                }, onSubscribe: {
-                    
-                }, onDispose: {
-                    
-            })
             .subscribe(onNext: { (models: [GetAppDataViewModel]) in
                 
                 self.dataSource = RxDataSource
