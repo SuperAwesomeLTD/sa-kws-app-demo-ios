@@ -48,9 +48,7 @@ class FeatureViewController: KWSBaseController {
                     .estimateRowHeight(100)
                     //
                     // customise Login & Logout row
-                    .customiseRow(cellIdentifier: "FeatureAuthRowId",
-                                  cellType: FeatureAuthViewModel.self)
-                    { (model, cell) in
+                    .customiseRow(cellIdentifier: "FeatureAuthRowId", cellType: FeatureAuthViewModel.self) { (model, cell) in
                         
                         let cell = cell as? FeatureAuthRow
                         
@@ -73,9 +71,7 @@ class FeatureViewController: KWSBaseController {
                     }
                     //
                     // customise the Remote Notifications row
-                    .customiseRow(cellIdentifier: "FeatureNotifRowId",
-                                  cellType: FeatureNotifViewModel.self)
-                    { (model, cell) in
+                    .customiseRow(cellIdentifier: "FeatureNotifRowId", cellType: FeatureNotifViewModel.self) { (model, cell) in
                         
                         let cell = cell as? FeatureNotifRow
                         
@@ -162,9 +158,7 @@ class FeatureViewController: KWSBaseController {
                     }
                     //
                     // customise the Permissions row
-                    .customiseRow(cellIdentifier: "FeaturePermRowId",
-                                  cellType: FeaturePermViewModel.self)
-                    { (model, cell) in
+                    .customiseRow(cellIdentifier: "FeaturePermRowId", cellType: FeaturePermViewModel.self) { (model, cell) in
                         
                         let cell = cell as? FeaturePermRow
                         
@@ -214,11 +208,8 @@ class FeatureViewController: KWSBaseController {
                                                 
                                             })
                                             .addDisposableTo(self.disposeBag)
-                                        
                                     }))
-                                    
                                 }
-                                
                             }
                             
                             // present action sheet
@@ -231,9 +222,7 @@ class FeatureViewController: KWSBaseController {
                     }
                     //
                     // customise the Events row
-                    .customiseRow(cellIdentifier: "FeatureEventRowId",
-                                  cellType: FeatureEventViewModel.self)
-                    { (model, cell) in
+                    .customiseRow(cellIdentifier: "FeatureEventRowId", cellType: FeatureEventViewModel.self) { (model, cell) in
                         
                         let cell = cell as? FeatureEventRow
                         
@@ -309,9 +298,7 @@ class FeatureViewController: KWSBaseController {
                     }
                     //
                     // customise the Invite row
-                    .customiseRow(cellIdentifier: "FeatureInviteRowId",
-                                  cellType: FeatureInviteViewModel.self)
-                    { (model, cell) in
+                    .customiseRow(cellIdentifier: "FeatureInviteRowId", cellType: FeatureInviteViewModel.self) { (model, cell) in
                         
                         let cell = cell as? FeatureInviteRow
                         
@@ -356,9 +343,7 @@ class FeatureViewController: KWSBaseController {
                     }
                     //
                     // customise the App Data row
-                    .customiseRow(cellIdentifier: "FeatureAppDataRowId",
-                                  cellType: FeatureAppDataViewModel.self)
-                    { (model, cell) in
+                    .customiseRow(cellIdentifier: "FeatureAppDataRowId", cellType: FeatureAppDataViewModel.self) { (model, cell) in
                         
                         let cell = cell as? FeatureAppDataRow
                         
@@ -373,7 +358,7 @@ class FeatureViewController: KWSBaseController {
                         cell?.appdSeeDocsButton.onAction {
                             self.openDocumentation()
                         }
-                }
+                    }
                 
                 // update the data for the first time
                 self.dataSource?.update(features)

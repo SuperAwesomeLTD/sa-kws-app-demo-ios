@@ -30,7 +30,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="selectedImageTintColor" red="0.92941176469999998" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
@@ -47,7 +47,7 @@
         <scene sceneID="7gA-Ev-ShT">
             <objects>
                 <navigationController id="Nkh-qk-YpS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="nRo-jp-VAB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nRo-jp-VAB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -243,7 +243,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Itd-qY-Xkz" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_login_btn" translatesAutoresizingMaskIntoConstraints="NO" id="Tks-7g-u0Y">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_login" translatesAutoresizingMaskIntoConstraints="NO" id="Tks-7g-u0Y">
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="28" id="Wq9-No-q6l"/>
                                                                 <constraint firstAttribute="height" constant="28" id="bth-hY-PpE"/>
@@ -324,7 +324,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rf7-W9-RA4" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_bell" translatesAutoresizingMaskIntoConstraints="NO" id="pgN-Ne-7he">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_notif" translatesAutoresizingMaskIntoConstraints="NO" id="pgN-Ne-7he">
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="dWv-Mt-Ga8"/>
                                                                 <constraint firstAttribute="width" constant="28" id="xJf-VR-sNu"/>
@@ -405,7 +405,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hY-Ik-qUT" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_bell" translatesAutoresizingMaskIntoConstraints="NO" id="Tmt-D5-CMU">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_manage_permissions" translatesAutoresizingMaskIntoConstraints="NO" id="Tmt-D5-CMU">
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="28" id="eY5-FL-R2Y"/>
                                                                 <constraint firstAttribute="height" constant="28" id="nVU-kC-gXM"/>
@@ -486,7 +486,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoJ-tc-W7n" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_bell" translatesAutoresizingMaskIntoConstraints="NO" id="0TK-ej-xU4">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_events_and_points" translatesAutoresizingMaskIntoConstraints="NO" id="0TK-ej-xU4">
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="28" id="Eib-rI-EH5"/>
                                                                 <constraint firstAttribute="height" constant="28" id="JQ0-CU-k8V"/>
@@ -603,7 +603,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmE-yr-1Ar" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_bell" translatesAutoresizingMaskIntoConstraints="NO" id="JwI-km-vWV">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_invite_friends" translatesAutoresizingMaskIntoConstraints="NO" id="JwI-km-vWV">
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="28" id="0cA-j4-4ul"/>
                                                                 <constraint firstAttribute="height" constant="28" id="d75-HS-e2p"/>
@@ -684,7 +684,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cK6-8Y-LQD" customClass="KWSShadowView" customModule="KWSDemo" customModuleProvider="target">
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_bell" translatesAutoresizingMaskIntoConstraints="NO" id="DaQ-nC-0Nn">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_app_data" translatesAutoresizingMaskIntoConstraints="NO" id="DaQ-nC-0Nn">
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="28" id="0He-p7-Jhp"/>
                                                                 <constraint firstAttribute="height" constant="28" id="J5X-nX-Mt4"/>
@@ -1625,9 +1625,13 @@
     <resources>
         <image name="documentation" width="37" height="30"/>
         <image name="documentation_selected" width="37" height="30"/>
-        <image name="ico_bell" width="24" height="26"/>
+        <image name="ico_app_data" width="30" height="27"/>
+        <image name="ico_events_and_points" width="30" height="29"/>
         <image name="ico_identity" width="24" height="12"/>
-        <image name="ico_login_btn" width="26" height="23"/>
+        <image name="ico_invite_friends" width="30" height="30"/>
+        <image name="ico_login" width="26" height="23"/>
+        <image name="ico_manage_permissions" width="28" height="28"/>
+        <image name="ico_notif" width="24" height="26"/>
         <image name="ico_parent_portal" width="16" height="22"/>
         <image name="ico_shield" width="18" height="22"/>
         <image name="ico_smiley" width="22" height="22"/>

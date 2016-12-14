@@ -40,7 +40,7 @@ class SetAppDataModel: NSObject {
     }
     
     func isValidName () -> Bool {
-        return name != nil && name.characters.count > 5
+        return name != nil && name.characters.count >= 5
     }
     
     func isValidValue () -> Bool {
@@ -48,7 +48,7 @@ class SetAppDataModel: NSObject {
     }
     
     func isValid () -> Bool {
-        return name != nil && value != INVALID_VALID
+        return isValidName () && isValidValue()
     }
     
     func getName () -> String! {
