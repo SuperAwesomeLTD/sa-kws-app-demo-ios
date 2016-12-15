@@ -34,6 +34,7 @@
 		1B7AD59C1D5CB9A4003400B4 /* LeaderHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7AD59B1D5CB9A4003400B4 /* LeaderHeaderViewModel.swift */; };
 		1B92FCDD1D218BEA00B75617 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92FCDC1D218BEA00B75617 /* UserViewController.swift */; };
 		1B92FD0C1D228F7000B75617 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */; };
+		1B993B3D1E02FFDE00EE5001 /* KWSDemo_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B993B3C1E02FFDE00EE5001 /* KWSDemo_Tests.swift */; };
 		1BA9F0DF1D78336C002150A7 /* FeatureInviteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0DE1D78336C002150A7 /* FeatureInviteRow.swift */; };
 		1BA9F0E11D783478002150A7 /* FeatureInviteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0E01D783478002150A7 /* FeatureInviteViewModel.swift */; };
 		1BA9F0E31D783893002150A7 /* FeatureAppDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA9F0E21D783893002150A7 /* FeatureAppDataRow.swift */; };
@@ -75,6 +76,16 @@
 		486C55E87962109585629F6B /* Pods_KWSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FC682E29A423CEE036B9BD /* Pods_KWSDemo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1B993B3F1E02FFDE00EE5001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B56DFC91D194A6200973075 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B56DFD01D194A6200973075;
+			remoteInfo = KWSDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1B085FF91DF96B6100986E56 /* RxKWS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxKWS.swift; sourceTree = "<group>"; };
 		1B085FFB1DF9A44800986E56 /* KWSBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSBaseController.swift; sourceTree = "<group>"; };
@@ -106,6 +117,9 @@
 		1B7AD59B1D5CB9A4003400B4 /* LeaderHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderHeaderViewModel.swift; sourceTree = "<group>"; };
 		1B92FCDC1D218BEA00B75617 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		1B92FD0B1D228F7000B75617 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1B993B3A1E02FFDE00EE5001 /* KWSDemo_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KWSDemo_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B993B3C1E02FFDE00EE5001 /* KWSDemo_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KWSDemo_Tests.swift; sourceTree = "<group>"; };
+		1B993B3E1E02FFDE00EE5001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BA9F0DE1D78336C002150A7 /* FeatureInviteRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureInviteRow.swift; sourceTree = "<group>"; };
 		1BA9F0E01D783478002150A7 /* FeatureInviteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureInviteViewModel.swift; sourceTree = "<group>"; };
 		1BA9F0E21D783893002150A7 /* FeatureAppDataRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureAppDataRow.swift; sourceTree = "<group>"; };
@@ -159,6 +173,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1B993B371E02FFDE00EE5001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -175,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				1B56DFD31D194A6200973075 /* KWSDemo */,
+				1B993B3B1E02FFDE00EE5001 /* KWSDemo_Tests */,
 				1B56DFD21D194A6200973075 /* Products */,
 				F98D0A2E9A60745B474766C2 /* Pods */,
 				C6BA7DA313395D83BFD2D04C /* Frameworks */,
@@ -185,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				1B56DFD11D194A6200973075 /* KWSDemo.app */,
+				1B993B3A1E02FFDE00EE5001 /* KWSDemo_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -317,6 +340,15 @@
 			name = Features;
 			sourceTree = "<group>";
 		};
+		1B993B3B1E02FFDE00EE5001 /* KWSDemo_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1B993B3C1E02FFDE00EE5001 /* KWSDemo_Tests.swift */,
+				1B993B3E1E02FFDE00EE5001 /* Info.plist */,
+			);
+			path = KWSDemo_Tests;
+			sourceTree = "<group>";
+		};
 		1BA9F0E61D783CC9002150A7 /* SetAppData */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,13 +462,31 @@
 			productReference = 1B56DFD11D194A6200973075 /* KWSDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1B993B391E02FFDE00EE5001 /* KWSDemo_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B993B431E02FFDE00EE5001 /* Build configuration list for PBXNativeTarget "KWSDemo_Tests" */;
+			buildPhases = (
+				1B993B361E02FFDE00EE5001 /* Sources */,
+				1B993B371E02FFDE00EE5001 /* Frameworks */,
+				1B993B381E02FFDE00EE5001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B993B401E02FFDE00EE5001 /* PBXTargetDependency */,
+			);
+			name = KWSDemo_Tests;
+			productName = KWSDemo_Tests;
+			productReference = 1B993B3A1E02FFDE00EE5001 /* KWSDemo_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1B56DFC91D194A6200973075 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Gabriel Coman";
 				TargetAttributes = {
@@ -454,6 +504,11 @@
 							};
 						};
 					};
+					1B993B391E02FFDE00EE5001 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1B56DFD01D194A6200973075;
+					};
 				};
 			};
 			buildConfigurationList = 1B56DFCC1D194A6200973075 /* Build configuration list for PBXProject "KWSDemo" */;
@@ -470,6 +525,7 @@
 			projectRoot = "";
 			targets = (
 				1B56DFD01D194A6200973075 /* KWSDemo */,
+				1B993B391E02FFDE00EE5001 /* KWSDemo_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -498,6 +554,13 @@
 				1BE8CEF61D8FF2A000572070 /* Localizable.strings in Resources */,
 				1BDC11C81D198B5600B1111A /* SF-UI-Text-RegularItalic.otf in Resources */,
 				1BDC11C61D198B5600B1111A /* SF-UI-Text-MediumItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B993B381E02FFDE00EE5001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,7 +668,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1B993B361E02FFDE00EE5001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B993B3D1E02FFDE00EE5001 /* KWSDemo_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B993B401E02FFDE00EE5001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B56DFD01D194A6200973075 /* KWSDemo */;
+			targetProxy = 1B993B3F1E02FFDE00EE5001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1B56DFD81D194A6200973075 /* Main.storyboard */ = {
@@ -769,6 +848,39 @@
 			};
 			name = Release;
 		};
+		1B993B411E02FFDE00EE5001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = KWSDemo_Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tv.superawesome.KWSDemo-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KWSDemo.app/KWSDemo";
+			};
+			name = Debug;
+		};
+		1B993B421E02FFDE00EE5001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = KWSDemo_Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tv.superawesome.KWSDemo-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KWSDemo.app/KWSDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -789,6 +901,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		1B993B431E02FFDE00EE5001 /* Build configuration list for PBXNativeTarget "KWSDemo_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B993B411E02FFDE00EE5001 /* Debug */,
+				1B993B421E02FFDE00EE5001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
