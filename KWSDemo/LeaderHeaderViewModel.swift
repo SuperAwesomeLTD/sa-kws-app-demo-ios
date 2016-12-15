@@ -15,8 +15,8 @@ class LeaderHeaderViewModel: AnyObject, ViewModel {
     var col3title: String
     
     init() {
-        col1title = "leader_col_1_title".localized
-        col2title = "leader_col_2_title".localized
-        col3title = "leader_col_3_title".localized
+        col1title = "page_leader_header_rank".localized
+        col2title = "page_leader_header_username".localized
+        col3title = "page_leader_header_score".localized
     }
 }

@@ -18,9 +18,9 @@ class FeatureNotifRow: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        notifTitle.text = "feature_cell_notif_title".localized
-        notifMessage.text = "feature_cell_notif_content".localized
-        notifEnableOrDisableButton.setTitle("feature_cell_notif_button_1_enable".localized.uppercased(), for: UIControlState())
-        notifDocButton.setTitle("feature_cell_notif_button_2".localized.uppercased(), for: UIControlState())
+        notifTitle.text = "page_features_row_notif_title".localized
+        notifMessage.text = "page_features_row_notif_content".localized
+        notifEnableOrDisableButton.setTitle("page_features_row_notif_button_enable".localized.uppercased(), for: UIControlState())
+        notifDocButton.setTitle("page_features_row_notif_button_doc".localized.uppercased(), for: UIControlState())
     }
 }

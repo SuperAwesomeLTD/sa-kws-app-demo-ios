@@ -1,219 +1,268 @@
 
-/*tabs*/
-"tab_platform" = "Platform";
-"tab_features" = "Features";
-"tab_documentation" = "Documentation";
+/*******************************************************************************
+ Platform
+ ******************************************************************************/
+"page_platform_title" = "Platform";
+"page_platform_text_welcome" = "Welcome to your\nKWS App";
+"page_platform_text_content" = "This KWS App is powered by Kids Web Services (KWS). KWS is a platform that provides a set of compliance-as-a-service tools to create a kid-safe, COPPA-compliant sites and apps; KWS allows you to focus on delivering awesome content, by handling all the legal complexity related to data-collection in the kids space in one simple, customizable package.";
+"page_platform_text_feature_1" = "Verifiable\nparental\nconsent";
+"page_platform_text_feature_2" = "Loyalty\nplatform\nfor kids";
+"page_platform_text_feature_3" = "Federated\nIdentity";
+"page_platform_text_feature_4" = "Parent\nPortal";
+"page_platform_button_more" = "KNOW MORE ABOUT KIDS WEB SERVICES";
 
-/*navigation*/
-"kws_popup_nav_bar_close" = "Close";
+/*******************************************************************************
+ Features
+ ******************************************************************************/
+"page_features_title" = "Features";
 
-/*platform*/
-"platform_vc_title" = "Platform";
-"platform_title" = "Welcome to your\nKWS Demo App";
-"platform_content" = "This KWS Demo App is powered by Kids Web Services (KWS). KWS is a platform that provides a set of compliance-as-a-service tools to create a kid-safe, COPPA-compliant sites and apps; KWS allows you to focus on delivering awesome content, by handling all the legal complexity related to data-collection in the kids space in one simple, customizable package.";
-"platform_feature_1" = "Verifiable\nparental\nconsent";
-"platform_feature_2" = "Loyalty\nplatform\nfor kids";
-"platform_feature_3" = "Federated\nIdentity";
-"platform_feature_4" = "Parent\nPortal";
-"platform_main_button" = "KNOW MORE ABOUT KIDS WEB SERVICES";
+/** Features - auth */
+"page_features_row_auth_title" = "Secure single sign-on";
+"page_features_row_auth_content" = "Kids Web Services\' federated identity system (Single Sign-On) allows kids and parents to create one secure login to access your collection of kid-safe apps and sites.";
+"page_features_row_auth_button_login_not_logged" = "AUTHENTICATE USER";
+"page_features_row_auth_button_login_logged" = "LOGGED IN AS ";
+"page_features_row_auth_button_doc" = "SEE DOCUMENTATION";
 
-/*features*/
-"feature_vc_title" = "Features";
-"feature_cell_auth_title" = "Secure single sign-on";
-"feature_cell_auth_content" = "Kids Web Services' federated identity system (Single Sign-On) allows kids and parents to create one secure login to access your collection of kid-safe apps and sites.";
-"feature_cell_auth_button_1_loggedout" = "AUTHENTICATE USER";
-"feature_cell_auth_button_1_loggedin" = "LOGGED IN AS ";
-"feature_cell_auth_button_2" = "SEE DOCUMENTATION";
-"feature_cell_notif_title" = "Push notifications";
-"feature_cell_notif_content" = "Safely manage Push Notifications for your users through Kids Web Services. Enable, disable and schedule notifications to be sent to your user base on a regular basis.";
+/** Features - notif */
+"page_features_row_notif_title" = "Push notifications";
+"page_features_row_notif_content" = "Safely manage Kid-Safe Push Notifications for your users through Kids Web Services. Enable, disable and schedule notifications to be sent to your user base on a regular basis.";
+"page_features_row_notif_button_enable" = "ENABLE PUSH NOTIFICATIONS";
+"page_features_row_notif_button_disable" = "DISABLE PUSH NOTIFICATIONS";
+"page_features_row_notif_button_doc" = "SEE DOCUMENTATION";
 
-/*Fuzzy*/
-"feature_cell_notif_button_1_enable" = "ENABLE PUSH NOTIFICATIONS";
-"feature_cell_notif_button_1_disable" = "DISABLE PUSH NOTIFICATIONS";
-"feature_cell_notif_button_2" = "SEE DOCUMENTATION";
-"feature_cell_perm_title" = "Manage permissions";
-"feature_cell_perm_content" = "Kids Web Services handles the complexities of dealing with personally identifiable information for. It allows you to request permission from a parent when requesting such data.";
-"feature_cell_perm_button_1" = "ADD PERMISSIONS";
-"feature_cell_perm_button_2" = "SEE DOCUMENTATION";
-"feature_cell_evt_title" = "Events and points";
-"feature_cell_evt_message" = "Kids Web Services can handle a whole multi-currency system for you. You can add or subtract points for each user, check latest scores or manage leaderboards.";
-"feature_cell_evt_button_1" = "ADD 20 POINTS";
-"feature_cell_evt_button_2" = "SUBTRACT 10 POINTS";
-"feature_cell_evt_button_3" = "GET SCORE";
-"feature_cell_evt_button_4" = "SEE LEADERBOARD";
-"feature_cell_evt_button_5" = "SEE DOCUMENTATION";
-"feature_cell_inv_title" = "Invite friends";
-"feature_cell_inv_message" = "You can invite players to your app by using their email. KWS will ensure that everything is compliant.";
-"feature_cell_inv_button_1" = "INVITE FRIEND";
-"feature_cell_inv_button_2" = "SEE DOCUMENTATION";
-"feature_cell_appd_title" = "App data";
-"feature_cell_appd_message" = "Set custom app data for each player in an app through a set of name-value pairs.";
-"feature_cell_appd_button_1" = "SEE APP DATA";
-"feature_cell_appd_button_2" = "SEE DOCUMENTATION";
-"feature_notif_reg_popup_success_title" = "Great!";
-"feature_notif_reg_popup_success_message" = "You've successfully registered for Remote Notifications.";
-"feature_notif_reg_popup_error_title" = "Oops - something went wrong!";
-"feature_notif_reg_popup_error_message" = "An error occurred trying to subscribe to Push Notifications. Please try again!";
-"feature_notif_unreg_popup_success_title" = "Awesome!";
-"feature_notif_unreg_popup_success_message" = "You have successfully un-registered for Remote Notifications in KWS!";
-"feature_notif_unreg_popup_error_title" = "Aw no - that didn't work!";
-"feature_notif_unreg_popup_error_message" = "There was a network error trying to un-register for Remote Notifications in KWS. Please try again!";
-"feature_parent_email_popup_error_title" = "Oh no - something went wrong...";
-"feature_parent_email_popup_error_message" = "An error occurred when trying to submit the parent email. Please start again!";
-"feature_perm_alert_title" = "KWS Permissions";
+"page_features_row_notif_popup_reg_success_title" = "Great!";
+"page_features_row_notif_popup_reg_success_message" = "You\'ve successfully registered for Remote Notifications.";
 
-/*Fuzzy*/
-"feature_perm_alert_message" = "What information would you like permission for?";
-"feature_perm_popup_success_title" = "Great!";
-"feature_perm_popup_success_message" = "You've successfully asked for this permission.";
-"feature_event_add20_popup_success_title" = "Congrats!";
-"feature_event_add20_popup_success_message" = "You just earned 20 points!";
-"feature_event_sub10_popup_success_title" = "Oh no!";
-"feature_event_sub10_popup_success_message" = "You just lost 10 points!";
-"feature_event_getscore_success_title" = "Hey";
-"feature_event_getscore_success_message" = "You're ranked %ld with %ld points!";
-"feature_friend_email_popup_title" = "Friend's email";
-"feature_friend_email_popup_message" = "Please enter your friend's email address to invite them";
-"feature_friend_email_popup_submit" = "Submit";
-"feature_friend_email_popup_cancel" = "Cancel";
-"feature_friend_email_popup_success_title" = "Hey!";
-"feature_friend_email_popup_success_message" = "You successfully invited your friend to your app through KWS!";
-"feature_friend_email_popup_error_title" = "Something went wrong...";
-"feature_friend_email_popup_error_message" = "An error occurred while inviting %@ to your app through KWS. Please try again!";
-"feature_popup_dismiss_button" = "Got it";
+"page_features_row_notif_popup_reg_error_disable_parent_title" = "Oops - something went wrong!";
+"page_features_row_notif_popup_reg_error_disable_parent_message" = "The parent appears to have disabled Remote Notifications for this user.";
 
-/** login */
-"login_vc_title" = "Login";
-"login_username_placeholder" = "Enter username";
-"login_password_placeholder" = "Enter password";
-"login_button_login" = "Login";
-"login_button_create" = "Create new user";
-"login_popup_error_title" = "Oops - something went wrong!";
-"login_popup_error_message" = "Seems like either the username or password you supplied were incorrect";
-"login_popup_error_network_title" = "Oops - something went wrong!";
-"login_popup_error_network_message" = "Seems like either the username or password you supplied were incorrect";
-"login_popup_dismiss_button" = "Got it";
+"page_features_row_notif_popup_reg_error_disable_user_title" = "Oops - something went wrong!";
+"page_features_row_notif_popup_reg_error_disable_user_message" = "The user appears to have disabeld Remote Notifications for his device for this app.";
 
-/*documentation
- sign-up*/
-"sign_up_vc_title" = "Sign Up";
-"sign_up_username_placeholder" = "Enter a username";
-"sign_up_password1_placeholder" = "Enter a password";
-"sign_up_password2_placeholder" = "Repeat the password";
-"sign_up_parent_email_paceholder" = "Enter a parent email";
-"sign_up_country_placeholder" = "Select a country";
-"sign_up_year_placeholder" = "YYYY";
-"sign_up_month_placeholder" = "MM";
-"sign_up_day_placeholder" = "DD";
-"sign_up_submit" = "Submit";
-"sign_up_popup_warning_title" = "Hey";
-"sign_up_popup_error_title" = "Oops - something went wrong!";
-"sign_up_popup_dismiss_button" = "Got it";
-"sign_up_popup_warning_message_username" = "Please enter a different username, unfortunately this one is already taken.";
-"sign_up_popup_warning_message_password1" = "Please enter a password that is longer than 8 characters";
-"sign_up_popup_warning_message_password2" = "Please make sure the two passwords match (and are both longer than 8 characters)";
-"sign_up_popup_warning_message_password12" = "The two passwords you entered do not match!";
-"sign_up_popup_warning_message_year" = "Please enter a valid year of birth.";
-"sign_up_popup_warning_message_month" = "Please enter a valid month of birth.";
-"sign_up_popup_warning_message_day" = "Please enter a valid day of birth.";
-"sign_up_popup_error_message" = "Sign up failed - please try again!";
+"page_features_row_notif_popup_reg_error_no_email_title" = "Oops - something went wrong!";
+"page_features_row_notif_popup_reg_error_no_email_message" = "This user does not appear to have a Parent Email associated with the account.";
 
-/** country */
-"country_vc_title" = "Select country";
-"country_search_placeholder" = "Type country name";
-"country_row_code_default" = "UN";
-"country_row_name_default" = "United Nations";
-"country_row_flag_default" = "unitednations.png";
+"page_features_row_notif_popup_reg_error_firebase_not_setup_title" = "Oops - something went wrong!";
+"page_features_row_notif_popup_reg_error_firebase_not_setup_message" = "Firebase does not seem to be setup correctly.";
 
-/*user*/
-"user_vc_title" = "User details";
-"user_logout" = "Log out";
-"user_header_address" = "Address";
-"user_header_points" = "Points";
-"user_header_perm" = "Permissions";
-"user_row_details_first_name" = "First name";
-"user_row_details_last_name" = "Last name";
-"user_row_details_birth_date" = "Date of birth";
-"user_row_details_gender" = "Gender";
-"user_row_details_phone" = "Phone number";
-"user_row_details_language" = "Language";
-"user_row_details_email" = "Email address";
-"user_row_address_street" = "Street";
-"user_row_address_city" = "City";
-"user_row_address_post_code" = "Postal code";
-"user_row_address_country" = "Country";
-"user_row_points_received" = "Received";
-"user_row_points_total" = "Total";
-"user_row_points_app" = "In this app";
-"user_row_points_available" = "Available";
-"user_row_points_pending" = "Pending";
-"user_row_perm_address" = "Address";
-"user_row_perm_phone" = "Phone number";
-"user_row_perm_first_name" = "First name";
-"user_row_perm_last_name" = "Last name";
-"user_row_perm_email" = "Email address";
-"user_row_perm_city" = "City";
-"user_row_perm_post_code" = "Postal code";
-"user_row_perm_country" = "Country";
-"user_row_perm_notifications" = "Notifications";
-"user_row_perm_newsletter" = "Newsletter";
-"user_row_value_true" = "True";
-"user_row_value_false" = "False";
-"user_row_value_undefined" = "Undefined";
-"user_popup_error_title" = "Something went wrong!";
-"user_popup_error_message" = "An error occurred and we could not get the user details. Please try again!";
-"user_popup_dismiss_button" = "Got it";
+"page_features_row_notif_popup_reg_error_firebase_nil_token_title" = "Oops - something went wrong!";
+"page_features_row_notif_popup_reg_error_firebase_nil_token_message" = "Firebase could not get the notification token.";
 
-/*leaderboard*/
-"leader_vc_title" = "Leaderboard";
-"leader_col_1_title" = "#";
-"leader_col_2_title" = "Username";
-"leader_col_3_title" = "Score";
-"leader_col_unknown_username" = "Unknown";
-"leader_popup_error_title" = "Oh no - something went wrong!";
-"leader_popup_error_message" = "An error occurred and we could not get the Leaderboard. Please try again.";
-"leader_popup_dismiss_button" = "Got it";
+"page_features_row_notif_popup_reg_error_network_title" = "Oops - something went wrong!";
+"page_features_row_notif_popup_reg_error_network_message" = "A network error occurred trying to subscribe to Push Notifications. Please try again!";
 
-/*get app data*/
-"get_app_data_vc_title" = "App data";
-"get_app_data_add_button" = "Add";
-"get_app_data_popup_error_title" = "Something went wrong!";
-"get_app_data_popup_error_message" = "An error occured and we could not get the current app data. Please try again.";
-"get_app_data_popup_dismiss_button" = "Got it";
+"page_features_row_notif_popup_unreg_success_title" = "Awesome!";
+"page_features_row_notif_popup_unreg_success_message" = "You have successfully un-registered for Remote Notifications in KWS!";
 
-/*add app data*/
-"add_app_data_vc_title" = "New app data";
-"add_app_data_name_placeholder" = "Enter a new name pair";
-"add_app_data_value_placeholder" = "Enter a new value pair";
-"add_app_data_submit" = "Submit";
-"add_app_data_popup_warning_title" = "Hey!";
-"add_app_data_popup_error_title" = "Oops - something went wrong!";
-"add_app_data_popup_dismiss_button" = "Got it";
-"add_app_data_warning_message" = "Please enter a valid name & value pair";
-"add_app_data_error_message" = "We couldn't save the name & value pair because of a network error - please try again!";
+"page_features_row_notif_popup_unreg_error_network_title" = "Oops - something went wrong!";
+"page_features_row_notif_popup_unreg_error_network_message" = "There was a network error trying to un-register for Remote Notifications in KWS. Please try again!";
 
-/*user_row_perm_street*/
-"user_row_perm_street" = "Street";
+/** Features - permissions */
+"page_features_row_perm_title" = "Manage permissions";
+"page_features_row_perm_content" = "Kids Web Services handles the complexities of dealing with personally identifiable information for. It allows you to request permission from a parent when requesting such data.";
+"page_features_row_perm_button_add" = "ADD PERMISSIONS";
+"page_features_row_perm_button_doc" = "SEE DOCUMENTATION";
 
-/*feature_cell_notif_button_1_disable*/
+"page_features_row_perm_popup_perm_title" = "KWS Permissions";
+"page_features_row_perm_popup_perm_message" = "What information would you like permission for?";
+"page_features_row_perm_popup_perm_option_email" = "Email";
+"page_features_row_perm_popup_perm_option_address" = "Address";
+"page_features_row_perm_popup_perm_option_first_name" = "First Name";
+"page_features_row_perm_popup_perm_option_last_name" = "Last Name";
+"page_features_row_perm_popup_perm_option_newsletter" = "Newsletter";
 
-/*feature_perm_popup_error_title*/
-"feature_perm_popup_error_title" = "Something went wrong!";
+"page_features_row_perm_popup_success_title" = "Great!";
+"page_features_row_perm_popup_success_message" = "You\'ve successfully requested Permissions from KWS.";
 
-/*feature_perm_popup_error_message*/
-"feature_perm_popup_error_message" = "There was an issue while trying to ask for permission - please try again.";
+"page_features_row_perm_popup_error_no_email_title" = "Oops - something went wrong!";
+"page_features_row_perm_popup_error_no_email_message" = "This user does not appear to have a Parent Email associated with the account.";
 
-/*feature_parent_email_request_popup_title*/
-"feature_parent_email_request_popup_title" = "The parent email is missing";
+"page_features_row_perm_popup_error_network_title" = "Oops - something went wrong!";
+"page_features_row_perm_popup_error_network_message" = "A network error occurred trying to ask for Permissions. Try again later!";
 
-/*feature_parent_email_request_popup_message*/
-"feature_parent_email_request_popup_message" = "Please enter a valid parent's email to continue";
+/** Features - events */
+"page_features_row_events_title" = "Events and points";
+"page_features_row_events_content" = "Kids Web Services can handle a whole multi-currency system for you. You can add or subtract points for each user, check latest scores or manage leaderboards.";
+"page_features_row_events_button_add20" = "ADD 20 POINTS";
+"page_features_row_events_button_sub10" = "SUBTRACT 10 POINTS";
+"page_features_row_events_button_score" = "GET SCORE";
+"page_features_row_events_button_leaderboard" = "SEE LEADERBOARD";
+"page_features_row_events_button_doc" = "SEE DOCUMENTATION";
 
-/*feature_parent_email_request_popup_submit*/
-"feature_parent_email_request_popup_submit" = "Submit";
+"page_features_row_events_popup_success_20pcts_title" = "Congrats!";
+"page_features_row_events_popup_success_20pcts_message" = "You just earned 20 points!";
 
-/*feature_parent_email_request_popup_cancel*/
-"feature_parent_email_request_popup_cancel" = "Cancel";
+"page_features_row_events_popup_success_10pcts_title" = "Oh no!";
+"page_features_row_events_popup_success_10pcts_message" = "You just lost 10 points!";
 
-/** documentation */
-"documentation_vc_title" = "Documentation";
+"page_features_row_events_popup_success_score_title" = "Hey";
+"page_features_row_events_popup_success_score_message" = "You're ranked %ld with %ld points!";
+
+"page_features_row_events_popup_error_network_title" = "Oops - something went wrong!";
+"page_features_row_events_popup_error_network_message" = "A network error occurred trying to subscribe to Push Notifications. Please try again!";
+
+/** Features - invite */
+"page_features_row_invite_title" = "Invite friends";
+"page_features_row_invite_content" = "You can invite players to your app by using their email. KWS will ensure that everything is compliant.";
+"page_features_row_invite_button_invite" = "INVITE FRIEND";
+"page_features_row_invite_button_doc" = "SEE DOCUMENTATION";
+
+"page_features_row_invite_popup_email_title" = "Friend\'s email";
+"page_features_row_invite_popup_email_message" = "Please enter your friend\'s email address to invite them";
+"page_features_row_invite_popup_email_button_ok" = "Submit";
+"page_features_row_invite_popup_email_button_cancel" = "Cancel";
+
+"page_features_row_invite_popup_success_title" = "Hey!";
+"page_features_row_invite_popup_success_message" = "You successfully invited your friend to your app through KWS!";
+
+"page_features_row_invite_popup_error_network_title" = "Oops - something went wrong!";
+"page_features_row_invite_popup_error_network_message" = "A network error occurred while inviting your friend to the app through KWS. Please try again!";
+
+/** Features - app data */
+"page_features_row_appdata_title" = "App data";
+"page_features_row_appdata_message" = "Set custom app data for each player in an app through a set of name-value pairs.";
+"page_features_row_appdata_button_see" = "SEE APP DATA";
+"page_features_row_appdata_button_doc" = "SEE DOCUMENTATION";
+
+"page_features_row_popup_button_ok_generic" = "Got it";
+
+/*******************************************************************************
+ Login
+ ******************************************************************************/
+"page_login_title" = "Login";
+"page_login_textfield_username_placeholder" = "Enter username";
+"page_login_textfield_password_placeholder" = "Enter password";
+"page_login_button_login" = "Login";
+"page_login_button_create" = "Create new user";
+
+"page_login_popup_error_auth_title" = "Oops - something went wrong!";
+"page_login_popup_error_auth_message" = "Seems like either the username or password you supplied were incorrect";
+"page_login_popup_error_auth_ok_button" = "Got it";
+
+"page_login_popup_error_network_title" = "Oops - something went wrong!";
+"page_login_popup_error_network_message" = "Seems like either the username or password you supplied were incorrect";
+"page_login_popup_error_network_ok_button" = "Got it";
+
+/*******************************************************************************
+ Sign Up
+ ******************************************************************************/
+"page_signup_title" = "Sign Up";
+"page_signup_textfield_username_placeholder" = "Enter a username";
+"page_signup_textfield_password1_placeholder" = "Enter a password";
+"page_signup_textfield_password2_placeholder" = "Repeat the password";
+"page_signup_textfield_email_placeholder" = "Enter a parent email";
+"page_signup_button_country" = "Select a country";
+"page_signup_textfield_year_placeholder" = "YYYY";
+"page_signup_textfield_month_placeholder" = "MM";
+"page_signup_textfield_day_placeholder" = "DD";
+"page_signup_button_submit" = "Submit";
+
+"page_signup_popup_error_create_title" = "Oops - something went wrong!";
+"page_signup_popup_error_create_message" = "Please enter a different username, unfortunately this one is already taken.";
+"page_signup_popup_error_create_ok_button" = "Got it";
+
+"page_signup_popup_error_network_title" = "Oops - something went wrong!";
+"page_signup_popup_error_network_message" = "Seems like either the username or password you supplied were incorrect";
+"page_signup_popup_error_network_ok_button" = "Got it";
+
+/*******************************************************************************
+ Country
+ ******************************************************************************/
+"page_country_title" = "Select country";
+"page_country_textfield_search_placeholder" = "Type country name";
+
+"page_country_row_default_country_iso" = "UN";
+"page_country_row_default_country_name" = "United Nations";
+"page_country_row_default_country_flag" = "unitednations";
+
+/*******************************************************************************
+ User
+ ******************************************************************************/
+"page_user_title" = "User details";
+"page_user_button_logout" = "Log out";
+
+"page_user_header_address" = "Address";
+"page_user_header_points" = "Points";
+"page_user_header_permissions" = "Permissions";
+
+"page_user_row_details_first_name_title" = "First name";
+"page_user_row_details_last_name_title" = "Last name";
+"page_user_row_details_birth_date_title" = "Date of birth";
+"page_user_row_details_gender_title" = "Gender";
+"page_user_row_details_phone_title" = "Phone number";
+"page_user_row_details_language_title" = "Language";
+"page_user_row_details_email_title" = "Email address";
+
+"page_user_row_address_street_title" = "Street";
+"page_user_row_address_city_title" = "City";
+"page_user_row_address_post_code_title" = "Postal code";
+"page_user_row_address_country_title" = "Country";
+
+"page_user_row_points_received_title" = "Received";
+"page_user_row_points_total_title" = "Total";
+"page_user_row_points_app_title" = "In this app";
+"page_user_row_points_available_title" = "Available";
+"page_user_row_points_pending_title" = "Pending";
+
+"page_user_row_perm_address_title" = "Address";
+"page_user_row_perm_street_title" = "Street";
+"page_user_row_perm_phone_title" = "Phone number";
+"page_user_row_perm_first_name_title" = "First name";
+"page_user_row_perm_last_name_title" = "Last name";
+"page_user_row_perm_email_title" = "Email address";
+"page_user_row_perm_city_title" = "City";
+"page_user_row_perm_post_code_title" = "Postal code";
+"page_user_row_perm_country_title" = "Country";
+"page_user_row_perm_notifications_title" = "Notifications";
+"page_user_row_perm_newsletter_title" = "Newsletter";
+
+"page_user_row_true_value" = "True";
+"page_user_row_false_value" = "False";
+"page_user_row_undefined_value" = "Undefined";
+
+"page_user_popup_error_network_title" = "Oops - something went wrong!";
+"page_user_popup_error_network_message" = "An error occurred and we could not get the user details. Please try again!";
+"page_user_popup_error_network_ok_button" = "Got it";
+
+/*******************************************************************************
+ LeaderBoard
+ ******************************************************************************/
+"page_leader_title" = "Leaderboard";
+
+"page_leader_header_rank" = "#";
+"page_leader_header_username" = "Username";
+"page_leader_header_score" = "Score";
+
+"page_leader_row_rank_default" = "#";
+"page_leader_row_username_default" = "Unknown";
+"page_leader_row_score_default" = "0";
+
+/*******************************************************************************
+ Get App data
+ ******************************************************************************/
+"page_getappdata_title" = "App data";
+"page_getappdata_button_add" = "Add";
+
+"page_getappdata_popup_error_network_title" = "Oops - something went wrong!";
+"page_getappdata_popup_error_network_message" = "An error occurred and we could not get the current app data. Please try again.";
+"page_getappdata_popup_error_network_ok_button" = "Got it";
+
+/*******************************************************************************
+ Set App data
+ ******************************************************************************/
+"page_setappdata_title" = "New app data";
+
+"page_setappdata_textfield_name_placeholder" = "Enter a new name pair";
+"page_setappdata_textfield_value_placeholder" = "Enter a new value pair";
+"page_setappdata_button_submit" = "Submit";
+
+"page_setappdata_popup_error_network_title" = "Oops - something went wrong!";
+"page_setappdata_popup_error_network_message" = "An error occurred and we could not save the current app data. Please try again.";
+"page_setappdata_popup_error_network_ok_button" = "Got it";
+
+/*******************************************************************************
+ Documentation
+ ******************************************************************************/
+"page_documentation_title" = "Docs";
+
+

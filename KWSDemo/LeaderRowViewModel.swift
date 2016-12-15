@@ -20,7 +20,7 @@ class LeaderRowViewModel : AnyObject, ViewModel {
         if let username = username {
             self.username = username
         } else {
-            self.username = "leader_col_unknown_username".localized
+            self.username = "page_leader_row_username_default".localized
         }
     }    
 }

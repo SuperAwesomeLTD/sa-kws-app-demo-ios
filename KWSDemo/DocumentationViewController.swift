@@ -27,6 +27,6 @@ class DocumentationViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.topItem?.title = "documentation_vc_title".localized
+        self.navigationController?.navigationBar.topItem?.title = "page_documentation_title".localized
     }
 }

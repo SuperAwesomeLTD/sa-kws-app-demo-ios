@@ -23,7 +23,7 @@ class LeaderViewController: KWSBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "leader_vc_title".localized
+        self.title = "page_leader_title".localized
         
         RxKWS.getLeaderboard()
             .map { (leader: KWSLeader) -> ViewModel in
@@ -63,7 +63,7 @@ class LeaderViewController: KWSBaseController {
                         cell?.UsernameLabel.text = model?.username
                         cell?.PointsLabel.text = model?.score
                         
-                    }
+                }
                 
                 // update
                 self.dataSource?.update(viewModels)
@@ -75,5 +75,4 @@ class LeaderViewController: KWSBaseController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
 }

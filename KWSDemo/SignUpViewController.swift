@@ -44,17 +44,17 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "sign_up_vc_title".localized
+        self.title = "page_signup_title".localized
         
-        usernameTextView.placeholder = "sign_up_username_placeholder".localized
-        password1TextView.placeholder = "sign_up_password1_placeholder".localized
-        password2TextView.placeholder = "sign_up_password2_placeholder".localized
-        parentEmailTextView.placeholder = "sign_up_parent_email_paceholder".localized
-        yearTextView.placeholder = "sign_up_year_placeholder".localized
-        monthTextView.placeholder = "sign_up_month_placeholder".localized
-        dayTextView.placeholder = "sign_up_day_placeholder".localized
-        submitButton.setTitle("sign_up_submit".localized.uppercased(), for: .normal)
-        countryButton.setTitle("sign_up_country_placeholder".localized, for: .normal)
+        usernameTextView.placeholder = "page_signup_textfield_username_placeholder".localized
+        password1TextView.placeholder = "page_signup_textfield_password1_placeholder".localized
+        password2TextView.placeholder = "page_signup_textfield_password2_placeholder".localized
+        parentEmailTextView.placeholder = "page_signup_textfield_email_placeholder".localized
+        countryButton.setTitle("page_signup_button_country".localized, for: .normal)
+        yearTextView.placeholder = "page_signup_textfield_year_placeholder".localized
+        monthTextView.placeholder = "page_signup_textfield_month_placeholder".localized
+        dayTextView.placeholder = "page_signup_textfield_day_placeholder".localized
+        submitButton.setTitle("page_signup_button_submit".localized.uppercased(), for: .normal)
         
         // determine if the submit button should be enabled or not
         Observable
@@ -227,9 +227,9 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
     }
     
     func signUpError() {
-        SAPopup.sharedManager().show(withTitle: "sign_up_popup_error_title".localized,
-                                     andMessage: "sign_up_popup_warning_message_username".localized,
-                                     andOKTitle: "sign_up_popup_dismiss_button".localized,
+        SAPopup.sharedManager().show(withTitle: "page_signup_popup_error_create_title".localized,
+                                     andMessage: "page_signup_popup_error_create_message".localized,
+                                     andOKTitle: "page_signup_popup_error_create_ok_button".localized,
                                      andNOKTitle: nil,
                                      andTextField: false,
                                      andKeyboardTyle: .decimalPad,
@@ -237,9 +237,9 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
     }
     
     func networkError () {
-        SAPopup.sharedManager().show(withTitle: "sign_up_popup_error_title".localized,
-                                     andMessage: "sign_up_popup_error_message".localized,
-                                     andOKTitle: "sign_up_popup_dismiss_button".localized,
+        SAPopup.sharedManager().show(withTitle: "page_signup_popup_error_network_title".localized,
+                                     andMessage: "page_signup_popup_error_network_message".localized,
+                                     andOKTitle: "page_signup_popup_error_network_ok_button".localized,
                                      andNOKTitle: nil,
                                      andTextField: false,
                                      andKeyboardTyle: .decimalPad,

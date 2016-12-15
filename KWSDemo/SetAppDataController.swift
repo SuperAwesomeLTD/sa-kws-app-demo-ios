@@ -28,11 +28,11 @@ class SetAppDataController: KWSBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "add_app_data_vc_title".localized
+        self.title = "page_setappdata_title".localized
         
-        namePairTextField.placeholder = "add_app_data_name_placeholder".localized
-        valuePairTextField.placeholder = "add_app_data_value_placeholder".localized
-        submitButton.setTitle("add_app_data_submit".localized.uppercased(), for: UIControlState())
+        namePairTextField.placeholder = "page_setappdata_textfield_name_placeholder".localized
+        valuePairTextField.placeholder = "page_setappdata_textfield_value_placeholder".localized
+        submitButton.setTitle("page_setappdata_button_submit".localized.uppercased(), for: UIControlState())
 
         // make sure we have a valid current model and the "submit" button
         // is enabled
@@ -115,9 +115,9 @@ class SetAppDataController: KWSBaseController {
     }
     
     func appDataError() {
-        SAPopup.sharedManager().show(withTitle: "add_app_data_popup_error_title".localized,
-                                     andMessage: "add_app_data_error_message".localized,
-                                     andOKTitle: "add_app_data_popup_dismiss_button".localized,
+        SAPopup.sharedManager().show(withTitle: "page_setappdata_popup_error_network_title".localized,
+                                     andMessage: "page_setappdata_popup_error_network_message".localized,
+                                     andOKTitle: "page_setappdata_popup_error_network_ok_button".localized,
                                      andNOKTitle: nil,
                                      andTextField: false,
                                      andKeyboardTyle: .decimalPad,

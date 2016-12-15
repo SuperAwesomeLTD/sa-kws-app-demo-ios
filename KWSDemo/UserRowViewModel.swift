@@ -26,21 +26,21 @@ class UserRowViewModel: AnyObject, ViewModel {
                     self.valueColor = UIColorFromHex(0x610404)
                 }
             }
-            if value is Bool {
+            else if value is Bool {
                 if value as! Bool == true {
-                    self.value = "user_row_value_true".localized
+                    self.value = "page_user_row_true_value".localized
                     self.valueColor = UIColor.black
                 } else {
-                    self.value = "user_row_value_false".localized
+                    self.value = "page_user_row_false_value".localized
                     self.valueColor = UIColorFromHex(0x610404)
                 }
             }
             if self.value == "" {
-                self.value = "user_row_value_undefined".localized
+                self.value = "page_user_row_undefined_value".localized
                 self.valueColor = UIColor.lightGray
             }
         } else {
-            self.value = "user_row_value_undefined".localized
+            self.value = "page_user_row_undefined_value".localized
             self.valueColor = UIColor.lightGray
         }
     }

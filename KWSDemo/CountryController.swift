@@ -29,10 +29,10 @@ class CountryController: KWSBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "country_vc_title".localized
+        self.title = "page_country_title".localized
         
         // view setup
-        countrySearch.placeholder = "country_search_placeholder".localized
+        countrySearch.placeholder = "page_country_textfield_search_placeholder".localized
         
         // search
         countrySearch.rx.text.orEmpty
@@ -44,7 +44,6 @@ class CountryController: KWSBaseController {
                 return NSLocale.isoCountryCodes.filter({ (isoCode) -> Bool in
                     let name = Locale.current.localizedString(forRegionCode: isoCode)?.lowercased()
                     return name!.contains(query) || isEmpty
-
                 })
             }
             .subscribe(onNext: { (filteredCountryCodes: [String]) in

@@ -29,13 +29,13 @@ class LoginController: KWSBaseController, SignUpProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "login_vc_title".localized
+        self.title = "page_login_title".localized
         
         // add text
-        usernameTextField.placeholder = "login_username_placeholder".localized
-        passwordTextField.placeholder = "login_password_placeholder".localized
-        createNewUserButton.setTitle("login_button_create".localized.uppercased(), for: .normal)
-        loginButton.setTitle("login_button_login".localized.uppercased(), for: .normal)
+        usernameTextField.placeholder = "page_login_textfield_username_placeholder".localized
+        passwordTextField.placeholder = "page_login_textfield_password_placeholder".localized
+        loginButton.setTitle("page_login_button_login".localized.uppercased(), for: .normal)
+        createNewUserButton.setTitle("page_login_button_create".localized.uppercased(), for: .normal)
         
         // add observable for button
         Observable
@@ -118,9 +118,9 @@ class LoginController: KWSBaseController, SignUpProtocol {
     }
     
     func loginError () {
-        SAPopup.sharedManager().show(withTitle: "login_popup_error_title".localized,
-                                     andMessage: "login_popup_error_message".localized,
-                                     andOKTitle: "login_popup_dismiss_button".localized,
+        SAPopup.sharedManager().show(withTitle: "page_login_popup_error_auth_title".localized,
+                                     andMessage: "page_login_popup_error_auth_message".localized,
+                                     andOKTitle: "page_login_popup_error_auth_ok_button".localized,
                                      andNOKTitle: nil,
                                      andTextField: false,
                                      andKeyboardTyle: .decimalPad,
@@ -128,9 +128,9 @@ class LoginController: KWSBaseController, SignUpProtocol {
     }
     
     func networkError () {
-        SAPopup.sharedManager().show(withTitle: "login_popup_error_network_title".localized,
-                                     andMessage: "login_popup_error_message".localized,
-                                     andOKTitle: "login_popup_dismiss_button".localized,
+        SAPopup.sharedManager().show(withTitle: "page_login_popup_error_network_title".localized,
+                                     andMessage: "page_login_popup_error_network_message".localized,
+                                     andOKTitle: "page_login_popup_error_network_ok_button".localized,
                                      andNOKTitle: nil,
                                      andTextField: false,
                                      andKeyboardTyle: .decimalPad,

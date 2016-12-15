@@ -18,10 +18,10 @@ class FeatureAppDataRow: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        appdTitle.text = "feature_cell_appd_title".localized
-        appdMessage.text = "feature_cell_appd_message".localized
-        appdSeeAppDataButton.setTitle("feature_cell_appd_button_1".localized.uppercased(), for: UIControlState())
-        appdSeeDocsButton.setTitle("feature_cell_appd_button_2".localized.uppercased(), for: UIControlState())
+        appdTitle.text = "page_features_row_appdata_title".localized
+        appdMessage.text = "page_features_row_appdata_message".localized
+        appdSeeAppDataButton.setTitle("page_features_row_appdata_button_see".localized.uppercased(), for: UIControlState())
+        appdSeeDocsButton.setTitle("page_features_row_appdata_button_doc".localized.uppercased(), for: UIControlState())
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

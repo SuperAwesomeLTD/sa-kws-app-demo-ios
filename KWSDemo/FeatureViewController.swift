@@ -57,8 +57,8 @@ class FeatureViewController: KWSBaseController {
                         
                         cell?.authActionButton.setTitle(
                             isLogged ?
-                                "feature_cell_auth_button_1_loggedin".localized + (local?.username.uppercased())! :
-                                "feature_cell_auth_button_1_loggedout".localized, for: .normal)
+                                "page_features_row_auth_button_login_logged".localized + (local?.username.uppercased())! :
+                                "page_features_row_auth_button_login_not_logged".localized, for: .normal)
                         
                         cell?.authActionButton.onAction {
                             let lIsLogged = KWS.sdk().getLoggedUser() != nil
@@ -81,8 +81,8 @@ class FeatureViewController: KWSBaseController {
                         cell?.notifEnableOrDisableButton.isEnabled = isLogged
                         cell?.notifEnableOrDisableButton.setTitle(
                             isRegistered ?
-                                "feature_cell_notif_button_1_disable".localized :
-                                "feature_cell_notif_button_1_enable".localized, for: .normal)
+                                "page_features_row_notif_button_disable".localized :
+                                "page_features_row_notif_button_enable".localized, for: .normal)
                         
                         cell?.notifEnableOrDisableButton.onAction {
                             
@@ -95,13 +95,13 @@ class FeatureViewController: KWSBaseController {
                                         
                                         if isUnregistered {
                                             
-                                            self.featurePopup("feature_notif_unreg_popup_success_title".localized,
-                                                              "feature_notif_unreg_popup_success_message".localized)
+                                            self.featurePopup("page_features_row_notif_popup_unreg_success_title".localized,
+                                                              "page_features_row_notif_popup_unreg_success_message".localized)
                                             
                                         } else {
                                             
-                                            self.featurePopup("feature_notif_unreg_popup_error_title".localized,
-                                                              "feature_notif_unreg_popup_error_message".localized)
+                                            self.featurePopup("page_features_row_notif_popup_unreg_error_network_title".localized,
+                                                              "page_features_row_notif_popup_unreg_error_network_message".localized)
                                         }
                                         
                                         // update data source
@@ -117,28 +117,38 @@ class FeatureViewController: KWSBaseController {
                                         
                                         switch status {
                                         case .success:
-                                            self.featurePopup("feature_notif_reg_popup_success_title".localized,
-                                                              "feature_notif_reg_popup_success_message".localized)
+                                            self.featurePopup("page_features_row_notif_popup_reg_success_title".localized,
+                                                              "page_features_row_notif_popup_reg_success_message".localized)
                                             break
                                             
                                         case .parentDisabledNotifications:
+                                            self.featurePopup("page_features_row_notif_popup_reg_error_disable_parent_title".localized,
+                                                              "page_features_row_notif_popup_reg_error_disable_parent_message".localized)
                                             break
                                             
                                         case .userDisabledNotifications:
+                                            self.featurePopup("page_features_row_notif_popup_reg_error_disable_user_title".localized,
+                                                              "page_features_row_notif_popup_reg_error_disable_user_message".localized)
                                             break
                                             
                                         case .noParentEmail:
+                                            self.featurePopup("page_features_row_notif_popup_reg_error_no_email_title".localized,
+                                                              "page_features_row_notif_popup_reg_error_no_email_message".localized)
                                             break
                                             
                                         case .firebaseNotSetup:
+                                            self.featurePopup("page_features_row_notif_popup_reg_error_firebase_not_setup_title".localized,
+                                                              "page_features_row_notif_popup_reg_error_firebase_not_setup_message".localized)
                                             break
                                             
                                         case .firebaseCouldNotGetToken:
+                                            self.featurePopup("page_features_row_notif_popup_reg_error_firebase_nil_token_title".localized,
+                                                              "page_features_row_notif_popup_reg_error_firebase_nil_token_message".localized)
                                             break
                                             
                                         case .networkError:
-                                            self.featurePopup("feature_notif_reg_popup_error_title".localized,
-                                                              "feature_notif_reg_popup_error_message".localized)
+                                            self.featurePopup("page_features_row_notif_popup_reg_error_network_title".localized,
+                                                              "page_features_row_notif_popup_reg_error_network_message".localized)
                                             break
                                         }
                                         
@@ -168,17 +178,21 @@ class FeatureViewController: KWSBaseController {
                         
                         cell?.permAddPermissionsButton.onAction {
                             
-                            let myActionSheet = UIAlertController(title: "feature_perm_alert_title".localized,
-                                                                  message: "feature_perm_alert_message".localized,
+                            let myActionSheet = UIAlertController(title: "page_features_row_perm_popup_perm_title".localized,
+                                                                  message: "page_features_row_perm_popup_perm_message".localized,
                                                                   preferredStyle: .actionSheet)
                             
                             let permissions = [
-                                ["name":"Email", "type":KWSPermissionType.accessEmail.rawValue],
-                                ["name":"Address", "type":KWSPermissionType.accessAddress.rawValue],
-                                ["name":"First name", "type":KWSPermissionType.accessFirstName.rawValue],
-                                ["name":"Last name", "type":KWSPermissionType.accessLastName.rawValue],
-                                ["name":"Newesletter", "type":KWSPermissionType.sendNewsletter.rawValue],
-                                
+                                ["name":"page_features_row_perm_popup_perm_option_email".localized,
+                                 "type":KWSPermissionType.accessEmail.rawValue],
+                                ["name":"page_features_row_perm_popup_perm_option_address".localized,
+                                 "type":KWSPermissionType.accessAddress.rawValue],
+                                ["name":"page_features_row_perm_popup_perm_option_first_name".localized,
+                                 "type":KWSPermissionType.accessFirstName.rawValue],
+                                ["name":"page_features_row_perm_popup_perm_option_last_name".localized,
+                                 "type":KWSPermissionType.accessLastName.rawValue],
+                                ["name":"page_features_row_perm_popup_perm_option_newsletter".localized,
+                                 "type":KWSPermissionType.sendNewsletter.rawValue],
                             ]
                             
                             for i in 0 ..< permissions.count {
@@ -195,14 +209,16 @@ class FeatureViewController: KWSBaseController {
                                                 
                                                 switch status {
                                                     case .success:
-                                                        self.featurePopup("feature_perm_popup_success_title".localized,
-                                                                          "feature_perm_popup_success_message".localized)
+                                                        self.featurePopup("page_features_row_perm_popup_success_title".localized,
+                                                                          "page_features_row_perm_popup_success_message".localized)
                                                     break
                                                     case .networkError:
-                                                        // do nothing
+                                                        self.featurePopup("page_features_row_perm_popup_error_network_title".localized,
+                                                                          "page_features_row_perm_popup_error_network_message".localized)
                                                     break
                                                     case .noParentEmail:
-                                                        // will now never get here
+                                                        self.featurePopup("page_features_row_perm_popup_error_no_email_title".localized,
+                                                                          "page_features_row_perm_popup_error_no_email_message".localized)
                                                     break
                                                 }
                                                 
@@ -238,12 +254,12 @@ class FeatureViewController: KWSBaseController {
                                 .subscribe(onNext: { (isTriggered) in
                                 
                                     if isTriggered {
-                                        
-                                        self.featurePopup("feature_event_add20_popup_success_title".localized,
-                                                          "feature_event_add20_popup_success_message".localized)
+                                        self.featurePopup("page_features_row_events_popup_success_20pcts_title".localized,
+                                                          "page_features_row_events_popup_success_20pcts_message".localized)
                                         
                                     } else {
-                                        // do nothing
+                                        self.featurePopup("page_features_row_events_popup_error_network_title".localized,
+                                                          "page_features_row_events_popup_error_network_message".localized)
                                     }
                                     
                                 })
@@ -255,12 +271,12 @@ class FeatureViewController: KWSBaseController {
                                 .subscribe(onNext: { (isTriggered) in
                                 
                                     if isTriggered {
-                                        
-                                        self.featurePopup("feature_event_sub10_popup_success_title".localized,
-                                                          "feature_event_sub10_popup_success_message".localized)
+                                        self.featurePopup("page_features_row_events_popup_success_10pcts_title".localized,
+                                                          "page_features_row_events_popup_success_10pcts_message".localized)
                                         
                                     } else {
-                                        // do nothing
+                                        self.featurePopup("page_features_row_events_popup_error_network_title".localized,
+                                                          "page_features_row_events_popup_error_network_message".localized)
                                     }
                                     
                                 })
@@ -274,13 +290,14 @@ class FeatureViewController: KWSBaseController {
                                     
                                     if let score = score {
                                         
-                                        let message = NSString(format: "feature_event_getscore_success_message".localized as NSString, score.rank, score.score) as String
+                                        let message = NSString(format: "page_features_row_events_popup_success_score_message".localized as NSString, score.rank, score.score) as String
                                         
-                                        self.featurePopup("feature_event_getscore_success_title".localized,
+                                        self.featurePopup("page_features_row_events_popup_success_score_title".localized,
                                                           message)
                                         
                                     } else {
-                                        // do nothing
+                                        self.featurePopup("page_features_row_events_popup_error_network_title".localized,
+                                                          "page_features_row_events_popup_error_network_message".localized)
                                     }
                                     
                                 })
@@ -308,10 +325,10 @@ class FeatureViewController: KWSBaseController {
                         
                         cell?.invInviteFriendButton.onAction {
                             
-                            SAPopup.sharedManager().show(withTitle: "feature_friend_email_popup_title".localized,
-                                                         andMessage: "feature_friend_email_popup_message".localized,
-                                                         andOKTitle: "feature_friend_email_popup_submit".localized,
-                                                         andNOKTitle: "feature_friend_email_popup_cancel".localized,
+                            SAPopup.sharedManager().show(withTitle: "page_features_row_invite_popup_email_title".localized,
+                                                         andMessage: "page_features_row_invite_popup_email_message".localized,
+                                                         andOKTitle: "page_features_row_invite_popup_email_button_ok".localized,
+                                                         andNOKTitle: "page_features_row_invite_popup_email_button_cancel".localized,
                                                          andTextField: true,
                                                          andKeyboardTyle: UIKeyboardType.emailAddress)
                             { (button: Int32, email: String?) in
@@ -322,13 +339,12 @@ class FeatureViewController: KWSBaseController {
                                         .subscribe(onNext: { (invited: Bool) in
                                             
                                             if invited {
-                                                
-                                                self.featurePopup("feature_friend_email_popup_success_title".localized,
-                                                                  "feature_friend_email_popup_success_message".localized)
+                                                self.featurePopup("page_features_row_invite_popup_success_title".localized,
+                                                                  "page_features_row_invite_popup_success_message".localized)
                                                 
                                             } else {
-                                                // send some error
-                                            }
+                                                self.featurePopup("page_features_row_invite_popup_error_network_title".localized,
+                                                                  "page_features_row_invite_popup_error_network_message".localized)                                            }
                                             
                                         })
                                         .addDisposableTo(self.disposeBag)
@@ -374,7 +390,7 @@ class FeatureViewController: KWSBaseController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         dataSource?.update()
-        self.navigationController?.navigationBar.topItem?.title = "feature_vc_title".localized
+        self.navigationController?.navigationBar.topItem?.title = "page_features_title".localized
     }
 
     func openDocumentation () {
@@ -392,7 +408,7 @@ class FeatureViewController: KWSBaseController {
         
         SAPopup.sharedManager().show(withTitle: title,
                                      andMessage: message,
-                                     andOKTitle: "feature_popup_dismiss_button".localized,
+                                     andOKTitle: "page_features_row_popup_button_ok_generic".localized,
                                      andNOKTitle: nil,
                                      andTextField: false,
                                      andKeyboardTyle: .alphabet,

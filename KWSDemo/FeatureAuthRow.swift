@@ -18,10 +18,10 @@ class FeatureAuthRow: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        authTitle.text = "feature_cell_auth_title".localized
-        authMessage.text = "feature_cell_auth_content".localized
-        authActionButton.setTitle("feature_cell_auth_button_1_loggedout".localized.uppercased(), for: UIControlState())
-        authDocsButton.setTitle("feature_cell_auth_button_2".localized.uppercased(), for: UIControlState())
+        authTitle.text = "page_features_row_auth_title".localized
+        authMessage.text = "page_features_row_auth_content".localized
+        authActionButton.setTitle("page_features_row_auth_button_login_not_logged".localized.uppercased(), for: UIControlState())
+        authDocsButton.setTitle("page_features_row_auth_button_doc".localized.uppercased(), for: UIControlState())
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

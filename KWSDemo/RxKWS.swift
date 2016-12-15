@@ -11,6 +11,10 @@ import RxCocoa
 import RxSwift
 import KWSiOSSDKObjC
 
+enum RxKWSError : Error {
+    case NetworkError
+}
+
 class RxKWS: NSObject {
 
     static func signUp (withUsername username: String,
@@ -101,8 +105,10 @@ class RxKWS: NSObject {
                 if let appData = appData {
                     for data in appData {
                         subscriber.onNext(data)
-                    }
-                    subscriber.onCompleted()
+                     }
+                     subscriber.onCompleted()
+                } else {
+                  subscriber.onError(RxKWSError.NetworkError)
                 }
                 
             })

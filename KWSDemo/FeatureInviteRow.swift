@@ -18,10 +18,10 @@ class FeatureInviteRow: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        inviteTitle.text = "feature_cell_inv_title".localized
-        invMessage.text = "feature_cell_inv_message".localized
-        invInviteFriendButton.setTitle("feature_cell_inv_button_1".localized.uppercased(), for: UIControlState())
-        invSeeDocsButton.setTitle("feature_cell_inv_button_2".localized.uppercased(), for: UIControlState())
+        inviteTitle.text = "page_features_row_invite_title".localized
+        invMessage.text = "page_features_row_invite_content".localized
+        invInviteFriendButton.setTitle("page_features_row_invite_button_invite".localized.uppercased(), for: UIControlState())
+        invSeeDocsButton.setTitle("page_features_row_invite_button_doc".localized.uppercased(), for: UIControlState())
         
     }
 

@@ -24,7 +24,8 @@ class GetAppDataController: KWSBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "get_app_data_vc_title".localized
+        self.title = "page_getappdata_title".localized
+        addButton.setTitle("page_getappdata_button_add".localized.uppercased(), for: .normal)
         
         // button tap
         addButton.rx
@@ -69,7 +70,19 @@ class GetAppDataController: KWSBaseController {
                 
                 self.dataSource?.update(models)
                 
+            }, onError: { (error) in
+                self.networkError()
             })
             .addDisposableTo(disposeBag)
+    }
+    
+    func networkError () {
+        SAPopup.sharedManager().show(withTitle: "page_getappdata_popup_error_network_title".localized,
+                                     andMessage: "page_getappdata_popup_error_network_message".localized,
+                                     andOKTitle: "page_getappdata_popup_error_network_ok_button".localized,
+                                     andNOKTitle: nil,
+                                     andTextField: false,
+                                     andKeyboardTyle: .decimalPad,
+                                     andPressed: nil)
     }
 }

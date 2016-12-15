@@ -31,7 +31,7 @@ class CountryRowViewModel: NSObject, ViewModel {
         if let code = countryISOCode {
             return code.uppercased()
         } else {
-            return "country_row_code_default".localized
+            return "page_country_row_default_country_iso".localized
         }
     }
     
@@ -39,7 +39,7 @@ class CountryRowViewModel: NSObject, ViewModel {
         if let name = countryName {
             return name.capitalized
         } else {
-            return "country_row_name_default".localized
+            return "page_country_row_default_country_name".localized
         }
     }
     
@@ -47,7 +47,7 @@ class CountryRowViewModel: NSObject, ViewModel {
         if let flag = countryFlag {
             return flag
         } else {
-            return UIImage (named: "country_row_flag_default".localized)!
+            return UIImage (named: ("page_country_row_default_country_flag".localized + ".png"))!
         }
     }
     

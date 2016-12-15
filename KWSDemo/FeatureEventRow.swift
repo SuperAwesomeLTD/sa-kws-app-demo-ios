@@ -21,13 +21,13 @@ class FeatureEventRow: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        evtTitle.text = "feature_cell_evt_title".localized
-        evtMessage.text = "feature_cell_evt_message".localized
-        evtAdd20PointsButton.setTitle("feature_cell_evt_button_1".localized.uppercased(), for: UIControlState())
-        evtSub10PointsButton.setTitle("feature_cell_evt_button_2".localized.uppercased(), for: UIControlState())
-        evtGetScoreButton.setTitle("feature_cell_evt_button_3".localized.uppercased(), for: UIControlState())
-        evtSeeLeaderboardButton.setTitle("feature_cell_evt_button_4".localized.uppercased(), for: UIControlState())
-        evtSeeDocsButton.setTitle("feature_cell_evt_button_5".localized.uppercased(), for: UIControlState())
+        evtTitle.text = "page_features_row_events_title".localized
+        evtMessage.text = "page_features_row_events_content".localized
+        evtAdd20PointsButton.setTitle("page_features_row_events_button_add20".localized.uppercased(), for: UIControlState())
+        evtSub10PointsButton.setTitle("page_features_row_events_button_sub10".localized.uppercased(), for: UIControlState())
+        evtGetScoreButton.setTitle("page_features_row_events_button_score".localized.uppercased(), for: UIControlState())
+        evtSeeLeaderboardButton.setTitle("page_features_row_events_button_leaderboard".localized.uppercased(), for: UIControlState())
+        evtSeeDocsButton.setTitle("page_features_row_events_button_doc".localized.uppercased(), for: UIControlState())
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

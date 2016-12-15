@@ -18,10 +18,10 @@ class FeaturePermRow: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        permTitle.text = "feature_cell_perm_title".localized
-        permMessage.text = "feature_cell_perm_content".localized
-        permAddPermissionsButton.setTitle("feature_cell_perm_button_1".localized.uppercased(), for: UIControlState())
-        permSeeDocsButton.setTitle("feature_cell_perm_button_2".localized.uppercased(), for: UIControlState())
+        permTitle.text = "page_features_row_perm_title".localized
+        permMessage.text = "page_features_row_perm_content".localized
+        permAddPermissionsButton.setTitle("page_features_row_perm_button_add".localized.uppercased(), for: UIControlState())
+        permSeeDocsButton.setTitle("page_features_row_perm_button_doc".localized.uppercased(), for: UIControlState())
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
