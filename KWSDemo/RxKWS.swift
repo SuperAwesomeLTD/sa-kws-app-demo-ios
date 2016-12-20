@@ -222,4 +222,26 @@ class RxKWS: NSObject {
         
     }
     
+    static func getRandomName () -> Observable <String?> {
+        
+        return Observable.create({ (subscriber) -> Disposable in
+            
+            KWS.sdk().generateRandomName { (name) in
+                subscriber.onNext (name)
+                subscriber.onCompleted()
+            }
+            
+            return Disposables.create()
+        })
+        
+    }
+    
+    static func getRandomName2 () -> PublishSubject <String?> {
+        let subject: PublishSubject <String?> = PublishSubject<String?>()
+        KWS.sdk().generateRandomName { (name) in
+            subject.onNext(name)
+        }
+        return subject
+    }
+    
 }

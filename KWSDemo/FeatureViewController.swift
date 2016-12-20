@@ -15,9 +15,10 @@ import KWSiOSSDKObjC
 class FeatureViewController: KWSBaseController {
 
     // constants to setup KWS
-    fileprivate let CLIENT = "sa-mobile-app-sdk-client-0"
-    fileprivate let SECRET = "_apikey_5cofe4ppp9xav2t9"
-    fileprivate let API = "https://kwsapi.demo.superawesome.tv/"
+    fileprivate let CLIENT_ID = "sa-mobile-app-sdk-client-0"
+    fileprivate let APP_ID = 313
+    fileprivate let CLIENT_SECRET = "_apikey_5cofe4ppp9xav2t9"
+    fileprivate let KWS_API = "https://kwsapi.demo.superawesome.tv/"
     
     // outlets
     @IBOutlet weak var tableView: UITableView!
@@ -29,7 +30,7 @@ class FeatureViewController: KWSBaseController {
         super.viewDidLoad()
         
         // setup the session
-        KWS.sdk().startSession(withClientId: CLIENT, andClientSecret: SECRET, andAPIUrl: API)
+        KWS.sdk().startSession(withClientId: CLIENT_ID, andAppId: APP_ID, andClientSecret: CLIENT_SECRET, andAPIUrl: KWS_API)
         
         Observable
             .from([

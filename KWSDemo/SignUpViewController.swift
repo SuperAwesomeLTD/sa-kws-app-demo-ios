@@ -30,6 +30,7 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
     @IBOutlet weak var submitButton: KWSRedButton!
     @IBOutlet weak var countryButton: KWSCountryButton!
     @IBOutlet weak var countryIcon: UIImageView!
+    @IBOutlet weak var reloadUsername: UIButton!
     
     // current model
     private let countrySubject: PublishSubject <String?> = PublishSubject<String?>()
@@ -65,7 +66,7 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
                            yearTextView.rx.text.orEmpty,
                            monthTextView.rx.text.orEmpty,
                            dayTextView.rx.text.orEmpty,
-                           countrySubject.asObserver())
+                           countrySubject.asObserver().startWith(nil))
             { (username, password1, password2, parentEmail, year, month, day, isoCode) -> SignUpModel in
                 return SignUpModel(withUsername: username,
                                    andPassword1: password1,
@@ -192,8 +193,19 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
                 }
             })
             .addDisposableTo(disposeBag)
-        
-        countrySubject.onNext(nil)
+    
+        // for the reload username
+        reloadUsername.rx
+            .tap
+            .startWith(())
+            .asObservable()
+            .flatMap({ () -> Observable<String?> in
+                return RxKWS.getRandomName()
+            })
+            .subscribe(onNext: { (name) in
+                self.usernameTextView.text = name
+            })
+            .addDisposableTo(disposeBag)
         
         // the touch gesture recogniser
         touch = UITapGestureRecognizer ()

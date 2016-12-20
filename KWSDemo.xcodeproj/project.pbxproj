@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AD63D16D28D44687BB84B8A /* Pods_KWSDemo_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC706827DB57F09DB5072B1 /* Pods_KWSDemo_Tests.framework */; };
 		1B085FFA1DF96B6100986E56 /* RxKWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B085FF91DF96B6100986E56 /* RxKWS.swift */; };
 		1B085FFC1DF9A44800986E56 /* KWSBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B085FFB1DF9A44800986E56 /* KWSBaseController.swift */; };
 		1B0860001DF9C28F00986E56 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B085FFF1DF9C28F00986E56 /* SignUpModel.swift */; };
@@ -73,7 +74,7 @@
 		1BDC12001D1AECC300B1111A /* KWSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC11FF1D1AECC300B1111A /* KWSTextField.swift */; };
 		1BE8CEF61D8FF2A000572070 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CEF51D8FF2A000572070 /* Localizable.strings */; };
 		1BE8CEFD1D90342300572070 /* KWSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8CEFC1D90342300572070 /* KWSString.swift */; };
-		486C55E87962109585629F6B /* Pods_KWSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FC682E29A423CEE036B9BD /* Pods_KWSDemo.framework */; };
+		50C2AB16D0E9845AEC8E392C /* Pods_KWSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E173A3EC684DF8E746E0FA /* Pods_KWSDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00F9BF47BF8D68AB13BC322F /* Pods-KWSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.release.xcconfig"; sourceTree = "<group>"; };
 		1B085FF91DF96B6100986E56 /* RxKWS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxKWS.swift; sourceTree = "<group>"; };
 		1B085FFB1DF9A44800986E56 /* KWSBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSBaseController.swift; sourceTree = "<group>"; };
 		1B085FFF1DF9C28F00986E56 /* SignUpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
@@ -159,9 +161,11 @@
 		1BE8CEF51D8FF2A000572070 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1BE8CEF81D8FF92900572070 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1BE8CEFC1D90342300572070 /* KWSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWSString.swift; sourceTree = "<group>"; };
-		35FC682E29A423CEE036B9BD /* Pods_KWSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KWSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		73EC6CD53EA0788DF07CB27A /* Pods-KWSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.release.xcconfig"; sourceTree = "<group>"; };
-		A57993F2A900C4293C24C6FD /* Pods-KWSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		1FAF6549F24B287C08051DC6 /* Pods-KWSDemo_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo_Tests/Pods-KWSDemo_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		3EC706827DB57F09DB5072B1 /* Pods_KWSDemo_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KWSDemo_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A5F505B115BC10E960A04B /* Pods-KWSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C9578FC84BF35C455E606A68 /* Pods-KWSDemo_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWSDemo_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KWSDemo_Tests/Pods-KWSDemo_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E1E173A3EC684DF8E746E0FA /* Pods_KWSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KWSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				486C55E87962109585629F6B /* Pods_KWSDemo.framework in Frameworks */,
+				50C2AB16D0E9845AEC8E392C /* Pods_KWSDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AD63D16D28D44687BB84B8A /* Pods_KWSDemo_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,8 +203,8 @@
 				1B56DFD31D194A6200973075 /* KWSDemo */,
 				1B993B3B1E02FFDE00EE5001 /* KWSDemo_Tests */,
 				1B56DFD21D194A6200973075 /* Products */,
-				F98D0A2E9A60745B474766C2 /* Pods */,
-				C6BA7DA313395D83BFD2D04C /* Frameworks */,
+				7D15A6BFC9DD5950996A3C4E /* Pods */,
+				66AA88C691664C2FF871B6E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -422,19 +427,22 @@
 			name = Styles;
 			sourceTree = "<group>";
 		};
-		C6BA7DA313395D83BFD2D04C /* Frameworks */ = {
+		66AA88C691664C2FF871B6E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				35FC682E29A423CEE036B9BD /* Pods_KWSDemo.framework */,
+				E1E173A3EC684DF8E746E0FA /* Pods_KWSDemo.framework */,
+				3EC706827DB57F09DB5072B1 /* Pods_KWSDemo_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F98D0A2E9A60745B474766C2 /* Pods */ = {
+		7D15A6BFC9DD5950996A3C4E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A57993F2A900C4293C24C6FD /* Pods-KWSDemo.debug.xcconfig */,
-				73EC6CD53EA0788DF07CB27A /* Pods-KWSDemo.release.xcconfig */,
+				93A5F505B115BC10E960A04B /* Pods-KWSDemo.debug.xcconfig */,
+				00F9BF47BF8D68AB13BC322F /* Pods-KWSDemo.release.xcconfig */,
+				1FAF6549F24B287C08051DC6 /* Pods-KWSDemo_Tests.debug.xcconfig */,
+				C9578FC84BF35C455E606A68 /* Pods-KWSDemo_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -446,12 +454,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B56DFE31D194A6200973075 /* Build configuration list for PBXNativeTarget "KWSDemo" */;
 			buildPhases = (
-				38C2CC44E58664C989E2A193 /* [CP] Check Pods Manifest.lock */,
+				48354C46E2C6F2CAF6098DE4 /* [CP] Check Pods Manifest.lock */,
 				1B56DFCD1D194A6200973075 /* Sources */,
 				1B56DFCE1D194A6200973075 /* Frameworks */,
 				1B56DFCF1D194A6200973075 /* Resources */,
-				C21949C16A431F1DEE7D8E79 /* [CP] Embed Pods Frameworks */,
-				D9728A189220A91C8A5B206D /* [CP] Copy Pods Resources */,
+				987CD2C50AAE8FA926CD3813 /* [CP] Embed Pods Frameworks */,
+				958F8D6555723AC25C172C81 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -466,9 +474,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B993B431E02FFDE00EE5001 /* Build configuration list for PBXNativeTarget "KWSDemo_Tests" */;
 			buildPhases = (
+				36B85B40FA345709A4E170FD /* [CP] Check Pods Manifest.lock */,
 				1B993B361E02FFDE00EE5001 /* Sources */,
 				1B993B371E02FFDE00EE5001 /* Frameworks */,
 				1B993B381E02FFDE00EE5001 /* Resources */,
+				DDDD7BFAFD1EF326297708AF /* [CP] Embed Pods Frameworks */,
+				2F59CA1637DC68A1A1694814 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -567,7 +578,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		38C2CC44E58664C989E2A193 /* [CP] Check Pods Manifest.lock */ = {
+		2F59CA1637DC68A1A1694814 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KWSDemo_Tests/Pods-KWSDemo_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36B85B40FA345709A4E170FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -582,7 +608,37 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C21949C16A431F1DEE7D8E79 /* [CP] Embed Pods Frameworks */ = {
+		48354C46E2C6F2CAF6098DE4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		958F8D6555723AC25C172C81 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		987CD2C50AAE8FA926CD3813 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -597,19 +653,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D9728A189220A91C8A5B206D /* [CP] Copy Pods Resources */ = {
+		DDDD7BFAFD1EF326297708AF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KWSDemo/Pods-KWSDemo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KWSDemo_Tests/Pods-KWSDemo_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -805,7 +861,7 @@
 		};
 		1B56DFE41D194A6200973075 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A57993F2A900C4293C24C6FD /* Pods-KWSDemo.debug.xcconfig */;
+			baseConfigurationReference = 93A5F505B115BC10E960A04B /* Pods-KWSDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -828,7 +884,7 @@
 		};
 		1B56DFE51D194A6200973075 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73EC6CD53EA0788DF07CB27A /* Pods-KWSDemo.release.xcconfig */;
+			baseConfigurationReference = 00F9BF47BF8D68AB13BC322F /* Pods-KWSDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -850,6 +906,7 @@
 		};
 		1B993B411E02FFDE00EE5001 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FAF6549F24B287C08051DC6 /* Pods-KWSDemo_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -867,6 +924,7 @@
 		};
 		1B993B421E02FFDE00EE5001 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9578FC84BF35C455E606A68 /* Pods-KWSDemo_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;

@@ -47,7 +47,7 @@
         <scene sceneID="7gA-Ev-ShT">
             <objects>
                 <navigationController id="Nkh-qk-YpS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nRo-jp-VAB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="nRo-jp-VAB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -957,6 +957,13 @@
                                     <constraint firstAttribute="width" constant="40" id="h01-MK-jzR"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vaf-9n-2bb">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7uW-Du-WDk"/>
+                                    <constraint firstAttribute="width" constant="40" id="S3U-a5-pAE"/>
+                                </constraints>
+                                <state key="normal" image="refresh_username"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -964,7 +971,9 @@
                             <constraint firstItem="cle-JT-YD2" firstAttribute="width" secondItem="0ZK-Wg-awI" secondAttribute="width" id="6bv-eh-wia"/>
                             <constraint firstItem="2Ba-c7-YFK" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="93e-WO-7ya"/>
                             <constraint firstAttribute="trailing" secondItem="iVu-wa-78n" secondAttribute="trailing" constant="20" id="9gA-84-Z5i"/>
+                            <constraint firstItem="Vaf-9n-2bb" firstAttribute="top" secondItem="uPg-tE-YoI" secondAttribute="bottom" constant="22" id="AG5-fW-fgE"/>
                             <constraint firstItem="2Ba-c7-YFK" firstAttribute="top" secondItem="iCh-DE-AMl" secondAttribute="bottom" constant="8" id="Bcn-D5-b7U"/>
+                            <constraint firstItem="Vgd-Sg-yfY" firstAttribute="leading" secondItem="Vaf-9n-2bb" secondAttribute="trailing" constant="8" id="Bf9-Q2-4OD"/>
                             <constraint firstItem="adU-nc-o50" firstAttribute="top" secondItem="Vgd-Sg-yfY" secondAttribute="bottom" constant="8" id="Bqy-09-auK"/>
                             <constraint firstItem="0ZK-Wg-awI" firstAttribute="top" secondItem="06I-P9-osd" secondAttribute="bottom" constant="8" id="HiK-jC-d2F"/>
                             <constraint firstItem="iVu-wa-78n" firstAttribute="top" secondItem="cle-JT-YD2" secondAttribute="bottom" constant="15" id="HtZ-5g-oEZ"/>
@@ -973,6 +982,7 @@
                             <constraint firstItem="cle-JT-YD2" firstAttribute="leading" secondItem="Wum-dX-MwU" secondAttribute="trailing" constant="10" id="P2U-1L-FHf"/>
                             <constraint firstAttribute="trailing" secondItem="iCh-DE-AMl" secondAttribute="trailing" constant="20" id="UNX-2R-39Z"/>
                             <constraint firstAttribute="trailing" secondItem="cle-JT-YD2" secondAttribute="trailing" constant="20" id="V48-u1-Sub"/>
+                            <constraint firstItem="Vaf-9n-2bb" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="Zxy-9V-QX8"/>
                             <constraint firstItem="iCh-DE-AMl" firstAttribute="top" secondItem="adU-nc-o50" secondAttribute="bottom" constant="8" id="b5g-FW-4S3"/>
                             <constraint firstItem="cle-JT-YD2" firstAttribute="top" secondItem="06I-P9-osd" secondAttribute="bottom" constant="8" id="clv-rn-G1v"/>
                             <constraint firstItem="Wum-dX-MwU" firstAttribute="leading" secondItem="0ZK-Wg-awI" secondAttribute="trailing" constant="10" id="fo4-1C-odq"/>
@@ -983,7 +993,6 @@
                             <constraint firstItem="adU-nc-o50" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="jEJ-mg-2Hm"/>
                             <constraint firstItem="0ZK-Wg-awI" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="jjg-Lo-l7F"/>
                             <constraint firstAttribute="trailing" secondItem="adU-nc-o50" secondAttribute="trailing" constant="20" id="jlg-f2-d9c"/>
-                            <constraint firstItem="Vgd-Sg-yfY" firstAttribute="leading" secondItem="1Mh-d3-X0U" secondAttribute="leading" constant="20" id="l36-RL-fn7"/>
                             <constraint firstAttribute="trailing" secondItem="Vgd-Sg-yfY" secondAttribute="trailing" constant="20" id="qYS-Rp-uey"/>
                             <constraint firstAttribute="trailing" secondItem="06I-P9-osd" secondAttribute="trailing" constant="20" id="rOK-qO-AHq"/>
                             <constraint firstItem="Drr-AR-2QO" firstAttribute="top" secondItem="2Ba-c7-YFK" secondAttribute="bottom" constant="8" id="xZn-YO-cXu"/>
@@ -999,6 +1008,7 @@
                         <outlet property="parentEmailTextView" destination="2Ba-c7-YFK" id="C1V-FA-VDf"/>
                         <outlet property="password1TextView" destination="adU-nc-o50" id="Jq4-ne-RM8"/>
                         <outlet property="password2TextView" destination="iCh-DE-AMl" id="Kre-cZ-eSt"/>
+                        <outlet property="reloadUsername" destination="Vaf-9n-2bb" id="UPi-wW-dzj"/>
                         <outlet property="submitButton" destination="iVu-wa-78n" id="lbN-Kt-xeo"/>
                         <outlet property="usernameTextView" destination="Vgd-Sg-yfY" id="ZSN-od-Hf1"/>
                         <outlet property="yearTextView" destination="0ZK-Wg-awI" id="7Am-w3-Mmb"/>
@@ -1007,7 +1017,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dr6-jJ-Dnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4554" y="-829"/>
+            <point key="canvasLocation" x="4552.8000000000002" y="-829.83508245877067"/>
         </scene>
         <!--Country Controller-->
         <scene sceneID="IQs-mJ-my7">
@@ -1635,6 +1645,7 @@
         <image name="ico_parent_portal" width="16" height="22"/>
         <image name="ico_shield" width="18" height="22"/>
         <image name="ico_smiley" width="22" height="22"/>
+        <image name="refresh_username" width="32" height="32"/>
         <image name="tab_features_sel" width="22" height="30"/>
         <image name="tab_features_unsel" width="22" height="30"/>
         <image name="tab_platform_sel" width="21" height="30"/>
