@@ -35,6 +35,7 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
     // current model
     private let countrySubject: PublishSubject <String?> = PublishSubject<String?>()
     private var currentModel: SignUpModel = SignUpModel.createEmpty()
+    private var usernameTxt: ControlProperty<String>!
     
     // delegate
     public var delegate: SignUpProtocol?
@@ -221,6 +222,9 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
             })
             .addDisposableTo(disposeBag)
         self.view.addGestureRecognizer(touch!)
+        
+        // become first responder
+        usernameTextView.becomeFirstResponder()
     }
     
     func didSelectCountry(isoCode: String, name: String, flag: UIImage) {
