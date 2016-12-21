@@ -3,12 +3,12 @@
  Platform
  ******************************************************************************/
 "page_platform_title" = "Platform";
-"page_platform_text_welcome" = "Welcome to your\\nKWS App";
+"page_platform_text_welcome" = "Welcome to your\nKWS App";
 "page_platform_text_content" = "This KWS App is powered by Kids Web Services (KWS). The KWS platform provides a set of compliance-as-a-service tools to create kid-safe, data-privacy compliant sites and apps. KWS handles all the legal complexity of data-collection in the kids space through one simple, customisable package - allowing you to focus instead on delivering awesome content.";
-"page_platform_text_feature_1" = "Verifiable\\nparental\\nconsent";
-"page_platform_text_feature_2" = "Loyalty\\nplatform\\nfor kids";
-"page_platform_text_feature_3" = "Secure\\nsingle\\nsign-on";
-"page_platform_text_feature_4" = "Parent\\nPortal";
+"page_platform_text_feature_1" = "Verifiable\nparental\nconsent";
+"page_platform_text_feature_2" = "Loyalty\nplatform\nfor kids";
+"page_platform_text_feature_3" = "Secure\nsingle\nsign-on";
+"page_platform_text_feature_4" = "Parent\nPortal";
 "page_platform_button_more" = "KNOW MORE ABOUT KIDS WEB SERVICES";
 
 /*******************************************************************************
@@ -18,7 +18,7 @@
 
 /** Features - auth*/
 "page_features_row_auth_title" = "Secure single sign-on";
-"page_features_row_auth_content" = "Kids Web Services\\' federated identity system (Single sign-on) allows kids and parents to create one secure login to access your collection of kid-safe apps and sites.";
+"page_features_row_auth_content" = "Kids Web Services\' federated identity system (Single sign-on) allows kids and parents to create one secure login to access your collection of kid-safe apps and sites.";
 "page_features_row_auth_button_login_not_logged" = "AUTHENTICATE USER";
 "page_features_row_auth_button_login_logged" = "LOGGED IN AS ";
 "page_features_row_auth_button_doc" = "SEE DOCUMENTATION";
@@ -30,7 +30,7 @@
 "page_features_row_notif_button_disable" = "DISABLE PUSH NOTIFICATIONS";
 "page_features_row_notif_button_doc" = "SEE DOCUMENTATION";
 "page_features_row_notif_popup_reg_success_title" = "Great!";
-"page_features_row_notif_popup_reg_success_message" = "You\\'ve successfully registered for push notifications.";
+"page_features_row_notif_popup_reg_success_message" = "You\'ve successfully registered for push notifications.";
 "page_features_row_notif_popup_reg_error_disable_parent_title" = "Oops - something went wrong!";
 "page_features_row_notif_popup_reg_error_disable_parent_message" = "The parent appears to have disabled push notifications for this user.";
 "page_features_row_notif_popup_reg_error_disable_user_title" = "Oops - something went wrong!";
@@ -63,7 +63,7 @@
 /*This isn't really a permission, it's a feature - it would require an email address*/
 "page_features_row_perm_popup_perm_option_newsletter" = "Newsletter";
 "page_features_row_perm_popup_success_title" = "Great!";
-"page_features_row_perm_popup_success_message" = "You\\'ve successfully requested permissions from KWS.";
+"page_features_row_perm_popup_success_message" = "You\'ve successfully requested permissions from KWS.";
 "page_features_row_perm_popup_error_no_email_title" = "Oops - something went wrong!";
 "page_features_row_perm_popup_error_no_email_message" = "This user does not appear to have a parent's email address associated with their account.";
 "page_features_row_perm_popup_error_network_title" = "Oops - something went wrong!";
@@ -91,8 +91,8 @@
 "page_features_row_invite_content" = "You can invite users to your app by using their email address. KWS will ensure that this invite process is compliant with kids data privacy laws.";
 "page_features_row_invite_button_invite" = "INVITE FRIEND";
 "page_features_row_invite_button_doc" = "SEE DOCUMENTATION";
-"page_features_row_invite_popup_email_title" = "Friend\\'s email";
-"page_features_row_invite_popup_email_message" = "Please enter your friend\\'s email address to invite them";
+"page_features_row_invite_popup_email_title" = "Friend\'s email";
+"page_features_row_invite_popup_email_message" = "Please enter your friend\'s email address to invite them";
 "page_features_row_invite_popup_email_button_ok" = "Submit";
 "page_features_row_invite_popup_email_button_cancel" = "Cancel";
 "page_features_row_invite_popup_success_title" = "Hey!";

@@ -967,6 +967,7 @@
 				1B993B421E02FFDE00EE5001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
