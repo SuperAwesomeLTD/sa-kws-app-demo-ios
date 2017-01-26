@@ -118,22 +118,22 @@ class LoginController: KWSBaseController, SignUpProtocol {
     }
     
     func loginError () {
-        SAPopup.sharedManager().show(withTitle: "page_login_popup_error_auth_title".localized,
-                                     andMessage: "page_login_popup_error_auth_message".localized,
-                                     andOKTitle: "page_login_popup_error_auth_ok_button".localized,
-                                     andNOKTitle: nil,
-                                     andTextField: false,
-                                     andKeyboardTyle: .decimalPad,
-                                     andPressed: nil)
+        SAAlert.getInstance().show(withTitle: "page_login_popup_error_auth_title".localized,
+                                   andMessage: "page_login_popup_error_auth_message".localized,
+                                   andOKTitle: "page_login_popup_error_auth_ok_button".localized,
+                                   andNOKTitle: nil,
+                                   andTextField: false,
+                                   andKeyboardTyle: .decimalPad,
+                                   andPressed: nil)
     }
     
     func networkError () {
-        SAPopup.sharedManager().show(withTitle: "page_login_popup_error_network_title".localized,
-                                     andMessage: "page_login_popup_error_network_message".localized,
-                                     andOKTitle: "page_login_popup_error_network_ok_button".localized,
-                                     andNOKTitle: nil,
-                                     andTextField: false,
-                                     andKeyboardTyle: .decimalPad,
-                                     andPressed: nil)
+        SAAlert.getInstance().show(withTitle: "page_login_popup_error_network_title".localized,
+                                   andMessage: "page_login_popup_error_network_message".localized,
+                                   andOKTitle: "page_login_popup_error_network_ok_button".localized,
+                                   andNOKTitle: nil,
+                                   andTextField: false,
+                                   andKeyboardTyle: .decimalPad,
+                                   andPressed: nil)
     }
 }

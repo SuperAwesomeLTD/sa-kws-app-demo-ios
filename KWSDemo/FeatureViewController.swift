@@ -30,7 +30,7 @@ class FeatureViewController: KWSBaseController {
         super.viewDidLoad()
         
         // setup the session
-        KWS.sdk().startSession(withClientId: CLIENT_ID, andAppId: APP_ID, andClientSecret: CLIENT_SECRET, andAPIUrl: KWS_API)
+        KWS.sdk().startSession(withClientId: CLIENT_ID, andClientSecret: CLIENT_SECRET, andAPIUrl: KWS_API)
         
         Observable
             .from([
@@ -58,7 +58,7 @@ class FeatureViewController: KWSBaseController {
                         
                         cell?.authActionButton.setTitle(
                             isLogged ?
-                                "page_features_row_auth_button_login_logged".localized + (local?.username.uppercased())! :
+                                "page_features_row_auth_button_login_logged".localized + "\(local!.metadata!.userId)" :
                                 "page_features_row_auth_button_login_not_logged".localized, for: .normal)
                         
                         cell?.authActionButton.onAction {
@@ -326,12 +326,12 @@ class FeatureViewController: KWSBaseController {
                         
                         cell?.invInviteFriendButton.onAction {
                             
-                            SAPopup.sharedManager().show(withTitle: "page_features_row_invite_popup_email_title".localized,
-                                                         andMessage: "page_features_row_invite_popup_email_message".localized,
-                                                         andOKTitle: "page_features_row_invite_popup_email_button_ok".localized,
-                                                         andNOKTitle: "page_features_row_invite_popup_email_button_cancel".localized,
-                                                         andTextField: true,
-                                                         andKeyboardTyle: UIKeyboardType.emailAddress)
+                            SAAlert.getInstance().show(withTitle: "page_features_row_invite_popup_email_title".localized,
+                                                       andMessage: "page_features_row_invite_popup_email_message".localized,
+                                                       andOKTitle: "page_features_row_invite_popup_email_button_ok".localized,
+                                                       andNOKTitle: "page_features_row_invite_popup_email_button_cancel".localized,
+                                                       andTextField: true,
+                                                       andKeyboardTyle: UIKeyboardType.emailAddress)
                             { (button: Int32, email: String?) in
                                 
                                 if let email = email, button == 0 {
@@ -407,13 +407,13 @@ class FeatureViewController: KWSBaseController {
     
     func featurePopup(_ title: String, _ message: String) {
         
-        SAPopup.sharedManager().show(withTitle: title,
-                                     andMessage: message,
-                                     andOKTitle: "page_features_row_popup_button_ok_generic".localized,
-                                     andNOKTitle: nil,
-                                     andTextField: false,
-                                     andKeyboardTyle: .alphabet,
-                                     andPressed: nil)
+        SAAlert.getInstance().show(withTitle: title,
+                                   andMessage: message,
+                                   andOKTitle: "page_features_row_popup_button_ok_generic".localized,
+                                   andNOKTitle: nil,
+                                   andTextField: false,
+                                   andKeyboardTyle: .alphabet,
+                                   andPressed: nil)
         
     }
 }

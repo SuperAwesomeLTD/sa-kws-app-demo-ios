@@ -77,12 +77,12 @@ class GetAppDataController: KWSBaseController {
     }
     
     func networkError () {
-        SAPopup.sharedManager().show(withTitle: "page_getappdata_popup_error_network_title".localized,
-                                     andMessage: "page_getappdata_popup_error_network_message".localized,
-                                     andOKTitle: "page_getappdata_popup_error_network_ok_button".localized,
-                                     andNOKTitle: nil,
-                                     andTextField: false,
-                                     andKeyboardTyle: .decimalPad,
-                                     andPressed: nil)
+        SAAlert.getInstance().show(withTitle: "page_getappdata_popup_error_network_title".localized,
+                                   andMessage: "page_getappdata_popup_error_network_message".localized,
+                                   andOKTitle: "page_getappdata_popup_error_network_ok_button".localized,
+                                   andNOKTitle: nil,
+                                   andTextField: false,
+                                   andKeyboardTyle: .decimalPad,
+                                   andPressed: nil)
     }
 }

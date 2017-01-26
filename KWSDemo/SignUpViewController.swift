@@ -243,23 +243,23 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
     }
     
     func signUpError() {
-        SAPopup.sharedManager().show(withTitle: "page_signup_popup_error_create_title".localized,
-                                     andMessage: "page_signup_popup_error_create_message".localized,
-                                     andOKTitle: "page_signup_popup_error_create_ok_button".localized,
-                                     andNOKTitle: nil,
-                                     andTextField: false,
-                                     andKeyboardTyle: .decimalPad,
-                                     andPressed: nil)
+        SAAlert.getInstance().show(withTitle: "page_signup_popup_error_create_title".localized,
+                                   andMessage: "page_signup_popup_error_create_message".localized,
+                                   andOKTitle: "page_signup_popup_error_create_ok_button".localized,
+                                   andNOKTitle: nil,
+                                   andTextField: false,
+                                   andKeyboardTyle: .decimalPad,
+                                   andPressed: nil)
     }
     
     func networkError () {
-        SAPopup.sharedManager().show(withTitle: "page_signup_popup_error_network_title".localized,
-                                     andMessage: "page_signup_popup_error_network_message".localized,
-                                     andOKTitle: "page_signup_popup_error_network_ok_button".localized,
-                                     andNOKTitle: nil,
-                                     andTextField: false,
-                                     andKeyboardTyle: .decimalPad,
-                                     andPressed: nil)
+        SAAlert.getInstance().show(withTitle: "page_signup_popup_error_network_title".localized,
+                                   andMessage: "page_signup_popup_error_network_message".localized,
+                                   andOKTitle: "page_signup_popup_error_network_ok_button".localized,
+                                   andNOKTitle: nil,
+                                   andTextField: false,
+                                   andKeyboardTyle: .decimalPad,
+                                   andPressed: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

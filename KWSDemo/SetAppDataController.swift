@@ -115,12 +115,12 @@ class SetAppDataController: KWSBaseController {
     }
     
     func appDataError() {
-        SAPopup.sharedManager().show(withTitle: "page_setappdata_popup_error_network_title".localized,
-                                     andMessage: "page_setappdata_popup_error_network_message".localized,
-                                     andOKTitle: "page_setappdata_popup_error_network_ok_button".localized,
-                                     andNOKTitle: nil,
-                                     andTextField: false,
-                                     andKeyboardTyle: .decimalPad,
-                                     andPressed: nil)
+        SAAlert.getInstance().show(withTitle: "page_setappdata_popup_error_network_title".localized,
+                                   andMessage: "page_setappdata_popup_error_network_message".localized,
+                                   andOKTitle: "page_setappdata_popup_error_network_ok_button".localized,
+                                   andNOKTitle: nil,
+                                   andTextField: false,
+                                   andKeyboardTyle: .decimalPad,
+                                   andPressed: nil)
     }
 }
