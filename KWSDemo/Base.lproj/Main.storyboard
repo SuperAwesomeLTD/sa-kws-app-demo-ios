@@ -1399,7 +1399,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BCJ-GN-k86">
-                                <rect key="frame" x="0.0" y="44" width="375" height="573"/>
+                                <rect key="frame" x="0.0" y="24" width="375" height="593"/>
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserHeaderId" id="sxo-94-fAm" customClass="UserHeader" customModule="KWSDemo" customModuleProvider="target">
@@ -1540,7 +1540,7 @@
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="T8M-q0-3as" secondAttribute="trailing" id="27C-cN-N6l"/>
-                            <constraint firstItem="BCJ-GN-k86" firstAttribute="top" secondItem="iaq-7k-aru" secondAttribute="bottom" id="96v-ta-Sux"/>
+                            <constraint firstItem="BCJ-GN-k86" firstAttribute="top" secondItem="iaq-7k-aru" secondAttribute="bottom" constant="-20" id="96v-ta-Sux"/>
                             <constraint firstItem="mDc-H5-38x" firstAttribute="top" secondItem="T8M-q0-3as" secondAttribute="bottom" id="PQd-IQ-g2R"/>
                             <constraint firstItem="T8M-q0-3as" firstAttribute="top" secondItem="BCJ-GN-k86" secondAttribute="bottom" id="Qxx-vN-ngY"/>
                             <constraint firstAttribute="trailing" secondItem="iaq-7k-aru" secondAttribute="trailing" id="bVq-LS-zWr"/>
@@ -1577,7 +1577,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pex-dx-mCH">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="24" width="375" height="643"/>
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LeaderHeaderId" id="YIw-8p-GNC" customClass="LeaderHeader" customModule="KWSDemo" customModuleProvider="target">
@@ -1757,7 +1757,7 @@
                             <constraint firstItem="pex-dx-mCH" firstAttribute="leading" secondItem="Du9-t4-p3Z" secondAttribute="leading" id="RA6-kx-vg9"/>
                             <constraint firstAttribute="trailing" secondItem="NeM-SS-Q5u" secondAttribute="trailing" id="WLK-Mo-6gP"/>
                             <constraint firstItem="NeM-SS-Q5u" firstAttribute="top" secondItem="5Ld-yG-ajE" secondAttribute="bottom" id="ZrU-Bg-t75"/>
-                            <constraint firstItem="pex-dx-mCH" firstAttribute="top" secondItem="NeM-SS-Q5u" secondAttribute="bottom" id="jDq-JT-44e"/>
+                            <constraint firstItem="pex-dx-mCH" firstAttribute="top" secondItem="NeM-SS-Q5u" secondAttribute="bottom" constant="-20" id="jDq-JT-44e"/>
                             <constraint firstItem="NeM-SS-Q5u" firstAttribute="leading" secondItem="Du9-t4-p3Z" secondAttribute="leading" id="pHr-xf-fxu"/>
                         </constraints>
                     </view>
@@ -1786,7 +1786,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fCQ-Ii-BZM">
-                                <rect key="frame" x="0.0" y="44" width="375" height="573"/>
+                                <rect key="frame" x="0.0" y="24" width="375" height="593"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GetAppDataRowId" id="zPC-m8-8WA" customClass="GetAppDataRow" customModule="KWSDemo" customModuleProvider="target">
@@ -1912,7 +1912,7 @@
                             <constraint firstAttribute="trailing" secondItem="fCQ-Ii-BZM" secondAttribute="trailing" id="bCB-VP-7mj"/>
                             <constraint firstItem="3uc-Bi-8fX" firstAttribute="leading" secondItem="hN8-9z-7ck" secondAttribute="leading" id="g3k-Wh-Pmi"/>
                             <constraint firstItem="3uc-Bi-8fX" firstAttribute="top" secondItem="fCQ-Ii-BZM" secondAttribute="bottom" id="grH-nZ-weq"/>
-                            <constraint firstItem="fCQ-Ii-BZM" firstAttribute="top" secondItem="e6l-BE-W5b" secondAttribute="bottom" id="kLH-hZ-Cip"/>
+                            <constraint firstItem="fCQ-Ii-BZM" firstAttribute="top" secondItem="e6l-BE-W5b" secondAttribute="bottom" constant="-20" id="kLH-hZ-Cip"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FeR-ks-5k5"/>
