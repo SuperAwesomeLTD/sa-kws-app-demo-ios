@@ -19,13 +19,15 @@ class UserViewController: KWSBaseController {
     @IBOutlet weak var logoutButton: KWSRedButton!
     @IBOutlet weak var userDetailsTableView: UITableView!
     
+    @IBOutlet weak var titleText: UILabel!
+    
     // data source
     private var dataSource: RxDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "page_user_title".localized
+        titleText.text = "page_user_title".localized
         
         logoutButton.setTitle("page_user_button_logout".localized.uppercased(), for: UIControlState())
         
@@ -138,8 +140,8 @@ class UserViewController: KWSBaseController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func networkError () {

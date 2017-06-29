@@ -37,6 +37,8 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
     private var currentModel: SignUpModel = SignUpModel.createEmpty()
     private var usernameTxt: ControlProperty<String>!
     
+    @IBOutlet weak var titleText: UILabel!
+    
     // delegate
     public var delegate: SignUpProtocol?
     
@@ -46,7 +48,7 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "page_signup_title".localized
+        titleText.text = "page_signup_title".localized
         
         usernameTextView.placeholder = "page_signup_textfield_username_placeholder".localized
         password1TextView.placeholder = "page_signup_textfield_password1_placeholder".localized
@@ -86,7 +88,7 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
             }
             .subscribe(onNext: { (isValid) in
                 self.submitButton.isEnabled = isValid
-                self.submitButton.backgroundColor = isValid ? UIColorFromHex(0xED1C24) : UIColor.lightGray
+                self.submitButton.backgroundColor = isValid ? UIColorFromHex(0x46237A) : UIColor.lightGray
             })
             .addDisposableTo(disposeBag)
         
@@ -234,14 +236,6 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
         countrySubject.onNext(isoCode)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     func signUpError() {
         SAAlert.getInstance().show(withTitle: "page_signup_popup_error_create_title".localized,
                                    andMessage: "page_signup_popup_error_create_message".localized,
@@ -260,6 +254,10 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
                                    andTextField: false,
                                    andKeyboardTyle: .decimalPad,
                                    andPressed: nil)
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

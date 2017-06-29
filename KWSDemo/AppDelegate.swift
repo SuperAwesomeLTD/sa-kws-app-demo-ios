@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 20.0))
+        view.backgroundColor = UIColor(colorLiteralRed: 70.0/255.0, green: 35.0/255.0, blue: 122.0/255.0, alpha: 1)
+        self.window?.rootViewController?.view.addSubview(view)
+    
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

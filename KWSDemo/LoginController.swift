@@ -20,6 +20,8 @@ class LoginController: KWSBaseController, SignUpProtocol {
     @IBOutlet weak var createNewUserButton: UIButton!
     @IBOutlet weak var loginButton: KWSRedButton!
     
+    @IBOutlet weak var titleText: UILabel!
+    
     // model
     private var currentModel = LoginModel.createEmpty()
     
@@ -29,7 +31,7 @@ class LoginController: KWSBaseController, SignUpProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "page_login_title".localized
+        titleText.text = "page_login_title".localized
         
         // add text
         usernameTextField.placeholder = "page_login_textfield_username_placeholder".localized
@@ -52,7 +54,7 @@ class LoginController: KWSBaseController, SignUpProtocol {
             }
             .subscribe(onNext: { (isValid) in
                 self.loginButton.isEnabled = isValid
-                self.loginButton.backgroundColor = isValid ? UIColorFromHex(0xED1C24) : UIColor.lightGray
+                self.loginButton.backgroundColor = isValid ? UIColorFromHex(0x46237A) : UIColor.lightGray
             })
             .addDisposableTo(disposeBag)
         
@@ -103,10 +105,6 @@ class LoginController: KWSBaseController, SignUpProtocol {
         self.view.addGestureRecognizer(touch!)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     func didSignUp() {
         _ = self.navigationController?.popViewController(animated: true)
     }
@@ -115,6 +113,10 @@ class LoginController: KWSBaseController, SignUpProtocol {
         if let destination = segue.destination as? SignUpViewController {
             destination.delegate = self
         }
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func loginError () {

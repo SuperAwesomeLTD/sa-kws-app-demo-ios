@@ -19,6 +19,8 @@ class SetAppDataController: KWSBaseController {
     @IBOutlet weak var valuePairTextField: KWSTextField!
     @IBOutlet weak var submitButton: KWSRedButton!
     
+    @IBOutlet weak var titleText: UILabel!
+    
     // variables
     var currentModel: SetAppDataModel = SetAppDataModel.createEmpty()
     
@@ -28,7 +30,7 @@ class SetAppDataController: KWSBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "page_setappdata_title".localized
+        titleText.text = "page_setappdata_title".localized
         
         namePairTextField.placeholder = "page_setappdata_textfield_name_placeholder".localized
         valuePairTextField.placeholder = "page_setappdata_textfield_value_placeholder".localized
@@ -52,7 +54,7 @@ class SetAppDataController: KWSBaseController {
             }
             .subscribe(onNext: { (isValid) in
                 self.submitButton.isEnabled = isValid
-                self.submitButton.backgroundColor = isValid ? UIColorFromHex(0xED1C24) : UIColor.lightGray
+                self.submitButton.backgroundColor = isValid ? UIColorFromHex(0x46237A) : UIColor.lightGray
             })
             .addDisposableTo(disposeBag)
         
@@ -106,14 +108,6 @@ class SetAppDataController: KWSBaseController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     func appDataError() {
         SAAlert.getInstance().show(withTitle: "page_setappdata_popup_error_network_title".localized,
                                    andMessage: "page_setappdata_popup_error_network_message".localized,
@@ -122,5 +116,9 @@ class SetAppDataController: KWSBaseController {
                                    andTextField: false,
                                    andKeyboardTyle: .decimalPad,
                                    andPressed: nil)
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }

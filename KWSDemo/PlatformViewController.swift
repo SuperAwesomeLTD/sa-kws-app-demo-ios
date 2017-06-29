@@ -18,6 +18,10 @@ class PlatformViewController: KWSBaseController {
     @IBOutlet weak var platformFeature3: UILabel!
     @IBOutlet weak var platformFeature4: UILabel!
     @IBOutlet weak var knowMoreButton: KWSBlueButton!
+    @IBOutlet weak var platformIcon1: UIImageView!
+    @IBOutlet weak var platformIcon2: UIImageView!
+    @IBOutlet weak var platformIcon3: UIImageView!
+    @IBOutlet weak var platformIcon4: UIImageView!
     
     // contants
     fileprivate let urlStr = "http://www.superawesome.tv/en/"
@@ -32,6 +36,18 @@ class PlatformViewController: KWSBaseController {
         platformFeature3.text = "page_platform_text_feature_3".localized
         platformFeature4.text = "page_platform_text_feature_4".localized
         knowMoreButton.setTitle("page_platform_button_more".localized.uppercased(), for: UIControlState())
+        
+        platformIcon1.image = platformIcon1.image?.withRenderingMode(.alwaysTemplate)
+        platformIcon1.tintColor = UIColor(colorLiteralRed: 70.0/255.0, green: 35.0/255.0, blue: 122.0/255.0, alpha: 1)
+        
+        platformIcon2.image = platformIcon2.image?.withRenderingMode(.alwaysTemplate)
+        platformIcon2.tintColor = UIColor(colorLiteralRed: 70.0/255.0, green: 35.0/255.0, blue: 122.0/255.0, alpha: 1)
+        
+        platformIcon3.image = platformIcon3.image?.withRenderingMode(.alwaysTemplate)
+        platformIcon3.tintColor = UIColor(colorLiteralRed: 70.0/255.0, green: 35.0/255.0, blue: 122.0/255.0, alpha: 1)
+        
+        platformIcon4.image = platformIcon4.image?.withRenderingMode(.alwaysTemplate)
+        platformIcon4.tintColor = UIColor(colorLiteralRed: 70.0/255.0, green: 35.0/255.0, blue: 122.0/255.0, alpha: 1)
         
         // on tap
         knowMoreButton.rx.tap

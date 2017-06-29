@@ -45,7 +45,7 @@ class KWSRedButton : KWSButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.backgroundColor = UIColorFromHex(0xED1C24)
+        self.backgroundColor = UIColorFromHex(0x46237A)
         self.layer.cornerRadius = 5
         self.setTitleColor(UIColor.white, for: .normal)
     }

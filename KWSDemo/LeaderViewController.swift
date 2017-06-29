@@ -17,13 +17,15 @@ class LeaderViewController: KWSBaseController {
     // outlets
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var titleText: UILabel!
+    
     // data source
     private var dataSource: RxDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "page_leader_title".localized
+        titleText.text = "page_leader_title".localized
         
         RxKWS.getLeaderboard()
             .map { (leader: KWSLeader) -> ViewModel in
@@ -72,7 +74,7 @@ class LeaderViewController: KWSBaseController {
             .addDisposableTo(disposeBag)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }

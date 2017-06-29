@@ -18,13 +18,15 @@ class GetAppDataController: KWSBaseController {
     @IBOutlet weak var appDataTable: UITableView!
     @IBOutlet weak var addButton: KWSRedButton!
     
+    @IBOutlet weak var titleText: UILabel!
+    
     // data source
     private var dataSource: RxDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "page_getappdata_title".localized
+        titleText.text = "page_getappdata_title".localized
         addButton.setTitle("page_getappdata_button_add".localized.uppercased(), for: .normal)
         
         // button tap
@@ -36,10 +38,6 @@ class GetAppDataController: KWSBaseController {
             
             })
             .addDisposableTo(disposeBag)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,5 +82,9 @@ class GetAppDataController: KWSBaseController {
                                    andTextField: false,
                                    andKeyboardTyle: .decimalPad,
                                    andPressed: nil)
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }

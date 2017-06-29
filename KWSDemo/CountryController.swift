@@ -20,6 +20,8 @@ class CountryController: KWSBaseController {
     @IBOutlet weak var countrySearch: KWSTextField!
     @IBOutlet weak var countryTable: UITableView!
     
+    @IBOutlet weak var titleText: UILabel!
+    
     // delegate
     var delegate: CountryProtocol?
     
@@ -29,7 +31,7 @@ class CountryController: KWSBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "page_country_title".localized
+        titleText.text = "page_country_title".localized
         
         // view setup
         countrySearch.placeholder = "page_country_textfield_search_placeholder".localized
@@ -92,7 +94,7 @@ class CountryController: KWSBaseController {
             .addDisposableTo(disposeBag)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
