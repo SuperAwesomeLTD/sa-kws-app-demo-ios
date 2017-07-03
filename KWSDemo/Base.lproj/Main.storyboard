@@ -124,7 +124,7 @@
         <scene sceneID="7gA-Ev-ShT">
             <objects>
                 <navigationController navigationBarHidden="YES" id="Nkh-qk-YpS" customClass="KWSNavigationController" customModule="KWSDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nRo-jp-VAB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="nRo-jp-VAB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
