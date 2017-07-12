@@ -11,7 +11,7 @@ import UIKit
 class DocumentationViewController: UIViewController {
 
     // constants
-    let urlStr: String = "https://developers.superawesome.tv/"
+    let urlStr: String = "http://doc.superawesome.tv/sa-kws-ios-sdk/latest/"
     
     // outlets
     @IBOutlet weak var webView: UIWebView!
