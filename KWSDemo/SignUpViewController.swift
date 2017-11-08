@@ -175,20 +175,20 @@ class SignUpViewController: KWSBaseController, CountryProtocol  {
         // now the click
         submitButton.rx.tap
             // .skip (1)
-            .flatMap { () -> Observable <KWSCreateUserStatus> in
+            .flatMap { () -> Observable <KWSChildrenCreateUserStatus> in
                 return RxKWS.signUp(withUsername: self.currentModel.getUsername(),
                                     andPassword: self.currentModel.getPassword(),
                                     andBirthdate: self.currentModel.getDate(),
                                     andCountryCode: self.currentModel.getISOCode(),
                                     andParentEmail: self.currentModel.getParentEmail())
             }
-            .subscribe(onNext: { (status: KWSCreateUserStatus) in
+            .subscribe(onNext: { (status: KWSChildrenCreateUserStatus) in
                 
-                if status == KWSCreateUserStatus.success {
+                if status == KWSChildrenCreateUserStatus.createUser_Success {
                     self.delegate?.didSignUp()
                     _ = self.navigationController?.popViewController(animated: true)
                 }
-                else if status == KWSCreateUserStatus.duplicateUsername {
+                else if status == KWSChildrenCreateUserStatus.createUser_DuplicateUsername {
                     self.signUpError()
                 }
                 else {

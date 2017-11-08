@@ -3,8 +3,7 @@ target 'KWSDemo' do
 
   pod 'RxSwift', '3.1.0'
   pod 'RxCocoa', '3.1.0'
-  pod 'SAUtils', '1.5.0'
-  pod 'KWSiOSSDKObjC', '2.2.0'
+  pod 'KWSiOSSDKObjC'
   pod 'Firebase', '3.7.1'
   pod 'FirebaseMessaging', '1.2.0'
   

@@ -23,6 +23,8 @@ class FeatureViewController: KWSBaseController {
     // outlets
     @IBOutlet weak var tableView: UITableView!
     
+    private var hasChecked: Bool = false
+    
     // the data source
     private var dataSource: RxDataSource?
 
@@ -30,7 +32,7 @@ class FeatureViewController: KWSBaseController {
         super.viewDidLoad()
         
         // setup the session
-        KWS.sdk().startSession(withClientId: CLIENT_ID, andClientSecret: CLIENT_SECRET, andAPIUrl: KWS_API)
+        KWSChildren.sdk().setup(withClientId: CLIENT_ID, andClientSecret: CLIENT_SECRET, andAPIUrl: KWS_API)
         
         Observable
             .from([
@@ -53,8 +55,8 @@ class FeatureViewController: KWSBaseController {
                         
                         let cell = cell as? FeatureAuthRow
                         
-                        let isLogged = KWS.sdk().getLoggedUser() != nil
-                        let local = KWS.sdk().getLoggedUser()
+                        let isLogged = KWSChildren.sdk().getLoggedUser() != nil
+                        let local = KWSChildren.sdk().getLoggedUser()
                         
                         cell?.authActionButton.setTitle(
                             isLogged ?
@@ -62,7 +64,7 @@ class FeatureViewController: KWSBaseController {
                                 "page_features_row_auth_button_login_not_logged".localized, for: .normal)
                         
                         cell?.authActionButton.onAction {
-                            let lIsLogged = KWS.sdk().getLoggedUser() != nil
+                            let lIsLogged = KWSChildren.sdk().getLoggedUser() != nil
                             self.performSegue(withIdentifier: lIsLogged ? "FeaturesToUserSegue" : "FeaturesToLoginSegue", sender: self)
                         }
                         
@@ -76,10 +78,10 @@ class FeatureViewController: KWSBaseController {
                         
                         let cell = cell as? FeatureNotifRow
                         
-                        let isLogged = KWS.sdk().getLoggedUser() != nil
-                        let isRegistered = isLogged && KWS.sdk().getLoggedUser().isRegisteredForNotifications()
+                        let isLogged = KWSChildren.sdk().getLoggedUser() != nil
+                        let isRegistered = isLogged && KWSChildren.sdk().getLoggedUser().isRegisteredForNotifications()
                         
-                        cell?.notifEnableOrDisableButton.isEnabled = isLogged
+                        cell?.notifEnableOrDisableButton.isEnabled = isLogged && self.hasChecked
                         cell?.notifEnableOrDisableButton.setTitle(
                             isRegistered ?
                                 "page_features_row_notif_button_disable".localized :
@@ -87,7 +89,7 @@ class FeatureViewController: KWSBaseController {
                         
                         cell?.notifEnableOrDisableButton.onAction {
                             
-                            let lIsRegistered = KWS.sdk().getLoggedUser() != nil && KWS.sdk().getLoggedUser().isRegisteredForNotifications()
+                            let lIsRegistered = KWSChildren.sdk().getLoggedUser() != nil && KWSChildren.sdk().getLoggedUser().isRegisteredForNotifications()
                             
                             if lIsRegistered {
                                 
@@ -114,40 +116,40 @@ class FeatureViewController: KWSBaseController {
                             } else {
                                 
                                 RxKWS.registerForNotifications()
-                                    .subscribe(onNext: { (status: KWSNotificationStatus) in
+                                    .subscribe(onNext: { (status: KWSChildrenRegisterForRemoteNotificationsStatus) in
                                         
                                         switch status {
-                                        case .success:
+                                        case .registerForRemoteNotifications_Success:
                                             self.featurePopup("page_features_row_notif_popup_reg_success_title".localized,
                                                               "page_features_row_notif_popup_reg_success_message".localized)
                                             break
                                             
-                                        case .parentDisabledNotifications:
+                                        case .registerForRemoteNotifications_ParentDisabledNotifications:
                                             self.featurePopup("page_features_row_notif_popup_reg_error_disable_parent_title".localized,
                                                               "page_features_row_notif_popup_reg_error_disable_parent_message".localized)
                                             break
                                             
-                                        case .userDisabledNotifications:
+                                        case .registerForRemoteNotifications_UserDisabledNotifications:
                                             self.featurePopup("page_features_row_notif_popup_reg_error_disable_user_title".localized,
                                                               "page_features_row_notif_popup_reg_error_disable_user_message".localized)
                                             break
                                             
-                                        case .noParentEmail:
+                                        case .registerForRemoteNotifications_NoParentEmail:
                                             self.featurePopup("page_features_row_notif_popup_reg_error_no_email_title".localized,
                                                               "page_features_row_notif_popup_reg_error_no_email_message".localized)
                                             break
                                             
-                                        case .firebaseNotSetup:
+                                        case .registerForRemoteNotifications_FirebaseNotSetup:
                                             self.featurePopup("page_features_row_notif_popup_reg_error_firebase_not_setup_title".localized,
                                                               "page_features_row_notif_popup_reg_error_firebase_not_setup_message".localized)
                                             break
                                             
-                                        case .firebaseCouldNotGetToken:
+                                        case .registerForRemoteNotifications_FirebaseCouldNotGetToken:
                                             self.featurePopup("page_features_row_notif_popup_reg_error_firebase_nil_token_title".localized,
                                                               "page_features_row_notif_popup_reg_error_firebase_nil_token_message".localized)
                                             break
                                             
-                                        case .networkError:
+                                        case .registerForRemoteNotifications_NetworkError:
                                             self.featurePopup("page_features_row_notif_popup_reg_error_network_title".localized,
                                                               "page_features_row_notif_popup_reg_error_network_message".localized)
                                             break
@@ -173,7 +175,7 @@ class FeatureViewController: KWSBaseController {
                         
                         let cell = cell as? FeaturePermRow
                         
-                        let isLogged = KWS.sdk().getLoggedUser() != nil
+                        let isLogged = KWSChildren.sdk().getLoggedUser() != nil
                         
                         cell?.permAddPermissionsButton.isEnabled = isLogged
                         
@@ -185,15 +187,15 @@ class FeatureViewController: KWSBaseController {
                             
                             let permissions = [
                                 ["name":"page_features_row_perm_popup_perm_option_email".localized,
-                                 "type":KWSPermissionType.accessEmail.rawValue],
+                                 "type":KWSChildrenPermissionType.permissionType_AccessEmail.rawValue],
                                 ["name":"page_features_row_perm_popup_perm_option_address".localized,
-                                 "type":KWSPermissionType.accessAddress.rawValue],
+                                 "type":KWSChildrenPermissionType.permissionType_AccessAddress.rawValue],
                                 ["name":"page_features_row_perm_popup_perm_option_first_name".localized,
-                                 "type":KWSPermissionType.accessFirstName.rawValue],
+                                 "type":KWSChildrenPermissionType.permissionType_AccessFirstName.rawValue],
                                 ["name":"page_features_row_perm_popup_perm_option_last_name".localized,
-                                 "type":KWSPermissionType.accessLastName.rawValue],
+                                 "type":KWSChildrenPermissionType.permissionType_AccessLastName.rawValue],
                                 ["name":"page_features_row_perm_popup_perm_option_newsletter".localized,
-                                 "type":KWSPermissionType.sendNewsletter.rawValue],
+                                 "type":KWSChildrenPermissionType.permissionType_SendNewsletter.rawValue],
                             ]
                             
                             for i in 0 ..< permissions.count {
@@ -206,18 +208,18 @@ class FeatureViewController: KWSBaseController {
                                         let requestedPermission = [type]
                                         
                                         RxKWS.addPermissions(permissions: requestedPermission as [NSNumber]!)
-                                            .subscribe(onNext: { (status: KWSPermissionStatus) in
+                                            .subscribe(onNext: { (status: KWSChildrenRequestPermissionStatus) in
                                                 
                                                 switch status {
-                                                    case .success:
+                                                    case .requestPermission_Success:
                                                         self.featurePopup("page_features_row_perm_popup_success_title".localized,
                                                                           "page_features_row_perm_popup_success_message".localized)
                                                     break
-                                                    case .networkError:
+                                                    case .requestPermission_NetworkError:
                                                         self.featurePopup("page_features_row_perm_popup_error_network_title".localized,
                                                                           "page_features_row_perm_popup_error_network_message".localized)
                                                     break
-                                                    case .noParentEmail:
+                                                    case .requestPermission_NoParentEmail:
                                                         self.featurePopup("page_features_row_perm_popup_error_no_email_title".localized,
                                                                           "page_features_row_perm_popup_error_no_email_message".localized)
                                                     break
@@ -243,7 +245,7 @@ class FeatureViewController: KWSBaseController {
                         
                         let cell = cell as? FeatureEventRow
                         
-                        let isLogged = KWS.sdk().getLoggedUser() != nil
+                        let isLogged = KWSChildren.sdk().getLoggedUser() != nil
                         
                         cell?.evtAdd20PointsButton.isEnabled = isLogged
                         cell?.evtSub10PointsButton.isEnabled = isLogged
@@ -320,7 +322,7 @@ class FeatureViewController: KWSBaseController {
                         
                         let cell = cell as? FeatureInviteRow
                         
-                        let isLogged = KWS.sdk().getLoggedUser() != nil
+                        let isLogged = KWSChildren.sdk().getLoggedUser() != nil
                         
                         cell?.invInviteFriendButton.isEnabled = isLogged
                         
@@ -364,7 +366,7 @@ class FeatureViewController: KWSBaseController {
                         
                         let cell = cell as? FeatureAppDataRow
                         
-                        let isLogged = KWS.sdk().getLoggedUser() != nil
+                        let isLogged = KWSChildren.sdk().getLoggedUser() != nil
                         
                         cell?.appdSeeAppDataButton.isEnabled = isLogged
                         
@@ -390,8 +392,13 @@ class FeatureViewController: KWSBaseController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.hasChecked = false
         dataSource?.update()
         self.navigationController?.navigationBar.topItem?.title = "page_features_title".localized
+        KWSChildren.sdk().isRegistered(forRemoteNotifications: { (isReg) in
+            self.hasChecked = true
+            self.dataSource?.update()
+        })
     }
 
     func openDocumentation () {

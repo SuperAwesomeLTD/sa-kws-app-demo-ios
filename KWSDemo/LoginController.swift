@@ -71,21 +71,21 @@ class LoginController: KWSBaseController, SignUpProtocol {
         // and click for the login button
         loginButton.rx
             .tap
-            .flatMap { () -> Observable <KWSAuthUserStatus> in
+            .flatMap { () -> Observable <KWSChildrenLoginUserStatus> in
                 return RxKWS.login(username: self.currentModel.getUsername(),
                                    password: self.currentModel.getPassword())
             }
-            .subscribe(onNext: { (status: KWSAuthUserStatus) in
+            .subscribe(onNext: { (status: KWSChildrenLoginUserStatus) in
                 
                 switch status {
                     
-                case KWSAuthUserStatus.success:
+                case .loginUser_Success:
                     _ = self.navigationController?.popViewController(animated: true)
                     break
-                case KWSAuthUserStatus.invalidCredentials:
+                case .loginUser_InvalidCredentials:
                     self.loginError()
                     break
-                case KWSAuthUserStatus.networkError:
+                case .loginUser_NetworkError:
                     self.networkError()
                     break
                     

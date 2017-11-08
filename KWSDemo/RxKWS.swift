@@ -21,16 +21,18 @@ class RxKWS: NSObject {
                         andPassword password: String,
                         andBirthdate dateOfBirth: String,
                         andCountryCode isoCode: String,
-                        andParentEmail parentEmail: String) -> Observable <KWSCreateUserStatus> {
+                        andParentEmail parentEmail: String) -> Observable <KWSChildrenCreateUserStatus> {
         
         return Observable.create ({ (subscriber) -> Disposable in
          
-            KWS.sdk().createUser(username,
-                                 withPassword: password,
-                                 andDateOfBirth: dateOfBirth,
-                                 andCountry: isoCode,
-                                 andParentEmail: parentEmail)
-            { (status: KWSCreateUserStatus) in
+            
+            
+            KWSChildren.sdk().createUser(username,
+                                         withPassword: password,
+                                         andDateOfBirth: dateOfBirth,
+                                         andCountry: isoCode,
+                                         andParentEmail: parentEmail)
+            { (status: KWSChildrenCreateUserStatus) in
                 
                 subscriber.onNext(status)
                 subscriber.onCompleted()
@@ -45,7 +47,7 @@ class RxKWS: NSObject {
         
         return Observable.create({ (subscriber) -> Disposable in
         
-            KWS.sdk().triggerEvent(event, withPoints: 20, andResponse: { (triggered) in
+            KWSChildren.sdk().triggerEvent(event, withPoints: 20, andResponse: { (triggered) in
                 
                 subscriber.onNext(triggered)
                 subscriber.onCompleted()
@@ -62,7 +64,7 @@ class RxKWS: NSObject {
         
         return Observable.create({ (subscriber) -> Disposable in
         
-            KWS.sdk().getScore({ (score: KWSScore?) in
+            KWSChildren.sdk().getScore({ (score: KWSScore?) in
                 
                 subscriber.onNext(score)
                 subscriber.onCompleted()
@@ -78,7 +80,7 @@ class RxKWS: NSObject {
         
         return Observable.create({ (subscriber) -> Disposable in
             
-            KWS.sdk().getLeaderboard({ (leaders: [KWSLeader]?) in
+            KWSChildren.sdk().getLeaderboard({ (leaders: [KWSLeader]?) in
                 
                 if let leaders = leaders {
                     
@@ -100,7 +102,7 @@ class RxKWS: NSObject {
         
         return Observable.create({ (subscriber) -> Disposable in
             
-            KWS.sdk().getAppData({ (appData: [KWSAppData]?) in
+            KWSChildren.sdk().getAppData({ (appData: [KWSAppData]?) in
                 
                 if let appData = appData {
                     for data in appData {
@@ -122,12 +124,10 @@ class RxKWS: NSObject {
         
         return Observable.create({ (subscribe) -> Disposable in
           
-            KWS.sdk().setAppData(name, withValue: value, andResponse: { (success) in
-                
+            KWSChildren.sdk().setAppData(value, forName: name) { (success) in
                 subscribe.onNext(success)
                 subscribe.onCompleted()
-                
-            })
+            }
             
             return Disposables.create()
         })
@@ -135,42 +135,42 @@ class RxKWS: NSObject {
     
     static func getUser () -> Observable <KWSUser?> {
         
-        return Observable.create({ (subscribe) -> Disposable in
+        return Observable.create { (subscribe) -> Disposable in
         
-            KWS.sdk().getUser({ (user: KWSUser?) in
+            KWSChildren.sdk().getUser { (user: KWSUser?) in
                 
                 subscribe.onNext(user)
                 subscribe.onCompleted()
                 
-            })
+            }
             
             return Disposables.create()
-        })
+        }
         
     }
     
-    static func login (username: String, password: String) -> Observable <KWSAuthUserStatus> {
+    static func login (username: String, password: String) -> Observable <KWSChildrenLoginUserStatus> {
         
-        return Observable.create({ (subscriber) -> Disposable in
+        return Observable.create { (subscriber) -> Disposable in
             
-            KWS.sdk().loginUser(username, withPassword: password, andResponse: { (status: KWSAuthUserStatus) in
+            KWSChildren.sdk().loginUser(username, withPassword: password) { (status: KWSChildrenLoginUserStatus) in
                 
                 subscriber.onNext(status)
                 subscriber.onCompleted()
                 
-            })
+            }
             
             return Disposables.create()
-        })
+        }
         
     }
     
     static func inviteFriend(email: String) -> Observable <Bool> {
         
-        return Observable.create({ (subscriber) -> Disposable in
+        return Observable.create { (subscriber) -> Disposable in
         
             
-            KWS.sdk().inviteUser(email) { (isInvited) in
+            KWSChildren.sdk().inviteUser(email) { (isInvited) in
                 
                 subscriber.onNext(isInvited)
                 subscriber.onCompleted()
@@ -178,33 +178,33 @@ class RxKWS: NSObject {
             }
             
             return Disposables.create()
-        })
+        }
     }
     
-    static func addPermissions (permissions: [NSNumber]) -> Observable <KWSPermissionStatus> {
+    static func addPermissions (permissions: [NSNumber]) -> Observable <KWSChildrenRequestPermissionStatus> {
         
-        return Observable.create({ (subscriber) -> Disposable in
+        return Observable.create { (subscriber) -> Disposable in
             
-            KWS.sdk().requestPermission(permissions) { (permissionStatus: KWSPermissionStatus) in
+            KWSChildren.sdk().requestPermission(permissions) { (permissionStatus: KWSChildrenRequestPermissionStatus) in
                 subscriber.onNext(permissionStatus)
                 subscriber.onCompleted()
             }
             
             return Disposables.create()
-        })
+        }
     }
     
-    static func registerForNotifications () -> Observable <KWSNotificationStatus> {
+    static func registerForNotifications () -> Observable <KWSChildrenRegisterForRemoteNotificationsStatus> {
         
-        return Observable.create({ (subscriber) -> Disposable in
+        return Observable.create { (subscriber) -> Disposable in
         
-            KWS.sdk().register({ (status: KWSNotificationStatus) in
+            KWSChildren.sdk().register { (status: KWSChildrenRegisterForRemoteNotificationsStatus) in
                 subscriber.onNext(status)
                 subscriber.onCompleted()
-            })
+            }
             
             return Disposables.create()
-        })
+        }
         
     }
     
@@ -212,7 +212,7 @@ class RxKWS: NSObject {
         
         return Observable.create({ (subscriber) -> Disposable in
             
-            KWS.sdk().unregister { (isUnregistered) in
+            KWSChildren.sdk().unregister { (isUnregistered) in
                 subscriber.onNext(isUnregistered)
                 subscriber.onCompleted()
             }
@@ -226,7 +226,7 @@ class RxKWS: NSObject {
         
         return Observable.create({ (subscriber) -> Disposable in
             
-            KWS.sdk().generateRandomName { (name) in
+            KWSChildren.sdk().getRandomUsername { (name) in
                 subscriber.onNext (name)
                 subscriber.onCompleted()
             }
@@ -238,7 +238,7 @@ class RxKWS: NSObject {
     
     static func getRandomName2 () -> PublishSubject <String?> {
         let subject: PublishSubject <String?> = PublishSubject<String?>()
-        KWS.sdk().generateRandomName { (name) in
+        KWSChildren.sdk().getRandomUsername { (name) in
             subject.onNext(name)
         }
         return subject

@@ -133,7 +133,7 @@ class UserViewController: KWSBaseController {
         logoutButton.rx
             .tap
             .subscribe ( { (Void) in
-                KWS.sdk().logoutUser()
+                KWSChildren.sdk().logoutUser()
                 _ = self.navigationController?.popViewController(animated: true)
             })
             .addDisposableTo(disposeBag)
